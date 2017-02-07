@@ -71,6 +71,6 @@ extension MainViewController: GridLayoutDelegate {
     func cellSlotSize(section: Int, row: Int) -> (width: Int, height: Int) {
         let slotCell = gridConfiguration.slots[section][row].cell!
         
-        return (slotApp.slotWidth, slotCell.slotHeight)
+        return (slotCell.slotWidth, slotCell.slotHeight)
     }
 }
