@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import UIKit
 
 struct Slot {
     var cell: SlotableCell

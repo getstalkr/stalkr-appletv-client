@@ -27,6 +27,15 @@ class MainViewController: UICollectionViewController {
         if let layout = collectionView?.collectionViewLayout as? GridLayout {
             layout.delegate = self
         }
+        
+        // load xibs
+        // todas as classes que implementam o protocolo SlotableCell podem ser exibidas na collectionview
+        // todos os nibs da collectionview terão como indentifier o mesmo nome da classe que implementa o protocolo SlotableCell
+        listAllSlotableCell.forEach { i in
+            let stringClassName = i.className()
+            collectionView?.register(UINib(nibName: stringClassName, bundle: nil),
+                                     forCellWithReuseIdentifier: stringClassName)
+        }
     }
     
     // MARK: UICollectionViewDataSource
@@ -42,18 +51,8 @@ class MainViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let slot = gridConfiguration.slots[indexPath.section][indexPath.row]
         
-        // todo: precisa ser mais flexível essa parte de carregar a célula, para quando adicionar numa nova célula não ter que atualizar esse código
-        var cell: UICollectionViewCell
-        if slot.cell is CellPlaceholderSmall {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellPlaceholderSmall", for: indexPath)
-        } else if slot.cell is CellPlaceholderWidthTwo {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellPlaceholderWidthTwo", for: indexPath)
-        } else if slot.cell is CellPlaceholderHeightTwo {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellPlaceholderHeightTwo", for: indexPath)
-        } else {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellPlaceholderTwoXTwo", for: indexPath)
-        }
-        
+        let cellClassName = "\(type(of: slot.cell))"
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellClassName, for: indexPath)
         (cell as! SlotableCell).load(params: slot.params)
         
         cell.backgroundColor = getRandomColor()

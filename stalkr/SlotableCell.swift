@@ -13,12 +13,13 @@ protocol SlotableCell {
     var slotHeight: Int { get }
     
     func load(params: [String: Any])
-    
-    // todo: o xib da célula precisará ser registrado
 }
 
-extension NSObject {
-    class func entity() -> Self {
-        return self.init()
-    }
-}
+// lista com todos as classes que implementam o protocolo SlotableCell
+// todo: talvez haja alguma forma mística de gerar essa listagem automaticamente
+let listAllSlotableCell: [NSObject.Type] = [
+    CellPlaceholderSmall.self,
+    CellPlaceholderWidthTwo.self,
+    CellPlaceholderHeightTwo.self,
+    CellPlaceholderTwoXTwo.self
+]

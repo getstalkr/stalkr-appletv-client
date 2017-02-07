@@ -18,6 +18,11 @@
 		89B3380B1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3380A1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift */; };
 		89B3380D1E48C34E00610EA3 /* GridConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3380C1E48C34E00610EA3 /* GridConfiguration.swift */; };
 		89B3380F1E48C42200610EA3 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3380E1E48C42200610EA3 /* GridLayout.swift */; };
+		89B338111E49ED2400610EA3 /* CellPlaceholderSmall.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B338101E49ED2400610EA3 /* CellPlaceholderSmall.xib */; };
+		89B338131E49F5EA00610EA3 /* CellPlaceholderWidthTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B338121E49F5EA00610EA3 /* CellPlaceholderWidthTwo.xib */; };
+		89B338151E49F60200610EA3 /* CellPlaceholderHeightTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B338141E49F60200610EA3 /* CellPlaceholderHeightTwo.xib */; };
+		89B338171E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B338161E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib */; };
+		89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338181E49F7A400610EA3 /* StalkrExtensions.swift */; };
 		91895BF7AD0056EDD4A683AD /* Pods_stalkr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2584928AB2DB6CF074F0769D /* Pods_stalkr.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +41,11 @@
 		89B3380A1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellPlaceholderTwoXTwo.swift; sourceTree = "<group>"; };
 		89B3380C1E48C34E00610EA3 /* GridConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridConfiguration.swift; sourceTree = "<group>"; };
 		89B3380E1E48C42200610EA3 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		89B338101E49ED2400610EA3 /* CellPlaceholderSmall.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellPlaceholderSmall.xib; sourceTree = "<group>"; };
+		89B338121E49F5EA00610EA3 /* CellPlaceholderWidthTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellPlaceholderWidthTwo.xib; sourceTree = "<group>"; };
+		89B338141E49F60200610EA3 /* CellPlaceholderHeightTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellPlaceholderHeightTwo.xib; sourceTree = "<group>"; };
+		89B338161E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellPlaceholderTwoXTwo.xib; sourceTree = "<group>"; };
+		89B338181E49F7A400610EA3 /* StalkrExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StalkrExtensions.swift; sourceTree = "<group>"; };
 		8DA58B41991C641DBFD4F4DC /* Pods-stalkr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stalkr.release.xcconfig"; path = "Pods/Target Support Files/Pods-stalkr/Pods-stalkr.release.xcconfig"; sourceTree = "<group>"; };
 		9924C7B765C9FBEEE07466DA /* Pods-stalkr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stalkr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stalkr/Pods-stalkr.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +99,7 @@
 				89B3380C1E48C34E00610EA3 /* GridConfiguration.swift */,
 				89B3380E1E48C42200610EA3 /* GridLayout.swift */,
 				89B338031E48C0B700610EA3 /* SlotableCell */,
+				89B338181E49F7A400610EA3 /* StalkrExtensions.swift */,
 			);
 			path = stalkr;
 			sourceTree = "<group>";
@@ -98,9 +109,13 @@
 			children = (
 				89B338011E48C08400610EA3 /* SlotableCell.swift */,
 				89B338041E48C0DE00610EA3 /* CellPlaceholderSmall.swift */,
+				89B338101E49ED2400610EA3 /* CellPlaceholderSmall.xib */,
 				89B338061E48C13200610EA3 /* CellPlaceholderWidthTwo.swift */,
+				89B338121E49F5EA00610EA3 /* CellPlaceholderWidthTwo.xib */,
 				89B338081E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift */,
+				89B338141E49F60200610EA3 /* CellPlaceholderHeightTwo.xib */,
 				89B3380A1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift */,
+				89B338161E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib */,
 			);
 			name = SlotableCell;
 			sourceTree = "<group>";
@@ -178,6 +193,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				89B337FA1E48BB9F00610EA3 /* Assets.xcassets in Resources */,
+				89B338131E49F5EA00610EA3 /* CellPlaceholderWidthTwo.xib in Resources */,
+				89B338151E49F60200610EA3 /* CellPlaceholderHeightTwo.xib in Resources */,
+				89B338111E49ED2400610EA3 /* CellPlaceholderSmall.xib in Resources */,
+				89B338171E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib in Resources */,
 				89B337F81E48BB9F00610EA3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +261,7 @@
 				89B338051E48C0DE00610EA3 /* CellPlaceholderSmall.swift in Sources */,
 				89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */,
 				89B338091E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift in Sources */,
+				89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */,
 				89B338071E48C13200610EA3 /* CellPlaceholderWidthTwo.swift in Sources */,
 				89B3380F1E48C42200610EA3 /* GridLayout.swift in Sources */,
 				89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */,
@@ -403,6 +423,7 @@
 				89B338001E48BB9F00610EA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
