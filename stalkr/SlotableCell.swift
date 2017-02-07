@@ -16,3 +16,9 @@ protocol SlotableCell {
     
     // todo: o xib da célula precisará ser registrado
 }
+
+extension NSObject {
+    class func entity() -> Self {
+        return self.init()
+    }
+}
