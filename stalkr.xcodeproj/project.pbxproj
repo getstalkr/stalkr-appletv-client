@@ -8,18 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B337F21E48BB9F00610EA3 /* AppDelegate.swift */; };
-		89B337F51E48BB9F00610EA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B337F41E48BB9F00610EA3 /* ViewController.swift */; };
+		89B337F51E48BB9F00610EA3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B337F41E48BB9F00610EA3 /* MainViewController.swift */; };
 		89B337F81E48BB9F00610EA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B337F61E48BB9F00610EA3 /* Main.storyboard */; };
 		89B337FA1E48BB9F00610EA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89B337F91E48BB9F00610EA3 /* Assets.xcassets */; };
+		89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338011E48C08400610EA3 /* SlotableCell.swift */; };
+		89B338051E48C0DE00610EA3 /* CellPlaceholderSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338041E48C0DE00610EA3 /* CellPlaceholderSmall.swift */; };
+		89B338071E48C13200610EA3 /* CellPlaceholderWidthTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338061E48C13200610EA3 /* CellPlaceholderWidthTwo.swift */; };
+		89B338091E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338081E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift */; };
+		89B3380B1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3380A1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift */; };
+		89B3380D1E48C34E00610EA3 /* GridConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3380C1E48C34E00610EA3 /* GridConfiguration.swift */; };
+		89B3380F1E48C42200610EA3 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3380E1E48C42200610EA3 /* GridLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		89B337EF1E48BB9F00610EA3 /* stalkr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stalkr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B337F21E48BB9F00610EA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		89B337F41E48BB9F00610EA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		89B337F41E48BB9F00610EA3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		89B337F71E48BB9F00610EA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89B337F91E48BB9F00610EA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89B337FB1E48BB9F00610EA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89B338011E48C08400610EA3 /* SlotableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotableCell.swift; sourceTree = "<group>"; };
+		89B338041E48C0DE00610EA3 /* CellPlaceholderSmall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellPlaceholderSmall.swift; sourceTree = "<group>"; };
+		89B338061E48C13200610EA3 /* CellPlaceholderWidthTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellPlaceholderWidthTwo.swift; sourceTree = "<group>"; };
+		89B338081E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellPlaceholderHeightTwo.swift; sourceTree = "<group>"; };
+		89B3380A1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellPlaceholderTwoXTwo.swift; sourceTree = "<group>"; };
+		89B3380C1E48C34E00610EA3 /* GridConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridConfiguration.swift; sourceTree = "<group>"; };
+		89B3380E1E48C42200610EA3 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +67,27 @@
 			isa = PBXGroup;
 			children = (
 				89B337F21E48BB9F00610EA3 /* AppDelegate.swift */,
-				89B337F41E48BB9F00610EA3 /* ViewController.swift */,
+				89B337F41E48BB9F00610EA3 /* MainViewController.swift */,
 				89B337F61E48BB9F00610EA3 /* Main.storyboard */,
 				89B337F91E48BB9F00610EA3 /* Assets.xcassets */,
 				89B337FB1E48BB9F00610EA3 /* Info.plist */,
+				89B3380C1E48C34E00610EA3 /* GridConfiguration.swift */,
+				89B3380E1E48C42200610EA3 /* GridLayout.swift */,
+				89B338031E48C0B700610EA3 /* SlotableCell */,
 			);
 			path = stalkr;
+			sourceTree = "<group>";
+		};
+		89B338031E48C0B700610EA3 /* SlotableCell */ = {
+			isa = PBXGroup;
+			children = (
+				89B338011E48C08400610EA3 /* SlotableCell.swift */,
+				89B338041E48C0DE00610EA3 /* CellPlaceholderSmall.swift */,
+				89B338061E48C13200610EA3 /* CellPlaceholderWidthTwo.swift */,
+				89B338081E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift */,
+				89B3380A1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift */,
+			);
+			name = SlotableCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,8 +162,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89B337F51E48BB9F00610EA3 /* ViewController.swift in Sources */,
+				89B3380D1E48C34E00610EA3 /* GridConfiguration.swift in Sources */,
+				89B337F51E48BB9F00610EA3 /* MainViewController.swift in Sources */,
+				89B338051E48C0DE00610EA3 /* CellPlaceholderSmall.swift in Sources */,
 				89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */,
+				89B338091E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift in Sources */,
+				89B338071E48C13200610EA3 /* CellPlaceholderWidthTwo.swift in Sources */,
+				89B3380F1E48C42200610EA3 /* GridLayout.swift in Sources */,
+				89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */,
+				89B3380B1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
