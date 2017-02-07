@@ -17,19 +17,20 @@ class GridConfiguration {
     
     static let shared = GridConfiguration()
     let slots: [[Slot]]
+    var jsonConfig: String?
     
     private init() {
-        slots = [
+        /*slots = [
             [Slot(cell: CellPlaceholderWidthTwo(), params: [:]), Slot(cell: CellPlaceholderHeightTwo(), params: [:])],
             [Slot(cell: CellPlaceholderWidthTwo(), params: [:])],
             [Slot(cell: CellPlaceholderSmall(), params: ["label": "macabeus é sayajin"]), Slot(cell: CellPlaceholderSmall(), params: ["label": "macabeus é lindo"]), Slot(cell: CellPlaceholderSmall(), params: ["label": "macabeus é o galã"])]
-         ]
+         ]*/
         
-        /*slots = [
+        slots = [
             [Slot(cell: CellPlaceholderWidthTwo(), params: [:]), Slot(cell: CellPlaceholderHeightTwo(), params: [:])],
             [Slot(cell: CellPlaceholderTwoXTwo(), params: [:])],
             [Slot(cell: CellPlaceholderSmall(), params: ["label": "macabeus é sayajin"])]
-        ]*/
+        ]
     }
     
     // todo: add cell
