@@ -44,11 +44,11 @@ class MainViewController: UICollectionViewController {
         
         // todo: precisa ser mais flexível essa parte de carregar a célula, para quando adicionar numa nova célula não ter que atualizar esse código
         var cell: UICollectionViewCell
-        if slot.application is CellPlaceholderSmall {
+        if slot.cell is CellPlaceholderSmall {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellPlaceholderSmall", for: indexPath)
-        } else if slot.application is CellPlaceholderWidthTwo {
+        } else if slot.cell is CellPlaceholderWidthTwo {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellPlaceholderWidthTwo", for: indexPath)
-        } else if slot.application is CellPlaceholderHeightTwo {
+        } else if slot.cell is CellPlaceholderHeightTwo {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellPlaceholderHeightTwo", for: indexPath)
         } else {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellPlaceholderTwoXTwo", for: indexPath)
@@ -69,8 +69,8 @@ class MainViewController: UICollectionViewController {
 extension MainViewController: GridLayoutDelegate {
     
     func cellSlotSize(section: Int, row: Int) -> (width: Int, height: Int) {
-        let slotApp = gridConfiguration.slots[section][row].application!
+        let slotCell = gridConfiguration.slots[section][row].cell!
         
-        return (slotApp.slotWidth, slotApp.slotHeight)
+        return (slotApp.slotWidth, slotCell.slotHeight)
     }
 }

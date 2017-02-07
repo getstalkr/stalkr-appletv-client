@@ -9,7 +9,7 @@
 import Foundation
 
 struct Slot {
-    var application: SlotableCell?
+    var cell: SlotableCell?
     var params: [String: Any]
 }
 
@@ -19,17 +19,17 @@ class GridConfiguration {
     let slots: [[Slot]]
     
     private init() {
-        /*slots = [
-            [Slot(application: CellPlaceholderWidthTwo(), params: [:]), Slot(application: CellPlaceholderHeightTwo(), params: [:])],
-            [Slot(application: CellPlaceholderWidthTwo(), params: [:])],
-            [Slot(application: CellPlaceholderSmall(), params: ["label": "macabeus é sayajin"]), Slot(application: CellPlaceholderSmall(), params: ["label": "macabeus é lindo"]), Slot(application: CellPlaceholderSmall(), params: ["label": "macabeus é o galã"])]
-         ]*/
-        
         slots = [
-            [Slot(application: CellPlaceholderWidthTwo(), params: [:]), Slot(application: CellPlaceholderHeightTwo(), params: [:])],
-            [Slot(application: CellPlaceholderTwoXTwo(), params: [:])],
-            [Slot(application: CellPlaceholderSmall(), params: ["label": "macabeus é sayajin"])]
-        ]
+            [Slot(cell: CellPlaceholderWidthTwo(), params: [:]), Slot(cell: CellPlaceholderHeightTwo(), params: [:])],
+            [Slot(cell: CellPlaceholderWidthTwo(), params: [:])],
+            [Slot(cell: CellPlaceholderSmall(), params: ["label": "macabeus é sayajin"]), Slot(cell: CellPlaceholderSmall(), params: ["label": "macabeus é lindo"]), Slot(cell: CellPlaceholderSmall(), params: ["label": "macabeus é o galã"])]
+         ]
+        
+        /*slots = [
+            [Slot(cell: CellPlaceholderWidthTwo(), params: [:]), Slot(cell: CellPlaceholderHeightTwo(), params: [:])],
+            [Slot(cell: CellPlaceholderTwoXTwo(), params: [:])],
+            [Slot(cell: CellPlaceholderSmall(), params: ["label": "macabeus é sayajin"])]
+        ]*/
     }
     
     // todo: add cell
