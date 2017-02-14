@@ -36,10 +36,14 @@ class MainViewController: UICollectionViewController {
             collectionView?.register(UINib(nibName: stringClassName, bundle: nil),
                                      forCellWithReuseIdentifier: stringClassName)
         }
+        
+        //
+        let collectionViewInsets = UIEdgeInsetsMake(30.0, 30.0, 30.0, 30.0);
+        self.collectionView?.contentInset = collectionViewInsets;
+        self.collectionView?.scrollIndicatorInsets = UIEdgeInsetsMake(collectionViewInsets.top, 0, collectionViewInsets.bottom, 0);
     }
     
     // MARK: UICollectionViewDataSource
-    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
@@ -60,8 +64,9 @@ class MainViewController: UICollectionViewController {
         return cell
     }
     
+    // Focus
     override func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
-        return false
+        return true
     }
 }
 
