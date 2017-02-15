@@ -21,7 +21,7 @@ class SlotableCellDefault: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.transform = CGAffineTransform(scaleX: 0.90, y: 0.90)
+        self.layer.shadowColor = UIColor.white.cgColor
     }
     
     override var canBecomeFocused: Bool {
@@ -33,14 +33,18 @@ class SlotableCellDefault: UICollectionViewCell {
         if self === context.previouslyFocusedItem {
             
             coordinator.addCoordinatedAnimations({
-                self.transform = CGAffineTransform(scaleX: 0.90, y: 0.90)
+                self.transform = CGAffineTransform(scaleX: 0.98, y: 0.98)
+                
+                self.layer.shadowOpacity = 0.0
             }, completion: {
                 
             })
         } else if self === context.nextFocusedItem {
             
             coordinator.addCoordinatedAnimations({
-                self.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+                self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                
+                self.layer.shadowOpacity = 1
             }, completion: {
                 
             })

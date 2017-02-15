@@ -38,9 +38,7 @@ class MainViewController: UICollectionViewController {
         }
         
         //
-        let collectionViewInsets = UIEdgeInsetsMake(30.0, 30.0, 30.0, 30.0);
-        self.collectionView?.contentInset = collectionViewInsets;
-        self.collectionView?.scrollIndicatorInsets = UIEdgeInsetsMake(collectionViewInsets.top, 0, collectionViewInsets.bottom, 0);
+        self.view.backgroundColor = UIColor.gray
     }
     
     // MARK: UICollectionViewDataSource
@@ -60,6 +58,7 @@ class MainViewController: UICollectionViewController {
         (cell as! SlotableCell).load(params: slot.params)
         
         cell.backgroundColor = getRandomColor()
+        cell.transform = CGAffineTransform(scaleX: 0.98, y: 0.98) // TODO: Gambiarra! Isso não deve ficar aqui, mas sim em SlotableCellDefault
         
         return cell
     }
