@@ -12,32 +12,16 @@ class SegmentedViewController: UIViewController {
 
     @IBOutlet weak var segmentedActivities: UISegmentedControl!
     
-    @IBOutlet weak var collectionCells: UICollectionView!
-    
-    @IBOutlet weak var tableProjects: UITableView!
-    
     @IBOutlet weak var labelTitle: UILabel!
     
-    @IBOutlet weak var container: UICollectionView!
+    @IBOutlet weak var dashboardContainer: UIView!
     
-    var mainViewController: MainViewController {
+    @IBOutlet weak var ProjectListContainer: UIView!
         
-        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let viewController = storyBoard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-        return viewController
-    }
-    
-    var blueViewController: BlueViewController {
-        
-        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let viewController = storyBoard.instantiateViewController(withIdentifier: "BlueViewController") as! BlueViewController
-        return viewController
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         
         super.viewDidAppear(animated)
-        self.__addChildViewController(controller: mainViewController)
+        //self.__addChildViewController(controller: mainViewController, to: dashboardContainer)
     }
     
     override func viewDidLoad() {
@@ -53,22 +37,22 @@ class SegmentedViewController: UIViewController {
     @IBAction func selectionChanged(_ sender: UISegmentedControl) {
         
         if sender.selectedSegmentIndex == 0 {
-            switchViewController(controller: blueViewController, to: mainViewController)
+            //switchViewController(controller: blueViewController, to: mainViewController)
         } else if sender.selectedSegmentIndex == 1 {
-            switchViewController(controller: mainViewController, to: blueViewController)
+            //switchViewController(controller: mainViewController, to: blueViewController)
         }
     }
     
     func switchViewController(controller oldController: UIViewController, to newController: UIViewController) {
         
         self.__removeChildViewController(controller: oldController)
-        self.__addChildViewController(controller: newController)
+        self.__addChildViewController(controller: newController, to: dashboardContainer)
     }
     
-    private func __addChildViewController(controller: UIViewController) {
+    private func __addChildViewController(controller: UIViewController, to view: UIView) {
 
         self.addChildViewController(controller)
-        self.container.addSubview(controller.view)
+        view.addSubview(controller.view)
         controller.didMove(toParentViewController: self)
     }
     
