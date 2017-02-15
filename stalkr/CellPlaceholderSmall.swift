@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CellPlaceholderSmall: UICollectionViewCell, SlotableCell {
+class CellPlaceholderSmall: SlotableCellDefault, SlotableCell {
     
     @IBOutlet weak var label: UILabel!
     let slotWidth = 1

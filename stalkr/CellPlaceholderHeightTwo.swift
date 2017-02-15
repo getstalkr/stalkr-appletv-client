@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CellPlaceholderHeightTwo: UICollectionViewCell, SlotableCell {
+class CellPlaceholderHeightTwo: SlotableCellDefault, SlotableCell {
     
     let slotWidth = 1
     let slotHeight = 2

@@ -36,10 +36,12 @@ class MainViewController: UICollectionViewController {
             collectionView?.register(UINib(nibName: stringClassName, bundle: nil),
                                      forCellWithReuseIdentifier: stringClassName)
         }
+        
+        //
+        self.view.backgroundColor = UIColor.gray
     }
     
     // MARK: UICollectionViewDataSource
-    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
@@ -56,12 +58,14 @@ class MainViewController: UICollectionViewController {
         (cell as! SlotableCell).load(params: slot.params)
         
         cell.backgroundColor = getRandomColor()
+        cell.transform = CGAffineTransform(scaleX: 0.98, y: 0.98) // TODO: Gambiarra! Isso não deve ficar aqui, mas sim em SlotableCellDefault
         
         return cell
     }
     
+    // Focus
     override func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
-        return false
+        return true
     }
 }
 
