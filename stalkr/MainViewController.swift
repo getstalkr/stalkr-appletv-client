@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PusherSwift
 
 fileprivate var counter = 0
 fileprivate let gridConfiguration = GridConfiguration.shared
@@ -20,6 +21,8 @@ func getRandomColor() -> UIColor{
 }
 
 class MainViewController: UICollectionViewController {
+    
+    let pusher = Pusher(key: "767b37910219fd5fe893")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,12 +54,23 @@ class MainViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // get slot in grid config
         let slot = gridConfiguration.slots[indexPath.section][indexPath.row]
         
+        // start cell
         let cellClassName = "\(type(of: slot.cell))"
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellClassName, for: indexPath)
         (cell as! SlotableCell).load(params: slot.params)
         
+        // start websocket
+        if let webSocketConfig = slot.webSocketConfig {
+            let channel = pusher.subscribe(webSocketConfig.channel)
+            let _ = channel.bind(eventName: webSocketConfig.event, callback: (cell as! SubscriberCell).getHandle(event: webSocketConfig.event))
+            
+            pusher.connect()
+        }
+        
+        //
         cell.backgroundColor = getRandomColor()
         cell.transform = CGAffineTransform(scaleX: 0.98, y: 0.98) // TODO: Gambiarra! Isso não deve ficar aqui, mas sim em SlotableCellDefault
         

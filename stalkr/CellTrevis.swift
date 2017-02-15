@@ -8,12 +8,23 @@
 
 import UIKit
 
-class CellTrevis: SlotableCellDefault, SlotableCell, UITableViewDelegate, UITableViewDataSource {
+class CellTrevis: SlotableCellDefault, SlotableCell, SubscriberCell, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var table: UITableView!
     let slotWidth = 1
     let slotHeight = 3
-    //var alertMessage: String?
+    
+    let webSocketHandles: [String: (_ data: Any?) -> Void] = [
+        "my-event": { data in
+            // TODO
+            
+            if let data = data {
+                print(data)
+            } else {
+                print("nothing")
+            }
+        }
+    ]
     
     func load(params: [String: Any]) {
         self.table.delegate = self

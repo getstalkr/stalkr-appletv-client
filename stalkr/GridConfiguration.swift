@@ -10,9 +10,15 @@ import Foundation
 import SwiftyJSON
 import UIKit
 
+struct WebSocketConfig {
+    let channel: String
+    let event: String
+}
+
 struct Slot {
     var cell: SlotableCell
     var params: [String: Any]
+    var webSocketConfig: WebSocketConfig?
 }
 
 class JSONConfig {
@@ -30,14 +36,14 @@ class JSONConfig {
                     "{ \"cell\": \"CellPlaceholderHeightTwo\", \"params\": {} }" +
                 "]," +
                 "[" +
-                "{ \"cell\": \"CellPlaceholderTwoXTwo\", \"params\": {} }" +
+                    "{ \"cell\": \"CellPlaceholderTwoXTwo\", \"params\": {} }" +
                 "]," +
                 "[" +
                     "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é sayajin\" } }" +
                 "]" +
             "]"*/
         
-        rawConfig = "" +
+        /*rawConfig = "" +
             "[" +
                 "[" +
                     "{ \"cell\": \"CellPlaceholderWidthTwo\", \"params\": {} }," +
@@ -51,17 +57,56 @@ class JSONConfig {
                     "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é lindo\" } }," +
                     "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é o galã\" } }" +
                 "]" +
+            "]"*/
+        
+        rawConfig = "" +
+            "[" +
+                "[" +
+                    "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é lindo\" } }," +
+                    "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"my-channel\", \"event\": \"my-event\" } }" +
+                "]," +
+                "[" +
+            
+                "]," +
+                "[" +
+                    "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é o galã\" } }" +
+                "]" +
             "]"
         
         json = JSON(parseJSON: rawConfig)
         
         slots = json.arrayValue.map { rows -> [Slot] in
             rows.arrayValue.map { cell -> Slot in
+                // cell class
                 let cellClass = NSClassFromString("stalkr." + cell["cell"].stringValue)! as! NSObject.Type
                 let cellObject = cellClass.init() as! SlotableCell
+                
+                // cell params
                 let params = cell["params"].dictionaryObject!
                 
-                return Slot(cell: cellObject, params: params)
+                // cell websocket config to subscriber
+                let webSocketConfig: WebSocketConfig?
+                if let webSocketJson = cell["websocket"].dictionary {
+                    let channel = webSocketJson["channel"]!.stringValue
+                    let event = webSocketJson["event"]!.stringValue
+
+                    if !(cellObject.self is SubscriberCell) {
+                        print("Erro de configuração no JSON: Há configuração de websocket para a célula do tipo \(cell["cell"].stringValue), porém, ela não está conforme o protocol SubscriberCell!")
+                        webSocketConfig = nil
+                        
+                    } else if (cellObject as! SubscriberCell).webSocketHandles[event] == nil {
+                        print("Erro de configuração no JSON: O handle para o event \(event) do channel \(channel) para a célula \(cell["cell"].stringValue) não foi implementado!")
+                        webSocketConfig = nil
+                        
+                    } else {
+                        webSocketConfig = WebSocketConfig(channel: channel, event: event)
+                    }
+                } else {
+                    webSocketConfig = nil
+                }
+                
+                //
+                return Slot(cell: cellObject, params: params, webSocketConfig: webSocketConfig)
             }
         }
     }
