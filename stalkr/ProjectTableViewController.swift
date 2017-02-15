@@ -45,6 +45,7 @@ class ProjectTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         cell.textLabel?.text = projectsNames[indexPath.row]
+        cell.textLabel?.textColor = .white
         
         return cell
     }
