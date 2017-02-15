@@ -18,6 +18,8 @@ class SegmentedViewController: UIViewController {
     
     @IBOutlet weak var labelTitle: UILabel!
     
+    @IBOutlet weak var container: UICollectionView!
+    
     var mainViewController: MainViewController {
         
         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -25,19 +27,55 @@ class SegmentedViewController: UIViewController {
         return viewController
     }
     
+    var blueViewController: BlueViewController {
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "BlueViewController") as! BlueViewController
+        return viewController
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        self.__addChildViewController(controller: mainViewController)
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        segmentedActivities.addTarget(self, action: #selector(SegmentedViewController.controlSegmented), for: .valueChanged)
+        //segmentedActivities.addTarget(self, action: #selector(SegmentedViewController.controlSegmented), for: .valueChanged)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func controlSegmented() {
+    @IBAction func selectionChanged(_ sender: UISegmentedControl) {
         
+        if sender.selectedSegmentIndex == 0 {
+            switchViewController(controller: blueViewController, to: mainViewController)
+        } else if sender.selectedSegmentIndex == 1 {
+            switchViewController(controller: mainViewController, to: blueViewController)
+        }
     }
+    
+    func switchViewController(controller oldController: UIViewController, to newController: UIViewController) {
+        
+        self.__removeChildViewController(controller: oldController)
+        self.__addChildViewController(controller: newController)
+    }
+    
+    private func __addChildViewController(controller: UIViewController) {
 
+        self.addChildViewController(controller)
+        self.container.addSubview(controller.view)
+        controller.didMove(toParentViewController: self)
+    }
+    
+    private func __removeChildViewController(controller: UIViewController) {
+
+        controller.willMove(toParentViewController: nil)
+        controller.view.removeFromSuperview()
+        controller.removeFromParentViewController()
+    }
 }
