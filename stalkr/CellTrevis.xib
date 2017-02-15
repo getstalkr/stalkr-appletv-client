@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellTrevis" id="3qC-Ve-G5K" customClass="CellTrevis" customModule="stalkr" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="385" height="377"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="385" height="377"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="P28-QJ-yJ5">
+                        <rect key="frame" x="8" y="8" width="369" height="361"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tableView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="P28-QJ-yJ5" firstAttribute="top" secondItem="3qC-Ve-G5K" secondAttribute="top" constant="8" id="6co-3G-IhK"/>
+                <constraint firstAttribute="bottom" secondItem="P28-QJ-yJ5" secondAttribute="bottom" constant="8" id="hGK-bp-yPW"/>
+                <constraint firstItem="P28-QJ-yJ5" firstAttribute="leading" secondItem="3qC-Ve-G5K" secondAttribute="leading" constant="8" id="hrL-U9-Spf"/>
+                <constraint firstAttribute="trailing" secondItem="P28-QJ-yJ5" secondAttribute="trailing" constant="8" id="lOy-8q-UqJ"/>
+            </constraints>
+            <size key="customSize" width="385" height="377"/>
+            <connections>
+                <outlet property="table" destination="P28-QJ-yJ5" id="GfO-dH-mEc"/>
+            </connections>
+            <point key="canvasLocation" x="50.5" y="231.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

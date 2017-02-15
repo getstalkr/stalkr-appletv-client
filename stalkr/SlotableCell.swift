@@ -58,5 +58,6 @@ let listAllSlotableCell: [NSObject.Type] = [
     CellPlaceholderSmall.self,
     CellPlaceholderWidthTwo.self,
     CellPlaceholderHeightTwo.self,
-    CellPlaceholderTwoXTwo.self
+    CellPlaceholderTwoXTwo.self,
+    CellTrevis.self
 ]
