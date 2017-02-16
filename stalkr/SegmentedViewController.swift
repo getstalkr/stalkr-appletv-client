@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SegmentedViewController: UIViewController {
+class SegmentedViewController: UIViewController, ProjectViewProtocol {
 
     @IBOutlet weak var segmentedActivities: UISegmentedControl!
     
@@ -30,7 +30,7 @@ class SegmentedViewController: UIViewController {
         
         super.viewDidLoad()
         
-        seletionBar.frame = CGRect(x: 0.0, y: 0.0, width: self.segmentedActivities.frame.size.width/CGFloat(self.segmentedActivities.numberOfSegments), height: 5.0)
+        seletionBar.frame = CGRect(x: 0.0, y: self.segmentedActivities.frame.size.height, width: self.segmentedActivities.frame.size.width/CGFloat(self.segmentedActivities.numberOfSegments), height: 5.0)
         seletionBar.backgroundColor = UIColor(colorLiteralRed: 141/255, green: 102/255, blue: 189/255, alpha: 1)
     }
     
@@ -81,5 +81,12 @@ class SegmentedViewController: UIViewController {
         controller.willMove(toParentViewController: nil)
         controller.view.removeFromSuperview()
         controller.removeFromParentViewController()
+    }
+    
+    //MARK: ProjectViewProtocol
+    
+    func didChangeProject(toProjectNamed name: String) {
+        
+        
     }
 }

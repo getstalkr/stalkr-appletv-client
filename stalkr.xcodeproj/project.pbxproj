@@ -26,6 +26,8 @@
 		91895BF7AD0056EDD4A683AD /* Pods_stalkr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2584928AB2DB6CF074F0769D /* Pods_stalkr.framework */; };
 		CE3DC3121E54807D008F88EE /* ProjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DC3111E54807D008F88EE /* ProjectTableViewController.swift */; };
 		CE85B3CE1E5349D900DA7287 /* SegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */; };
+		CEE8497A1E55EF840033F512 /* DashboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE849791E55EF840033F512 /* DashboardProtocol.swift */; };
+		CEE8497C1E55F18F0033F512 /* ProjectViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		9924C7B765C9FBEEE07466DA /* Pods-stalkr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stalkr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stalkr/Pods-stalkr.debug.xcconfig"; sourceTree = "<group>"; };
 		CE3DC3111E54807D008F88EE /* ProjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewController.swift; sourceTree = "<group>"; };
 		CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedViewController.swift; sourceTree = "<group>"; };
+		CEE849791E55EF840033F512 /* DashboardProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardProtocol.swift; sourceTree = "<group>"; };
+		CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 		89B337F11E48BB9F00610EA3 /* stalkr */ = {
 			isa = PBXGroup;
 			children = (
+				CEE849781E55EF420033F512 /* Protocols */,
 				89B337F21E48BB9F00610EA3 /* AppDelegate.swift */,
 				89B337F41E48BB9F00610EA3 /* MainViewController.swift */,
 				89B337F61E48BB9F00610EA3 /* Main.storyboard */,
@@ -133,6 +138,15 @@
 				8DA58B41991C641DBFD4F4DC /* Pods-stalkr.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CEE849781E55EF420033F512 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CEE849791E55EF840033F512 /* DashboardProtocol.swift */,
+				CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +281,10 @@
 				89B338051E48C0DE00610EA3 /* CellPlaceholderSmall.swift in Sources */,
 				89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */,
 				89B338091E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift in Sources */,
+				CEE8497A1E55EF840033F512 /* DashboardProtocol.swift in Sources */,
 				89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */,
 				CE3DC3121E54807D008F88EE /* ProjectTableViewController.swift in Sources */,
+				CEE8497C1E55F18F0033F512 /* ProjectViewProtocol.swift in Sources */,
 				89B338071E48C13200610EA3 /* CellPlaceholderWidthTwo.swift in Sources */,
 				89B3380F1E48C42200610EA3 /* GridLayout.swift in Sources */,
 				89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */,

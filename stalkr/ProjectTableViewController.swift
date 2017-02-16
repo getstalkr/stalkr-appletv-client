@@ -15,7 +15,7 @@ class ProjectTableViewController: UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+
         for i in 0...3 {
             projectsNames.append("Project \(i)")
         }
