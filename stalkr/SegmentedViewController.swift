@@ -17,6 +17,8 @@ class SegmentedViewController: UIViewController {
     @IBOutlet weak var dashboardContainer: UIView!
     
     @IBOutlet weak var ProjectListContainer: UIView!
+    
+    var seletionBar: UIView = UIView()
         
     override func viewDidAppear(_ animated: Bool) {
         
@@ -27,7 +29,9 @@ class SegmentedViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        //segmentedActivities.addTarget(self, action: #selector(SegmentedViewController.controlSegmented), for: .valueChanged)
+        
+        seletionBar.frame = CGRect(x: 0.0, y: 0.0, width: self.segmentedActivities.frame.size.width/CGFloat(self.segmentedActivities.numberOfSegments), height: 5.0)
+        seletionBar.backgroundColor = UIColor(colorLiteralRed: 141/255, green: 102/255, blue: 189/255, alpha: 1)
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,6 +39,22 @@ class SegmentedViewController: UIViewController {
     }
     
     @IBAction func selectionChanged(_ sender: UISegmentedControl) {
+        
+        let placeSelectionBar = { () -> () in
+            var barFrame = self.seletionBar.frame
+            barFrame.origin.x = barFrame.size.width * CGFloat(sender.selectedSegmentIndex)
+            self.seletionBar.frame = barFrame
+        }
+        
+        if seletionBar.superview == nil {
+            sender.addSubview(seletionBar)
+            placeSelectionBar()
+        }
+        else {
+            UIView.animate(withDuration: 0.3, animations: {
+                placeSelectionBar()
+            })
+        }
         
         if sender.selectedSegmentIndex == 0 {
             //switchViewController(controller: blueViewController, to: mainViewController)
