@@ -8,13 +8,13 @@
 
 import UIKit
 import PusherSwift
+import SwiftyJSON
 
 fileprivate var counter = 0
 fileprivate let gridConfiguration = GridConfiguration.shared
 
 class MainViewController: UICollectionViewController {
     
-    //let pusher = Pusher(key: "767b37910219fd5fe893")
     let pusher = Pusher(key: "5cdc3c711f606f43aada")
     
     override func viewDidLoad() {
@@ -58,7 +58,21 @@ class MainViewController: UICollectionViewController {
         // start websocket
         if let webSocketConfig = slot.webSocketConfig {
             let channel = pusher.subscribe(webSocketConfig.channel)
-            let _ = channel.bind(eventName: webSocketConfig.event, callback: (cell as! SubscriberCell).getHandle(event: webSocketConfig.event))
+            
+            // function to converter data "Any?" to "JSON", and pass the current cell
+            func wrapper(data: Any?) {
+                let json: JSON
+                if let object = data as? [String : Any],
+                    let jsonData = try? JSONSerialization.data(withJSONObject: object, options: .prettyPrinted) {
+                    json = JSON(data: jsonData)
+                } else {
+                    json = JSON(arrayLiteral: [])
+                }
+                
+                (cell as! SubscriberCell).getHandle(event: webSocketConfig.event, cell: cell as! SlotableCell)(json, cell as! SlotableCell)
+            }
+            
+            let _ = channel.bind(eventName: webSocketConfig.event, callback: wrapper)
             
             pusher.connect()
         }

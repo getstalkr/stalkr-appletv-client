@@ -17,8 +17,10 @@ class CellTrevis: SlotableCellDefault, SlotableCell, SubscriberCell, UITableView
     let slotHeight = 3
     let cellHeight = (UINib(nibName: "CellTrevisTableCell", bundle: nil).instantiate(withOwner: nil, options: nil).last as! UIView).frame.size.height
     
-    let webSocketHandles: [String: (_ data: Any?) -> Void] = [
-        "status-requested": { object in
+    var travisBuildsLog: [TravisBuildRegister] = []
+    
+    let webSocketHandles: [String: (_ data: JSON, _ cell: SlotableCell) -> Void] = [
+        "status-requested": { json, cell in
             // TODO
         }
     ]

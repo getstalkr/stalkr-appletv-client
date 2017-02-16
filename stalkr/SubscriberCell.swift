@@ -7,13 +7,14 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 protocol SubscriberCell {
-    var webSocketHandles: [String: (_ data: Any?) -> Void] { get }
+    var webSocketHandles: [String: (_ data: JSON, _ cell: SlotableCell) -> Void] { get }
 }
 
 extension SubscriberCell {
-    func getHandle(event: String) -> ((_ data: Any?) -> Void) {
+    func getHandle(event: String, cell: SlotableCell) -> ((_ data: JSON, _ cell: SlotableCell) -> Void) {
         return self.webSocketHandles[event]!
     }
 }
