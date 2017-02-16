@@ -8,5 +8,6 @@ target 'stalkr' do
   # Pods for stalkr
   pod 'SwiftyJSON', '~> 3.1.4'
   pod 'PusherSwift'
+  pod 'SwiftRichString'
 
 end

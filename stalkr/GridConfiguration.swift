@@ -63,13 +63,13 @@ class JSONConfig {
             "[" +
                 "[" +
                     "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é lindo\" } }," +
-                    "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"my-channel\", \"event\": \"my-event\" } }" +
+                    "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"travis-builds-facebook-jest\", \"event\": \"status-requested\" } }" +
                 "]," +
                 "[" +
             
                 "]," +
                 "[" +
-                    "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é o galã\" } }" +
+                    
                 "]" +
             "]"
         

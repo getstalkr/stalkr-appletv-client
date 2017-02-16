@@ -12,17 +12,10 @@ import PusherSwift
 fileprivate var counter = 0
 fileprivate let gridConfiguration = GridConfiguration.shared
 
-func getRandomColor() -> UIColor{
-    let red:CGFloat = CGFloat(drand48())
-    let green:CGFloat = CGFloat(drand48())
-    let blue:CGFloat = CGFloat(drand48())
-    
-    return UIColor(red:red, green: green, blue: blue, alpha: 0.5)
-}
-
 class MainViewController: UICollectionViewController {
     
-    let pusher = Pusher(key: "767b37910219fd5fe893")
+    //let pusher = Pusher(key: "767b37910219fd5fe893")
+    let pusher = Pusher(key: "5cdc3c711f606f43aada")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +34,7 @@ class MainViewController: UICollectionViewController {
         }
         
         //
-        self.view.backgroundColor = UIColor.gray
+        self.view.backgroundColor = UIColor.backgroundAbove
     }
     
     // MARK: UICollectionViewDataSource
@@ -71,7 +64,7 @@ class MainViewController: UICollectionViewController {
         }
         
         //
-        cell.backgroundColor = getRandomColor()
+        cell.backgroundColor = UIColor.backgroundCell
         cell.transform = CGAffineTransform(scaleX: 0.98, y: 0.98) // TODO: Gambiarra! Isso não deve ficar aqui, mas sim em SlotableCellDefault
         
         return cell

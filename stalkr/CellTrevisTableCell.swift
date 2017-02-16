@@ -12,11 +12,15 @@ class CellTrevisTableCell: UITableViewCell {
 
     @IBOutlet weak var viewLeft: UIView!
     @IBOutlet weak var labelCheckmark: UILabel!
-    @IBOutlet weak var labelBranch: UILabel!
     @IBOutlet weak var labelCommitMessage: UILabel!
+    @IBOutlet weak var textCommitMessage: UITextView!
     @IBOutlet weak var labelCommitterName: UILabel!
+    @IBOutlet weak var labelCommitCode: UILabel!
+    @IBOutlet weak var labelBranch: UILabel!
+    @IBOutlet weak var labelPastTime: UILabel!
+    @IBOutlet weak var labelRunTime: UILabel!
+    @IBOutlet weak var labelTotalTime: UILabel!
     
-    @IBOutlet weak var labelCountPassed: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
