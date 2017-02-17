@@ -12,10 +12,12 @@ class ProjectTableViewController: UITableViewController {
 
     var projectsNames: [String] = []
     
+    weak var projectDelegate: ProjectViewProtocol?
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+        
         for i in 0...3 {
             projectsNames.append("Project \(i)")
         }
@@ -49,7 +51,11 @@ class ProjectTableViewController: UITableViewController {
         
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, didUpdateFocusIn context: UITableViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        projectDelegate!.didChangeProject(toProjectNamed: projectsNames[context.nextFocusedIndexPath!.row])
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

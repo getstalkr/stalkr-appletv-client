@@ -8,22 +8,20 @@
 
 import UIKit
 
-class SegmentedViewController: UIViewController, ProjectViewProtocol {
+class SegmentedViewController: UIViewController {
 
     @IBOutlet weak var segmentedActivities: UISegmentedControl!
     
     @IBOutlet weak var labelTitle: UILabel!
     
-    @IBOutlet weak var dashboardContainer: UIView!
+    var projectTable: ProjectTableViewController? = nil
     
-    @IBOutlet weak var ProjectListContainer: UIView!
+    @IBOutlet weak var dashboardContainer: UIView!
     
     var seletionBar: UIView = UIView()
         
     override func viewDidAppear(_ animated: Bool) {
-        
         super.viewDidAppear(animated)
-        //self.__addChildViewController(controller: mainViewController, to: dashboardContainer)
     }
     
     override func viewDidLoad() {
@@ -83,10 +81,21 @@ class SegmentedViewController: UIViewController, ProjectViewProtocol {
         controller.removeFromParentViewController()
     }
     
-    //MARK: ProjectViewProtocol
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "tableIdentifier" {
+            self.projectTable = segue.destination as? ProjectTableViewController
+            self.projectTable?.projectDelegate = self
+        }
+    }
+    
+}
+
+//MARK: ProjectViewProtocol
+
+extension SegmentedViewController: ProjectViewProtocol {
     
     func didChangeProject(toProjectNamed name: String) {
-        
-        
+        labelTitle.text = name
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ProjectViewProtocol {
+protocol ProjectViewProtocol: class {
     
     func didChangeProject(toProjectNamed name: String)
 }

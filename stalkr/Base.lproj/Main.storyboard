@@ -45,7 +45,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pv-4W-19l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-205" y="767"/>
+            <point key="canvasLocation" x="-35" y="734"/>
         </scene>
         <!--Segmented View Controller-->
         <scene sceneID="jWs-BP-Tgm">
@@ -86,7 +86,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Khn-QB-1nk">
                                 <rect key="frame" x="20" y="262" width="453" height="798"/>
                                 <connections>
-                                    <segue destination="8PL-Ka-4f6" kind="embed" id="1Bh-um-Rmy"/>
+                                    <segue destination="8PL-Ka-4f6" kind="embed" identifier="tableIdentifier" id="1Bh-um-Rmy"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcN-im-5jw">
@@ -115,6 +115,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="mkD-kw-s0m"/>
                     <connections>
+                        <outlet property="dashboardContainer" destination="lcN-im-5jw" id="xjX-rO-4YO"/>
                         <outlet property="labelTitle" destination="LnL-ND-Cqh" id="kqp-UA-qw0"/>
                         <outlet property="segmentedActivities" destination="Smk-be-70T" id="Ucc-9U-QAG"/>
                     </connections>
@@ -144,7 +145,7 @@
         <!--Project Table View Controller-->
         <scene sceneID="8qx-2t-Fuc">
             <objects>
-                <tableViewController id="8PL-Ka-4f6" customClass="ProjectTableViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ProjectTableViewController" id="8PL-Ka-4f6" customClass="ProjectTableViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="66" sectionFooterHeight="66" id="Ebf-zl-vZe">
                         <rect key="frame" x="0.0" y="0.0" width="453" height="798"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
