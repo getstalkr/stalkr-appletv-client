@@ -39,7 +39,7 @@ class MainViewController: UICollectionViewController {
     
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return gridConfiguration.slots.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -96,5 +96,72 @@ extension MainViewController: GridLayoutDelegate {
         let slotCell = gridConfiguration.slots[section][row].cell
         
         return (slotCell.slotWidth, slotCell.slotHeight)
+    }
+    
+    // as funções gridNumberOfRows e gridNumberOfColumns seguem um algoritimo parecido,
+    // para computar a quantidade de linhas e colunas, respectivamente, que a grid precisará
+    // o algoritimo é o seguinte:
+    // 1 - armazenará na variável yOffset o buffer de quantas linhas são necessárias para desenhar a célula da linha atual
+    // 2 - em "gridConfiguration.slots.forEach" computaremos linha a linha da grid
+    // 3 - em "while yOffset[index] != 0 {" finalizando a computação da linha, então, como já usamos uma linha para desenhar a célula, apagaremos em 1 cada item de yOffset
+    func gridNumberOfRows() -> Int {
+        var yOffset: [Int] = [Int](repeating: 0, count: 10)
+        
+        var maxIndex = 0
+        gridConfiguration.slots.forEach {
+            var index = 0
+            $0.forEach {
+                while yOffset[index] != 0 {
+                    index += 1
+                }
+                
+                yOffset[index] = $0.cell.slotHeight
+                if index > maxIndex {
+                    maxIndex = index
+                }
+            }
+            index = 0
+            
+            while yOffset[index] != 0 {
+                yOffset[index] -= 1
+                index += 1
+            }
+        }
+        
+        // a quantidade de linhas necessárias para se desenhar a grid é o quanto sobrou para desenhar a célula (ou seja, yOffset.max) + quantas linhas foram necessárias para desenhar as demais células (gridConfiguration.slots.count)
+        return yOffset.max()! + gridConfiguration.slots.count
+    }
+    
+    func gridNumberOfColumns() -> Int {
+        var yOffset: [Int] = [Int](repeating: 0, count: 10)
+        
+        var maxIndex = 0
+        gridConfiguration.slots.forEach {
+            var index = 0
+            $0.forEach {
+                while yOffset[index] != 0 {
+                    index += 1
+                }
+                
+                for _ in 0..<$0.cell.slotWidth {
+                    yOffset[index] = $0.cell.slotHeight
+                    index += 1
+                }
+                if index > maxIndex {
+                    maxIndex = index
+                }
+            }
+            print("")
+            index = 0
+            
+            while yOffset[index] != 0 {
+                yOffset[index] -= 1
+                index += 1
+            }
+            print("")
+        }
+        
+        // a quantidade de colunas necessárias para desenhar a grid é o maior índice necessário que foi usado em yOffset (armazenado em maxIndex)
+        return maxIndex
     }
 }
