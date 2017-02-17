@@ -10,7 +10,9 @@ import UIKit
 
 class ProjectTableViewController: UITableViewController {
 
-    var projectsNames: [String] = []
+    //TODO: Populate arrays with data from user account
+    var projectsNames: [String] = ["Blau", "Save my nails", "Spirit pets"]
+    var icons: [UIImage] = [UIImage(named: "ProjectIcon")!, UIImage(named: "ProjectIcon")!, UIImage(named: "ProjectIcon")!]
     
     weak var projectDelegate: ProjectViewProtocol?
     
@@ -18,10 +20,6 @@ class ProjectTableViewController: UITableViewController {
         
         super.viewDidLoad()
         
-        for i in 0...3 {
-            projectsNames.append("Project \(i)")
-        }
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -45,15 +43,24 @@ class ProjectTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let image = icons[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         cell.textLabel?.text = projectsNames[indexPath.row]
-        cell.textLabel?.textColor = .white
+        cell.textLabel?.textColor = UIColor(netHex: 0xB865D2)
+        cell.imageView?.image = image
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didUpdateFocusIn context: UITableViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        projectDelegate!.didChangeProject(toProjectNamed: projectsNames[context.nextFocusedIndexPath!.row])
+        
+        if context.nextFocusedIndexPath != nil {
+            projectDelegate!.didChangeProject(toProjectNamed: projectsNames[context.nextFocusedIndexPath!.row])
+            tableView.cellForRow(at: context.nextFocusedIndexPath!)!.contentView.backgroundColor = UIColor(netHex: 0x1B1D36)
+        }
+        if context.previouslyFocusedIndexPath != nil {
+            tableView.cellForRow(at: context.previouslyFocusedIndexPath!)!.contentView.backgroundColor = .clear
+        }
     }
     
     /*
@@ -101,4 +108,20 @@ class ProjectTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension UIColor {
+    
+    convenience init(red: Int, green: Int, blue: Int) {
+        
+        assert(red >= 0 && red <= 255, "Invalid red component")
+        assert(green >= 0 && green <= 255, "Invalid green component")
+        assert(blue >= 0 && blue <= 255, "Invalid blue component")
+        
+        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+    }
+    
+    convenience init(netHex: Int) {
+        self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
+    }
 }
