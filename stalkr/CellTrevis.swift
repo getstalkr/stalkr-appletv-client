@@ -9,6 +9,7 @@
 import UIKit
 import SwiftRichString
 import SwiftyJSON
+import RelativeFormatter
 
 class CellTrevis: SlotableCellDefault, SlotableCell, SubscriberCell, UITableViewDelegate, UITableViewDataSource {
     
@@ -21,7 +22,8 @@ class CellTrevis: SlotableCellDefault, SlotableCell, SubscriberCell, UITableView
     
     let webSocketHandles: [String: (_ data: JSON, _ cell: SlotableCell) -> Void] = [
         "status-requested": { json, cell in
-            // TODO
+            (cell as! CellTrevis).travisBuildsLog = json["currentData"].arrayValue.map { TravisBuildRegister(json: $0) }
+            (cell as! CellTrevis).table.reloadData()
         }
     ]
     
@@ -43,29 +45,37 @@ class CellTrevis: SlotableCellDefault, SlotableCell, SubscriberCell, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return travisBuildsLog.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellTrevisTableCell", for: indexPath) as! CellTrevisTableCell
+        let currentBuild = travisBuildsLog[indexPath.row]
         
-        cell.viewLeft.backgroundColor = UIColor.stalkrSuccess
+        cell.viewLeft.backgroundColor = UIColor.stalkrSuccess // TODO
         
-        cell.labelCheckmark.text = "✓"
+        cell.labelCheckmark.text = "✓" // TODO
         cell.labelCheckmark.textColor = UIColor.stalkrSuccess
-        cell.labelCommitMessage.text = "Pull request #3"
+        cell.labelCommitMessage.text = "\(currentBuild.eventType) #\(currentBuild.number)"
+        cell.textCommitMessage.text = currentBuild.message
         cell.textCommitMessage.textColor = UIColor.fontPullMessage
         
         let styleBold = Style("bold", {
             $0.font = FontAttribute(FontName.HelveticaNeue_Bold, size: 17)
         })
-        cell.labelBranch.attributedText = "Branch " + "Master".set(style: styleBold)
-        cell.labelCommitterName.text = "matt"
-        cell.labelCommitCode.attributedText = "Commit " + "b5e5061".set(style: styleBold)
+        cell.labelBranch.attributedText = "Branch " + currentBuild.branch.set(style: styleBold)
+        cell.labelCommitterName.text = "matt" // TODO
+        cell.labelCommitCode.attributedText = "Commit " + currentBuild.commit.set(style: styleBold)
         
-        cell.labelPastTime.attributedText = "3 months".set(style: styleBold) + " ago"
-        cell.labelRunTime.attributedText = "Ran for " + "0 min 42 sec".set(style: styleBold)
-        cell.labelTotalTime.attributedText = "Total time: " + "6 min".set(style: styleBold)
+        if let dateFinish = currentBuild.dateFinish {
+            cell.labelPastTime.attributedText = dateFinish.relativeFormatted().set(style: styleBold) + " ago"
+            cell.labelRunTime.attributedText = "Ran for " + "\(currentBuild.duration / 60) min \(currentBuild.duration % 60) sec".set(style: styleBold)
+            cell.labelTotalTime.attributedText = "Total time: " + "6 min".set(style: styleBold) // TODO
+        } else {
+            cell.labelPastTime.text = ""
+            cell.labelRunTime.text = ""
+            cell.labelTotalTime.text = ""
+        }
         
         return cell
     }
