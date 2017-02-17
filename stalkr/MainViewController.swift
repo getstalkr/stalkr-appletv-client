@@ -7,19 +7,15 @@
 //
 
 import UIKit
+import PusherSwift
+import SwiftyJSON
 
 fileprivate var counter = 0
 fileprivate let gridConfiguration = GridConfiguration.shared
 
-func getRandomColor() -> UIColor{
-    let red:CGFloat = CGFloat(drand48())
-    let green:CGFloat = CGFloat(drand48())
-    let blue:CGFloat = CGFloat(drand48())
-    
-    return UIColor(red:red, green: green, blue: blue, alpha: 0.5)
-}
-
 class MainViewController: UICollectionViewController {
+    
+    let pusher = Pusher(key: "5cdc3c711f606f43aada")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +34,12 @@ class MainViewController: UICollectionViewController {
         }
         
         //
-        self.view.backgroundColor = UIColor.gray
+        self.view.backgroundColor = UIColor.backgroundAbove
     }
     
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return gridConfiguration.slots.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -51,13 +47,38 @@ class MainViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // get slot in grid config
         let slot = gridConfiguration.slots[indexPath.section][indexPath.row]
         
+        // start cell
         let cellClassName = "\(type(of: slot.cell))"
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellClassName, for: indexPath)
         (cell as! SlotableCell).load(params: slot.params)
         
-        cell.backgroundColor = getRandomColor()
+        // start websocket
+        if let webSocketConfig = slot.webSocketConfig {
+            let channel = pusher.subscribe(webSocketConfig.channel)
+            
+            // function to converter data "Any?" to "JSON", and pass the current cell
+            func wrapper(data: Any?) {
+                let json: JSON
+                if let object = data as? [String : Any],
+                    let jsonData = try? JSONSerialization.data(withJSONObject: object, options: .prettyPrinted) {
+                    json = JSON(data: jsonData)
+                } else {
+                    json = JSON(arrayLiteral: [])
+                }
+                
+                (cell as! SubscriberCell).getHandle(event: webSocketConfig.event, cell: cell as! SlotableCell)(json, cell as! SlotableCell)
+            }
+            
+            let _ = channel.bind(eventName: webSocketConfig.event, callback: wrapper)
+            
+            pusher.connect()
+        }
+        
+        //
+        cell.backgroundColor = UIColor.backgroundCell
         cell.transform = CGAffineTransform(scaleX: 0.98, y: 0.98) // TODO: Gambiarra! Isso não deve ficar aqui, mas sim em SlotableCellDefault
         
         return cell
@@ -75,5 +96,72 @@ extension MainViewController: GridLayoutDelegate {
         let slotCell = gridConfiguration.slots[section][row].cell
         
         return (slotCell.slotWidth, slotCell.slotHeight)
+    }
+    
+    // as funções gridNumberOfRows e gridNumberOfColumns seguem um algoritimo parecido,
+    // para computar a quantidade de linhas e colunas, respectivamente, que a grid precisará
+    // o algoritimo é o seguinte:
+    // 1 - armazenará na variável yOffset o buffer de quantas linhas são necessárias para desenhar a célula da linha atual
+    // 2 - em "gridConfiguration.slots.forEach" computaremos linha a linha da grid
+    // 3 - em "while yOffset[index] != 0 {" finalizando a computação da linha, então, como já usamos uma linha para desenhar a célula, apagaremos em 1 cada item de yOffset
+    func gridNumberOfRows() -> Int {
+        var yOffset: [Int] = [Int](repeating: 0, count: 10)
+        
+        var maxIndex = 0
+        gridConfiguration.slots.forEach {
+            var index = 0
+            $0.forEach {
+                while yOffset[index] != 0 {
+                    index += 1
+                }
+                
+                yOffset[index] = $0.cell.slotHeight
+                if index > maxIndex {
+                    maxIndex = index
+                }
+            }
+            index = 0
+            
+            while yOffset[index] != 0 {
+                yOffset[index] -= 1
+                index += 1
+            }
+        }
+        
+        // a quantidade de linhas necessárias para se desenhar a grid é o quanto sobrou para desenhar a célula (ou seja, yOffset.max) + quantas linhas foram necessárias para desenhar as demais células (gridConfiguration.slots.count)
+        return yOffset.max()! + gridConfiguration.slots.count
+    }
+    
+    func gridNumberOfColumns() -> Int {
+        var yOffset: [Int] = [Int](repeating: 0, count: 10)
+        
+        var maxIndex = 0
+        gridConfiguration.slots.forEach {
+            var index = 0
+            $0.forEach {
+                while yOffset[index] != 0 {
+                    index += 1
+                }
+                
+                for _ in 0..<$0.cell.slotWidth {
+                    yOffset[index] = $0.cell.slotHeight
+                    index += 1
+                }
+                if index > maxIndex {
+                    maxIndex = index
+                }
+            }
+            print("")
+            index = 0
+            
+            while yOffset[index] != 0 {
+                yOffset[index] -= 1
+                index += 1
+            }
+            print("")
+        }
+        
+        // a quantidade de colunas necessárias para desenhar a grid é o maior índice necessário que foi usado em yOffset (armazenado em maxIndex)
+        return maxIndex
     }
 }

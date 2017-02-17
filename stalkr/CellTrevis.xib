@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="dark"/>
+    </device>
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellTrevis" id="3qC-Ve-G5K" customClass="CellTrevis" customModule="stalkr" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="385" height="377"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="385" height="377"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="P28-QJ-yJ5">
+                        <rect key="frame" x="8" y="36" width="369" height="333"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tableView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUILD STATUS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtd-Oc-0EB">
+                        <rect key="frame" x="8" y="8" width="115" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="115" id="TSL-2e-8vN"/>
+                            <constraint firstAttribute="height" constant="21" id="mRP-je-GjO"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="P28-QJ-yJ5" firstAttribute="top" secondItem="qtd-Oc-0EB" secondAttribute="bottom" constant="7" id="1yU-14-fD1"/>
+                <constraint firstAttribute="trailing" secondItem="qtd-Oc-0EB" secondAttribute="trailing" constant="262" id="RO7-WN-nvg"/>
+                <constraint firstAttribute="bottom" secondItem="P28-QJ-yJ5" secondAttribute="bottom" constant="8" id="hGK-bp-yPW"/>
+                <constraint firstItem="P28-QJ-yJ5" firstAttribute="leading" secondItem="3qC-Ve-G5K" secondAttribute="leading" constant="8" id="hrL-U9-Spf"/>
+                <constraint firstAttribute="trailing" secondItem="P28-QJ-yJ5" secondAttribute="trailing" constant="8" id="lOy-8q-UqJ"/>
+                <constraint firstItem="qtd-Oc-0EB" firstAttribute="top" secondItem="3qC-Ve-G5K" secondAttribute="top" constant="8" id="lnC-Dl-qnK"/>
+                <constraint firstItem="qtd-Oc-0EB" firstAttribute="leading" secondItem="3qC-Ve-G5K" secondAttribute="leading" constant="8" id="t4f-uv-omf"/>
+            </constraints>
+            <size key="customSize" width="385" height="377"/>
+            <connections>
+                <outlet property="table" destination="P28-QJ-yJ5" id="GfO-dH-mEc"/>
+            </connections>
+            <point key="canvasLocation" x="50.5" y="231.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

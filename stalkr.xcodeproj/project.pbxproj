@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89276ED81E54BBE800D99D4E /* SubscriberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89276ED71E54BBE800D99D4E /* SubscriberCell.swift */; };
+		892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DD7C31E5624F1000482C0 /* TravisBuildRegister.swift */; };
 		89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B337F21E48BB9F00610EA3 /* AppDelegate.swift */; };
 		89B337F51E48BB9F00610EA3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B337F41E48BB9F00610EA3 /* MainViewController.swift */; };
 		89B337F81E48BB9F00610EA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B337F61E48BB9F00610EA3 /* Main.storyboard */; };
@@ -23,11 +25,17 @@
 		89B338151E49F60200610EA3 /* CellPlaceholderHeightTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B338141E49F60200610EA3 /* CellPlaceholderHeightTwo.xib */; };
 		89B338171E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B338161E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib */; };
 		89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338181E49F7A400610EA3 /* StalkrExtensions.swift */; };
+		89C994AB1E547C6E00DBADBA /* CellTrevis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C994AA1E547C6E00DBADBA /* CellTrevis.swift */; };
+		89C994AD1E547CDE00DBADBA /* CellTrevis.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994AC1E547CDE00DBADBA /* CellTrevis.xib */; };
+		89C994CB1E54820900DBADBA /* CellTrevisTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994CA1E54820900DBADBA /* CellTrevisTableCell.xib */; };
+		89C994CD1E5482C900DBADBA /* CellTrevisTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C994CC1E5482C900DBADBA /* CellTrevisTableCell.swift */; };
 		91895BF7AD0056EDD4A683AD /* Pods_stalkr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2584928AB2DB6CF074F0769D /* Pods_stalkr.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2584928AB2DB6CF074F0769D /* Pods_stalkr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stalkr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89276ED71E54BBE800D99D4E /* SubscriberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriberCell.swift; sourceTree = "<group>"; };
+		892DD7C31E5624F1000482C0 /* TravisBuildRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravisBuildRegister.swift; sourceTree = "<group>"; };
 		89B337EF1E48BB9F00610EA3 /* stalkr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stalkr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B337F21E48BB9F00610EA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89B337F41E48BB9F00610EA3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +54,10 @@
 		89B338141E49F60200610EA3 /* CellPlaceholderHeightTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellPlaceholderHeightTwo.xib; sourceTree = "<group>"; };
 		89B338161E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellPlaceholderTwoXTwo.xib; sourceTree = "<group>"; };
 		89B338181E49F7A400610EA3 /* StalkrExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StalkrExtensions.swift; sourceTree = "<group>"; };
+		89C994AA1E547C6E00DBADBA /* CellTrevis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTrevis.swift; sourceTree = "<group>"; };
+		89C994AC1E547CDE00DBADBA /* CellTrevis.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTrevis.xib; sourceTree = "<group>"; };
+		89C994CA1E54820900DBADBA /* CellTrevisTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTrevisTableCell.xib; sourceTree = "<group>"; };
+		89C994CC1E5482C900DBADBA /* CellTrevisTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTrevisTableCell.swift; sourceTree = "<group>"; };
 		8DA58B41991C641DBFD4F4DC /* Pods-stalkr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stalkr.release.xcconfig"; path = "Pods/Target Support Files/Pods-stalkr/Pods-stalkr.release.xcconfig"; sourceTree = "<group>"; };
 		9924C7B765C9FBEEE07466DA /* Pods-stalkr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stalkr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stalkr/Pods-stalkr.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				89B338011E48C08400610EA3 /* SlotableCell.swift */,
+				89276ED71E54BBE800D99D4E /* SubscriberCell.swift */,
 				89B338041E48C0DE00610EA3 /* CellPlaceholderSmall.swift */,
 				89B338101E49ED2400610EA3 /* CellPlaceholderSmall.xib */,
 				89B338061E48C13200610EA3 /* CellPlaceholderWidthTwo.swift */,
@@ -116,8 +129,21 @@
 				89B338141E49F60200610EA3 /* CellPlaceholderHeightTwo.xib */,
 				89B3380A1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift */,
 				89B338161E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib */,
+				89C994C91E5481D700DBADBA /* CellTrevis */,
 			);
 			name = SlotableCell;
+			sourceTree = "<group>";
+		};
+		89C994C91E5481D700DBADBA /* CellTrevis */ = {
+			isa = PBXGroup;
+			children = (
+				892DD7C31E5624F1000482C0 /* TravisBuildRegister.swift */,
+				89C994AA1E547C6E00DBADBA /* CellTrevis.swift */,
+				89C994AC1E547CDE00DBADBA /* CellTrevis.xib */,
+				89C994CC1E5482C900DBADBA /* CellTrevisTableCell.swift */,
+				89C994CA1E54820900DBADBA /* CellTrevisTableCell.xib */,
+			);
+			name = CellTrevis;
 			sourceTree = "<group>";
 		};
 		BE5274D6EDF17265D484357B /* Pods */ = {
@@ -194,8 +220,10 @@
 			files = (
 				89B337FA1E48BB9F00610EA3 /* Assets.xcassets in Resources */,
 				89B338131E49F5EA00610EA3 /* CellPlaceholderWidthTwo.xib in Resources */,
+				89C994AD1E547CDE00DBADBA /* CellTrevis.xib in Resources */,
 				89B338151E49F60200610EA3 /* CellPlaceholderHeightTwo.xib in Resources */,
 				89B338111E49ED2400610EA3 /* CellPlaceholderSmall.xib in Resources */,
+				89C994CB1E54820900DBADBA /* CellTrevisTableCell.xib in Resources */,
 				89B338171E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib in Resources */,
 				89B337F81E48BB9F00610EA3 /* Main.storyboard in Resources */,
 			);
@@ -260,10 +288,14 @@
 				89B337F51E48BB9F00610EA3 /* MainViewController.swift in Sources */,
 				89B338051E48C0DE00610EA3 /* CellPlaceholderSmall.swift in Sources */,
 				89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */,
+				89C994AB1E547C6E00DBADBA /* CellTrevis.swift in Sources */,
 				89B338091E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift in Sources */,
+				892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */,
 				89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */,
 				89B338071E48C13200610EA3 /* CellPlaceholderWidthTwo.swift in Sources */,
+				89276ED81E54BBE800D99D4E /* SubscriberCell.swift in Sources */,
 				89B3380F1E48C42200610EA3 /* GridLayout.swift in Sources */,
+				89C994CD1E5482C900DBADBA /* CellTrevisTableCell.swift in Sources */,
 				89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */,
 				89B3380B1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift in Sources */,
 			);

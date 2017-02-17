@@ -11,14 +11,14 @@ import UIKit
 protocol GridLayoutDelegate {
     
     func cellSlotSize(section: Int, row: Int) -> (width: Int, height: Int)
+    func gridNumberOfRows() -> Int
+    func gridNumberOfColumns() -> Int
 }
 
 class GridLayout: UICollectionViewLayout {
     
     var delegate: GridLayoutDelegate!
     
-    let numberOfColumns = 3
-    let numberOfRows = 3
     var cellPadding: CGFloat = 6.0
     
     private var cache = [UICollectionViewLayoutAttributes]()
@@ -30,6 +30,9 @@ class GridLayout: UICollectionViewLayout {
     }
     
     override func prepare() {
+        let numberOfColumns = delegate.gridNumberOfColumns()
+        let numberOfRows = delegate.gridNumberOfRows()
+        
         if cache.isEmpty {
             // inicializar variáveis com as dimensões
             let columnWidth = contentWidth / CGFloat(numberOfColumns)
@@ -42,7 +45,8 @@ class GridLayout: UICollectionViewLayout {
             
             // preencher collection view
             var column: Int
-            for section in 0..<numberOfRows {
+            //for section in 0..<numberOfRows {
+            for section in 0..<collectionView!.numberOfSections {
                 column = 0
                 
                 for item in 0..<collectionView!.numberOfItems(inSection: section) {
