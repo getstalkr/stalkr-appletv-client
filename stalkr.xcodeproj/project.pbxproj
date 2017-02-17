@@ -30,6 +30,11 @@
 		89C994CB1E54820900DBADBA /* CellTrevisTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994CA1E54820900DBADBA /* CellTrevisTableCell.xib */; };
 		89C994CD1E5482C900DBADBA /* CellTrevisTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C994CC1E5482C900DBADBA /* CellTrevisTableCell.swift */; };
 		91895BF7AD0056EDD4A683AD /* Pods_stalkr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2584928AB2DB6CF074F0769D /* Pods_stalkr.framework */; };
+		CE3DC3121E54807D008F88EE /* ProjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DC3111E54807D008F88EE /* ProjectTableViewController.swift */; };
+		CE85B3CE1E5349D900DA7287 /* SegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */; };
+		CE9C311A1E573AD900078AE4 /* ProjectIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9C31191E573AD900078AE4 /* ProjectIcon.png */; };
+		CEE8497A1E55EF840033F512 /* DashboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE849791E55EF840033F512 /* DashboardProtocol.swift */; };
+		CEE8497C1E55F18F0033F512 /* ProjectViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +65,11 @@
 		89C994CC1E5482C900DBADBA /* CellTrevisTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTrevisTableCell.swift; sourceTree = "<group>"; };
 		8DA58B41991C641DBFD4F4DC /* Pods-stalkr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stalkr.release.xcconfig"; path = "Pods/Target Support Files/Pods-stalkr/Pods-stalkr.release.xcconfig"; sourceTree = "<group>"; };
 		9924C7B765C9FBEEE07466DA /* Pods-stalkr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stalkr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stalkr/Pods-stalkr.debug.xcconfig"; sourceTree = "<group>"; };
+		CE3DC3111E54807D008F88EE /* ProjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewController.swift; sourceTree = "<group>"; };
+		CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedViewController.swift; sourceTree = "<group>"; };
+		CE9C31191E573AD900078AE4 /* ProjectIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProjectIcon.png; sourceTree = "<group>"; };
+		CEE849791E55EF840033F512 /* DashboardProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardProtocol.swift; sourceTree = "<group>"; };
+		CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +113,8 @@
 		89B337F11E48BB9F00610EA3 /* stalkr */ = {
 			isa = PBXGroup;
 			children = (
+				CE9C31161E57342B00078AE4 /* Images */,
+				CEE849781E55EF420033F512 /* Protocols */,
 				89B337F21E48BB9F00610EA3 /* AppDelegate.swift */,
 				89B337F41E48BB9F00610EA3 /* MainViewController.swift */,
 				89B337F61E48BB9F00610EA3 /* Main.storyboard */,
@@ -112,6 +124,8 @@
 				89B3380E1E48C42200610EA3 /* GridLayout.swift */,
 				89B338031E48C0B700610EA3 /* SlotableCell */,
 				89B338181E49F7A400610EA3 /* StalkrExtensions.swift */,
+				CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */,
+				CE3DC3111E54807D008F88EE /* ProjectTableViewController.swift */,
 			);
 			path = stalkr;
 			sourceTree = "<group>";
@@ -153,6 +167,23 @@
 				8DA58B41991C641DBFD4F4DC /* Pods-stalkr.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE9C31161E57342B00078AE4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CE9C31191E573AD900078AE4 /* ProjectIcon.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		CEE849781E55EF420033F512 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CEE849791E55EF840033F512 /* DashboardProtocol.swift */,
+				CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +255,7 @@
 				89B338151E49F60200610EA3 /* CellPlaceholderHeightTwo.xib in Resources */,
 				89B338111E49ED2400610EA3 /* CellPlaceholderSmall.xib in Resources */,
 				89C994CB1E54820900DBADBA /* CellTrevisTableCell.xib in Resources */,
+				CE9C311A1E573AD900078AE4 /* ProjectIcon.png in Resources */,
 				89B338171E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib in Resources */,
 				89B337F81E48BB9F00610EA3 /* Main.storyboard in Resources */,
 			);
@@ -291,13 +323,17 @@
 				89C994AB1E547C6E00DBADBA /* CellTrevis.swift in Sources */,
 				89B338091E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift in Sources */,
 				892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */,
+				CEE8497A1E55EF840033F512 /* DashboardProtocol.swift in Sources */,
 				89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */,
+				CE3DC3121E54807D008F88EE /* ProjectTableViewController.swift in Sources */,
+				CEE8497C1E55F18F0033F512 /* ProjectViewProtocol.swift in Sources */,
 				89B338071E48C13200610EA3 /* CellPlaceholderWidthTwo.swift in Sources */,
 				89276ED81E54BBE800D99D4E /* SubscriberCell.swift in Sources */,
 				89B3380F1E48C42200610EA3 /* GridLayout.swift in Sources */,
 				89C994CD1E5482C900DBADBA /* CellTrevisTableCell.swift in Sources */,
 				89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */,
 				89B3380B1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift in Sources */,
+				CE85B3CE1E5349D900DA7287 /* SegmentedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
