@@ -9,5 +9,6 @@ target 'stalkr' do
   pod 'SwiftyJSON', '~> 3.1.4'
   pod 'PusherSwift'
   pod 'SwiftRichString'
+  pod 'RelativeFormatter'
 
 end

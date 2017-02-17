@@ -1,18 +1,21 @@
 PODS:
   - PusherSwift (4.0.1)
+  - RelativeFormatter (0.8.3)
   - SwiftRichString (0.9.4)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - PusherSwift
+  - RelativeFormatter
   - SwiftRichString
   - SwiftyJSON (~> 3.1.4)
 
 SPEC CHECKSUMS:
   PusherSwift: 8249a1c3634943cf7e1e9a691468357d53ab7e5f
+  RelativeFormatter: 13508ccd19bbab46ca95cf847a0db6e80601c9a4
   SwiftRichString: f09656f5d44b07fc4423225f96eab43e463221e6
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 46b0d8e4869a68dc62ec3d5b9d3b6dc6c039b0e1
+PODFILE CHECKSUM: 9e83e2d8378b58f50f4a0bd2d3da4ff73534ba57
 
 COCOAPODS: 1.2.0
