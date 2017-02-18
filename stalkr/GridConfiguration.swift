@@ -62,8 +62,9 @@ class JSONConfig {
         rawConfig = "" +
             "[" +
                 "[" +
-                    "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é lindo\" } }," +
-                    "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"travis-builds-CocoaPods-CocoaPods\", \"event\": \"status-requested\" } }" +
+                    "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"travis-builds-CocoaPods-CocoaPods\", \"event\": \"status-requested\" } }," +
+                    "{ \"cell\": \"CellCommitsFeed\", \"params\": { } }," +
+
                 "]" +
             "]"
         

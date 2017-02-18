@@ -52,3 +52,13 @@ extension Date {
         return DateFormatter(format: format).string(from: self)
     }
 }
+
+// http://stackoverflow.com/questions/4414221/uiimage-in-a-circle
+extension UIImageView{
+    
+    func asCircle(){
+        self.layer.cornerRadius = self.frame.width / 2;
+        self.layer.masksToBounds = true
+    }
+    
+}
