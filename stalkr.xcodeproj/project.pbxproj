@@ -142,7 +142,6 @@
 				89B3380C1E48C34E00610EA3 /* GridConfiguration.swift */,
 				89B3380E1E48C42200610EA3 /* GridLayout.swift */,
 				89B338031E48C0B700610EA3 /* SlotableCell */,
-				892E73E01E589380007483E1 /* CellCommitsFeed */,
 				89B338181E49F7A400610EA3 /* StalkrExtensions.swift */,
 				CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */,
 				CE3DC3111E54807D008F88EE /* ProjectTableViewController.swift */,
@@ -164,6 +163,7 @@
 				89B3380A1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift */,
 				89B338161E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib */,
 				89C994C91E5481D700DBADBA /* CellTrevis */,
+				892E73E01E589380007483E1 /* CellCommitsFeed */,
 			);
 			name = SlotableCell;
 			sourceTree = "<group>";

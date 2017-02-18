@@ -21,7 +21,8 @@ struct TravisBuildRegister {
     init(json: JSON) {
         self.number = json["number"].stringValue
         self.branch = json["branch"].stringValue
-        self.commit = json["commit"].stringValue
+        let commit = json["commit"].stringValue
+        self.commit = commit.substring(to: commit.index(commit.startIndex, offsetBy: 7))
         self.message = json["message"].stringValue
         if json["event_type"].stringValue == "pull_request" {
             self.eventType = "Pull Request"
