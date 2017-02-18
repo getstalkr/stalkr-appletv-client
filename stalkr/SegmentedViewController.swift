@@ -24,9 +24,29 @@ class SegmentedViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     
+    let gradientLayer = CAGradientLayer()
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        self.view.backgroundColor = .white
+        
+        gradientLayer.frame = self.view.bounds
+        
+        let color1 = UIColor(netHex: 0x543663).cgColor
+        let color2 = UIColor(netHex: 0x483159).cgColor
+        let color3 = UIColor(netHex: 0x453158).cgColor
+        let color4 = UIColor(netHex: 0x242741).cgColor
+        gradientLayer.colors = [color1, color2, color3, color4]
+        
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0.3, y: 0.4)
+        gradientLayer.zPosition = -1
+        
+        gradientLayer.locations = [0.0, 0.25, 0.75, 1.0]
+        
+        self.view.layer.addSublayer(gradientLayer)
         
         seletionBar.frame = CGRect(x: 0.0, y: self.segmentedActivities.frame.size.height, width: self.segmentedActivities.frame.size.width/CGFloat(self.segmentedActivities.numberOfSegments), height: 5.0)
         seletionBar.backgroundColor = UIColor(colorLiteralRed: 141/255, green: 102/255, blue: 189/255, alpha: 1)
