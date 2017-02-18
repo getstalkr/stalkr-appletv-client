@@ -32,7 +32,11 @@ struct TravisBuildRegister {
         self.duration = json["duration"].intValue
         
         let finishedAt = json["finished_at"].stringValue
-        let index = finishedAt.index(finishedAt.startIndex, offsetBy: 10)
-        self.dateFinish = finishedAt.substring(to: index).toDate(format: "yyyy-MM-dd")
+        if finishedAt != "" {
+            let index = finishedAt.index(finishedAt.startIndex, offsetBy: 10)
+            self.dateFinish = finishedAt.substring(to: index).toDate(format: "yyyy-MM-dd")
+        } else {
+            self.dateFinish = nil
+        }
     }
 }
