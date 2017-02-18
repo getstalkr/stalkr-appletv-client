@@ -10,5 +10,6 @@ target 'stalkr' do
   pod 'PusherSwift'
   pod 'SwiftRichString'
   pod 'RelativeFormatter'
+  pod 'Kingfisher', '~> 3.4'
 
 end
