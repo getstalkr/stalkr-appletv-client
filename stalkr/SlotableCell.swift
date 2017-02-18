@@ -60,5 +60,6 @@ let listAllSlotableCell: [NSObject.Type] = [
     CellPlaceholderHeightTwo.self,
     CellPlaceholderTwoXTwo.self,
     CellTrevis.self,
-    CellCommitsFeed.self
+    CellCommitsFeed.self,
+    CellTeamCommits.self
 ]

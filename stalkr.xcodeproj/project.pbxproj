@@ -13,6 +13,8 @@
 		892E73DD1E589378007483E1 /* CellCommitsFeed.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892E73D91E589378007483E1 /* CellCommitsFeed.xib */; };
 		892E73DE1E589378007483E1 /* CellCommitsFeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E73DA1E589378007483E1 /* CellCommitsFeedTableCell.swift */; };
 		892E73DF1E589378007483E1 /* CellCommitsFeedTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892E73DB1E589378007483E1 /* CellCommitsFeedTableCell.xib */; };
+		892E73E31E58A581007483E1 /* CellTeamCommits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E73E21E58A581007483E1 /* CellTeamCommits.swift */; };
+		892E73E51E58A59B007483E1 /* CellTeamCommits.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892E73E41E58A59B007483E1 /* CellTeamCommits.xib */; };
 		89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B337F21E48BB9F00610EA3 /* AppDelegate.swift */; };
 		89B337F51E48BB9F00610EA3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B337F41E48BB9F00610EA3 /* MainViewController.swift */; };
 		89B337F81E48BB9F00610EA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B337F61E48BB9F00610EA3 /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 		892E73D91E589378007483E1 /* CellCommitsFeed.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCommitsFeed.xib; sourceTree = "<group>"; };
 		892E73DA1E589378007483E1 /* CellCommitsFeedTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCommitsFeedTableCell.swift; sourceTree = "<group>"; };
 		892E73DB1E589378007483E1 /* CellCommitsFeedTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCommitsFeedTableCell.xib; sourceTree = "<group>"; };
+		892E73E21E58A581007483E1 /* CellTeamCommits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTeamCommits.swift; sourceTree = "<group>"; };
+		892E73E41E58A59B007483E1 /* CellTeamCommits.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTeamCommits.xib; sourceTree = "<group>"; };
 		89B337EF1E48BB9F00610EA3 /* stalkr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stalkr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B337F21E48BB9F00610EA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89B337F41E48BB9F00610EA3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,15 @@
 			name = CellCommitsFeed;
 			sourceTree = "<group>";
 		};
+		892E73E11E58A555007483E1 /* CellTeamCommits */ = {
+			isa = PBXGroup;
+			children = (
+				892E73E21E58A581007483E1 /* CellTeamCommits.swift */,
+				892E73E41E58A59B007483E1 /* CellTeamCommits.xib */,
+			);
+			name = CellTeamCommits;
+			sourceTree = "<group>";
+		};
 		89B337E61E48BB9F00610EA3 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +177,7 @@
 				89B338161E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib */,
 				89C994C91E5481D700DBADBA /* CellTrevis */,
 				892E73E01E589380007483E1 /* CellCommitsFeed */,
+				892E73E11E58A555007483E1 /* CellTeamCommits */,
 			);
 			name = SlotableCell;
 			sourceTree = "<group>";
@@ -272,6 +286,7 @@
 				89B337FA1E48BB9F00610EA3 /* Assets.xcassets in Resources */,
 				89B338131E49F5EA00610EA3 /* CellPlaceholderWidthTwo.xib in Resources */,
 				89C994AD1E547CDE00DBADBA /* CellTrevis.xib in Resources */,
+				892E73E51E58A59B007483E1 /* CellTeamCommits.xib in Resources */,
 				89B338151E49F60200610EA3 /* CellPlaceholderHeightTwo.xib in Resources */,
 				89B338111E49ED2400610EA3 /* CellPlaceholderSmall.xib in Resources */,
 				89C994CB1E54820900DBADBA /* CellTrevisTableCell.xib in Resources */,
@@ -349,6 +364,7 @@
 				89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */,
 				CE3DC3121E54807D008F88EE /* ProjectTableViewController.swift in Sources */,
 				CEE8497C1E55F18F0033F512 /* ProjectViewProtocol.swift in Sources */,
+				892E73E31E58A581007483E1 /* CellTeamCommits.swift in Sources */,
 				89B338071E48C13200610EA3 /* CellPlaceholderWidthTwo.swift in Sources */,
 				89276ED81E54BBE800D99D4E /* SubscriberCell.swift in Sources */,
 				892E73DC1E589378007483E1 /* CellCommitsFeed.swift in Sources */,

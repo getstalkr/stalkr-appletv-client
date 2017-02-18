@@ -63,11 +63,24 @@ class JSONConfig {
             "[" +
                 "[" +
                     "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"travis-builds-CocoaPods-CocoaPods\", \"event\": \"status-requested\" } }," +
-                    "{ \"cell\": \"CellCommitsFeed\", \"params\": { } }," +
-
+                    "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
+                "]," +
+                "[" +
+                    "{ \"cell\": \"CellCommitsFeed\", \"params\": { } }" +
                 "]" +
             "]"
-        
+
+        /*rawConfig = "" +
+            "[" +
+            "[" +
+            "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"travis-builds-CocoaPods-CocoaPods\", \"event\": \"status-requested\" } }," +
+            "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
+            "]," +
+            "[" +
+            "{ \"cell\": \"CellCommitsFeed\", \"params\": { } }" +
+            "]" +
+        "]"*/
+
         json = JSON(parseJSON: rawConfig)
         
         slots = json.arrayValue.map { rows -> [Slot] in
