@@ -62,10 +62,12 @@ class JSONConfig {
         rawConfig = "" +
             "[" +
                 "[" +
+                    "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
                     "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"travis-builds-CocoaPods-CocoaPods\", \"event\": \"status-requested\" } }," +
                     "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
                 "]," +
                 "[" +
+                    "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"DEPLOY STATUS\" } }," +
                     "{ \"cell\": \"CellCommitsFeed\", \"params\": { } }" +
                 "]" +
             "]"

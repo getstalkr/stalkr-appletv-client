@@ -15,6 +15,8 @@
 		892E73DF1E589378007483E1 /* CellCommitsFeedTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892E73DB1E589378007483E1 /* CellCommitsFeedTableCell.xib */; };
 		892E73E31E58A581007483E1 /* CellTeamCommits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E73E21E58A581007483E1 /* CellTeamCommits.swift */; };
 		892E73E51E58A59B007483E1 /* CellTeamCommits.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892E73E41E58A59B007483E1 /* CellTeamCommits.xib */; };
+		892E73E81E58F487007483E1 /* CellCloudPerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E73E71E58F487007483E1 /* CellCloudPerformance.swift */; };
+		892E73EA1E58F56F007483E1 /* CellCloudPerformance.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892E73E91E58F56F007483E1 /* CellCloudPerformance.xib */; };
 		89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B337F21E48BB9F00610EA3 /* AppDelegate.swift */; };
 		89B337F51E48BB9F00610EA3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B337F41E48BB9F00610EA3 /* MainViewController.swift */; };
 		89B337F81E48BB9F00610EA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B337F61E48BB9F00610EA3 /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 		892E73DB1E589378007483E1 /* CellCommitsFeedTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCommitsFeedTableCell.xib; sourceTree = "<group>"; };
 		892E73E21E58A581007483E1 /* CellTeamCommits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTeamCommits.swift; sourceTree = "<group>"; };
 		892E73E41E58A59B007483E1 /* CellTeamCommits.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTeamCommits.xib; sourceTree = "<group>"; };
+		892E73E71E58F487007483E1 /* CellCloudPerformance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCloudPerformance.swift; sourceTree = "<group>"; };
+		892E73E91E58F56F007483E1 /* CellCloudPerformance.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCloudPerformance.xib; sourceTree = "<group>"; };
 		89B337EF1E48BB9F00610EA3 /* stalkr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stalkr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B337F21E48BB9F00610EA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89B337F41E48BB9F00610EA3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +128,15 @@
 			name = CellTeamCommits;
 			sourceTree = "<group>";
 		};
+		892E73E61E58F39A007483E1 /* CellCloudPerformance */ = {
+			isa = PBXGroup;
+			children = (
+				892E73E71E58F487007483E1 /* CellCloudPerformance.swift */,
+				892E73E91E58F56F007483E1 /* CellCloudPerformance.xib */,
+			);
+			name = CellCloudPerformance;
+			sourceTree = "<group>";
+		};
 		89B337E61E48BB9F00610EA3 = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +191,7 @@
 				89C994C91E5481D700DBADBA /* CellTrevis */,
 				892E73E01E589380007483E1 /* CellCommitsFeed */,
 				892E73E11E58A555007483E1 /* CellTeamCommits */,
+				892E73E61E58F39A007483E1 /* CellCloudPerformance */,
 			);
 			name = SlotableCell;
 			sourceTree = "<group>";
@@ -290,6 +304,7 @@
 				89B338151E49F60200610EA3 /* CellPlaceholderHeightTwo.xib in Resources */,
 				89B338111E49ED2400610EA3 /* CellPlaceholderSmall.xib in Resources */,
 				89C994CB1E54820900DBADBA /* CellTrevisTableCell.xib in Resources */,
+				892E73EA1E58F56F007483E1 /* CellCloudPerformance.xib in Resources */,
 				892E73DF1E589378007483E1 /* CellCommitsFeedTableCell.xib in Resources */,
 				CE9C311A1E573AD900078AE4 /* ProjectIcon.png in Resources */,
 				89B338171E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib in Resources */,
@@ -367,6 +382,7 @@
 				892E73E31E58A581007483E1 /* CellTeamCommits.swift in Sources */,
 				89B338071E48C13200610EA3 /* CellPlaceholderWidthTwo.swift in Sources */,
 				89276ED81E54BBE800D99D4E /* SubscriberCell.swift in Sources */,
+				892E73E81E58F487007483E1 /* CellCloudPerformance.swift in Sources */,
 				892E73DC1E589378007483E1 /* CellCommitsFeed.swift in Sources */,
 				89B3380F1E48C42200610EA3 /* GridLayout.swift in Sources */,
 				89C994CD1E5482C900DBADBA /* CellTrevisTableCell.swift in Sources */,
