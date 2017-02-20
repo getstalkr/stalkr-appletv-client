@@ -1,21 +1,29 @@
 PODS:
+  - Charts (3.0.1):
+    - Charts/Core (= 3.0.1)
+  - Charts/Core (3.0.1)
+  - Kingfisher (3.4.0)
   - PusherSwift (4.0.1)
   - RelativeFormatter (0.8.3)
   - SwiftRichString (0.9.4)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - Charts
+  - Kingfisher (~> 3.4)
   - PusherSwift
   - RelativeFormatter
   - SwiftRichString
   - SwiftyJSON (~> 3.1.4)
 
 SPEC CHECKSUMS:
+  Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
+  Kingfisher: 5690cfb3d1bddf3a98d679a3a34d0b7294974ed2
   PusherSwift: 8249a1c3634943cf7e1e9a691468357d53ab7e5f
   RelativeFormatter: 13508ccd19bbab46ca95cf847a0db6e80601c9a4
   SwiftRichString: f09656f5d44b07fc4423225f96eab43e463221e6
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 9e83e2d8378b58f50f4a0bd2d3da4ff73534ba57
+PODFILE CHECKSUM: b6051e31baf1b4252b5ae8acd997189f3287c70b
 
 COCOAPODS: 1.2.0

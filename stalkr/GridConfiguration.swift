@@ -62,11 +62,27 @@ class JSONConfig {
         rawConfig = "" +
             "[" +
                 "[" +
-                    "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é lindo\" } }," +
-                    "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"travis-builds-CocoaPods-CocoaPods\", \"event\": \"status-requested\" } }" +
+                    "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
+                    "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"travis-builds-CocoaPods-CocoaPods\", \"event\": \"status-requested\" } }," +
+                    "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
+                "]," +
+                "[" +
+                    "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
+                    "{ \"cell\": \"CellCommitsFeed\", \"params\": { } }" +
                 "]" +
             "]"
-        
+
+        /*rawConfig = "" +
+            "[" +
+            "[" +
+            "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"travis-builds-CocoaPods-CocoaPods\", \"event\": \"status-requested\" } }," +
+            "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
+            "]," +
+            "[" +
+            "{ \"cell\": \"CellCommitsFeed\", \"params\": { } }" +
+            "]" +
+        "]"*/
+
         json = JSON(parseJSON: rawConfig)
         
         slots = json.arrayValue.map { rows -> [Slot] in

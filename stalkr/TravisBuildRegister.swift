@@ -21,7 +21,8 @@ struct TravisBuildRegister {
     init(json: JSON) {
         self.number = json["number"].stringValue
         self.branch = json["branch"].stringValue
-        self.commit = json["commit"].stringValue
+        let commit = json["commit"].stringValue
+        self.commit = commit.substring(to: commit.index(commit.startIndex, offsetBy: 7))
         self.message = json["message"].stringValue
         if json["event_type"].stringValue == "pull_request" {
             self.eventType = "Pull Request"
@@ -31,7 +32,11 @@ struct TravisBuildRegister {
         self.duration = json["duration"].intValue
         
         let finishedAt = json["finished_at"].stringValue
-        let index = finishedAt.index(finishedAt.startIndex, offsetBy: 10)
-        self.dateFinish = finishedAt.substring(to: index).toDate(format: "yyyy-MM-dd")
+        if finishedAt != "" {
+            let index = finishedAt.index(finishedAt.startIndex, offsetBy: 10)
+            self.dateFinish = finishedAt.substring(to: index).toDate(format: "yyyy-MM-dd")
+        } else {
+            self.dateFinish = nil
+        }
     }
 }
