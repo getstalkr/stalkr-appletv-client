@@ -40,16 +40,19 @@ class SegmentedViewController: UIViewController {
         let color4 = UIColor(netHex: 0x242741).cgColor
         gradientLayer.colors = [color1, color2, color3, color4]
         
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 0.3, y: 0.4)
+        gradientLayer.startPoint = CGPoint(x: 0.35, y: 0.25)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.6)
         gradientLayer.zPosition = -1
         
         gradientLayer.locations = [0.0, 0.25, 0.75, 1.0]
         
         self.view.layer.addSublayer(gradientLayer)
         
-        seletionBar.frame = CGRect(x: 0.0, y: self.segmentedActivities.frame.size.height, width: self.segmentedActivities.frame.size.width/CGFloat(self.segmentedActivities.numberOfSegments), height: 5.0)
-        seletionBar.backgroundColor = UIColor(colorLiteralRed: 141/255, green: 102/255, blue: 189/255, alpha: 1)
+//        seletionBar.frame = CGRect(x: 0.0, y: self.segmentedActivities.frame.size.height, width: self.segmentedActivities.frame.size.width/CGFloat(self.segmentedActivities.numberOfSegments), height: 5.0)
+//        seletionBar.backgroundColor = UIColor(colorLiteralRed: 141/255, green: 102/255, blue: 189/255, alpha: 1)
+//        
+//        let font = UIFont.systemFont(ofSize: 5)
+//        segmentedActivities.setTitleTextAttributes([NSFontAttributeName: font], for: UIControlState.normal)
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,27 +61,27 @@ class SegmentedViewController: UIViewController {
     
     @IBAction func selectionChanged(_ sender: UISegmentedControl) {
         
-        let placeSelectionBar = { () -> () in
-            var barFrame = self.seletionBar.frame
-            barFrame.origin.x = barFrame.size.width * CGFloat(sender.selectedSegmentIndex)
-            self.seletionBar.frame = barFrame
-        }
-        
-        if seletionBar.superview == nil {
-            sender.addSubview(seletionBar)
-            placeSelectionBar()
-        }
-        else {
-            UIView.animate(withDuration: 0.3, animations: {
-                placeSelectionBar()
-            })
-        }
+//        let placeSelectionBar = { () -> () in
+//            var barFrame = self.seletionBar.frame
+//            barFrame.origin.x = barFrame.size.width * CGFloat(sender.selectedSegmentIndex)
+//            self.seletionBar.frame = barFrame
+//        }
+//        
+//        if seletionBar.superview == nil {
+//            sender.addSubview(seletionBar)
+//            placeSelectionBar()
+//        }
+//        else {
+//            UIView.animate(withDuration: 0.3, animations: {
+//                placeSelectionBar()
+//            })
+//        }
         
         if sender.selectedSegmentIndex == 0 {
             //switchViewController(controller: blueViewController, to: mainViewController)
         } else if sender.selectedSegmentIndex == 1 {
             //switchViewController(controller: mainViewController, to: blueViewController)
-        }
+        }        
     }
     
     func switchViewController(controller oldController: UIViewController, to newController: UIViewController) {
