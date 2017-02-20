@@ -67,7 +67,7 @@ class JSONConfig {
                     "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
                 "]," +
                 "[" +
-                    "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"DEPLOY STATUS\" } }," +
+                    "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
                     "{ \"cell\": \"CellCommitsFeed\", \"params\": { } }" +
                 "]" +
             "]"

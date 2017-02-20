@@ -33,6 +33,8 @@
 		89B338151E49F60200610EA3 /* CellPlaceholderHeightTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B338141E49F60200610EA3 /* CellPlaceholderHeightTwo.xib */; };
 		89B338171E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B338161E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib */; };
 		89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338181E49F7A400610EA3 /* StalkrExtensions.swift */; };
+		89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C467541E596250003CF8F2 /* CellDeployStatus.swift */; };
+		89C467571E596258003CF8F2 /* CellDeployStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C467561E596258003CF8F2 /* CellDeployStatus.xib */; };
 		89C994AB1E547C6E00DBADBA /* CellTrevis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C994AA1E547C6E00DBADBA /* CellTrevis.swift */; };
 		89C994AD1E547CDE00DBADBA /* CellTrevis.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994AC1E547CDE00DBADBA /* CellTrevis.xib */; };
 		89C994CB1E54820900DBADBA /* CellTrevisTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994CA1E54820900DBADBA /* CellTrevisTableCell.xib */; };
@@ -75,6 +77,8 @@
 		89B338141E49F60200610EA3 /* CellPlaceholderHeightTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellPlaceholderHeightTwo.xib; sourceTree = "<group>"; };
 		89B338161E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellPlaceholderTwoXTwo.xib; sourceTree = "<group>"; };
 		89B338181E49F7A400610EA3 /* StalkrExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StalkrExtensions.swift; sourceTree = "<group>"; };
+		89C467541E596250003CF8F2 /* CellDeployStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDeployStatus.swift; sourceTree = "<group>"; };
+		89C467561E596258003CF8F2 /* CellDeployStatus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellDeployStatus.xib; sourceTree = "<group>"; };
 		89C994AA1E547C6E00DBADBA /* CellTrevis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTrevis.swift; sourceTree = "<group>"; };
 		89C994AC1E547CDE00DBADBA /* CellTrevis.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTrevis.xib; sourceTree = "<group>"; };
 		89C994CA1E54820900DBADBA /* CellTrevisTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTrevisTableCell.xib; sourceTree = "<group>"; };
@@ -192,8 +196,18 @@
 				892E73E01E589380007483E1 /* CellCommitsFeed */,
 				892E73E11E58A555007483E1 /* CellTeamCommits */,
 				892E73E61E58F39A007483E1 /* CellCloudPerformance */,
+				89C467531E596230003CF8F2 /* CellDeployStatus */,
 			);
 			name = SlotableCell;
+			sourceTree = "<group>";
+		};
+		89C467531E596230003CF8F2 /* CellDeployStatus */ = {
+			isa = PBXGroup;
+			children = (
+				89C467541E596250003CF8F2 /* CellDeployStatus.swift */,
+				89C467561E596258003CF8F2 /* CellDeployStatus.xib */,
+			);
+			name = CellDeployStatus;
 			sourceTree = "<group>";
 		};
 		89C994C91E5481D700DBADBA /* CellTrevis */ = {
@@ -301,6 +315,7 @@
 				89B338131E49F5EA00610EA3 /* CellPlaceholderWidthTwo.xib in Resources */,
 				89C994AD1E547CDE00DBADBA /* CellTrevis.xib in Resources */,
 				892E73E51E58A59B007483E1 /* CellTeamCommits.xib in Resources */,
+				89C467571E596258003CF8F2 /* CellDeployStatus.xib in Resources */,
 				89B338151E49F60200610EA3 /* CellPlaceholderHeightTwo.xib in Resources */,
 				89B338111E49ED2400610EA3 /* CellPlaceholderSmall.xib in Resources */,
 				89C994CB1E54820900DBADBA /* CellTrevisTableCell.xib in Resources */,
@@ -387,6 +402,7 @@
 				89B3380F1E48C42200610EA3 /* GridLayout.swift in Sources */,
 				89C994CD1E5482C900DBADBA /* CellTrevisTableCell.swift in Sources */,
 				89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */,
+				89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */,
 				892E73DE1E589378007483E1 /* CellCommitsFeedTableCell.swift in Sources */,
 				89B3380B1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift in Sources */,
 				CE85B3CE1E5349D900DA7287 /* SegmentedViewController.swift in Sources */,
