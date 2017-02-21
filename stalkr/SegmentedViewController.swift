@@ -30,6 +30,11 @@ class SegmentedViewController: UIViewController {
         
         super.viewDidLoad()
         
+        addGradientToBackground()
+    }
+    
+    func addGradientToBackground() {
+        
         self.view.backgroundColor = .white
         
         gradientLayer.frame = self.view.bounds
@@ -47,12 +52,6 @@ class SegmentedViewController: UIViewController {
         gradientLayer.locations = [0.0, 0.25, 0.75, 1.0]
         
         self.view.layer.addSublayer(gradientLayer)
-        
-//        seletionBar.frame = CGRect(x: 0.0, y: self.segmentedActivities.frame.size.height, width: self.segmentedActivities.frame.size.width/CGFloat(self.segmentedActivities.numberOfSegments), height: 5.0)
-//        seletionBar.backgroundColor = UIColor(colorLiteralRed: 141/255, green: 102/255, blue: 189/255, alpha: 1)
-//        
-//        let font = UIFont.systemFont(ofSize: 5)
-//        segmentedActivities.setTitleTextAttributes([NSFontAttributeName: font], for: UIControlState.normal)
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,47 +60,11 @@ class SegmentedViewController: UIViewController {
     
     @IBAction func selectionChanged(_ sender: UISegmentedControl) {
         
-//        let placeSelectionBar = { () -> () in
-//            var barFrame = self.seletionBar.frame
-//            barFrame.origin.x = barFrame.size.width * CGFloat(sender.selectedSegmentIndex)
-//            self.seletionBar.frame = barFrame
-//        }
-//        
-//        if seletionBar.superview == nil {
-//            sender.addSubview(seletionBar)
-//            placeSelectionBar()
-//        }
-//        else {
-//            UIView.animate(withDuration: 0.3, animations: {
-//                placeSelectionBar()
-//            })
-//        }
-        
         if sender.selectedSegmentIndex == 0 {
-            //switchViewController(controller: blueViewController, to: mainViewController)
+            
         } else if sender.selectedSegmentIndex == 1 {
-            //switchViewController(controller: mainViewController, to: blueViewController)
-        }        
-    }
-    
-    func switchViewController(controller oldController: UIViewController, to newController: UIViewController) {
-        
-        self.__removeChildViewController(controller: oldController)
-        self.__addChildViewController(controller: newController, to: dashboardContainer)
-    }
-    
-    private func __addChildViewController(controller: UIViewController, to view: UIView) {
 
-        self.addChildViewController(controller)
-        view.addSubview(controller.view)
-        controller.didMove(toParentViewController: self)
-    }
-    
-    private func __removeChildViewController(controller: UIViewController) {
-
-        controller.willMove(toParentViewController: nil)
-        controller.view.removeFromSuperview()
-        controller.removeFromParentViewController()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -113,7 +76,6 @@ class SegmentedViewController: UIViewController {
             self.projectTable!.projectViewAssociated.append(segue.destination as! ProjectViewProtocol)
         }
     }
-    
 }
 
 //MARK: ProjectViewProtocol
