@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import Cartography
 
 class CellDeployStatus: SlotableCellDefault, SlotableCell {
     
+    @IBOutlet weak var labelCellTitle: UILabel!
     @IBOutlet weak var viewCircleStatus: UIView!
     @IBOutlet weak var labelStatus: UILabel!
+    @IBOutlet weak var viewDivision: UIView!
+    @IBOutlet weak var stackViewSuccessIndex: UIStackView!
     @IBOutlet weak var labelSuccessPercent: UILabel!
     @IBOutlet weak var labelSuccessLegend: UILabel!
+    @IBOutlet weak var stackViewCharge: UIStackView!
     @IBOutlet weak var labelChargeValue: UILabel!
     @IBOutlet weak var labelChargeLegend: UILabel!
     let slotWidth = 1
@@ -32,6 +37,26 @@ class CellDeployStatus: SlotableCellDefault, SlotableCell {
         labelSuccessLegend.textColor = UIColor.cellDeployStatusLabelLegend
         labelChargeValue.textColor = UIColor.white
         labelChargeLegend.textColor = UIColor.cellDeployStatusLabelLegend
+        
+        // constrains
+        constrain(self.labelCellTitle, self.viewCircleStatus, self.viewDivision, self.stackViewSuccessIndex, self.stackViewCharge) { label, circle, division, stackSuccessIndex, stackCharge in
+            circle.top == label.bottom + 10
+            
+            circle.width == 150
+            circle.height == 150
+            circle.centerX == circle.superview!.centerX
+            
+            division.width == 2
+            division.height == 58
+            division.top == circle.bottom + 25
+            division.centerX == circle.centerX
+            
+            stackSuccessIndex.top == division.top
+            stackSuccessIndex.centerX == stackSuccessIndex.superview!.centerX * 0.5
+
+            stackCharge.top == division.top
+            stackCharge.centerX == stackCharge.superview!.centerX * 1.5
+        }
     }
 
 }
