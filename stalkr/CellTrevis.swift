@@ -65,7 +65,15 @@ class CellTrevis: SlotableCellDefault, SlotableCell, SubscriberCell, UITableView
         cell.labelCommitCode.attributedText = "Commit " + currentBuild.commit.set(style: .fontBold)
         
         if let dateFinish = currentBuild.dateFinish {
-            cell.labelPastTime.attributedText = dateFinish.relativeFormatted().set(style: .fontBold) + " ago"
+            let dateFinishRelativeFormatted = dateFinish.relativeFormatted()
+            let splited = dateFinishRelativeFormatted.components(separatedBy: " ")
+            
+            if splited.count == 3 && splited[2] == "ago" {
+                cell.labelPastTime.attributedText = "\(splited[0]) \(splited[1])".set(style: .fontBold) + " \(splited[2])"
+            } else {
+                cell.labelPastTime.attributedText = dateFinishRelativeFormatted.set(style: .fontBold)
+            }
+            
             cell.labelRunTime.attributedText = "Ran for " + "\(currentBuild.duration / 60) min \(currentBuild.duration % 60) sec".set(style: .fontBold)
             cell.labelTotalTime.attributedText = "Total time: " + "6 min".set(style: .fontBold) // TODO
         } else {
