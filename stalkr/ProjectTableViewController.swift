@@ -48,6 +48,7 @@ class ProjectTableViewController: UITableViewController {
         cell.textLabel?.text = projectsNames[indexPath.row]
         cell.textLabel?.textColor = UIColor(netHex: 0xB865D2)
         cell.imageView?.image = image
+        cell.focusStyle = .custom
         
         return cell
     }
@@ -56,10 +57,19 @@ class ProjectTableViewController: UITableViewController {
         
         if context.nextFocusedIndexPath != nil {
             projectDelegate!.didChangeProject(toProjectNamed: projectsNames[context.nextFocusedIndexPath!.row])
-            tableView.cellForRow(at: context.nextFocusedIndexPath!)!.contentView.backgroundColor = UIColor(netHex: 0x1B1D36)
+            
+            let nextCell = tableView.cellForRow(at: context.nextFocusedIndexPath!)!
+            nextCell.contentView.backgroundColor = UIColor(netHex: 0x1B1D36)
+            nextCell.contentView.layer.cornerRadius = 7
+            nextCell.textLabel?.font = UIFont(name: "Helvetica Neue", size: 25)
+            nextCell.layer.shadowColor = UIColor.white.cgColor
+            nextCell.layer.shadowOpacity = 1
         }
         if context.previouslyFocusedIndexPath != nil {
-            tableView.cellForRow(at: context.previouslyFocusedIndexPath!)!.contentView.backgroundColor = .clear
+            let previousCell = tableView.cellForRow(at: context.previouslyFocusedIndexPath!)!
+            previousCell.contentView.backgroundColor = .clear
+            previousCell.textLabel?.font = UIFont(name: "Helvetica Neue", size: 17)
+            previousCell.layer.shadowOpacity = 0
         }
     }
     

@@ -166,6 +166,8 @@
 				CEE849781E55EF420033F512 /* Protocols */,
 				89B337F21E48BB9F00610EA3 /* AppDelegate.swift */,
 				89B337F41E48BB9F00610EA3 /* MainViewController.swift */,
+				CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */,
+				CE3DC3111E54807D008F88EE /* ProjectTableViewController.swift */,
 				89B337F61E48BB9F00610EA3 /* Main.storyboard */,
 				89B337F91E48BB9F00610EA3 /* Assets.xcassets */,
 				89B337FB1E48BB9F00610EA3 /* Info.plist */,
@@ -173,8 +175,6 @@
 				89B3380E1E48C42200610EA3 /* GridLayout.swift */,
 				89B338031E48C0B700610EA3 /* SlotableCell */,
 				89B338181E49F7A400610EA3 /* StalkrExtensions.swift */,
-				CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */,
-				CE3DC3111E54807D008F88EE /* ProjectTableViewController.swift */,
 			);
 			path = stalkr;
 			sourceTree = "<group>";
