@@ -36,7 +36,7 @@ class GridLayout: UICollectionViewLayout {
         if cache.isEmpty {
             // inicializar variáveis com as dimensões
             let columnWidth = contentWidth / CGFloat(numberOfColumns)
-            let columnRow = collectionView!.bounds.height / CGFloat(numberOfRows)
+            let columnRow = (collectionView!.bounds.height / CGFloat(numberOfRows)) - cellPadding * CGFloat(numberOfRows)
             var xOffset = [CGFloat]()
             for column in 0..<numberOfColumns {
                 xOffset.append(CGFloat(column) * columnWidth)
@@ -59,7 +59,7 @@ class GridLayout: UICollectionViewLayout {
                     
                     let cellWidth = CGFloat(slotWidth) * columnWidth
                     let cellHeight = CGFloat(slotHeight) * columnRow
-                    var height = cellPadding + cellHeight + cellPadding
+                    var height = cellHeight + cellPadding
                     if slotHeight > 1 { // se a célula ocupa mais que um slot horizontal, acrescentar à célula o espaço de padding
                         height += CGFloat(slotHeight) * cellPadding
                     }

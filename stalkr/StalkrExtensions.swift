@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftRichString
 
 extension NSObject {
     class func className() -> String {
@@ -64,4 +65,11 @@ extension UIImageView{
         self.layer.masksToBounds = true
     }
     
+}
+
+//
+extension Style {
+    static let fontBold = Style("bold", {
+        $0.font = FontAttribute(FontName.HelveticaNeue_Bold, size: 17)
+    })
 }

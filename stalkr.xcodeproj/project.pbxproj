@@ -43,7 +43,6 @@
 		CE2E76411E5C737C00D5EC5C /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E76401E5C737C00D5EC5C /* TableCell.swift */; };
 		CE3DC3121E54807D008F88EE /* ProjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DC3111E54807D008F88EE /* ProjectTableViewController.swift */; };
 		CE85B3CE1E5349D900DA7287 /* SegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */; };
-		CE9C311A1E573AD900078AE4 /* ProjectIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9C31191E573AD900078AE4 /* ProjectIcon.png */; };
 		CEE8497A1E55EF840033F512 /* DashboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE849791E55EF840033F512 /* DashboardProtocol.swift */; };
 		CEE8497C1E55F18F0033F512 /* ProjectViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -89,7 +88,6 @@
 		CE2E76401E5C737C00D5EC5C /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		CE3DC3111E54807D008F88EE /* ProjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewController.swift; sourceTree = "<group>"; };
 		CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedViewController.swift; sourceTree = "<group>"; };
-		CE9C31191E573AD900078AE4 /* ProjectIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProjectIcon.png; sourceTree = "<group>"; };
 		CEE849791E55EF840033F512 /* DashboardProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardProtocol.swift; sourceTree = "<group>"; };
 		CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,7 +162,6 @@
 		89B337F11E48BB9F00610EA3 /* stalkr */ = {
 			isa = PBXGroup;
 			children = (
-				CE9C31161E57342B00078AE4 /* Images */,
 				CEE849781E55EF420033F512 /* Protocols */,
 				89B337F21E48BB9F00610EA3 /* AppDelegate.swift */,
 				89B337F41E48BB9F00610EA3 /* MainViewController.swift */,
@@ -232,14 +229,6 @@
 				8DA58B41991C641DBFD4F4DC /* Pods-stalkr.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		CE9C31161E57342B00078AE4 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				CE9C31191E573AD900078AE4 /* ProjectIcon.png */,
-			);
-			name = Images;
 			sourceTree = "<group>";
 		};
 		CEE849781E55EF420033F512 /* Protocols */ = {
@@ -324,7 +313,6 @@
 				89C994CB1E54820900DBADBA /* CellTrevisTableCell.xib in Resources */,
 				892E73EA1E58F56F007483E1 /* CellCloudPerformance.xib in Resources */,
 				892E73DF1E589378007483E1 /* CellCommitsFeedTableCell.xib in Resources */,
-				CE9C311A1E573AD900078AE4 /* ProjectIcon.png in Resources */,
 				89B338171E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib in Resources */,
 				892E73DD1E589378007483E1 /* CellCommitsFeed.xib in Resources */,
 				89B337F81E48BB9F00610EA3 /* Main.storyboard in Resources */,

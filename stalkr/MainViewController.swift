@@ -34,7 +34,7 @@ class MainViewController: UICollectionViewController {
         }
         
         //
-        self.view.backgroundColor = UIColor.backgroundAbove
+        self.view.backgroundColor = UIColor.clear
     }
     
     // MARK: UICollectionViewDataSource
@@ -80,6 +80,7 @@ class MainViewController: UICollectionViewController {
         //
         cell.backgroundColor = UIColor.backgroundCell
         cell.transform = CGAffineTransform(scaleX: 0.98, y: 0.98) // TODO: Gambiarra! Isso não deve ficar aqui, mas sim em SlotableCellDefault
+        cell.layer.cornerRadius = 10
         
         return cell
     }

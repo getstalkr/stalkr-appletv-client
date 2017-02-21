@@ -30,6 +30,11 @@ class SegmentedViewController: UIViewController {
         
         super.viewDidLoad()
         
+        addGradientToBackground()
+    }
+    
+    func addGradientToBackground() {
+        
         self.view.backgroundColor = .white
         
         gradientLayer.frame = self.view.bounds
@@ -56,7 +61,7 @@ class SegmentedViewController: UIViewController {
     @IBAction func selectionChanged(_ sender: UISegmentedControl) {
         
         if sender.selectedSegmentIndex == 0 {
-
+            
         } else if sender.selectedSegmentIndex == 1 {
 
         }

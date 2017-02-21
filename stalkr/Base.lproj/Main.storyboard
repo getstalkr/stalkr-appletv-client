@@ -64,7 +64,7 @@
                                 <rect key="frame" x="140" y="90" width="1640" height="900"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Smk-be-70T">
-                                        <rect key="frame" x="394" y="53" width="692" height="70"/>
+                                        <rect key="frame" x="394" y="81" width="692" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="692" id="gud-Xn-EWj"/>
@@ -73,7 +73,7 @@
                                             <segment title="Main Dashboard"/>
                                             <segment title="Detailed Dashboard"/>
                                         </segments>
-                                        <color key="tintColor" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.42352941176470588" green="0.44705882352941173" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="selectionChanged:" destination="5fm-2u-0sW" eventType="valueChanged" id="JXy-HX-PXn"/>
                                         </connections>
@@ -99,10 +99,10 @@
                                                     <segue destination="8PL-Ka-4f6" kind="embed" identifier="tableIdentifier" id="1Bh-um-Rmy"/>
                                                 </connections>
                                             </containerView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProjectIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xU3-6z-p94">
-                                                <rect key="frame" x="73" y="24" width="240" height="97"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stalkr" translatesAutoresizingMaskIntoConstraints="NO" id="xU3-6z-p94">
+                                                <rect key="frame" x="41" y="24" width="305" height="97"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="xU3-6z-p94" secondAttribute="height" multiplier="240:97" id="AvJ-D1-cAv"/>
+                                                    <constraint firstAttribute="width" secondItem="xU3-6z-p94" secondAttribute="height" multiplier="240:97" constant="65" id="AvJ-D1-cAv"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -114,7 +114,7 @@
                                             <constraint firstItem="Khn-QB-1nk" firstAttribute="top" secondItem="xU3-6z-p94" secondAttribute="bottom" constant="43" id="a2l-Ds-Bgx"/>
                                             <constraint firstItem="xU3-6z-p94" firstAttribute="centerX" secondItem="QHA-3Q-ZCw" secondAttribute="centerX" id="axw-8G-MOZ"/>
                                             <constraint firstItem="Khn-QB-1nk" firstAttribute="centerX" secondItem="QHA-3Q-ZCw" secondAttribute="centerX" id="jNN-CX-eMf"/>
-                                            <constraint firstItem="xU3-6z-p94" firstAttribute="width" secondItem="QHA-3Q-ZCw" secondAttribute="height" multiplier="4:15" id="l4v-hx-LLy"/>
+                                            <constraint firstItem="xU3-6z-p94" firstAttribute="width" secondItem="QHA-3Q-ZCw" secondAttribute="height" multiplier="4:15" constant="65" id="l4v-hx-LLy"/>
                                             <constraint firstItem="Khn-QB-1nk" firstAttribute="leading" secondItem="QHA-3Q-ZCw" secondAttribute="leading" id="rcQ-4K-Kfa"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -136,7 +136,7 @@
                                 <color key="backgroundColor" red="0.019607843137254902" green="0.019607843137254902" blue="0.12156862745098039" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="lcN-im-5jw" secondAttribute="bottom" constant="53" id="5DA-8s-LYt"/>
-                                    <constraint firstItem="lcN-im-5jw" firstAttribute="top" secondItem="Smk-be-70T" secondAttribute="bottom" constant="42" id="6SM-Qy-AbZ"/>
+                                    <constraint firstItem="lcN-im-5jw" firstAttribute="top" secondItem="Smk-be-70T" secondAttribute="bottom" constant="14" id="6SM-Qy-AbZ"/>
                                     <constraint firstItem="lcN-im-5jw" firstAttribute="trailing" secondItem="8F8-tD-s7m" secondAttribute="trailingMargin" id="PLd-3h-7SK"/>
                                     <constraint firstItem="QHA-3Q-ZCw" firstAttribute="top" secondItem="8F8-tD-s7m" secondAttribute="top" id="SXL-4N-iga"/>
                                     <constraint firstItem="lcN-im-5jw" firstAttribute="leading" secondItem="QHA-3Q-ZCw" secondAttribute="trailing" constant="31" id="VOQ-Ki-fyD"/>
@@ -201,7 +201,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.95022302865982056" green="0.75401997566223145" blue="0.035687629133462906" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="TableCell" customModule="stalkr" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="TableCell" customModule="stalkr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="66" width="386" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UW4-Tw-7UH" id="9Fg-35-gqH">
@@ -234,6 +234,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ProjectIcon" width="197" height="256"/>
+        <image name="Stalkr" width="300" height="100"/>
     </resources>
 </document>

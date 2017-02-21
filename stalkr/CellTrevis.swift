@@ -60,17 +60,22 @@ class CellTrevis: SlotableCellDefault, SlotableCell, SubscriberCell, UITableView
         cell.textCommitMessage.text = currentBuild.message
         cell.textCommitMessage.textColor = UIColor.fontPullMessage
         
-        let styleBold = Style("bold", {
-            $0.font = FontAttribute(FontName.HelveticaNeue_Bold, size: 17)
-        })
-        cell.labelBranch.attributedText = "Branch " + currentBuild.branch.set(style: styleBold)
+        cell.labelBranch.attributedText = "Branch " + currentBuild.branch.set(style: .fontBold)
         cell.labelCommitterName.text = "matt" // TODO
-        cell.labelCommitCode.attributedText = "Commit " + currentBuild.commit.set(style: styleBold)
+        cell.labelCommitCode.attributedText = "Commit " + currentBuild.commit.set(style: .fontBold)
         
         if let dateFinish = currentBuild.dateFinish {
-            cell.labelPastTime.attributedText = dateFinish.relativeFormatted().set(style: styleBold) + " ago"
-            cell.labelRunTime.attributedText = "Ran for " + "\(currentBuild.duration / 60) min \(currentBuild.duration % 60) sec".set(style: styleBold)
-            cell.labelTotalTime.attributedText = "Total time: " + "6 min".set(style: styleBold) // TODO
+            let dateFinishRelativeFormatted = dateFinish.relativeFormatted()
+            let splited = dateFinishRelativeFormatted.components(separatedBy: " ")
+            
+            if splited.count == 3 && splited[2] == "ago" {
+                cell.labelPastTime.attributedText = "\(splited[0]) \(splited[1])".set(style: .fontBold) + " \(splited[2])"
+            } else {
+                cell.labelPastTime.attributedText = dateFinishRelativeFormatted.set(style: .fontBold)
+            }
+            
+            cell.labelRunTime.attributedText = "Ran for " + "\(currentBuild.duration / 60) min \(currentBuild.duration % 60) sec".set(style: .fontBold)
+            cell.labelTotalTime.attributedText = "Total time: " + "6 min".set(style: .fontBold) // TODO
         } else {
             cell.labelPastTime.text = ""
             cell.labelRunTime.text = ""
