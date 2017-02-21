@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import SwiftRichString
 
 class CellCommitsFeed: SlotableCellDefault, SlotableCell, UITableViewDelegate, UITableViewDataSource {
     
@@ -43,6 +44,8 @@ class CellCommitsFeed: SlotableCellDefault, SlotableCell, UITableViewDelegate, U
         cell.imagePhoto.kf.setImage(with: URL(string: "https://avatars0.githubusercontent.com/u/9501115"))
         cell.imagePhoto.asCircle()
         cell.textMessage.textColor = UIColor.fontPullMessage
+        cell.labelCommitHash.attributedText = "Commit " + "be5e5440".set(style: .fontBold)
+        cell.labelBranch.attributedText = "Branch " + "Master".set(style: .fontBold)
         
         return cell
     }
