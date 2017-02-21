@@ -91,9 +91,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="386" height="900"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Khn-QB-1nk" userLabel="Table Container">
-                                                <rect key="frame" x="24" y="164" width="337" height="736"/>
+                                                <rect key="frame" x="0.0" y="164" width="386" height="736"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Khn-QB-1nk" secondAttribute="height" multiplier="337:736" id="R32-Yh-VHL"/>
+                                                    <constraint firstAttribute="width" secondItem="Khn-QB-1nk" secondAttribute="height" multiplier="337:736" constant="49" id="R32-Yh-VHL"/>
                                                 </constraints>
                                                 <connections>
                                                     <segue destination="8PL-Ka-4f6" kind="embed" identifier="tableIdentifier" id="1Bh-um-Rmy"/>
@@ -106,16 +106,16 @@
                                                 </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.29803921568627451" alpha="0.20384738869863014" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.29803921568627451" alpha="0.099020761986301373" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="QHA-3Q-ZCw" secondAttribute="height" multiplier="193:450" id="J6j-jO-xFO"/>
                                             <constraint firstItem="xU3-6z-p94" firstAttribute="top" secondItem="QHA-3Q-ZCw" secondAttribute="top" constant="24" id="REi-wH-YfH"/>
-                                            <constraint firstAttribute="trailing" secondItem="Khn-QB-1nk" secondAttribute="trailing" constant="25" id="VAz-4n-fPy"/>
+                                            <constraint firstAttribute="trailing" secondItem="Khn-QB-1nk" secondAttribute="trailing" id="VAz-4n-fPy"/>
                                             <constraint firstItem="Khn-QB-1nk" firstAttribute="top" secondItem="xU3-6z-p94" secondAttribute="bottom" constant="43" id="a2l-Ds-Bgx"/>
                                             <constraint firstItem="xU3-6z-p94" firstAttribute="centerX" secondItem="QHA-3Q-ZCw" secondAttribute="centerX" id="axw-8G-MOZ"/>
                                             <constraint firstItem="Khn-QB-1nk" firstAttribute="centerX" secondItem="QHA-3Q-ZCw" secondAttribute="centerX" id="jNN-CX-eMf"/>
                                             <constraint firstItem="xU3-6z-p94" firstAttribute="width" secondItem="QHA-3Q-ZCw" secondAttribute="height" multiplier="4:15" id="l4v-hx-LLy"/>
-                                            <constraint firstItem="Khn-QB-1nk" firstAttribute="leading" secondItem="QHA-3Q-ZCw" secondAttribute="leading" constant="24" id="rcQ-4K-Kfa"/>
+                                            <constraint firstItem="Khn-QB-1nk" firstAttribute="leading" secondItem="QHA-3Q-ZCw" secondAttribute="leading" id="rcQ-4K-Kfa"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -196,20 +196,20 @@
             <objects>
                 <tableViewController storyboardIdentifier="ProjectTableViewController" id="8PL-Ka-4f6" customClass="ProjectTableViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="66" sectionFooterHeight="66" id="Ebf-zl-vZe">
-                        <rect key="frame" x="0.0" y="0.0" width="337" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="386" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.95022302865982056" green="0.75401997566223145" blue="0.035687629133462906" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH">
-                                <rect key="frame" x="0.0" y="66" width="337" height="60"/>
+                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="TableCell" customModule="stalkr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="66" width="386" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UW4-Tw-7UH" id="9Fg-35-gqH">
-                                    <rect key="frame" x="0.0" y="0.0" width="321" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="370" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eIn-ao-Er5">
-                                            <rect key="frame" x="20" y="0.0" width="281" height="60"/>
+                                            <rect key="frame" x="20" y="0.0" width="330" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

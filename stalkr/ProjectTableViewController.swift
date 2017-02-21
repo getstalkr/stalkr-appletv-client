@@ -17,14 +17,7 @@ class ProjectTableViewController: UITableViewController {
     weak var projectDelegate: ProjectViewProtocol?
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,13 +35,19 @@ class ProjectTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let image = icons[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        cell.textLabel?.text = projectsNames[indexPath.row]
-        cell.textLabel?.textColor = UIColor(netHex: 0xB865D2)
-        cell.imageView?.image = image
-        cell.focusStyle = .custom
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! TableCell
+        
+        let numberOfSpaces: Int = Int(cell.contentView.bounds.width / 70)
+        var gap = " "
+        
+        for _ in 0...numberOfSpaces {
+            gap += " "
+        }
+        
+        cell.textLabel?.text = gap + projectsNames[indexPath.row]
+        cell.imageView!.image = image
         
         return cell
     }
@@ -58,66 +57,17 @@ class ProjectTableViewController: UITableViewController {
         if context.nextFocusedIndexPath != nil {
             projectDelegate!.didChangeProject(toProjectNamed: projectsNames[context.nextFocusedIndexPath!.row])
             
-            let nextCell = tableView.cellForRow(at: context.nextFocusedIndexPath!)!
+            let nextCell = tableView.cellForRow(at: context.nextFocusedIndexPath!)! as! TableCell
             nextCell.contentView.backgroundColor = UIColor(netHex: 0x1B1D36)
-            nextCell.contentView.layer.cornerRadius = 7
-            nextCell.textLabel?.font = UIFont(name: "Helvetica Neue", size: 25)
-            nextCell.layer.shadowColor = UIColor.white.cgColor
-            nextCell.layer.shadowOpacity = 1
+            nextCell.contentView.backgroundColor = nextCell.contentView.backgroundColor?.withAlphaComponent(0.5)
+            nextCell.alpha = 1
         }
         if context.previouslyFocusedIndexPath != nil {
-            let previousCell = tableView.cellForRow(at: context.previouslyFocusedIndexPath!)!
+            let previousCell = tableView.cellForRow(at: context.previouslyFocusedIndexPath!)! as! TableCell
             previousCell.contentView.backgroundColor = .clear
-            previousCell.textLabel?.font = UIFont(name: "Helvetica Neue", size: 17)
-            previousCell.layer.shadowOpacity = 0
+            previousCell.alpha = previousCell.defaultAlpha
         }
     }
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension UIColor {
