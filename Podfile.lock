@@ -1,4 +1,5 @@
 PODS:
+  - Cartography (1.0.1)
   - Charts (3.0.1):
     - Charts/Core (= 3.0.1)
   - Charts/Core (3.0.1)
@@ -9,6 +10,7 @@ PODS:
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - Cartography
   - Charts
   - Kingfisher (~> 3.4)
   - PusherSwift
@@ -17,6 +19,7 @@ DEPENDENCIES:
   - SwiftyJSON (~> 3.1.4)
 
 SPEC CHECKSUMS:
+  Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
   Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
   Kingfisher: 5690cfb3d1bddf3a98d679a3a34d0b7294974ed2
   PusherSwift: 8249a1c3634943cf7e1e9a691468357d53ab7e5f
@@ -24,6 +27,6 @@ SPEC CHECKSUMS:
   SwiftRichString: f09656f5d44b07fc4423225f96eab43e463221e6
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: b6051e31baf1b4252b5ae8acd997189f3287c70b
+PODFILE CHECKSUM: 09785c56762dd97e42665c3799871804fdb743a5
 
 COCOAPODS: 1.2.0
