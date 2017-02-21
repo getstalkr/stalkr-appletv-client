@@ -108,7 +108,9 @@ class SegmentedViewController: UIViewController {
         
         if segue.identifier == "tableIdentifier" {
             self.projectTable = segue.destination as? ProjectTableViewController
-            self.projectTable?.projectDelegate = self
+            self.projectTable?.projectViewAssociated.append(self)
+        } else if segue.identifier == "gridIdentifier" {
+            self.projectTable!.projectViewAssociated.append(segue.destination as! ProjectViewProtocol)
         }
     }
     

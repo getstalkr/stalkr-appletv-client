@@ -11,11 +11,11 @@ import PusherSwift
 import SwiftyJSON
 
 fileprivate var counter = 0
-fileprivate let gridConfiguration = GridConfiguration.shared
 
 class MainViewController: UICollectionViewController {
     
     let pusher = Pusher(key: "5cdc3c711f606f43aada")
+    var gridConfiguration = GridConfiguration(gridName: "nothing")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -152,17 +152,25 @@ extension MainViewController: GridLayoutDelegate {
                     maxIndex = index
                 }
             }
-            print("")
             index = 0
             
             while yOffset[index] != 0 {
                 yOffset[index] -= 1
                 index += 1
             }
-            print("")
         }
         
         // a quantidade de colunas necessárias para desenhar a grid é o maior índice necessário que foi usado em yOffset (armazenado em maxIndex)
         return maxIndex
+    }
+}
+
+extension MainViewController: ProjectViewProtocol {
+    
+    func didChangeProject(toProjectNamed name: String) {
+        print(name)
+        self.gridConfiguration = GridConfiguration(gridName: name)
+        (self.collectionView?.collectionViewLayout as! GridLayout).clearCache()
+        self.collectionView?.reloadData()
     }
 }
