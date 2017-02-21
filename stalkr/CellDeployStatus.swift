@@ -29,7 +29,7 @@ class CellDeployStatus: SlotableCellDefault, SlotableCell {
         self.viewCircleStatus.layer.masksToBounds = true
         self.viewCircleStatus.layer.borderWidth = 7
         self.viewCircleStatus.layer.borderColor = self.viewCircleStatus.backgroundColor?.withAlphaComponent(0.2).cgColor
-        self.viewCircleStatus.backgroundColor = UIColor.black.withAlphaComponent(0)
+        self.viewCircleStatus.backgroundColor = UIColor.stalkrSuccess.withAlphaComponent(0)
         
         self.labelStatus.textColor = UIColor.stalkrSuccess
         
