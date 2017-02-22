@@ -9,6 +9,7 @@
 import UIKit
 import PusherSwift
 import SwiftyJSON
+import PromiseKit
 
 fileprivate var counter = 0
 
@@ -168,9 +169,18 @@ extension GridViewController: GridLayoutDelegate {
 extension GridViewController: ProjectViewProtocol {
     
     func didChangeProject(toProjectNamed name: String) {
-        print(name)
         self.gridConfiguration = GridConfiguration(gridName: name)
         (self.collectionView?.collectionViewLayout as! GridLayout).clearCache()
-        self.collectionView?.reloadData()
+        
+        _ = firstly {
+            UIView.promise(animateWithDuration: 0.5, animations: {
+                self.collectionView?.alpha = 0
+            })
+        }.then { _ -> Void in
+            self.collectionView?.reloadData()
+            _ = UIView.promise(animateWithDuration: 0.5, animations: {
+                self.collectionView?.alpha = 1
+            })
+        }
     }
 }
