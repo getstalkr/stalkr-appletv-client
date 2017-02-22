@@ -12,23 +12,37 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellTeamCommitsZoom" id="d3S-Wn-xxv" customClass="CellTeamCommitsZoom" customModule="stalkr" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="530" height="275"/>
+            <rect key="frame" x="0.0" y="0.0" width="275" height="203"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="530" height="275"/>
+                <rect key="frame" x="0.0" y="0.0" width="275" height="203"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TEAM COMMITS (EXPANDED)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9y-DI-YZ9">
-                        <rect key="frame" x="8" y="8" width="232" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEAM COMMITS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9y-DI-YZ9">
+                        <rect key="frame" x="8" y="8" width="129" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQk-W1-0Sz" customClass="BarChartView" customModule="Charts">
+                        <rect key="frame" x="8" y="35" width="259" height="160"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                 </subviews>
             </view>
-            <size key="customSize" width="530" height="275"/>
-            <point key="canvasLocation" x="74" y="250.5"/>
+            <constraints>
+                <constraint firstItem="O9y-DI-YZ9" firstAttribute="top" secondItem="d3S-Wn-xxv" secondAttribute="top" constant="8" id="8IZ-bV-gcj"/>
+                <constraint firstItem="sQk-W1-0Sz" firstAttribute="top" secondItem="O9y-DI-YZ9" secondAttribute="bottom" constant="6" id="9Lb-5w-Qda"/>
+                <constraint firstItem="sQk-W1-0Sz" firstAttribute="leading" secondItem="d3S-Wn-xxv" secondAttribute="leading" constant="8" id="BlS-ni-afB"/>
+                <constraint firstAttribute="bottom" secondItem="sQk-W1-0Sz" secondAttribute="bottom" constant="8" id="a10-tU-atE"/>
+                <constraint firstItem="O9y-DI-YZ9" firstAttribute="leading" secondItem="d3S-Wn-xxv" secondAttribute="leading" constant="8" id="kZW-I8-Zge"/>
+                <constraint firstAttribute="trailing" secondItem="sQk-W1-0Sz" secondAttribute="trailing" constant="8" id="uM2-wo-r1r"/>
+            </constraints>
+            <size key="customSize" width="275" height="203"/>
+            <connections>
+                <outlet property="viewChart" destination="sQk-W1-0Sz" id="gs5-Ld-feE"/>
+            </connections>
+            <point key="canvasLocation" x="-53.5" y="214.5"/>
         </collectionViewCell>
     </objects>
 </document>

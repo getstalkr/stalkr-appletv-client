@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		89276ED81E54BBE800D99D4E /* SubscriberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89276ED71E54BBE800D99D4E /* SubscriberCell.swift */; };
 		892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DD7C31E5624F1000482C0 /* TravisBuildRegister.swift */; };
+		892DECC81E5E308900676056 /* CellTeamCommitsZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DECC71E5E308900676056 /* CellTeamCommitsZoom.swift */; };
 		892E73DC1E589378007483E1 /* CellCommitsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E73D81E589378007483E1 /* CellCommitsFeed.swift */; };
 		892E73DD1E589378007483E1 /* CellCommitsFeed.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892E73D91E589378007483E1 /* CellCommitsFeed.xib */; };
 		892E73DE1E589378007483E1 /* CellCommitsFeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E73DA1E589378007483E1 /* CellCommitsFeedTableCell.swift */; };
@@ -40,7 +41,6 @@
 		89C994AD1E547CDE00DBADBA /* CellTrevis.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994AC1E547CDE00DBADBA /* CellTrevis.xib */; };
 		89C994CB1E54820900DBADBA /* CellTrevisTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994CA1E54820900DBADBA /* CellTrevisTableCell.xib */; };
 		89C994CD1E5482C900DBADBA /* CellTrevisTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C994CC1E5482C900DBADBA /* CellTrevisTableCell.swift */; };
-		89CDB4141E5DCBFF00B6F239 /* CellTeamCommitsZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDB4131E5DCBFF00B6F239 /* CellTeamCommitsZoom.swift */; };
 		91895BF7AD0056EDD4A683AD /* Pods_stalkr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2584928AB2DB6CF074F0769D /* Pods_stalkr.framework */; };
 		CE2E76411E5C737C00D5EC5C /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E76401E5C737C00D5EC5C /* TableCell.swift */; };
 		CE3DC3121E54807D008F88EE /* ProjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DC3111E54807D008F88EE /* ProjectTableViewController.swift */; };
@@ -53,6 +53,7 @@
 		2584928AB2DB6CF074F0769D /* Pods_stalkr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stalkr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89276ED71E54BBE800D99D4E /* SubscriberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriberCell.swift; sourceTree = "<group>"; };
 		892DD7C31E5624F1000482C0 /* TravisBuildRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravisBuildRegister.swift; sourceTree = "<group>"; };
+		892DECC71E5E308900676056 /* CellTeamCommitsZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTeamCommitsZoom.swift; sourceTree = "<group>"; };
 		892E73D81E589378007483E1 /* CellCommitsFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCommitsFeed.swift; sourceTree = "<group>"; };
 		892E73D91E589378007483E1 /* CellCommitsFeed.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCommitsFeed.xib; sourceTree = "<group>"; };
 		892E73DA1E589378007483E1 /* CellCommitsFeedTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCommitsFeedTableCell.swift; sourceTree = "<group>"; };
@@ -86,7 +87,6 @@
 		89C994AC1E547CDE00DBADBA /* CellTrevis.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTrevis.xib; sourceTree = "<group>"; };
 		89C994CA1E54820900DBADBA /* CellTrevisTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTrevisTableCell.xib; sourceTree = "<group>"; };
 		89C994CC1E5482C900DBADBA /* CellTrevisTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTrevisTableCell.swift; sourceTree = "<group>"; };
-		89CDB4131E5DCBFF00B6F239 /* CellTeamCommitsZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTeamCommitsZoom.swift; sourceTree = "<group>"; };
 		8DA58B41991C641DBFD4F4DC /* Pods-stalkr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stalkr.release.xcconfig"; path = "Pods/Target Support Files/Pods-stalkr/Pods-stalkr.release.xcconfig"; sourceTree = "<group>"; };
 		9924C7B765C9FBEEE07466DA /* Pods-stalkr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stalkr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stalkr/Pods-stalkr.debug.xcconfig"; sourceTree = "<group>"; };
 		CE2E76401E5C737C00D5EC5C /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 			children = (
 				892E73E21E58A581007483E1 /* CellTeamCommits.swift */,
 				892E73E41E58A59B007483E1 /* CellTeamCommits.xib */,
-				89CDB4131E5DCBFF00B6F239 /* CellTeamCommitsZoom.swift */,
+				892DECC71E5E308900676056 /* CellTeamCommitsZoom.swift */,
 				89A6663E1E5DB9C0007F8A7A /* CellTeamCommitsZoom.xib */,
 			);
 			name = CellTeamCommits;
@@ -385,10 +385,10 @@
 				89B337F51E48BB9F00610EA3 /* GridViewController.swift in Sources */,
 				89B338051E48C0DE00610EA3 /* CellPlaceholderSmall.swift in Sources */,
 				89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */,
-				89CDB4141E5DCBFF00B6F239 /* CellTeamCommitsZoom.swift in Sources */,
 				89C994AB1E547C6E00DBADBA /* CellTrevis.swift in Sources */,
 				89B338091E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift in Sources */,
 				892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */,
+				892DECC81E5E308900676056 /* CellTeamCommitsZoom.swift in Sources */,
 				CEE8497A1E55EF840033F512 /* DashboardProtocol.swift in Sources */,
 				89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */,
 				CE3DC3121E54807D008F88EE /* ProjectTableViewController.swift in Sources */,
