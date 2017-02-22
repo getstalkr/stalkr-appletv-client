@@ -8,8 +8,8 @@
 
 import UIKit
 
-class CellTeamCommitsZoom: SlotableCellDefault, SlotableCell, ZoomCell {
-    
+class CellTeamCommitsZoom: ZoomCell, SlotableCell {
+
     func load(params: [String: Any]) {
         
     }

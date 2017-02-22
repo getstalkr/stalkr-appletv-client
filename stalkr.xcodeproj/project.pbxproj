@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		89276ED81E54BBE800D99D4E /* SubscriberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89276ED71E54BBE800D99D4E /* SubscriberCell.swift */; };
 		892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DD7C31E5624F1000482C0 /* TravisBuildRegister.swift */; };
-		892DECC61E5E274900676056 /* ZoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DECC51E5E274900676056 /* ZoomCell.swift */; };
 		892E73DC1E589378007483E1 /* CellCommitsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E73D81E589378007483E1 /* CellCommitsFeed.swift */; };
 		892E73DD1E589378007483E1 /* CellCommitsFeed.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892E73D91E589378007483E1 /* CellCommitsFeed.xib */; };
 		892E73DE1E589378007483E1 /* CellCommitsFeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E73DA1E589378007483E1 /* CellCommitsFeedTableCell.swift */; };
@@ -54,7 +53,6 @@
 		2584928AB2DB6CF074F0769D /* Pods_stalkr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stalkr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89276ED71E54BBE800D99D4E /* SubscriberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriberCell.swift; sourceTree = "<group>"; };
 		892DD7C31E5624F1000482C0 /* TravisBuildRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravisBuildRegister.swift; sourceTree = "<group>"; };
-		892DECC51E5E274900676056 /* ZoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomCell.swift; sourceTree = "<group>"; };
 		892E73D81E589378007483E1 /* CellCommitsFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCommitsFeed.swift; sourceTree = "<group>"; };
 		892E73D91E589378007483E1 /* CellCommitsFeed.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCommitsFeed.xib; sourceTree = "<group>"; };
 		892E73DA1E589378007483E1 /* CellCommitsFeedTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCommitsFeedTableCell.swift; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 			children = (
 				89B338011E48C08400610EA3 /* SlotableCell.swift */,
 				89276ED71E54BBE800D99D4E /* SubscriberCell.swift */,
-				892DECC51E5E274900676056 /* ZoomCell.swift */,
 				89B338041E48C0DE00610EA3 /* CellPlaceholderSmall.swift */,
 				89B338101E49ED2400610EA3 /* CellPlaceholderSmall.xib */,
 				89B338061E48C13200610EA3 /* CellPlaceholderWidthTwo.swift */,
@@ -390,7 +387,6 @@
 				89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */,
 				89CDB4141E5DCBFF00B6F239 /* CellTeamCommitsZoom.swift in Sources */,
 				89C994AB1E547C6E00DBADBA /* CellTrevis.swift in Sources */,
-				892DECC61E5E274900676056 /* ZoomCell.swift in Sources */,
 				89B338091E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift in Sources */,
 				892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */,
 				CEE8497A1E55EF840033F512 /* DashboardProtocol.swift in Sources */,

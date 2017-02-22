@@ -54,6 +54,12 @@ class SlotableCellDefault: UICollectionViewCell {
     
 }
 
+class ZoomCell: SlotableCellDefault {
+    let slotWidth = 1
+    let slotHeight = 1
+    let haveZoom = false
+}
+
 // lista com todos as classes que implementam o protocolo SlotableCell
 // todo: talvez haja alguma forma mística de gerar essa listagem automaticamente
 let listAllSlotableCell: [NSObject.Type] = [
