@@ -23,6 +23,7 @@ class CellDeployStatus: SlotableCellDefault, SlotableCell {
     @IBOutlet weak var labelChargeLegend: UILabel!
     let slotWidth = 1
     let slotHeight = 1
+    let haveZoom = false
     
     func load(params: [String: Any]) {
         self.viewCircleStatus.layer.cornerRadius = self.viewCircleStatus.frame.width / 2

@@ -15,6 +15,7 @@ class CellCloudPerformance: SlotableCellDefault, SlotableCell {
     @IBOutlet weak var viewDivision: UIView!
     let slotWidth = 1
     let slotHeight = 1
+    let haveZoom = false
 
     func load(params: [String: Any]) {
         var dataEntry: [ChartDataEntry] = []

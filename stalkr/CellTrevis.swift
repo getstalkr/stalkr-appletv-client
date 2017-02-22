@@ -16,6 +16,7 @@ class CellTrevis: SlotableCellDefault, SlotableCell, SubscriberCell, UITableView
     @IBOutlet weak var table: UITableView!
     let slotWidth = 1
     let slotHeight = 2
+    let haveZoom = false
     let cellHeight = (UINib(nibName: "CellTrevisTableCell", bundle: nil).instantiate(withOwner: nil, options: nil).last as! UIView).frame.size.height
     
     var travisBuildsLog: [TravisBuildRegister] = []

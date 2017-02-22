@@ -12,6 +12,7 @@ class CellPlaceholderWidthTwo: SlotableCellDefault, SlotableCell {
     
     let slotWidth = 2
     let slotHeight = 1
+    let haveZoom = false
     
     func load(params: [String: Any]) { }
 }

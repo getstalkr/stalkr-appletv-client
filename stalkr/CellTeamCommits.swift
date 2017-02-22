@@ -10,10 +10,11 @@ import UIKit
 import Charts
 
 class CellTeamCommits: SlotableCellDefault, SlotableCell {
- 
+
     @IBOutlet weak var viewChart: BarChartView!
     let slotWidth = 1
     let slotHeight = 1
+    let haveZoom = true
 
     func load(params: [String: Any]) {
         var dataEntries: [BarChartDataEntry] = []
@@ -39,5 +40,5 @@ class CellTeamCommits: SlotableCellDefault, SlotableCell {
         
         viewChart.data = chartData
     }
-
+    
 }

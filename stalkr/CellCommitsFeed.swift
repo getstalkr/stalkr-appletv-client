@@ -15,6 +15,7 @@ class CellCommitsFeed: SlotableCellDefault, SlotableCell, UITableViewDelegate, U
     @IBOutlet weak var table: UITableView!
     let slotWidth = 1
     let slotHeight = 1
+    let haveZoom = false
     let cellHeight = (UINib(nibName: "CellCommitsFeedTableCell", bundle: nil).instantiate(withOwner: nil, options: nil).last as! UIView).frame.size.height
     
     func load(params: [String: Any]) {

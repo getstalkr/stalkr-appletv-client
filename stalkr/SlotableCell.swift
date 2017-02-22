@@ -12,6 +12,7 @@ import UIKit
 protocol SlotableCell {
     var slotWidth: Int { get }
     var slotHeight: Int { get }
+    var haveZoom: Bool { get }
     
     func load(params: [String: Any])
 }
@@ -50,6 +51,7 @@ class SlotableCellDefault: UICollectionViewCell {
             })
         }
     }
+    
 }
 
 // lista com todos as classes que implementam o protocolo SlotableCell
@@ -62,6 +64,7 @@ let listAllSlotableCell: [NSObject.Type] = [
     CellTrevis.self,
     CellCommitsFeed.self,
     CellTeamCommits.self,
+    CellTeamCommitsZoom.self,
     CellCloudPerformance.self,
     CellDeployStatus.self
 ]

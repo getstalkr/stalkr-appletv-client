@@ -110,8 +110,14 @@ class JSONConfig {
 
 class GridConfiguration {
     
-    private var config: JSONConfig
+    private var config: JSONConfig?
     let slots: [[Slot]]
+    let gridConfigZoomOut: GridConfiguration?
+    var isZoom: Bool {
+        get {
+            return self.gridConfigZoomOut != nil
+        }
+    }
     
     init(gridName: String) {
         // load config
@@ -126,10 +132,17 @@ class GridConfiguration {
             } else {
                 config = JSONConfig(rawConfig: rawConfig[2])
             }
-            slots = config.slots
+            slots = config!.slots
         }
+        //
+        
+        self.gridConfigZoomOut = nil
     }
     
-    // todo: add cell
-    // todo: remove cell
+    init(zoomAtX x: Int, y: Int, grid: GridConfiguration) {
+        let slot = grid.slots[y][x]
+        slots = [[slot]]
+        
+        self.gridConfigZoomOut = grid
+    }
 }
