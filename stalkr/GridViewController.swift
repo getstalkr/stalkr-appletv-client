@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  GridViewController.swift
 //  testGrid
 //
 //  Created by Bruno Macabeus Aquino on 01/02/17.
@@ -12,7 +12,7 @@ import SwiftyJSON
 
 fileprivate var counter = 0
 
-class MainViewController: UICollectionViewController {
+class GridViewController: UICollectionViewController {
     
     let pusher = Pusher(key: "5cdc3c711f606f43aada")
     var gridConfiguration = GridConfiguration(gridName: "nothing")
@@ -91,7 +91,7 @@ class MainViewController: UICollectionViewController {
     }
 }
 
-extension MainViewController: GridLayoutDelegate {
+extension GridViewController: GridLayoutDelegate {
     
     func cellSlotSize(section: Int, row: Int) -> (width: Int, height: Int) {
         let slotCell = gridConfiguration.slots[section][row].cell
@@ -165,7 +165,7 @@ extension MainViewController: GridLayoutDelegate {
     }
 }
 
-extension MainViewController: ProjectViewProtocol {
+extension GridViewController: ProjectViewProtocol {
     
     func didChangeProject(toProjectNamed name: String) {
         print(name)
