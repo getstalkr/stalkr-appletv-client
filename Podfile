@@ -13,5 +13,7 @@ target 'stalkr' do
   pod 'Kingfisher', '~> 3.4'
   pod 'Charts'
   pod 'Cartography'
+  pod 'PromiseKit'
+  pod 'PromiseKit/UIKit', '~> 4.0'
 
 end

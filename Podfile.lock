@@ -4,6 +4,17 @@ PODS:
     - Charts/Core (= 3.0.1)
   - Charts/Core (3.0.1)
   - Kingfisher (3.4.0)
+  - PromiseKit (4.1.7):
+    - PromiseKit/Foundation (= 4.1.7)
+    - PromiseKit/QuartzCore (= 4.1.7)
+    - PromiseKit/UIKit (= 4.1.7)
+  - PromiseKit/CorePromise (4.1.7)
+  - PromiseKit/Foundation (4.1.7):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.1.7):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.1.7):
+    - PromiseKit/CorePromise
   - PusherSwift (4.0.1)
   - RelativeFormatter (0.8.3)
   - SwiftRichString (0.9.4)
@@ -13,6 +24,8 @@ DEPENDENCIES:
   - Cartography
   - Charts
   - Kingfisher (~> 3.4)
+  - PromiseKit
+  - PromiseKit/UIKit (~> 4.0)
   - PusherSwift
   - RelativeFormatter
   - SwiftRichString
@@ -22,11 +35,12 @@ SPEC CHECKSUMS:
   Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
   Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
   Kingfisher: 5690cfb3d1bddf3a98d679a3a34d0b7294974ed2
+  PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
   PusherSwift: 8249a1c3634943cf7e1e9a691468357d53ab7e5f
   RelativeFormatter: 13508ccd19bbab46ca95cf847a0db6e80601c9a4
   SwiftRichString: f09656f5d44b07fc4423225f96eab43e463221e6
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 09785c56762dd97e42665c3799871804fdb743a5
+PODFILE CHECKSUM: d2ccce4179c35cbadd0bd0d35f714cc423902af7
 
 COCOAPODS: 1.2.0
