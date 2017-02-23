@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  GridViewController.swift
 //  testGrid
 //
 //  Created by Bruno Macabeus Aquino on 01/02/17.
@@ -9,16 +9,28 @@
 import UIKit
 import PusherSwift
 import SwiftyJSON
+import PromiseKit
 
 fileprivate var counter = 0
-fileprivate let gridConfiguration = GridConfiguration.shared
 
-class MainViewController: UICollectionViewController {
+class GridViewController: UICollectionViewController {
     
     let pusher = Pusher(key: "5cdc3c711f606f43aada")
+    private var _gridConfiguration: GridConfiguration?
+    var gridConfiguration: GridConfiguration {
+        get {
+            return _gridConfiguration!
+        }
+        set(grid) {
+            self._gridConfiguration = grid
+            self.reloadGridWithAnimation()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.gridConfiguration = GridConfiguration(gridName: "nothing")
         
         if let layout = collectionView?.collectionViewLayout as? GridLayout {
             layout.delegate = self
@@ -51,7 +63,12 @@ class MainViewController: UICollectionViewController {
         let slot = gridConfiguration.slots[indexPath.section][indexPath.row]
         
         // start cell
-        let cellClassName = "\(type(of: slot.cell))"
+        let cellClassName: String
+        if gridConfiguration.isZoom {
+            cellClassName = "\(type(of: slot.cell))Zoom"
+        } else {
+            cellClassName = "\(type(of: slot.cell))"
+        }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellClassName, for: indexPath)
         (cell as! SlotableCell).load(params: slot.params)
         
@@ -77,6 +94,19 @@ class MainViewController: UICollectionViewController {
             pusher.connect()
         }
         
+        // create gestures related a zoom
+        if gridConfiguration.isZoom {
+            let tapZoomOut = UITapGestureRecognizer(target: self, action: #selector(self.zoomOut))
+            tapZoomOut.allowedPressTypes = [NSNumber(value: UIPressType.menu.rawValue)];
+            cell.addGestureRecognizer(tapZoomOut)
+        }
+        
+        if (cell as! SlotableCell).haveZoom {
+            let tapZoomCell = UITapGestureRecognizer(target: self, action: #selector(self.zoomCell))
+            tapZoomCell.allowedPressTypes = [NSNumber(value: UIPressType.select.rawValue)];
+            cell.addGestureRecognizer(tapZoomCell)
+        }
+        
         //
         cell.backgroundColor = UIColor.backgroundCell
         cell.transform = CGAffineTransform(scaleX: 0.98, y: 0.98) // TODO: Gambiarra! Isso não deve ficar aqui, mas sim em SlotableCellDefault
@@ -89,9 +119,40 @@ class MainViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
         return true
     }
+
+    // Reload grid
+    func reloadGridWithAnimation() {
+        // we need clear cache
+        (self.collectionView?.collectionViewLayout as! GridLayout).clearCache()
+        
+        // reload data with animation
+        _ = firstly {
+            UIView.promise(animateWithDuration: 0.5, animations: {
+                self.collectionView?.alpha = 0
+            })
+        }.then { _ -> Void in
+            self.collectionView?.reloadData()
+            _ = UIView.promise(animateWithDuration: 0.5, animations: {
+                self.collectionView?.alpha = 1
+            })
+        }
+    }
+    
+    // Gesture functions
+    func zoomCell(_ cell: UICollectionViewCell) {
+        if let focusedCell = UIScreen.main.focusedView as? UICollectionViewCell{
+            let indexPath = collectionView?.indexPath(for: focusedCell)
+            
+            self.gridConfiguration = GridConfiguration(zoomAtX: indexPath!.row, y: indexPath!.section, grid: self.gridConfiguration)
+        }
+    }
+    
+    func zoomOut() {
+        self.gridConfiguration = self.gridConfiguration.gridConfigZoomOut!
+    }
 }
 
-extension MainViewController: GridLayoutDelegate {
+extension GridViewController: GridLayoutDelegate {
     
     func cellSlotSize(section: Int, row: Int) -> (width: Int, height: Int) {
         let slotCell = gridConfiguration.slots[section][row].cell
@@ -152,17 +213,24 @@ extension MainViewController: GridLayoutDelegate {
                     maxIndex = index
                 }
             }
-            print("")
             index = 0
             
             while yOffset[index] != 0 {
                 yOffset[index] -= 1
                 index += 1
             }
-            print("")
         }
         
         // a quantidade de colunas necessárias para desenhar a grid é o maior índice necessário que foi usado em yOffset (armazenado em maxIndex)
         return maxIndex
+    }
+}
+
+extension GridViewController: ProjectViewProtocol {
+    
+    func didChangeProject(toProjectNamed name: String) {
+        self.gridConfiguration = GridConfiguration(gridName: name)
+        (self.collectionView?.collectionViewLayout as! GridLayout).clearCache()
+
     }
 }

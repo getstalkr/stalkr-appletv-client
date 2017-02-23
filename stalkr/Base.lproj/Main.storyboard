@@ -11,11 +11,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Grid View Controller-->
         <scene sceneID="Ezv-RH-SgA">
             <objects>
-                <collectionViewController storyboardIdentifier="MainViewController" id="TRe-5o-Hak" customClass="MainViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="pgC-4I-7aS">
+                <collectionViewController storyboardIdentifier="GridViewController" id="TRe-5o-Hak" customClass="GridViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="pgC-4I-7aS">
                         <rect key="frame" x="0.0" y="0.0" width="1215" height="683"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewLayout key="collectionViewLayout" id="12X-FW-jGH" customClass="GridLayout" customModule="stalkr" customModuleProvider="target">
@@ -114,7 +114,7 @@
                                             <constraint firstAttribute="width" secondItem="lcN-im-5jw" secondAttribute="height" multiplier="1920:1080" id="Ewu-6K-aM1"/>
                                         </constraints>
                                         <connections>
-                                            <segue destination="TRe-5o-Hak" kind="embed" id="v29-tx-yHG"/>
+                                            <segue destination="TRe-5o-Hak" kind="embed" identifier="gridIdentifier" id="v29-tx-yHG"/>
                                         </connections>
                                     </containerView>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cxR-kR-aQQ" customClass="SegmentedControl" customModule="stalkr" customModuleProvider="target">

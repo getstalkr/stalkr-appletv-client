@@ -12,11 +12,18 @@ import UIKit
 protocol SlotableCell {
     var slotWidth: Int { get }
     var slotHeight: Int { get }
+    var haveZoom: Bool { get }
     
     func load(params: [String: Any])
 }
 
 class SlotableCellDefault: UICollectionViewCell {
+    
+    var scaleWhenFocused: Bool {
+        get {
+            return true
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,7 +49,9 @@ class SlotableCellDefault: UICollectionViewCell {
         } else if self === context.nextFocusedItem {
             
             coordinator.addCoordinatedAnimations({
-                self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                if self.scaleWhenFocused {
+                    self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                }
                 
                 self.layer.shadowOpacity = 1
             }, completion: {
@@ -50,6 +59,21 @@ class SlotableCellDefault: UICollectionViewCell {
             })
         }
     }
+    
+}
+
+class ZoomCell: SlotableCellDefault {
+    
+    let slotWidth = 1
+    let slotHeight = 1
+    let haveZoom = false
+    
+    override var scaleWhenFocused: Bool {
+        get {
+            return false
+        }
+    }
+
 }
 
 // lista com todos as classes que implementam o protocolo SlotableCell
@@ -62,6 +86,7 @@ let listAllSlotableCell: [NSObject.Type] = [
     CellTrevis.self,
     CellCommitsFeed.self,
     CellTeamCommits.self,
+    CellTeamCommitsZoom.self,
     CellCloudPerformance.self,
     CellDeployStatus.self
 ]

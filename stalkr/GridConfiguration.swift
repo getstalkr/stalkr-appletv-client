@@ -10,6 +10,48 @@ import Foundation
 import SwiftyJSON
 import UIKit
 
+let rawConfig = [
+    "[" +
+        "[" +
+            "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
+            "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"travis-builds-CocoaPods-CocoaPods\", \"event\": \"status-requested\" } }," +
+            "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
+        "]," +
+        "[" +
+            "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
+            "{ \"cell\": \"CellCommitsFeed\", \"params\": { } }" +
+        "]" +
+    "]",
+    
+    "[" +
+        "[" +
+            "{ \"cell\": \"CellPlaceholderWidthTwo\", \"params\": {} }," +
+            "{ \"cell\": \"CellPlaceholderHeightTwo\", \"params\": {} }" +
+        "]," +
+        "[" +
+            "{ \"cell\": \"CellPlaceholderTwoXTwo\", \"params\": {} }" +
+        "]," +
+        "[" +
+            "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é sayajin\" } }" +
+        "]" +
+    "]",
+    
+    "[" +
+        "[" +
+            "{ \"cell\": \"CellPlaceholderWidthTwo\", \"params\": {} }," +
+            "{ \"cell\": \"CellPlaceholderHeightTwo\", \"params\": {} }" +
+        "]," +
+        "[" +
+            "{ \"cell\": \"CellPlaceholderWidthTwo\", \"params\": {} }" +
+        "]," +
+        "[" +
+            "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus sayajin\" } }," +
+            "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é lindo\" } }," +
+            "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é o galã\" } }" +
+        "]" +
+    "]"
+]
+
 struct WebSocketConfig {
     let channel: String
     let event: String
@@ -23,66 +65,10 @@ struct Slot {
 
 class JSONConfig {
     
-    let rawConfig: String // todo: talvez ser private?
     let json: JSON // todo: talvez ser private?
     let slots: [[Slot]]
     
-    init() {
-        // todo: o valor de rawConfig precisa ser provido a partir de uma fonte externa!
-        /*rawConfig = "" +
-            "[" +
-                "[" +
-                    "{ \"cell\": \"CellPlaceholderWidthTwo\", \"params\": {} }," +
-                    "{ \"cell\": \"CellPlaceholderHeightTwo\", \"params\": {} }" +
-                "]," +
-                "[" +
-                    "{ \"cell\": \"CellPlaceholderTwoXTwo\", \"params\": {} }" +
-                "]," +
-                "[" +
-                    "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é sayajin\" } }" +
-                "]" +
-            "]"*/
-        
-        /*rawConfig = "" +
-            "[" +
-                "[" +
-                    "{ \"cell\": \"CellPlaceholderWidthTwo\", \"params\": {} }," +
-                    "{ \"cell\": \"CellPlaceholderHeightTwo\", \"params\": {} }" +
-                "]," +
-                "[" +
-                    "{ \"cell\": \"CellPlaceholderWidthTwo\", \"params\": {} }" +
-                "]," +
-                "[" +
-                    "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é sayajin\" } }," +
-                    "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é lindo\" } }," +
-                    "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é o galã\" } }" +
-                "]" +
-            "]"*/
-        
-        rawConfig = "" +
-            "[" +
-                "[" +
-                    "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
-                    "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"travis-builds-CocoaPods-CocoaPods\", \"event\": \"status-requested\" } }," +
-                    "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
-                "]," +
-                "[" +
-                    "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
-                    "{ \"cell\": \"CellCommitsFeed\", \"params\": { } }" +
-                "]" +
-            "]"
-
-        /*rawConfig = "" +
-            "[" +
-            "[" +
-            "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"travis-builds-CocoaPods-CocoaPods\", \"event\": \"status-requested\" } }," +
-            "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
-            "]," +
-            "[" +
-            "{ \"cell\": \"CellCommitsFeed\", \"params\": { } }" +
-            "]" +
-        "]"*/
-
+    init(rawConfig: String) {
         json = JSON(parseJSON: rawConfig)
         
         slots = json.arrayValue.map { rows -> [Slot] in
@@ -124,16 +110,39 @@ class JSONConfig {
 
 class GridConfiguration {
     
-    static let shared = GridConfiguration()
+    private var config: JSONConfig?
     let slots: [[Slot]]
-    var config: JSONConfig
-    
-    private init() {
-        // load config
-        config = JSONConfig()
-        slots = config.slots
+    let gridConfigZoomOut: GridConfiguration?
+    var isZoom: Bool {
+        get {
+            return self.gridConfigZoomOut != nil
+        }
     }
     
-    // todo: add cell
-    // todo: remove cell
+    init(gridName: String) {
+        // load config
+        if gridName == "nothing" {
+            config = JSONConfig(rawConfig: "[[]]")
+            slots = [[]]
+        } else {
+            if gridName == "Blau" {
+                config = JSONConfig(rawConfig: rawConfig[0])
+            } else if gridName == "Save my nails" {
+                config = JSONConfig(rawConfig: rawConfig[1])
+            } else {
+                config = JSONConfig(rawConfig: rawConfig[2])
+            }
+            slots = config!.slots
+        }
+        //
+        
+        self.gridConfigZoomOut = nil
+    }
+    
+    init(zoomAtX x: Int, y: Int, grid: GridConfiguration) {
+        let slot = grid.slots[y][x]
+        slots = [[slot]]
+        
+        self.gridConfigZoomOut = grid
+    }
 }

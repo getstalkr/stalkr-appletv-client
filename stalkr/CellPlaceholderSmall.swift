@@ -13,6 +13,7 @@ class CellPlaceholderSmall: SlotableCellDefault, SlotableCell {
     @IBOutlet weak var label: UILabel!
     let slotWidth = 1
     let slotHeight = 1
+    let haveZoom = false
     var alertMessage: String?
     
     func load(params: [String: Any]) {

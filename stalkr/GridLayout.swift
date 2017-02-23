@@ -107,4 +107,8 @@ class GridLayout: UICollectionViewLayout {
         return layoutAttributes
     }
     
+    func clearCache() {
+        self.cache = []
+    }
+    
 }

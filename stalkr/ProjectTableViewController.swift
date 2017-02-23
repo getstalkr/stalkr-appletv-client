@@ -14,7 +14,7 @@ class ProjectTableViewController: UITableViewController {
     var projectsNames: [String] = ["Blau", "Save my nails", "Spirit pets"]
     var icons: [UIImage] = [UIImage(named: "ProjectIcon")!, UIImage(named: "ProjectIcon")!, UIImage(named: "ProjectIcon")!]
     
-    weak var projectDelegate: ProjectViewProtocol?
+    var projectViewAssociated: [ProjectViewProtocol] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,8 +55,9 @@ class ProjectTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didUpdateFocusIn context: UITableViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         
         if context.nextFocusedIndexPath != nil {
-            projectDelegate!.didChangeProject(toProjectNamed: projectsNames[context.nextFocusedIndexPath!.row])
-            
+            projectViewAssociated.forEach { associated in
+                associated.didChangeProject(toProjectNamed: projectsNames[context.nextFocusedIndexPath!.row])
+                }
             let nextCell = tableView.cellForRow(at: context.nextFocusedIndexPath!)! as! TableCell
             nextCell.contentView.backgroundColor = UIColor(netHex: 0x1B1D36)
             nextCell.contentView.backgroundColor = nextCell.contentView.backgroundColor?.withAlphaComponent(0.5)

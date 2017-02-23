@@ -1,24 +1,20 @@
 //
-//  CellTeamCommits.swift
+//  CellTeamCommitsZoom.swift
 //  stalkr
 //
-//  Created by Bruno Macabeus Aquino on 18/02/17.
+//  Created by Bruno Macabeus Aquino on 22/02/17.
 //  Copyright © 2017 Bruno Macabeus Aquino. All rights reserved.
 //
 
 import UIKit
 import Charts
 
-class CellTeamCommits: SlotableCellDefault, SlotableCell {
-
+class CellTeamCommitsZoom: ZoomCell, SlotableCell {
+    
     @IBOutlet weak var viewChart: BarChartView!
-    let slotWidth = 1
-    let slotHeight = 1
-    let haveZoom = true
-
     func load(params: [String: Any]) {
         var dataEntries: [BarChartDataEntry] = []
-        let visitorCounts = [1, 2, 3, 4, 5, 6]
+        let visitorCounts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
         for i in 0..<visitorCounts.count {
             let dataEntry = BarChartDataEntry(x: Double(i), y: Double(visitorCounts[i]))
             dataEntries.append(dataEntry)
