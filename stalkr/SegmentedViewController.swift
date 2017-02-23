@@ -9,9 +9,9 @@
 import UIKit
 
 class SegmentedViewController: UIViewController {
-
-    @IBOutlet weak var segmentedActivities: UISegmentedControl!
     
+    @IBOutlet weak var dashboardSegmented: UISegmentedControl!
+
     @IBOutlet weak var labelTitle: UILabel!
     
     var projectTable: ProjectTableViewController? = nil
@@ -59,6 +59,12 @@ class SegmentedViewController: UIViewController {
     }
     
     @IBAction func selectionChanged(_ sender: UISegmentedControl) {
+        
+//        let subViewOfSegment: UIView = sender.subviews[sender.selectedSegmentIndex] as UIView
+//        subViewOfSegment.tintColor = .blue
+        
+        //sender.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.red], for: UIControlState.selected)
+
         
         if sender.selectedSegmentIndex == 0 {
             

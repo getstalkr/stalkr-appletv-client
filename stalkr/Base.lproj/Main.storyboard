@@ -60,26 +60,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8F8-tD-s7m" userLabel="MainBackView">
+                            <view contentMode="left" translatesAutoresizingMaskIntoConstraints="NO" id="8F8-tD-s7m" userLabel="MainBackView">
                                 <rect key="frame" x="140" y="90" width="1640" height="900"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Smk-be-70T">
-                                        <rect key="frame" x="394" y="81" width="692" height="70"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="692" id="gud-Xn-EWj"/>
-                                        </constraints>
-                                        <segments>
-                                            <segment title="Main Dashboard"/>
-                                            <segment title="Detailed Dashboard"/>
-                                        </segments>
-                                        <color key="tintColor" red="0.42352941176470588" green="0.44705882352941173" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <action selector="selectionChanged:" destination="5fm-2u-0sW" eventType="valueChanged" id="JXy-HX-PXn"/>
-                                        </connections>
-                                    </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P r o j e c t   1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LnL-ND-Cqh">
-                                        <rect key="frame" x="413" y="20" width="1190" height="42"/>
+                                        <rect key="frame" x="417" y="20" width="1190" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1190" id="iRP-6g-IvJ"/>
                                         </constraints>
@@ -132,17 +117,20 @@
                                             <segue destination="TRe-5o-Hak" kind="embed" id="v29-tx-yHG"/>
                                         </connections>
                                     </containerView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cxR-kR-aQQ" customClass="SegmentedControl" customModule="stalkr" customModuleProvider="target">
+                                        <rect key="frame" x="417" y="70" width="632" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.019607843137254902" green="0.019607843137254902" blue="0.12156862745098039" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="lcN-im-5jw" secondAttribute="bottom" constant="53" id="5DA-8s-LYt"/>
-                                    <constraint firstItem="lcN-im-5jw" firstAttribute="top" secondItem="Smk-be-70T" secondAttribute="bottom" constant="14" id="6SM-Qy-AbZ"/>
                                     <constraint firstItem="lcN-im-5jw" firstAttribute="trailing" secondItem="8F8-tD-s7m" secondAttribute="trailingMargin" id="PLd-3h-7SK"/>
                                     <constraint firstItem="QHA-3Q-ZCw" firstAttribute="top" secondItem="8F8-tD-s7m" secondAttribute="top" id="SXL-4N-iga"/>
                                     <constraint firstItem="lcN-im-5jw" firstAttribute="leading" secondItem="QHA-3Q-ZCw" secondAttribute="trailing" constant="31" id="VOQ-Ki-fyD"/>
-                                    <constraint firstItem="LnL-ND-Cqh" firstAttribute="leading" secondItem="QHA-3Q-ZCw" secondAttribute="trailing" constant="27" id="aae-uG-du8"/>
+                                    <constraint firstItem="LnL-ND-Cqh" firstAttribute="leading" secondItem="QHA-3Q-ZCw" secondAttribute="trailing" constant="31" id="aae-uG-du8"/>
                                     <constraint firstAttribute="bottom" secondItem="QHA-3Q-ZCw" secondAttribute="bottom" id="btL-gb-l8M"/>
-                                    <constraint firstItem="Smk-be-70T" firstAttribute="leading" secondItem="QHA-3Q-ZCw" secondAttribute="trailing" constant="8" symbolic="YES" id="fZr-p5-Ud7"/>
                                     <constraint firstItem="QHA-3Q-ZCw" firstAttribute="leading" secondItem="8F8-tD-s7m" secondAttribute="leading" id="gKQ-8e-3Nc"/>
                                     <constraint firstItem="QHA-3Q-ZCw" firstAttribute="height" secondItem="8F8-tD-s7m" secondAttribute="height" id="u9L-Hz-wj5"/>
                                     <constraint firstItem="LnL-ND-Cqh" firstAttribute="top" secondItem="8F8-tD-s7m" secondAttribute="top" constant="20" id="wf3-6G-ccA"/>
@@ -166,7 +154,6 @@
                     <connections>
                         <outlet property="dashboardContainer" destination="lcN-im-5jw" id="xjX-rO-4YO"/>
                         <outlet property="labelTitle" destination="LnL-ND-Cqh" id="kqp-UA-qw0"/>
-                        <outlet property="segmentedActivities" destination="Smk-be-70T" id="Ucc-9U-QAG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGd-37-Bnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
