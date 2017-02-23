@@ -201,19 +201,9 @@ import UIKit
     }
     
     func setFont(){
+        
         for item in labels {
             item.font = font
-        }
-    }
-    
-    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        print("\nUPDATE\n")
-        
-        if let nextItem = context.nextFocusedView {
-            //nextItem.backgroundColor = .blue
-        }
-        if let previousItem = context.previouslyFocusedView {
-            //previousItem.backgroundColor = .clear
         }
     }
 }

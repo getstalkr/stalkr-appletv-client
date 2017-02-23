@@ -11,7 +11,7 @@ import UIKit
 class ProjectTableViewController: UITableViewController {
 
     //TODO: Populate arrays with data from user account
-    var projectsNames: [String] = ["Blau", "Save my nails", "Spirit pets"]
+    var projectsNames: [String] = ["Projetos", "Criar projeto", "Conta"]
     var icons: [UIImage] = [UIImage(named: "ProjectIcon")!, UIImage(named: "ProjectIcon")!, UIImage(named: "ProjectIcon")!]
     
     var projectViewAssociated: [ProjectViewProtocol] = []

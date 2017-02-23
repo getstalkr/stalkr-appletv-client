@@ -284,7 +284,7 @@
 				TargetAttributes = {
 					89B337EE1E48BB9F00610EA3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 56KUK57QCP;
+						DevelopmentTeam = CWK5G6U242;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -524,7 +524,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 56KUK57QCP;
+				DEVELOPMENT_TEAM = CWK5G6U242;
 				INFOPLIST_FILE = stalkr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = macabeus.stalkr;
@@ -539,7 +539,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 56KUK57QCP;
+				DEVELOPMENT_TEAM = CWK5G6U242;
 				INFOPLIST_FILE = stalkr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = macabeus.stalkr;
