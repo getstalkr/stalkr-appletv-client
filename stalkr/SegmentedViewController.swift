@@ -10,7 +10,7 @@ import UIKit
 
 class SegmentedViewController: UIViewController {
     
-    @IBOutlet weak var dashboardSegmented: UISegmentedControl!
+    @IBOutlet weak var projectsSegmented: UISegmentedControl!
 
     @IBOutlet weak var labelTitle: UILabel!
     
@@ -31,6 +31,8 @@ class SegmentedViewController: UIViewController {
         super.viewDidLoad()
         
         addGradientToBackground()
+        
+        linkTableAndSegmentedByFocus()
     }
     
     func addGradientToBackground() {
@@ -54,23 +56,32 @@ class SegmentedViewController: UIViewController {
         self.view.layer.addSublayer(gradientLayer)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    func linkTableAndSegmentedByFocus() {
+        
+        //Table to segmented from left to right
+        let focusGuide = UIFocusGuide()
+        view.addLayoutGuide(focusGuide)
+        focusGuide.widthAnchor.constraint(equalToConstant: 10).isActive = true
+        focusGuide.heightAnchor.constraint(equalTo: projectTable!.view.heightAnchor).isActive = true
+        focusGuide.leadingAnchor.constraint(equalTo: projectTable!.view.trailingAnchor, constant: 0).isActive = true
+        focusGuide.centerYAnchor.constraint(equalTo: projectTable!.view.centerYAnchor).isActive = true
+        let segments = projectsSegmented.subviews.sorted(by: { (a, b) -> Bool in
+            return a.center.x < b.center.x
+        })
+        focusGuide.preferredFocusedView = segments[0]
+        
+        //segmented to table from right to left
+        let focusGuide2 = UIFocusGuide()
+        view.addLayoutGuide(focusGuide2)
+        focusGuide2.widthAnchor.constraint(equalToConstant: 10).isActive = true
+        focusGuide2.heightAnchor.constraint(equalTo: segments[0].heightAnchor).isActive = true
+        focusGuide2.trailingAnchor.constraint(equalTo: segments[0].leadingAnchor, constant: 0).isActive = true
+        focusGuide2.centerYAnchor.constraint(equalTo: segments[0].centerYAnchor).isActive = true
+        focusGuide2.preferredFocusedView = projectTable!.view
     }
     
-    @IBAction func selectionChanged(_ sender: UISegmentedControl) {
-        
-//        let subViewOfSegment: UIView = sender.subviews[sender.selectedSegmentIndex] as UIView
-//        subViewOfSegment.tintColor = .blue
-        
-        //sender.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.red], for: UIControlState.selected)
-
-        
-        if sender.selectedSegmentIndex == 0 {
-            
-        } else if sender.selectedSegmentIndex == 1 {
-
-        }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -81,6 +92,10 @@ class SegmentedViewController: UIViewController {
         } else if segue.identifier == "gridIdentifier" {
             self.projectTable!.projectViewAssociated.append(segue.destination as! ProjectViewProtocol)
         }
+    }
+    
+    override func shouldUpdateFocus(in context: UIFocusUpdateContext) -> Bool {
+        return super.shouldUpdateFocus(in: context)
     }
 }
 
