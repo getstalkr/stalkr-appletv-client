@@ -11,10 +11,10 @@ import UIKit
 class ProjectTableViewController: UITableViewController {
 
     //TODO: Populate arrays with data from user account
-    var projectsNames: [String] = ["Projetos", "Criar projeto", "Conta"]
+    var optionsNames: [String] = ["Projetos", "Criar projeto", "Conta"]
     var icons: [UIImage] = [UIImage(named: "ProjectIcon")!, UIImage(named: "ProjectIcon")!, UIImage(named: "ProjectIcon")!]
-    
-    var projectViewAssociated: [ProjectViewProtocol] = []
+        
+    var sidebarProtocol: SidebarProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class ProjectTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return projectsNames.count
+        return optionsNames.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,7 +46,7 @@ class ProjectTableViewController: UITableViewController {
             gap += " "
         }
         
-        cell.textLabel?.text = gap + projectsNames[indexPath.row]
+        cell.textLabel?.text = gap + optionsNames[indexPath.row]
         cell.imageView!.image = image
         
         return cell
@@ -54,17 +54,15 @@ class ProjectTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didUpdateFocusIn context: UITableViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         
-        if context.nextFocusedIndexPath != nil {
-            projectViewAssociated.forEach { associated in
-                associated.didChangeProject(toProjectNamed: projectsNames[context.nextFocusedIndexPath!.row])
-                }
-            let nextCell = tableView.cellForRow(at: context.nextFocusedIndexPath!)! as! TableCell
+        if let next = context.nextFocusedIndexPath {
+            sidebarProtocol?.focusedCell(withOption: optionsNames[next.row])
+            let nextCell = tableView.cellForRow(at: next)! as! TableCell
             nextCell.contentView.backgroundColor = UIColor(netHex: 0x1B1D36)
             nextCell.contentView.backgroundColor = nextCell.contentView.backgroundColor?.withAlphaComponent(0.5)
             nextCell.alpha = 1
         }
-        if context.previouslyFocusedIndexPath != nil {
-            let previousCell = tableView.cellForRow(at: context.previouslyFocusedIndexPath!)! as! TableCell
+        if let previously = context.previouslyFocusedIndexPath {
+            let previousCell = tableView.cellForRow(at: previously)! as! TableCell
             previousCell.contentView.backgroundColor = .clear
             previousCell.alpha = previousCell.defaultAlpha
         }
