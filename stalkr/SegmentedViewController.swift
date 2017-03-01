@@ -12,11 +12,11 @@ class SegmentedViewController: UIViewController {
     
     @IBOutlet weak var labelTitle: UILabel!
     
-    var sidebarController: ProjectTableViewController? = nil
+    var sidebarController: ProjectTableViewController?
     
-    var projectController: ProjectsViewController? = nil
+    var projectController: ProjectsViewController?
     
-    var createProjectController: CreateProjectViewController? = nil
+    var createProjectController: CreateGridViewController?
         
     var seletionBar: UIView = UIView()
     
@@ -99,13 +99,13 @@ class SegmentedViewController: UIViewController {
         if segue.identifier == "tableIdentifier" {
             self.sidebarController = segue.destination as? ProjectTableViewController
             self.sidebarController?.sidebarProtocol = self
-        }
-        if segue.identifier == "projectsIdentifier" {
+            
+        } else if segue.identifier == "projectsIdentifier" {
             self.projectController = segue.destination as? ProjectsViewController
             self.projectController?.parentController = self
-        }
-        if segue.identifier == "createProjectIdentifier" {
-            self.createProjectController = segue.destination as? CreateProjectViewController
+            
+        } else if segue.identifier == "createProjectIdentifier" {
+            self.createProjectController = segue.destination as? CreateGridViewController
         }
     }
     

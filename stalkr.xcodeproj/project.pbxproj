@@ -50,7 +50,6 @@
 		CE3DC3121E54807D008F88EE /* ProjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DC3111E54807D008F88EE /* ProjectTableViewController.swift */; };
 		CE52C5371E60ED5100FC6C40 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */; };
 		CE52C5391E61059300FC6C40 /* SidebarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */; };
-		CE52C53B1E610C3200FC6C40 /* CreateProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C53A1E610C3200FC6C40 /* CreateProjectViewController.swift */; };
 		CE85B3CE1E5349D900DA7287 /* SegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */; };
 		CEE8497A1E55EF840033F512 /* DashboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE849791E55EF840033F512 /* DashboardProtocol.swift */; };
 		CEE8497C1E55F18F0033F512 /* ProjectViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */; };
@@ -104,7 +103,6 @@
 		CE3DC3111E54807D008F88EE /* ProjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewController.swift; sourceTree = "<group>"; };
 		CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarProtocol.swift; sourceTree = "<group>"; };
-		CE52C53A1E610C3200FC6C40 /* CreateProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProjectViewController.swift; sourceTree = "<group>"; };
 		CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedViewController.swift; sourceTree = "<group>"; };
 		CEE849791E55EF840033F512 /* DashboardProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardProtocol.swift; sourceTree = "<group>"; };
 		CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewProtocol.swift; sourceTree = "<group>"; };
@@ -199,7 +197,6 @@
 				CE3DC3111E54807D008F88EE /* ProjectTableViewController.swift */,
 				CE2E76401E5C737C00D5EC5C /* TableCell.swift */,
 				CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */,
-				CE52C53A1E610C3200FC6C40 /* CreateProjectViewController.swift */,
 				89B337F61E48BB9F00610EA3 /* Main.storyboard */,
 				89B337F91E48BB9F00610EA3 /* Assets.xcassets */,
 				89B337FB1E48BB9F00610EA3 /* Info.plist */,
@@ -429,7 +426,6 @@
 				89B338071E48C13200610EA3 /* CellPlaceholderWidthTwo.swift in Sources */,
 				89276ED81E54BBE800D99D4E /* SubscriberCell.swift in Sources */,
 				892E73E81E58F487007483E1 /* CellCloudPerformance.swift in Sources */,
-				CE52C53B1E610C3200FC6C40 /* CreateProjectViewController.swift in Sources */,
 				892E73DC1E589378007483E1 /* CellCommitsFeed.swift in Sources */,
 				89B3380F1E48C42200610EA3 /* GridLayout.swift in Sources */,
 				892DECCE1E5F2E6100676056 /* CreateGridViewController.swift in Sources */,
