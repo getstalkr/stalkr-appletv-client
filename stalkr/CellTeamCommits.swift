@@ -12,9 +12,12 @@ import Charts
 class CellTeamCommits: SlotableCellDefault, SlotableCell {
 
     @IBOutlet weak var viewChart: BarChartView!
+    static let cellName = "Team Commits"
     let slotWidth = 1
     let slotHeight = 1
     let haveZoom = true
+    
+    static let configurations: [ConfigInput] = []
 
     func load(params: [String: Any]) {
         var dataEntries: [BarChartDataEntry] = []

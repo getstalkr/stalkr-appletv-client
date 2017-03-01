@@ -10,9 +10,12 @@ import Foundation
 import UIKit
 
 protocol SlotableCell {
+    
+    static var cellName: String { get }
     var slotWidth: Int { get }
     var slotHeight: Int { get }
     var haveZoom: Bool { get }
+    static var configurations: [ConfigInput] { get }
     
     func load(params: [String: Any])
 }
@@ -64,9 +67,11 @@ class SlotableCellDefault: UICollectionViewCell {
 
 class ZoomCell: SlotableCellDefault {
     
+    static let cellName = ""
     let slotWidth = 1
     let slotHeight = 1
     let haveZoom = false
+    static let configurations: [ConfigInput] = []
     
     override var scaleWhenFocused: Bool {
         get {

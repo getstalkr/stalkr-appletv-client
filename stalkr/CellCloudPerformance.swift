@@ -13,9 +13,12 @@ class CellCloudPerformance: SlotableCellDefault, SlotableCell {
     
     @IBOutlet weak var viewChart: LineChartView!
     @IBOutlet weak var viewDivision: UIView!
+    static let cellName = "Cloud Performances"
     let slotWidth = 1
     let slotHeight = 1
     let haveZoom = false
+    
+    static let configurations: [ConfigInput] = []
 
     func load(params: [String: Any]) {
         var dataEntry: [ChartDataEntry] = []

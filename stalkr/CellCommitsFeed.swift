@@ -13,10 +13,13 @@ import SwiftRichString
 class CellCommitsFeed: SlotableCellDefault, SlotableCell, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var table: UITableView!
+    static let cellName = "Commits Feed"
     let slotWidth = 1
     let slotHeight = 1
     let haveZoom = false
     let cellHeight = (UINib(nibName: "CellCommitsFeedTableCell", bundle: nil).instantiate(withOwner: nil, options: nil).last as! UIView).frame.size.height
+    
+    static let configurations: [ConfigInput] = []
     
     func load(params: [String: Any]) {
         self.table.delegate = self

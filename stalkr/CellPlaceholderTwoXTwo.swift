@@ -10,9 +10,12 @@ import UIKit
 
 class CellPlaceholderTwoXTwo: SlotableCellDefault, SlotableCell {
     
+    static let cellName = "Placeholder Two x Two"
     let slotWidth = 2
     let slotHeight = 2
     let haveZoom = false
+    
+    static let configurations: [ConfigInput] = []
     
     func load(params: [String: Any]) { }
 }

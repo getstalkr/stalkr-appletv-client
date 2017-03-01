@@ -21,9 +21,12 @@ class CellDeployStatus: SlotableCellDefault, SlotableCell {
     @IBOutlet weak var stackViewCharge: UIStackView!
     @IBOutlet weak var labelChargeValue: UILabel!
     @IBOutlet weak var labelChargeLegend: UILabel!
+    static let cellName = "Deploy Status"
     let slotWidth = 1
     let slotHeight = 1
     let haveZoom = false
+    
+    static let configurations: [ConfigInput] = []
     
     func load(params: [String: Any]) {
         self.viewCircleStatus.layer.cornerRadius = self.viewCircleStatus.frame.width / 2

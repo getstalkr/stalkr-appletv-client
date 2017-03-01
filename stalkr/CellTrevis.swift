@@ -14,10 +14,16 @@ import RelativeFormatter
 class CellTrevis: SlotableCellDefault, SlotableCell, SubscriberCell, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var table: UITableView!
+    static let cellName = "Travis"
     let slotWidth = 1
     let slotHeight = 2
     let haveZoom = false
     let cellHeight = (UINib(nibName: "CellTrevisTableCell", bundle: nil).instantiate(withOwner: nil, options: nil).last as! UIView).frame.size.height
+    
+    static let configurations: [ConfigInput] = [
+        ConfigInput(name: "trevisUser", label: "Trevis' user", inputType: .text, obligatory: true),
+        ConfigInput(name: "trevisRepository", label: "Trevis' repository", inputType: .text, obligatory: true)
+    ]
     
     var travisBuildsLog: [TravisBuildRegister] = []
     

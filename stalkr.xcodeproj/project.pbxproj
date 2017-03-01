@@ -10,6 +10,10 @@
 		89276ED81E54BBE800D99D4E /* SubscriberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89276ED71E54BBE800D99D4E /* SubscriberCell.swift */; };
 		892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DD7C31E5624F1000482C0 /* TravisBuildRegister.swift */; };
 		892DECC81E5E308900676056 /* CellTeamCommitsZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DECC71E5E308900676056 /* CellTeamCommitsZoom.swift */; };
+		892DECCA1E5F258400676056 /* SlotableCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DECC91E5F258400676056 /* SlotableCellConfiguration.swift */; };
+		892DECCE1E5F2E6100676056 /* CreateGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DECCD1E5F2E6100676056 /* CreateGridViewController.swift */; };
+		892DECE41E5FD70C00676056 /* CellConfigTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DECE31E5FD70C00676056 /* CellConfigTitle.swift */; };
+		892DECE61E5FD75100676056 /* CellConfigInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DECE51E5FD75100676056 /* CellConfigInput.swift */; };
 		892E73DC1E589378007483E1 /* CellCommitsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E73D81E589378007483E1 /* CellCommitsFeed.swift */; };
 		892E73DD1E589378007483E1 /* CellCommitsFeed.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892E73D91E589378007483E1 /* CellCommitsFeed.xib */; };
 		892E73DE1E589378007483E1 /* CellCommitsFeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E73DA1E589378007483E1 /* CellCommitsFeedTableCell.swift */; };
@@ -54,6 +58,10 @@
 		89276ED71E54BBE800D99D4E /* SubscriberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriberCell.swift; sourceTree = "<group>"; };
 		892DD7C31E5624F1000482C0 /* TravisBuildRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravisBuildRegister.swift; sourceTree = "<group>"; };
 		892DECC71E5E308900676056 /* CellTeamCommitsZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTeamCommitsZoom.swift; sourceTree = "<group>"; };
+		892DECC91E5F258400676056 /* SlotableCellConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotableCellConfiguration.swift; sourceTree = "<group>"; };
+		892DECCD1E5F2E6100676056 /* CreateGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGridViewController.swift; sourceTree = "<group>"; };
+		892DECE31E5FD70C00676056 /* CellConfigTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigTitle.swift; sourceTree = "<group>"; };
+		892DECE51E5FD75100676056 /* CellConfigInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigInput.swift; sourceTree = "<group>"; };
 		892E73D81E589378007483E1 /* CellCommitsFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCommitsFeed.swift; sourceTree = "<group>"; };
 		892E73D91E589378007483E1 /* CellCommitsFeed.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCommitsFeed.xib; sourceTree = "<group>"; };
 		892E73DA1E589378007483E1 /* CellCommitsFeedTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCommitsFeedTableCell.swift; sourceTree = "<group>"; };
@@ -114,6 +122,16 @@
 				2584928AB2DB6CF074F0769D /* Pods_stalkr.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		892DECE21E5FD6B400676056 /* CreateGrid */ = {
+			isa = PBXGroup;
+			children = (
+				892DECCD1E5F2E6100676056 /* CreateGridViewController.swift */,
+				892DECE31E5FD70C00676056 /* CellConfigTitle.swift */,
+				892DECE51E5FD75100676056 /* CellConfigInput.swift */,
+			);
+			name = CreateGrid;
 			sourceTree = "<group>";
 		};
 		892E73E01E589380007483E1 /* CellCommitsFeed */ = {
@@ -179,6 +197,7 @@
 				89B337FB1E48BB9F00610EA3 /* Info.plist */,
 				89B3380C1E48C34E00610EA3 /* GridConfiguration.swift */,
 				89B3380E1E48C42200610EA3 /* GridLayout.swift */,
+				892DECE21E5FD6B400676056 /* CreateGrid */,
 				89B338031E48C0B700610EA3 /* SlotableCell */,
 				89B338181E49F7A400610EA3 /* StalkrExtensions.swift */,
 			);
@@ -190,6 +209,7 @@
 			children = (
 				89B338011E48C08400610EA3 /* SlotableCell.swift */,
 				89276ED71E54BBE800D99D4E /* SubscriberCell.swift */,
+				892DECC91E5F258400676056 /* SlotableCellConfiguration.swift */,
 				89B338041E48C0DE00610EA3 /* CellPlaceholderSmall.swift */,
 				89B338101E49ED2400610EA3 /* CellPlaceholderSmall.xib */,
 				89B338061E48C13200610EA3 /* CellPlaceholderWidthTwo.swift */,
@@ -381,6 +401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				892DECCA1E5F258400676056 /* SlotableCellConfiguration.swift in Sources */,
 				89B3380D1E48C34E00610EA3 /* GridConfiguration.swift in Sources */,
 				89B337F51E48BB9F00610EA3 /* GridViewController.swift in Sources */,
 				89B338051E48C0DE00610EA3 /* CellPlaceholderSmall.swift in Sources */,
@@ -388,6 +409,7 @@
 				89C994AB1E547C6E00DBADBA /* CellTrevis.swift in Sources */,
 				89B338091E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift in Sources */,
 				892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */,
+				892DECE41E5FD70C00676056 /* CellConfigTitle.swift in Sources */,
 				892DECC81E5E308900676056 /* CellTeamCommitsZoom.swift in Sources */,
 				CEE8497A1E55EF840033F512 /* DashboardProtocol.swift in Sources */,
 				89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */,
@@ -399,11 +421,13 @@
 				892E73E81E58F487007483E1 /* CellCloudPerformance.swift in Sources */,
 				892E73DC1E589378007483E1 /* CellCommitsFeed.swift in Sources */,
 				89B3380F1E48C42200610EA3 /* GridLayout.swift in Sources */,
+				892DECCE1E5F2E6100676056 /* CreateGridViewController.swift in Sources */,
 				89C994CD1E5482C900DBADBA /* CellTrevisTableCell.swift in Sources */,
 				CE2E76411E5C737C00D5EC5C /* TableCell.swift in Sources */,
 				89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */,
 				89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */,
 				892E73DE1E589378007483E1 /* CellCommitsFeedTableCell.swift in Sources */,
+				892DECE61E5FD75100676056 /* CellConfigInput.swift in Sources */,
 				89B3380B1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift in Sources */,
 				CE85B3CE1E5349D900DA7287 /* SegmentedViewController.swift in Sources */,
 			);
