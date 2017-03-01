@@ -8,13 +8,18 @@
 
 import UIKit
 
-class CellConfigInput: UITableViewCell {
+class CellConfigInput: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var labelParamName: UILabel!
     @IBOutlet weak var inputField: UITextField!
+    var delegate: CreateGridConfigInputDelegate?
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    override func awakeFromNib() {
+        self.inputField.delegate = self
     }
-
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.delegate!.finishEditFieldText(text: textField.text!)
+    }
+    
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P47-bc-AFb">
     <device id="appleTV" orientation="landscape">
-        <adaptation id="light"/>
+        <adaptation id="dark"/>
     </device>
     <dependencies>
         <deployment identifier="tvOS"/>
@@ -196,7 +196,7 @@
                                                 <constraint firstAttribute="width" constant="750" id="OsE-hM-rOo"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -210,7 +210,7 @@
                                     <outlet property="labelTitle" destination="mhI-2q-fXt" id="vG7-i3-L8R"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellConfigInput" rowHeight="151" id="PVm-cE-tkV" customClass="CellConfigInput" customModule="stalkr" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellConfigInput" rowHeight="151" id="PVm-cE-tkV" customClass="CellConfigInput" customModule="stalkr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="146" width="1223" height="151"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PVm-cE-tkV" id="zAR-bw-OGj">
@@ -220,11 +220,11 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="param name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaS-HX-L3P">
                                             <rect key="frame" x="42" y="26" width="96" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q5h-1s-dgl">
-                                            <rect key="frame" x="42" y="50" width="50" height="46"/>
+                                            <rect key="frame" x="42" y="50" width="1155" height="46"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="46" id="3a5-pS-AMl"/>
                                             </constraints>
@@ -236,7 +236,7 @@
                                     <constraints>
                                         <constraint firstItem="q5h-1s-dgl" firstAttribute="top" secondItem="PaS-HX-L3P" secondAttribute="bottom" constant="3" id="EtO-yx-nRq"/>
                                         <constraint firstItem="PaS-HX-L3P" firstAttribute="leading" secondItem="zAR-bw-OGj" secondAttribute="leadingMargin" constant="34" id="PP7-AR-sEq"/>
-                                        <constraint firstItem="q5h-1s-dgl" firstAttribute="width" secondItem="zAR-bw-OGj" secondAttribute="width" constant="-1173" id="c39-yC-idE"/>
+                                        <constraint firstItem="q5h-1s-dgl" firstAttribute="width" secondItem="zAR-bw-OGj" secondAttribute="width" constant="-68" id="c39-yC-idE"/>
                                         <constraint firstItem="PaS-HX-L3P" firstAttribute="top" secondItem="zAR-bw-OGj" secondAttribute="topMargin" constant="18" id="cpg-Do-rdt"/>
                                         <constraint firstItem="q5h-1s-dgl" firstAttribute="leading" secondItem="zAR-bw-OGj" secondAttribute="leadingMargin" constant="34" id="vkr-yk-Ooh"/>
                                     </constraints>
@@ -245,6 +245,29 @@
                                     <outlet property="inputField" destination="q5h-1s-dgl" id="HuQ-Lw-hHM"/>
                                     <outlet property="labelParamName" destination="PaS-HX-L3P" id="GaL-em-kOv"/>
                                 </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellConfigCreateButton" rowHeight="151" id="HTs-hi-3eJ" customClass="CellConfigCreateButton" customModule="stalkr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="311" width="1223" height="151"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HTs-hi-3eJ" id="k0f-OP-CzW">
+                                    <rect key="frame" x="0.0" y="0.0" width="1207" height="151"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QlV-3Q-Dcm">
+                                            <rect key="frame" x="8" y="32" width="1155" height="86"/>
+                                            <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                            <state key="normal" title="Create new project"/>
+                                            <connections>
+                                                <action selector="btnCreateProject:" destination="HTs-hi-3eJ" eventType="primaryActionTriggered" id="D8w-pk-3fZ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="leadingMargin" secondItem="QlV-3Q-Dcm" secondAttribute="leading" id="2wd-Qh-kYL"/>
+                                        <constraint firstItem="QlV-3Q-Dcm" firstAttribute="top" secondItem="k0f-OP-CzW" secondAttribute="topMargin" constant="24" id="AOA-2d-nfx"/>
+                                        <constraint firstItem="QlV-3Q-Dcm" firstAttribute="width" secondItem="k0f-OP-CzW" secondAttribute="width" constant="-68" id="aWn-2Q-kum"/>
+                                    </constraints>
+                                </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -255,7 +278,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vr5-9J-koi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="1987"/>
+            <point key="canvasLocation" x="1861.5" y="1987"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Ep-q7-Hz3">

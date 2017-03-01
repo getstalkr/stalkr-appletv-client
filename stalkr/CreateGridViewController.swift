@@ -9,26 +9,26 @@
 import UIKit
 import SwiftRichString
 
-enum CellCreateGrid {
-    case name(String)
-    case configInput(ConfigInput)
-    
-    var get: Any {
-        switch self {
-        case .name(let name):
-            return name
-        case .configInput(let configInput):
-            return configInput
-        }
-    }
+protocol CreateGridConfigInputDelegate {
+    func finishEditFieldText(text: String)
 }
 
-class CreateGridViewController: UITableViewController {
+enum CellCreateGrid {
+    case name(String)
+    case configInput(ConfigInput, String)
+    case buttonCreateProject()
+}
+
+class CreateGridViewController: UITableViewController, CreateGridConfigInputDelegate {
 
     var cellConfigList: [CellCreateGrid] = []
+    var lastCellConfigSelected = IndexPath(row: 1, section: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cellConfigList.append(CellCreateGrid.name("Project"))
+        cellConfigList.append(CellCreateGrid.configInput(ConfigInput(name: "projectName", label: "Project name", inputType: .text, obligatory: true), ""))
 
         listAllSlotableCell.forEach { slotableCellClass in
             let configs = (slotableCellClass as! SlotableCell.Type).configurations
@@ -36,9 +36,11 @@ class CreateGridViewController: UITableViewController {
                 let cellName = (slotableCellClass as! SlotableCell.Type).cellName
                 
                 cellConfigList.append(CellCreateGrid.name(cellName))
-                configs.forEach { cellConfigList.append(CellCreateGrid.configInput($0)) }
+                configs.forEach { cellConfigList.append(CellCreateGrid.configInput($0, "")) }
             }
         }
+        
+        cellConfigList.append(CellCreateGrid.buttonCreateProject())
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -58,16 +60,20 @@ class CreateGridViewController: UITableViewController {
             cell.labelTitle.text = name
             
             return cell
-        case .configInput(let input):
+        case .configInput(let input, let value):
             let cell = tableView.dequeueReusableCell(withIdentifier: "CellConfigInput", for: indexPath) as! CellConfigInput
             if input.obligatory {
                 cell.labelParamName.attributedText = input.label + " (obligatory)".set(style: .fontItalic)
             } else {
                 cell.labelParamName.text = input.label
             }
-            cell.layer.shadowColor = UIColor.red.cgColor
+            cell.delegate = self
+            cell.inputField.text = value
+            cell.layer.shadowColor = UIColor.black.cgColor
             
             return cell
+        case .buttonCreateProject():
+            return tableView.dequeueReusableCell(withIdentifier: "CellConfigCreateButton", for: indexPath)
         }
     }
     
@@ -91,16 +97,47 @@ class CreateGridViewController: UITableViewController {
             return 60
         case .configInput(_):
             return 130
+        case .buttonCreateProject():
+            return 130
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let x = tableView.cellForRow(at: indexPath)
-        (x as! CellConfigInput).inputField.becomeFirstResponder()
+
+        switch cellConfigList[indexPath.row] {
+        case .configInput(_):
+            lastCellConfigSelected = indexPath
+            let cell = tableView.cellForRow(at: indexPath) as! CellConfigInput
+            cell.inputField.becomeFirstResponder()
+            
+        case .buttonCreateProject():
+            let cell = tableView.cellForRow(at: indexPath) as! CellConfigCreateButton
+            cell.btnCreateProject(cell)
+            
+        default:
+            return
+        }
+    }
+    
+    func finishEditFieldText(text: String) {
+        switch cellConfigList[lastCellConfigSelected.row] {
+        case .configInput(let input, _):
+            cellConfigList[lastCellConfigSelected.row] = CellCreateGrid.configInput(input, text)
+        
+        default:
+            return
+        }
     }
     
     override func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
-        return (cellConfigList[indexPath.row].get as? ConfigInput) != nil
+        switch cellConfigList[indexPath.row] {
+        case .name(_):
+            return false
+        case .configInput(_):
+            return true
+        case .buttonCreateProject():
+            return true
+        }
     }
 
 }
