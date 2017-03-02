@@ -20,12 +20,27 @@ class CellTrevis: SlotableCellDefault, SlotableCell, SubscriberCell, UITableView
     let haveZoom = false
     let cellHeight = (UINib(nibName: "CellTrevisTableCell", bundle: nil).instantiate(withOwner: nil, options: nil).last as! UIView).frame.size.height
     
+    var travisBuildsLog: [TravisBuildRegister] = []
+    
+    // config
     static let configurations: [ConfigInput] = [
-        ConfigInput(name: "trevisUser", label: "Trevis' user", inputType: .text, obligatory: true),
-        ConfigInput(name: "trevisRepository", label: "Trevis' repository", inputType: .text, obligatory: true)
+        ConfigInput(name: "owner", label: "Trevis' user", inputType: .text, obligatory: true),
+        ConfigInput(name: "project", label: "Trevis' repository", inputType: .text, obligatory: true)
     ]
     
-    var travisBuildsLog: [TravisBuildRegister] = []
+    // subscriber
+    let webSockets = [
+        WebSocketConfig(
+            url: "https://stalkr-api-builds-travis.herokuapp.com",
+            channel: { config in
+                let owner = config["owner"] as! String
+                let project = config["project"] as! String
+                
+                return "builds-travis-\(owner)-\(project)"
+            },
+            event: "status-requested"
+        )
+    ]
     
     let webSocketHandles: [String: (_ data: JSON, _ cell: SlotableCell) -> Void] = [
         "status-requested": { json, cell in
@@ -34,6 +49,7 @@ class CellTrevis: SlotableCellDefault, SlotableCell, SubscriberCell, UITableView
         }
     ]
     
+    //
     func load(params: [String: Any]) {
         self.table.delegate = self
         self.table.dataSource = self
