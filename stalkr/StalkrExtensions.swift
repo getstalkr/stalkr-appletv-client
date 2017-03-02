@@ -77,3 +77,17 @@ extension Style {
         $0.font = FontAttribute(FontName.HelveticaNeue_Italic, size: 17)
     })
 }
+
+//
+extension UISegmentedControl {
+    func replaceSegments(segments: [String]) {
+        self.removeAllSegments()
+        for segment in segments {
+            self.insertSegment(withTitle: segment, at: self.numberOfSegments, animated: false)
+        }
+    }
+    
+    func getSelectedText() -> String {
+        return self.titleForSegment(at: self.selectedSegmentIndex)!
+    }
+}

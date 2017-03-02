@@ -14,9 +14,9 @@
         <!--Grid View Controller-->
         <scene sceneID="Ezv-RH-SgA">
             <objects>
-                <collectionViewController storyboardIdentifier="GridViewController" id="TRe-5o-Hak" customClass="GridViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="pgC-4I-7aS">
-                        <rect key="frame" x="0.0" y="0.0" width="1215" height="683"/>
+                <collectionViewController id="TRe-5o-Hak" customClass="GridViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="pgC-4I-7aS">
+                        <rect key="frame" x="0.0" y="0.0" width="1215" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewLayout key="collectionViewLayout" id="12X-FW-jGH" customClass="GridLayout" customModule="stalkr" customModuleProvider="target">
                             <userDefinedRuntimeAttributes>
@@ -210,7 +210,7 @@
                                     <outlet property="labelTitle" destination="mhI-2q-fXt" id="vG7-i3-L8R"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellConfigInput" rowHeight="151" id="PVm-cE-tkV" customClass="CellConfigInput" customModule="stalkr" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellConfigInput" rowHeight="151" id="PVm-cE-tkV" customClass="CellConfigInput" customModule="stalkr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="146" width="1223" height="151"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PVm-cE-tkV" id="zAR-bw-OGj">
@@ -246,7 +246,7 @@
                                     <outlet property="labelParamName" destination="PaS-HX-L3P" id="GaL-em-kOv"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellConfigCreateButton" rowHeight="151" id="HTs-hi-3eJ" customClass="CellConfigCreateButton" customModule="stalkr" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellConfigCreateButton" rowHeight="151" id="HTs-hi-3eJ" customClass="CellConfigCreateButton" customModule="stalkr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="311" width="1223" height="151"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HTs-hi-3eJ" id="k0f-OP-CzW">
@@ -352,31 +352,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcN-im-5jw">
-                                <rect key="frame" x="4" y="94" width="1215" height="683"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="lcN-im-5jw" secondAttribute="height" multiplier="1920:1080" id="Ewu-6K-aM1"/>
-                                </constraints>
+                                <rect key="frame" x="4" y="94" width="1215" height="734"/>
                                 <connections>
                                     <segue destination="TRe-5o-Hak" kind="embed" identifier="gridIdentifier" id="v29-tx-yHG"/>
                                 </connections>
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Md6-UU-jXC">
-                                <rect key="frame" x="4" y="0.0" width="452" height="70"/>
+                                <rect key="frame" x="4" y="0.0" width="398" height="70"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
                                 <segments>
-                                    <segment title="No Project"/>
-                                    <segment title="Second"/>
+                                    <segment title="Project 1"/>
+                                    <segment title="Project 2"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentShowGridChanged:" destination="qM1-2K-w8G" eventType="valueChanged" id="UeK-eE-T5X"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Md6-UU-jXC" firstAttribute="leading" secondItem="geW-Jy-08H" secondAttribute="leadingMargin" constant="-16" id="RpB-QT-s33"/>
                             <constraint firstAttribute="topMargin" secondItem="Md6-UU-jXC" secondAttribute="top" id="Z0h-jc-O8k"/>
+                            <constraint firstItem="lcN-im-5jw" firstAttribute="width" secondItem="geW-Jy-08H" secondAttribute="width" constant="-8" id="gfT-uv-JDT"/>
+                            <constraint firstItem="94K-Cw-zT3" firstAttribute="top" secondItem="lcN-im-5jw" secondAttribute="bottom" constant="2" id="kH0-2Y-lVl"/>
                             <constraint firstItem="lcN-im-5jw" firstAttribute="top" secondItem="Md6-UU-jXC" secondAttribute="bottom" constant="25" id="q8z-si-rrr"/>
                             <constraint firstAttribute="bottom" secondItem="lcN-im-5jw" secondAttribute="bottom" constant="53" id="thi-8K-Jki"/>
                             <constraint firstItem="lcN-im-5jw" firstAttribute="trailing" secondItem="geW-Jy-08H" secondAttribute="trailingMargin" constant="16" id="vt4-KJ-Jlt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="segmentShowGrid" destination="Md6-UU-jXC" id="XI6-hE-B21"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5i0-Lz-kOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

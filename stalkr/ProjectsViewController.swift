@@ -10,31 +10,26 @@ import UIKit
 
 class ProjectsViewController: UIViewController {
     
+    @IBOutlet weak var segmentShowGrid: UISegmentedControl!
     var parentController: SegmentedViewController?
-    
     var gridView: GridViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.segmentShowGrid.replaceSegments(segments: ["Blau", "Save my Nails", "Eta bicho doido"])
+        self.segmentShowGrid.selectedSegmentIndex = 0
+        self.segmentShowGridChanged(self.segmentShowGrid)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-    // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "gridIdentifier" {
-            
+            self.gridView = segue.destination as? GridViewController
         }
     }
-}
-
-extension ProjectsViewController: ProjectViewProtocol {
     
-    func didChangeProject(toProjectNamed name: String) {
-        //labelTitle.text = name
+    @IBAction func segmentShowGridChanged(_ sender: UISegmentedControl) {
+        (self.gridView as! ProjectViewProtocol).didChangeProject(toProjectNamed: self.segmentShowGrid.getSelectedText())
     }
+
 }
