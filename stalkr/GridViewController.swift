@@ -101,9 +101,9 @@ class GridViewController: UICollectionViewController {
                 // start websocket on server
                 // TODO: Exibir um loading na célula quando for efetuar o request
                 Alamofire.request(
-                    webSocket.url,
+                    webSocket.requestStartUrl,
                     method: .post,
-                    parameters: ["owner": "CocoaPods", "project": "CocoaPods"],
+                    parameters: webSocket.requestStartParams(slot.params),
                     encoding: JSONEncoding.default,
                     headers: ["Content-Type": "application/json"]
                 ).responseJSON { response in

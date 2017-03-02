@@ -31,7 +31,10 @@ class CellTrevis: SlotableCellDefault, SlotableCell, SubscriberCell, UITableView
     // subscriber
     let webSockets = [
         WebSocketConfig(
-            url: "https://stalkr-api-builds-travis.herokuapp.com",
+            requestStartUrl: "https://stalkr-api-builds-travis.herokuapp.com",
+            requestStartParams: { config in
+                return ["owner": config["owner"] as! String, "project": config["project"] as! String]
+            },
             channel: { config in
                 let owner = config["owner"] as! String
                 let project = config["project"] as! String

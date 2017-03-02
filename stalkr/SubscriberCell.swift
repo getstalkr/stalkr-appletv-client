@@ -10,7 +10,8 @@ import Foundation
 import SwiftyJSON
 
 struct WebSocketConfig {
-    let url: String
+    let requestStartUrl: String
+    let requestStartParams: ([String: Any]) -> [String: String]
     let channel: ([String: Any]) -> String
     let event: String
 }
