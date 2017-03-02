@@ -14,7 +14,7 @@ let rawConfig = [
     "[" +
         "[" +
             "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
-            "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"travis-builds-CocoaPods-CocoaPods\", \"event\": \"status-requested\" } }," +
+            "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"builds-travis-CocoaPods-CocoaPods\", \"event\": \"status-requested\" } }," +
             "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
         "]," +
         "[" +

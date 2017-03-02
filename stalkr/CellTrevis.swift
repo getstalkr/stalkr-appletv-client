@@ -29,7 +29,7 @@ class CellTrevis: SlotableCellDefault, SlotableCell, SubscriberCell, UITableView
     
     let webSocketHandles: [String: (_ data: JSON, _ cell: SlotableCell) -> Void] = [
         "status-requested": { json, cell in
-            (cell as! CellTrevis).travisBuildsLog = json["currentData"].arrayValue.map { TravisBuildRegister(json: $0) }
+            (cell as! CellTrevis).travisBuildsLog = json["payload"].arrayValue.map { TravisBuildRegister(json: $0) }
             (cell as! CellTrevis).table.reloadData()
         }
     ]
