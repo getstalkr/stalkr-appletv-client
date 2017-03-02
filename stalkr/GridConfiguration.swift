@@ -14,7 +14,7 @@ let rawConfig = [
     "[" +
         "[" +
             "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
-            "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"builds-travis-CocoaPods-CocoaPods\", \"event\": \"status-requested\" } }," +
+            "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"CocoaPods\", \"project\": \"CocoaPods\" } }," +
             "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
         "]," +
         "[" +
@@ -52,15 +52,9 @@ let rawConfig = [
     "]"
 ]
 
-struct WebSocketConfig {
-    let channel: String
-    let event: String
-}
-
 struct Slot {
     var cell: SlotableCell
     var params: [String: Any]
-    var webSocketConfig: WebSocketConfig?
 }
 
 class JSONConfig {
@@ -80,29 +74,8 @@ class JSONConfig {
                 // cell params
                 let params = cell["params"].dictionaryObject!
                 
-                // cell websocket config to subscriber
-                let webSocketConfig: WebSocketConfig?
-                if let webSocketJson = cell["websocket"].dictionary {
-                    let channel = webSocketJson["channel"]!.stringValue
-                    let event = webSocketJson["event"]!.stringValue
-
-                    if !(cellObject.self is SubscriberCell) {
-                        print("Erro de configuração no JSON: Há configuração de websocket para a célula do tipo \(cell["cell"].stringValue), porém, ela não está conforme o protocol SubscriberCell!")
-                        webSocketConfig = nil
-                        
-                    } else if (cellObject as! SubscriberCell).webSocketHandles[event] == nil {
-                        print("Erro de configuração no JSON: O handle para o event \(event) do channel \(channel) para a célula \(cell["cell"].stringValue) não foi implementado!")
-                        webSocketConfig = nil
-                        
-                    } else {
-                        webSocketConfig = WebSocketConfig(channel: channel, event: event)
-                    }
-                } else {
-                    webSocketConfig = nil
-                }
-                
                 //
-                return Slot(cell: cellObject, params: params, webSocketConfig: webSocketConfig)
+                return Slot(cell: cellObject, params: params)
             }
         }
     }

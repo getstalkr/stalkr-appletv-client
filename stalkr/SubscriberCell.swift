@@ -9,7 +9,14 @@
 import Foundation
 import SwiftyJSON
 
+struct WebSocketConfig {
+    let url: String
+    let channel: ([String: Any]) -> String
+    let event: String
+}
+
 protocol SubscriberCell {
+    var webSockets: [WebSocketConfig] { get }
     var webSocketHandles: [String: (_ data: JSON, _ cell: SlotableCell) -> Void] { get }
 }
 

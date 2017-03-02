@@ -10,6 +10,7 @@ import UIKit
 import PusherSwift
 import SwiftyJSON
 import PromiseKit
+import Alamofire
 
 fileprivate var counter = 0
 
@@ -72,26 +73,48 @@ class GridViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellClassName, for: indexPath)
         (cell as! SlotableCell).load(params: slot.params)
         
-        // start websocket
-        if let webSocketConfig = slot.webSocketConfig {
-            let channel = pusher.subscribe(webSocketConfig.channel)
-            
-            // function to converter data "Any?" to "JSON", and pass the current cell
-            func wrapper(data: Any?) {
-                let json: JSON
-                if let object = data as? [String : Any],
-                    let jsonData = try? JSONSerialization.data(withJSONObject: object, options: .prettyPrinted) {
-                    json = JSON(data: jsonData)
-                } else {
-                    json = JSON(arrayLiteral: [])
+        // start websockets, if need
+        if let cellSubscriber = cell as? SubscriberCell {
+            cellSubscriber.webSockets.forEach { webSocket in
+
+                // subscribe in channel
+                let channelName = webSocket.channel(slot.params)
+                let channel = pusher.subscribe(channelName)
+                
+                // function to converter data "Any?" to "JSON", and pass the current cell
+                func wrapper(data: Any?) {
+                    let json: JSON
+                    if let object = data as? [String : Any],
+                        let jsonData = try? JSONSerialization.data(withJSONObject: object, options: .prettyPrinted) {
+                        json = JSON(data: jsonData)
+                    } else {
+                        json = JSON(arrayLiteral: [])
+                    }
+                    
+                    (cell as! SubscriberCell).getHandle(event: webSocket.event, cell: cell as! SlotableCell)(json, cell as! SlotableCell)
                 }
                 
-                (cell as! SubscriberCell).getHandle(event: webSocketConfig.event, cell: cell as! SlotableCell)(json, cell as! SlotableCell)
+                let _ = channel.bind(eventName: webSocket.event, callback: wrapper)
+                
+                pusher.connect()
+                
+                // start websocket on server
+                // TODO: Exibir um loading na célula quando for efetuar o request
+                Alamofire.request(
+                    webSocket.url,
+                    method: .post,
+                    parameters: ["owner": "CocoaPods", "project": "CocoaPods"],
+                    encoding: JSONEncoding.default,
+                    headers: ["Content-Type": "application/json"]
+                ).responseJSON { response in
+                    let statusCode = (response.response?.statusCode)!
+                            
+                    if statusCode != 200 {
+                        print("ERRO AO TENTAR INSTANCIA O WEBSOCKET!")
+                        // TODO: Precisa da um feedback visual ao usuário quando isso acontecer
+                    }
+                }
             }
-            
-            let _ = channel.bind(eventName: webSocketConfig.event, callback: wrapper)
-            
-            pusher.connect()
         }
         
         // create gestures related a zoom
