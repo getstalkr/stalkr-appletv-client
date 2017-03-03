@@ -15,7 +15,7 @@
         <scene sceneID="Ezv-RH-SgA">
             <objects>
                 <collectionViewController id="TRe-5o-Hak" customClass="GridViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="pgC-4I-7aS">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="pgC-4I-7aS">
                         <rect key="frame" x="0.0" y="0.0" width="1215" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewLayout key="collectionViewLayout" id="12X-FW-jGH" customClass="GridLayout" customModule="stalkr" customModuleProvider="target">
@@ -358,7 +358,7 @@
                                 </connections>
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Md6-UU-jXC">
-                                <rect key="frame" x="4" y="0.0" width="398" height="70"/>
+                                <rect key="frame" x="12" y="0.0" width="398" height="70"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
                                 <segments>
                                     <segment title="Project 1"/>
@@ -370,7 +370,8 @@
                             </segmentedControl>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Md6-UU-jXC" firstAttribute="leading" secondItem="geW-Jy-08H" secondAttribute="leadingMargin" constant="-16" id="RpB-QT-s33"/>
+                            <constraint firstItem="Md6-UU-jXC" firstAttribute="leading" secondItem="geW-Jy-08H" secondAttribute="leadingMargin" constant="-8" id="RpB-QT-s33"/>
+                            <constraint firstItem="lcN-im-5jw" firstAttribute="leading" secondItem="geW-Jy-08H" secondAttribute="leadingMargin" constant="-16" id="Ysd-Nx-oUP"/>
                             <constraint firstAttribute="topMargin" secondItem="Md6-UU-jXC" secondAttribute="top" id="Z0h-jc-O8k"/>
                             <constraint firstItem="lcN-im-5jw" firstAttribute="width" secondItem="geW-Jy-08H" secondAttribute="width" constant="-8" id="gfT-uv-JDT"/>
                             <constraint firstItem="94K-Cw-zT3" firstAttribute="top" secondItem="lcN-im-5jw" secondAttribute="bottom" constant="2" id="kH0-2Y-lVl"/>
