@@ -91,6 +91,7 @@ class GridViewController: UICollectionViewController {
                         json = JSON(arrayLiteral: [])
                     }
                     
+                    (cell as! SlotableCellDefault).stopLoading() // todo: não sei se aqui é o lugar ideal para interromper a animação de loading
                     (cell as! SubscriberCell).getHandle(event: webSocket.event, cell: cell as! SlotableCell)(json, cell as! SlotableCell)
                 }
                 
@@ -99,7 +100,7 @@ class GridViewController: UICollectionViewController {
                 pusher.connect()
                 
                 // start websocket on server
-                // TODO: Exibir um loading na célula quando for efetuar o request
+                (cell as! SlotableCellDefault).showLoading(message: "Fetching data...")
                 Alamofire.request(
                     webSocket.requestStartUrl,
                     method: .post,
@@ -108,10 +109,9 @@ class GridViewController: UICollectionViewController {
                     headers: ["Content-Type": "application/json"]
                 ).responseJSON { response in
                     let statusCode = (response.response?.statusCode)!
-                            
+                    
                     if statusCode != 200 {
-                        print("ERRO AO TENTAR INSTANCIA O WEBSOCKET!")
-                        // TODO: Precisa da um feedback visual ao usuário quando isso acontecer
+                        (cell as! SlotableCellDefault).errorLoading(message: "Something went wrong.\nCheck your connection and reload the app.")
                     }
                 }
             }

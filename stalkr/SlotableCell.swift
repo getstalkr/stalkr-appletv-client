@@ -8,6 +8,9 @@
 
 import Foundation
 import UIKit
+import NVActivityIndicatorView
+import Cartography
+import SwiftRichString
 
 protocol SlotableCell {
     
@@ -22,6 +25,9 @@ protocol SlotableCell {
 
 class SlotableCellDefault: UICollectionViewCell {
     
+    var loadingView: NVActivityIndicatorView?
+    var loadingLabel: UILabel?
+    
     var scaleWhenFocused: Bool {
         get {
             return true
@@ -32,6 +38,29 @@ class SlotableCellDefault: UICollectionViewCell {
         super.awakeFromNib()
         
         self.layer.shadowColor = UIColor.white.cgColor
+        
+        // start loading views
+        // TODO: talvez seja bom jogar toda essa lógica de loading num protocol
+        loadingView = NVActivityIndicatorView(frame: self.contentView.frame,
+                                              type: NVActivityIndicatorType.ballClipRotatePulse)
+        loadingView!.color = UIColor.init(red: 184/255, green: 101/255, blue: 210/255, alpha: 0.2)
+        loadingView!.alpha = 0
+        
+        loadingLabel = UILabel(frame: frame)
+        loadingLabel!.numberOfLines = 0
+        loadingLabel!.text = ""
+        loadingLabel!.textColor = UIColor.init(red: 184/255, green: 101/255, blue: 210/255, alpha: 0.9)
+        
+        self.contentView.addSubview(loadingView!)
+        self.contentView.addSubview(loadingLabel!)
+
+        constrain(loadingView!, loadingLabel!) { animate, label in
+            animate.width == animate.superview!.width * 2 / 3
+            animate.height == animate.width
+            animate.center == animate.superview!.center
+            
+            label.center == animate.center
+        }
     }
     
     override var canBecomeFocused: Bool {
@@ -61,6 +90,28 @@ class SlotableCellDefault: UICollectionViewCell {
                 
             })
         }
+    }
+    
+    // loadings methods
+    func showLoading(message: String) {
+        loadingView!.alpha = 1
+        loadingView!.startAnimating()
+        loadingLabel!.text = message
+    }
+
+    func errorLoading(message: String) {
+        loadingView!.stopAnimating()
+        loadingView!.color = UIColor.red
+        loadingLabel!.attributedText = "Oops\n" + message.set(style: Style({
+            $0.font = FontAttribute(FontName.HelveticaNeue, size: 15)
+        }))
+        loadingLabel!.textColor = UIColor.stalkrError
+    }
+
+    func stopLoading() {
+        loadingView!.alpha = 0
+        loadingView!.stopAnimating()
+        loadingLabel!.alpha = 0
     }
     
 }
