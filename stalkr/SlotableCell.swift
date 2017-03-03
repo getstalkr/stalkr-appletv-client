@@ -101,7 +101,6 @@ class SlotableCellDefault: UICollectionViewCell {
 
     func errorLoading(message: String) {
         loadingView!.stopAnimating()
-        loadingView!.color = UIColor.red
         loadingLabel!.attributedText = "Oops\n" + message.set(style: Style({
             $0.font = FontAttribute(FontName.HelveticaNeue, size: 15)
         }))
