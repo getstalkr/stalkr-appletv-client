@@ -14,12 +14,12 @@ let rawConfig = [
     "[" +
         "[" +
             "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
-            "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"CocoaPods\", \"project\": \"CocoaPods\" } }," +
+            "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"facebook\", \"project\": \"jest\" } }," +
             "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
         "]," +
         "[" +
             "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
-            "{ \"cell\": \"CellCommitsFeed\", \"params\": { } }" +
+            "{ \"cell\": \"CellCommitsFeed\", \"params\": { \"owner\": \"facebook\", \"project\": \"jest\" } }" +
         "]" +
     "]",
     
@@ -100,7 +100,7 @@ class GridConfiguration {
         } else {
             if gridName == "Blau" {
                 config = JSONConfig(rawConfig: rawConfig[0])
-            } else if gridName == "Save my nails" {
+            } else if gridName == "Save my Nails" {
                 config = JSONConfig(rawConfig: rawConfig[1])
             } else {
                 config = JSONConfig(rawConfig: rawConfig[2])
