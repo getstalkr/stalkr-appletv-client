@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8917E4AD1E6925FF001BD42A /* CommitRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8917E4AC1E6925FF001BD42A /* CommitRegister.swift */; };
 		89276ED81E54BBE800D99D4E /* SubscriberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89276ED71E54BBE800D99D4E /* SubscriberCell.swift */; };
 		892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DD7C31E5624F1000482C0 /* TravisBuildRegister.swift */; };
 		892DECC81E5E308900676056 /* CellTeamCommitsZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DECC71E5E308900676056 /* CellTeamCommitsZoom.swift */; };
@@ -58,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		2584928AB2DB6CF074F0769D /* Pods_stalkr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stalkr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8917E4AC1E6925FF001BD42A /* CommitRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitRegister.swift; sourceTree = "<group>"; };
 		89276ED71E54BBE800D99D4E /* SubscriberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriberCell.swift; sourceTree = "<group>"; };
 		892DD7C31E5624F1000482C0 /* TravisBuildRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravisBuildRegister.swift; sourceTree = "<group>"; };
 		892DECC71E5E308900676056 /* CellTeamCommitsZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTeamCommitsZoom.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		892E73E01E589380007483E1 /* CellCommitsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				8917E4AC1E6925FF001BD42A /* CommitRegister.swift */,
 				892E73D81E589378007483E1 /* CellCommitsFeed.swift */,
 				892E73D91E589378007483E1 /* CellCommitsFeed.xib */,
 				892E73DA1E589378007483E1 /* CellCommitsFeedTableCell.swift */,
@@ -437,6 +440,7 @@
 				89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */,
 				CE52C5371E60ED5100FC6C40 /* ProjectsViewController.swift in Sources */,
 				89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */,
+				8917E4AD1E6925FF001BD42A /* CommitRegister.swift in Sources */,
 				892E73DE1E589378007483E1 /* CellCommitsFeedTableCell.swift in Sources */,
 				892DECE61E5FD75100676056 /* CellConfigInput.swift in Sources */,
 				89939E0D1E6667DE007EDA4E /* CellConfigCreateButton.swift in Sources */,
