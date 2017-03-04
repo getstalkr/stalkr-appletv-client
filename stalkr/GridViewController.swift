@@ -252,6 +252,10 @@ extension GridViewController: GridLayoutDelegate {
 extension GridViewController: ProjectViewProtocol {
     
     func didChangeProject(toProjectNamed name: String) {
+        if name == self.gridConfiguration.name {
+            return
+        }
+        
         self.gridConfiguration = GridConfiguration(gridName: name)
         (self.collectionView?.collectionViewLayout as! GridLayout).clearCache()
 

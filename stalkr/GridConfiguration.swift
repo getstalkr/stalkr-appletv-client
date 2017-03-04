@@ -84,6 +84,7 @@ class JSONConfig {
 class GridConfiguration {
     
     private var config: JSONConfig?
+    let name: String
     let slots: [[Slot]]
     let gridConfigZoomOut: GridConfiguration?
     var isZoom: Bool {
@@ -107,8 +108,9 @@ class GridConfiguration {
             }
             slots = config!.slots
         }
-        //
         
+        //
+        self.name = gridName
         self.gridConfigZoomOut = nil
     }
     
@@ -116,6 +118,7 @@ class GridConfiguration {
         let slot = grid.slots[y][x]
         slots = [[slot]]
         
+        self.name = "gridZoom"
         self.gridConfigZoomOut = grid
     }
 }
