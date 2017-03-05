@@ -8,6 +8,7 @@
 
 import UIKit
 
+// TODO: rename this class
 class ProjectTableViewController: UITableViewController {
 
     //TODO: Populate arrays with data from user account
@@ -52,20 +53,42 @@ class ProjectTableViewController: UITableViewController {
         return cell
     }
     
+    // focus
     override func tableView(_ tableView: UITableView, didUpdateFocusIn context: UITableViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         
         if let next = context.nextFocusedIndexPath {
             sidebarProtocol?.focusedCell(withOption: optionsNames[next.row])
+            
             let nextCell = tableView.cellForRow(at: next)! as! TableCell
-            nextCell.contentView.backgroundColor = UIColor(netHex: 0x1B1D36)
-            nextCell.contentView.backgroundColor = nextCell.contentView.backgroundColor?.withAlphaComponent(0.5)
-            nextCell.alpha = 1
+            changeUiToFocused(cell: nextCell)
         }
+        
         if let previously = context.previouslyFocusedIndexPath {
             let previousCell = tableView.cellForRow(at: previously)! as! TableCell
-            previousCell.contentView.backgroundColor = .clear
-            previousCell.alpha = previousCell.defaultAlpha
+
+            if context.nextFocusedIndexPath == nil {
+                changeUiToSelected(cell: previousCell)
+            } else {
+                changeUiToNotSelected(cell: previousCell)
+            }
         }
+    }
+    
+    func changeUiToNotSelected(cell: TableCell) {
+        cell.contentView.backgroundColor = .clear
+        cell.alpha = cell.defaultAlpha
+    }
+    
+    func changeUiToSelected(cell: TableCell) {
+        cell.contentView.backgroundColor = UIColor(netHex: 0x1B1D36)
+        cell.contentView.backgroundColor = cell.contentView.backgroundColor?.withAlphaComponent(0.5)
+        cell.alpha = 1
+    }
+    
+    func changeUiToFocused(cell: TableCell) {
+        cell.contentView.backgroundColor = UIColor(netHex: 0x1B1D36)
+        cell.contentView.backgroundColor = cell.contentView.backgroundColor?.withAlphaComponent(1)
+        cell.alpha = 1
     }
 }
 
