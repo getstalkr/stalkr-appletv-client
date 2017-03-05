@@ -15,7 +15,7 @@
         <scene sceneID="Ezv-RH-SgA">
             <objects>
                 <collectionViewController id="TRe-5o-Hak" customClass="GridViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="pgC-4I-7aS">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="pgC-4I-7aS">
                         <rect key="frame" x="0.0" y="0.0" width="1215" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewLayout key="collectionViewLayout" id="12X-FW-jGH" customClass="GridLayout" customModule="stalkr" customModuleProvider="target">
@@ -75,6 +75,13 @@
                                             <segue destination="vZM-BM-kc4" kind="embed" identifier="createProjectIdentifier" id="UTx-VE-pX7"/>
                                         </connections>
                                     </containerView>
+                                    <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iGz-wx-8zv" userLabel="Account View">
+                                        <rect key="frame" x="417" y="70" width="1223" height="830"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <connections>
+                                            <segue destination="USc-8W-p44" kind="embed" identifier="accountIdentifier" id="y9S-W5-JXy"/>
+                                        </connections>
+                                    </containerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P r o j e c t   1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LnL-ND-Cqh">
                                         <rect key="frame" x="417" y="20" width="1190" height="42"/>
                                         <constraints>
@@ -120,13 +127,6 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iGz-wx-8zv" userLabel="Account View">
-                                        <rect key="frame" x="417" y="70" width="1223" height="830"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                        <connections>
-                                            <segue destination="USc-8W-p44" kind="embed" identifier="accountIdentifier" id="y9S-W5-JXy"/>
-                                        </connections>
-                                    </containerView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.019607843137254902" green="0.019607843137254902" blue="0.12156862745098039" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>

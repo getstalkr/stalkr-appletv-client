@@ -67,6 +67,10 @@ class ProjectTableViewController: UITableViewController {
             previousCell.alpha = previousCell.defaultAlpha
         }
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        sidebarProtocol?.selectedCell(withIndex: indexPath)
+    }
 }
 
 extension UIColor {

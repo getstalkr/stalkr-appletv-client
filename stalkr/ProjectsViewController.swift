@@ -11,12 +11,22 @@ import UIKit
 class ProjectsViewController: UIViewController {
     
     @IBOutlet weak var segmentShowGrid: UISegmentedControl!
-    var parentController: SegmentedViewController?
+    //var parentController: SegmentedViewController?
     var gridView: GridViewController?
+    
+//    var myprefered: UIView?
+//    override var preferredFocusedView: UIView?{
+//        return myprefered
+//    }
+    var mypreferredFocusEnvironments: [UIFocusEnvironment]?
+//    override var preferredFocusEnvironments: [UIFocusEnvironment] {
+//        return mypreferredFocusEnvironments
+//    }
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         
+        super.viewDidLoad()
+
         self.segmentShowGrid.replaceSegments(segments: ["Blau", "Save my Nails", "Eta bicho doido"])
         self.segmentShowGrid.selectedSegmentIndex = 0
         self.segmentShowGridChanged(self.segmentShowGrid)
