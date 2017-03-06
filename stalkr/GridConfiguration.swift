@@ -14,12 +14,12 @@ let rawConfig = [
     "[" +
         "[" +
             "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
-            "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"facebook\", \"project\": \"jest\" } }," +
+            "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"ythecombinator\", \"project\": \"simple-add\" } }," +
             "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
         "]," +
         "[" +
             "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
-            "{ \"cell\": \"CellCommitsFeed\", \"params\": { \"owner\": \"facebook\", \"project\": \"jest\" } }" +
+            "{ \"cell\": \"CellCommitsFeed\", \"params\": { \"owner\": \"ythecombinator\", \"project\": \"simple-add\" } }" +
         "]" +
     "]",
     

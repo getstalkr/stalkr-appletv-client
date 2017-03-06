@@ -13,13 +13,17 @@ protocol CreateGridConfigInputDelegate {
     func finishEditFieldText(text: String)
 }
 
+protocol CreateGridButtonCreateProjectDelegate {
+    func buttonCreateProjectClicked()
+}
+
 enum CellCreateGrid {
     case name(String)
-    case configInput(ConfigInput, String)
+    case configInput(ConfigInput, cellName: String, textFieldValue: String)
     case buttonCreateProject()
 }
 
-class CreateGridViewController: UITableViewController, CreateGridConfigInputDelegate {
+class CreateGridViewController: UITableViewController, CreateGridConfigInputDelegate, CreateGridButtonCreateProjectDelegate {
 
     var cellConfigList: [CellCreateGrid] = []
     var lastCellConfigSelected = IndexPath(row: 1, section: 0)
@@ -28,7 +32,7 @@ class CreateGridViewController: UITableViewController, CreateGridConfigInputDele
         super.viewDidLoad()
         
         cellConfigList.append(CellCreateGrid.name("Project"))
-        cellConfigList.append(CellCreateGrid.configInput(ConfigInput(name: "projectName", label: "Project name", inputType: .text, obligatory: true), ""))
+        cellConfigList.append(CellCreateGrid.configInput(ConfigInput(name: "projectName", label: "Project name", inputType: .text, obligatory: true), cellName: "project", textFieldValue: ""))
 
         listAllSlotableCell.forEach { slotableCellClass in
             let configs = (slotableCellClass as! SlotableCell.Type).configurations
@@ -36,7 +40,7 @@ class CreateGridViewController: UITableViewController, CreateGridConfigInputDele
                 let cellName = (slotableCellClass as! SlotableCell.Type).cellName
                 
                 cellConfigList.append(CellCreateGrid.name(cellName))
-                configs.forEach { cellConfigList.append(CellCreateGrid.configInput($0, "")) }
+                configs.forEach { cellConfigList.append(CellCreateGrid.configInput($0, cellName: slotableCellClass.className(), textFieldValue: "")) }
             }
         }
         
@@ -60,7 +64,7 @@ class CreateGridViewController: UITableViewController, CreateGridConfigInputDele
             cell.labelTitle.text = name
             
             return cell
-        case .configInput(let input, let value):
+        case .configInput(let input, _, let value):
             let cell = tableView.dequeueReusableCell(withIdentifier: "CellConfigInput", for: indexPath) as! CellConfigInput
             if input.obligatory {
                 cell.labelParamName.attributedText = input.label + " (obligatory)".set(style: .fontItalic)
@@ -73,7 +77,10 @@ class CreateGridViewController: UITableViewController, CreateGridConfigInputDele
             
             return cell
         case .buttonCreateProject():
-            return tableView.dequeueReusableCell(withIdentifier: "CellConfigCreateButton", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CellConfigCreateButton", for: indexPath) as! CellConfigCreateButton
+            cell.delegate = self
+            
+            return cell
         }
     }
     
@@ -122,12 +129,68 @@ class CreateGridViewController: UITableViewController, CreateGridConfigInputDele
     
     func finishEditFieldText(text: String) {
         switch cellConfigList[lastCellConfigSelected.row] {
-        case .configInput(let input, _):
-            cellConfigList[lastCellConfigSelected.row] = CellCreateGrid.configInput(input, text)
-        
+        case .configInput(let input, let cellName, _):
+            cellConfigList[lastCellConfigSelected.row] = CellCreateGrid.configInput(input, cellName: cellName, textFieldValue: text)
         default:
             return
         }
+    }
+    
+    func buttonCreateProjectClicked() {
+        var configGridName: String = ""
+        var configCellPlaceholderSmall: [String:String] = [:]
+        var configlCellCloudPerformance: [String:String] = [:]
+        var configlCellTrevis: [String:String] = [:]
+        var configlCellTeamCommits: [String:String] = [:]
+        var configlCellDeployStatus: [String:String] = [:]
+        var configlCellCommitsFeed: [String:String] = [:]
+        
+        
+        var pos = -1
+        for i in cellConfigList {
+            pos += 1
+            
+            //
+            if case .configInput = i { } else { continue }
+            
+            //
+            if case let .configInput(config, cellName, value) = i {
+                if config.obligatory && value == "" {
+                    self.tableView.selectRow(at: IndexPath(row: pos, section: 0), animated: true, scrollPosition: .middle)
+                    // todo: precisa mudar o focus para a célula selecionada
+                    // todo: precisa destacar o nome "obrigatório" nas células
+                    return
+                }
+            
+                //
+                switch cellName {
+                case "project":
+                    configGridName = value
+                case "CellPlaceholderSmall":
+                    configCellPlaceholderSmall[config.name] = value
+                case "CellTrevis":
+                    configlCellTrevis[config.name] = value
+                default:
+                    break
+                }
+            }
+        }
+        
+        let json = "" +
+            "[" +
+                "[" +
+                    "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
+                    "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"travis-builds-\(configlCellTrevis["trevisUser"]!)-\(configlCellTrevis["trevisRepository"]!)\", \"event\": \"status-requested\" } }," +
+                    "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
+                "]," +
+                "[" +
+                    "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
+                    "{ \"cell\": \"CellCommitsFeed\", \"params\": { } }" +
+                "]" +
+            "]"
+        
+        print(configGridName)
+        print(json)
     }
     
     override func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {

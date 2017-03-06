@@ -11,9 +11,7 @@ import UIKit
 class CellProjectTab: UICollectionViewCell {
     
     @IBOutlet weak var labelProjectName: UILabel!
-    @IBOutlet weak var viewFooterLeft: UIView!
     @IBOutlet weak var viewFooterCenter: UIView!
-    @IBOutlet weak var viewFooterRight: UIView!
     
     var project: Project?
     var grid: ProjectViewProtocol?
@@ -49,29 +47,23 @@ class CellProjectTab: UICollectionViewCell {
     func changeToNotSelected() {
         self.viewFooterCenter.backgroundColor = UIColor.projectTabNotSelected
         self.labelProjectName.textColor = UIColor.projectTabNotSelected
-        self.viewFooterLeft.layer.shadowOpacity = 0
         self.viewFooterCenter.layer.shadowOpacity = 0
-        self.viewFooterRight.layer.shadowOpacity = 0
     }
     
     func changeToSelected() {
         self.viewFooterCenter.backgroundColor = UIColor.projectTabSelected
         self.labelProjectName.textColor = UIColor.projectTabSelected
-        self.viewFooterLeft.layer.shadowOpacity = 0
         self.viewFooterCenter.layer.shadowOpacity = 0
-        self.viewFooterRight.layer.shadowOpacity = 0
     }
     
     func changeToFocused() {
         self.viewFooterCenter.backgroundColor = UIColor.projectTabSelected
         self.labelProjectName.textColor = UIColor.projectTabSelected
-        self.viewFooterLeft.layer.shadowOpacity = 1
         self.viewFooterCenter.layer.shadowOpacity = 1
-        self.viewFooterRight.layer.shadowOpacity = 1
     }
 }
 
 extension UIColor {
-    static let projectTabSelected = UIColor.init(red: 141/255, green: 102/255, blue: 189/255, alpha: 1.0)
-    static let projectTabNotSelected = UIColor.init(red: 108/255, green: 114/255, blue: 143/255, alpha: 1.0)
+    static let projectTabSelected = UIColor.init(red: 141.0/255.0, green: 102.0/255.0, blue: 189.0/255.0, alpha: 1.0)
+    static let projectTabNotSelected = UIColor.init(red: 108.0/255.0, green: 114.0/255.0, blue: 143.0/255.0, alpha: 1.0)
 }
