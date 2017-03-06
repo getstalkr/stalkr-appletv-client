@@ -54,6 +54,7 @@
 		CE52C5371E60ED5100FC6C40 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */; };
 		CE52C5391E61059300FC6C40 /* SidebarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */; };
 		CE85B3CE1E5349D900DA7287 /* SegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */; };
+		CEAE127C1E6CEBB9002CCEDB /* LinkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE127B1E6CEBB9002CCEDB /* LinkerProtocol.swift */; };
 		CEE8497A1E55EF840033F512 /* DashboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE849791E55EF840033F512 /* DashboardProtocol.swift */; };
 		CEE8497C1E55F18F0033F512 /* ProjectViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -110,6 +111,7 @@
 		CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarProtocol.swift; sourceTree = "<group>"; };
 		CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedViewController.swift; sourceTree = "<group>"; };
+		CEAE127B1E6CEBB9002CCEDB /* LinkerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkerProtocol.swift; sourceTree = "<group>"; };
 		CEE849791E55EF840033F512 /* DashboardProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardProtocol.swift; sourceTree = "<group>"; };
 		CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -285,6 +287,7 @@
 				CEE849791E55EF840033F512 /* DashboardProtocol.swift */,
 				CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */,
 				CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */,
+				CEAE127B1E6CEBB9002CCEDB /* LinkerProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */,
 				CE52C5371E60ED5100FC6C40 /* ProjectsViewController.swift in Sources */,
 				89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */,
+				CEAE127C1E6CEBB9002CCEDB /* LinkerProtocol.swift in Sources */,
 				8917E4AD1E6925FF001BD42A /* CommitRegister.swift in Sources */,
 				892E73DE1E589378007483E1 /* CellCommitsFeedTableCell.swift in Sources */,
 				892DECE61E5FD75100676056 /* CellConfigInput.swift in Sources */,

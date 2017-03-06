@@ -117,6 +117,7 @@ extension SegmentedViewController: SidebarProtocol {
         labelTitle.text = option
         
         sidebarGuide.isEnabled = false
+        choosedViewGuide.isEnabled = false
         
         switch option {
         case "Projetos":
