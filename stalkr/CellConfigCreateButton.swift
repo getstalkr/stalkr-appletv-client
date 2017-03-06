@@ -9,8 +9,10 @@
 import UIKit
 
 class CellConfigCreateButton: UITableViewCell {
+    
+    var delegate: CreateGridButtonCreateProjectDelegate?
 
     @IBAction func btnCreateProject(_ sender: Any) {
-        print("CREATE PROJECT CLICKED!")
+        delegate!.buttonCreateProjectClicked()
     }
 }
