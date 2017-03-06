@@ -75,9 +75,8 @@
                                             <segue destination="vZM-BM-kc4" kind="embed" identifier="createProjectIdentifier" id="UTx-VE-pX7"/>
                                         </connections>
                                     </containerView>
-                                    <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iGz-wx-8zv" userLabel="Account View">
+                                    <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGz-wx-8zv" userLabel="Account View">
                                         <rect key="frame" x="417" y="70" width="1223" height="830"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <connections>
                                             <segue destination="USc-8W-p44" kind="embed" identifier="accountIdentifier" id="y9S-W5-JXy"/>
                                         </connections>
@@ -130,11 +129,14 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.019607843137254902" green="0.019607843137254902" blue="0.12156862745098039" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="iGz-wx-8zv" firstAttribute="leading" secondItem="QHA-3Q-ZCw" secondAttribute="trailing" constant="31" id="IH1-Hw-e1q"/>
                                     <constraint firstAttribute="trailing" secondItem="cBB-r1-arU" secondAttribute="trailing" id="MjQ-Iq-8gH"/>
                                     <constraint firstItem="QHA-3Q-ZCw" firstAttribute="top" secondItem="8F8-tD-s7m" secondAttribute="top" id="SXL-4N-iga"/>
                                     <constraint firstAttribute="bottom" secondItem="cBB-r1-arU" secondAttribute="bottom" id="WGl-kX-139"/>
+                                    <constraint firstAttribute="trailing" secondItem="iGz-wx-8zv" secondAttribute="trailing" id="ZzE-KG-3LU"/>
                                     <constraint firstItem="LnL-ND-Cqh" firstAttribute="leading" secondItem="QHA-3Q-ZCw" secondAttribute="trailing" constant="31" id="aae-uG-du8"/>
                                     <constraint firstAttribute="bottom" secondItem="QHA-3Q-ZCw" secondAttribute="bottom" id="btL-gb-l8M"/>
+                                    <constraint firstAttribute="bottom" secondItem="iGz-wx-8zv" secondAttribute="bottom" id="cVp-Fs-kNe"/>
                                     <constraint firstAttribute="trailing" secondItem="RqD-In-Jyd" secondAttribute="trailing" id="dTF-7h-7Mo"/>
                                     <constraint firstAttribute="bottom" secondItem="RqD-In-Jyd" secondAttribute="bottom" id="dey-Xc-a1a"/>
                                     <constraint firstItem="QHA-3Q-ZCw" firstAttribute="leading" secondItem="8F8-tD-s7m" secondAttribute="leading" id="gKQ-8e-3Nc"/>
@@ -144,6 +146,7 @@
                                     <constraint firstItem="QHA-3Q-ZCw" firstAttribute="height" secondItem="8F8-tD-s7m" secondAttribute="height" id="u9L-Hz-wj5"/>
                                     <constraint firstItem="LnL-ND-Cqh" firstAttribute="top" secondItem="8F8-tD-s7m" secondAttribute="top" constant="20" id="wf3-6G-ccA"/>
                                     <constraint firstItem="cBB-r1-arU" firstAttribute="top" secondItem="LnL-ND-Cqh" secondAttribute="bottom" constant="8" id="xBj-Cf-dOQ"/>
+                                    <constraint firstItem="iGz-wx-8zv" firstAttribute="top" secondItem="LnL-ND-Cqh" secondAttribute="bottom" constant="8" id="z3D-p3-0DF"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -423,6 +426,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="containerView" destination="lcN-im-5jw" id="3hl-qH-bgt"/>
                         <outlet property="projectsTab" destination="pap-gW-QyV" id="18v-TX-NAW"/>
                     </connections>
                 </viewController>

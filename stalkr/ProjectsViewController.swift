@@ -22,6 +22,11 @@ class ProjectsViewController: UIViewController {
     var parentController: SegmentedViewController?
     var gridView: GridViewController?
     var projectsList: [Project] = []
+    @IBOutlet weak var containerView: UIView!
+    
+    override var preferredFocusEnvironments: [UIFocusEnvironment] {
+            return [projectsTab]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
