@@ -212,7 +212,7 @@
                                     <outlet property="labelTitle" destination="mhI-2q-fXt" id="vG7-i3-L8R"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellConfigInput" rowHeight="151" id="PVm-cE-tkV" customClass="CellConfigInput" customModule="stalkr" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellConfigInput" rowHeight="151" id="PVm-cE-tkV" customClass="CellConfigInput" customModule="stalkr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="146" width="1223" height="151"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PVm-cE-tkV" id="zAR-bw-OGj">
@@ -310,7 +310,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.95022302865982056" green="0.75401997566223145" blue="0.035687629133462906" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="TableCell" customModule="stalkr" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="TableCell" customModule="stalkr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="66" width="386" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UW4-Tw-7UH" id="9Fg-35-gqH">
@@ -323,7 +323,7 @@
                                             <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                            <color key="textColor" red="0.72156862745098038" green="0.396078431372549" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </label>
                                     </subviews>
