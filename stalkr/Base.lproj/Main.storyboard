@@ -167,7 +167,6 @@
                         <outlet property="dashboardContainer" destination="lcN-im-5jw" id="xjX-rO-4YO"/>
                         <outlet property="labelTitle" destination="LnL-ND-Cqh" id="kqp-UA-qw0"/>
                         <outlet property="projectView" destination="cBB-r1-arU" id="Bju-iT-7mg"/>
-                        <outlet property="projectsSegmented" destination="Md6-UU-jXC" id="IYz-vk-dqi"/>
                         <outlet property="sidebarView" destination="Khn-QB-1nk" id="lyF-6K-O76"/>
                     </connections>
                 </viewController>
@@ -357,35 +356,79 @@
                                     <segue destination="TRe-5o-Hak" kind="embed" identifier="gridIdentifier" id="v29-tx-yHG"/>
                                 </connections>
                             </containerView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Md6-UU-jXC">
-                                <rect key="frame" x="4" y="0.0" width="398" height="70"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
-                                <segments>
-                                    <segment title="Project 1"/>
-                                    <segment title="Project 2"/>
-                                </segments>
-                                <connections>
-                                    <action selector="segmentShowGridChanged:" destination="qM1-2K-w8G" eventType="valueChanged" id="UeK-eE-T5X"/>
-                                </connections>
-                            </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pap-gW-QyV">
+                                <rect key="frame" x="4" y="0.0" width="1215" height="86"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="n1R-Y8-gZW"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="HnW-Ho-Ag9">
+                                    <size key="itemSize" width="275" height="86"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellProjectTab" id="Nqu-pT-Xt0" customClass="CellProjectTab" customModule="stalkr" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="86"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="275" height="86"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Project Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DR6-T4-XQR">
+                                                    <rect key="frame" x="8" y="16" width="190" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                    <color key="textColor" red="0.42352941176470588" green="0.44705882352941173" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Kp-WP-5im">
+                                                    <rect key="frame" x="8" y="56" width="241" height="9"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.42352941176470588" green="0.44705882352941173" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DpK-A1-pOs">
+                                                    <rect key="frame" x="249" y="56" width="18" height="9"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.42352941176470588" green="0.44705882352941173" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aBv-d7-xNX">
+                                                    <rect key="frame" x="0.0" y="56" width="8" height="9"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.42352941176470588" green="0.44705882352941173" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="labelProjectName" destination="DR6-T4-XQR" id="Y9D-RR-XIu"/>
+                                            <outlet property="viewFooterCenter" destination="5Kp-WP-5im" id="tgF-8d-6Tc"/>
+                                            <outlet property="viewFooterLeft" destination="aBv-d7-xNX" id="QTk-Nz-Hpo"/>
+                                            <outlet property="viewFooterRight" destination="DpK-A1-pOs" id="Eal-Rh-Otv"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Md6-UU-jXC" firstAttribute="leading" secondItem="geW-Jy-08H" secondAttribute="leadingMargin" constant="-16" id="RpB-QT-s33"/>
-                            <constraint firstAttribute="topMargin" secondItem="Md6-UU-jXC" secondAttribute="top" id="Z0h-jc-O8k"/>
+                            <constraint firstItem="pap-gW-QyV" firstAttribute="width" secondItem="lcN-im-5jw" secondAttribute="width" id="4hf-s8-OIh"/>
+                            <constraint firstItem="lcN-im-5jw" firstAttribute="top" secondItem="pap-gW-QyV" secondAttribute="bottom" constant="8" id="6uG-D6-sdB"/>
+                            <constraint firstItem="pap-gW-QyV" firstAttribute="leading" secondItem="geW-Jy-08H" secondAttribute="leadingMargin" constant="-16" id="GPP-Gy-b4i"/>
+                            <constraint firstItem="pap-gW-QyV" firstAttribute="top" secondItem="q8n-wA-5Ii" secondAttribute="bottom" id="GS3-wI-mFQ"/>
+                            <constraint firstItem="lcN-im-5jw" firstAttribute="leading" secondItem="geW-Jy-08H" secondAttribute="leadingMargin" constant="-16" id="Ysd-Nx-oUP"/>
                             <constraint firstItem="lcN-im-5jw" firstAttribute="width" secondItem="geW-Jy-08H" secondAttribute="width" constant="-8" id="gfT-uv-JDT"/>
                             <constraint firstItem="94K-Cw-zT3" firstAttribute="top" secondItem="lcN-im-5jw" secondAttribute="bottom" constant="2" id="kH0-2Y-lVl"/>
-                            <constraint firstItem="lcN-im-5jw" firstAttribute="top" secondItem="Md6-UU-jXC" secondAttribute="bottom" constant="25" id="q8z-si-rrr"/>
                             <constraint firstAttribute="bottom" secondItem="lcN-im-5jw" secondAttribute="bottom" constant="53" id="thi-8K-Jki"/>
                             <constraint firstItem="lcN-im-5jw" firstAttribute="trailing" secondItem="geW-Jy-08H" secondAttribute="trailingMargin" constant="16" id="vt4-KJ-Jlt"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="segmentShowGrid" destination="Md6-UU-jXC" id="XI6-hE-B21"/>
+                        <outlet property="projectsTab" destination="pap-gW-QyV" id="18v-TX-NAW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5i0-Lz-kOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="867"/>
+            <point key="canvasLocation" x="1861.5" y="867"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FTT-Eb-GeF">
@@ -398,7 +441,7 @@
                     <view key="view" contentMode="scaleToFill" id="P44-tr-Zwb">
                         <rect key="frame" x="0.0" y="0.0" width="1223" height="830"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.17961907232104546" blue="0.22737318123577843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.17961907232104546" blue="0.22737318123577843" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M0G-54-2qq" userLabel="First Responder" sceneMemberID="firstResponder"/>

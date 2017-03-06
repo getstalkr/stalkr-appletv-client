@@ -44,14 +44,14 @@ class SegmentedViewController: UIViewController {
         
     @IBOutlet weak var accountView: UIView!
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
+    var sidebarGuide = UIFocusGuide()
+    
+    var choosedViewGuide = UIFocusGuide()
     
     let gradientLayer = CAGradientLayer()
     
     var focusArray: [UIFocusGuide] = []
-    
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -92,12 +92,19 @@ class SegmentedViewController: UIViewController {
         } else if segue.identifier == "projectsIdentifier" {
             self.projectController = segue.destination as? ProjectsViewController
         } else if segue.identifier == "createProjectIdentifier" {
+            print("CRIOU")
             self.createProjectController = segue.destination as? CreateGridViewController
         }
     }
     
     override func shouldUpdateFocus(in context: UIFocusUpdateContext) -> Bool {
         return super.shouldUpdateFocus(in: context)
+    }
+    
+    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        if context.previouslyFocusedView == sidebarGuide {
+            sidebarGuide.isEnabled = false
+        }
     }
 }
 
@@ -109,6 +116,8 @@ extension SegmentedViewController: SidebarProtocol {
         
         labelTitle.text = option
         
+        sidebarGuide.isEnabled = false
+        
         switch option {
         case "Projetos":
                 UIView.animate(withDuration: 0.5, animations: {
@@ -116,21 +125,15 @@ extension SegmentedViewController: SidebarProtocol {
                     self.createProjectView.alpha = 0
                     self.accountView.alpha = 0
                     
-                    if self.focusArray.count < 1 {
-                        //Liga a célula projeto da sidebar ao segmented control.
-                        //Comentada pq Não há mais um segmented.
-                        //Basta trocar o segmented pelo novo elemento
-                        
-//                        guard let cell = self.sidebarController!.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) else {
-//                            print("\ncell\n")
-//                            return
-//                        }
-//                        let segments = self.projectController!.segmentShowGrid.subviews.sorted(by: { (a, b) -> Bool in
-//                            return a.center.x < b.center.x
-//                        })
-//                        self.linkByFocus(from: cell, to: segments[0], inPosition: .Right, reduceMeasurement: .Width)
-//                        self.linkByFocus(from: segments[0], to: cell, inPosition: .Left, reduceMeasurement: .Width)
+                    guard let cell = self.sidebarController!.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) else {
+                        print("\ncell\n")
+                        return
                     }
+                    let segments = self.projectController!.projectsTab.subviews.sorted(by: { (a, b) -> Bool in
+                        return a.center.x < b.center.x
+                    })
+                    self.sidebarGuide = self.linkByFocus(from: cell, to: segments[0], inPosition: .Right, reduceMeasurement: .WidthAndHeight)
+                    self.choosedViewGuide = self.linkByFocus(from: segments[0], to: cell, inPosition: .Left, reduceMeasurement: .WidthAndHeight)
                 })
             case "Criar projeto":
                 UIView.animate(withDuration: 0.5, animations: {
@@ -138,9 +141,19 @@ extension SegmentedViewController: SidebarProtocol {
                     self.createProjectView.alpha = 1
                     self.accountView.alpha = 0
                     
-                    if self.focusArray.count < 2 {
-                        //Ligar célula Criar projeto ao textfield da view criar projeto
-                    }
+                    //Falhou, pois a tableView do grid não foi instanciada ainda
+                    
+//                    guard let sidebarCell = self.sidebarController!.tableView.cellForRow(at: IndexPath(row: 1, section: 0)) else {
+//                        print("\ncell\n")
+//                        return
+//                    }
+//                    guard let createGridCell = self.createProjectController!.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? CellConfigInput else {
+//                        print("\ncell\n")
+//                        return
+//                    }
+//                    let textFieldCell = createGridCell.inputField!
+//                    self.sidebarGuide = self.linkByFocus(from: sidebarCell, to: textFieldCell, inPosition: .Right, reduceMeasurement: .Width)
+//                    self.choosedViewGuide = self.linkByFocus(from: textFieldCell, to: sidebarCell, inPosition: .Left, reduceMeasurement: .Width)
                 })
             default:
                 UIView.animate(withDuration: 0.5, animations: {
@@ -151,7 +164,7 @@ extension SegmentedViewController: SidebarProtocol {
         }
     }
     
-    func linkByFocus(from view1: UIView, to view2: UIView, inPosition pos: Pos, reduceMeasurement measure: Measurement) {
+    func linkByFocus(from view1: UIView, to view2: UIView, inPosition pos: Pos, reduceMeasurement measure: Measurement) -> UIFocusGuide {
         
         let focusGuide = UIFocusGuide()
         self.view.addLayoutGuide(focusGuide)
@@ -183,7 +196,8 @@ extension SegmentedViewController: SidebarProtocol {
         
         focusGuide.centerYAnchor.constraint(equalTo: view1.centerYAnchor).isActive = true
         focusGuide.preferredFocusEnvironments = [view2]
-        self.focusArray.append(focusGuide)
+        
+        return focusGuide
     }
     
     func selectedCell(withIndex index: IndexPath) {

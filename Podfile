@@ -15,5 +15,7 @@ target 'stalkr' do
   pod 'Cartography'
   pod 'PromiseKit'
   pod 'PromiseKit/UIKit', '~> 4.0'
+  pod 'Alamofire', '~> 4.4'
+  pod 'NVActivityIndicatorView', '~> 3.5'
 
 end

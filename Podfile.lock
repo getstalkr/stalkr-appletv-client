@@ -1,9 +1,11 @@
 PODS:
+  - Alamofire (4.4.0)
   - Cartography (1.0.1)
   - Charts (3.0.1):
     - Charts/Core (= 3.0.1)
   - Charts/Core (3.0.1)
   - Kingfisher (3.4.0)
+  - NVActivityIndicatorView (3.5.1)
   - PromiseKit (4.1.7):
     - PromiseKit/Foundation (= 4.1.7)
     - PromiseKit/QuartzCore (= 4.1.7)
@@ -21,9 +23,11 @@ PODS:
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.4)
   - Cartography
   - Charts
   - Kingfisher (~> 3.4)
+  - NVActivityIndicatorView (~> 3.5)
   - PromiseKit
   - PromiseKit/UIKit (~> 4.0)
   - PusherSwift
@@ -32,15 +36,17 @@ DEPENDENCIES:
   - SwiftyJSON (~> 3.1.4)
 
 SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
   Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
   Kingfisher: 5690cfb3d1bddf3a98d679a3a34d0b7294974ed2
+  NVActivityIndicatorView: 075563b3547445ebcff840e3297ce9dd4a23731f
   PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
   PusherSwift: 8249a1c3634943cf7e1e9a691468357d53ab7e5f
   RelativeFormatter: 13508ccd19bbab46ca95cf847a0db6e80601c9a4
   SwiftRichString: f09656f5d44b07fc4423225f96eab43e463221e6
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: d2ccce4179c35cbadd0bd0d35f714cc423902af7
+PODFILE CHECKSUM: eec99fe7cea8ac6cea2b640027eeba244bae8d66
 
 COCOAPODS: 1.2.0
