@@ -206,3 +206,17 @@ extension SegmentedViewController: SidebarProtocol {
         
     }
 }
+
+//MARK: SidebarProtocol
+
+extension SegmentedViewController: LinkerProtocol {
+
+    func linkToSidebar(fromView: UIView, toItem: IndexPath) {
+        
+        guard let cell = self.sidebarController?.tableView.cellForRow(at: toItem) else {
+            print("\ncell\n")
+            return
+        }
+        self.choosedViewGuide = self.linkByFocus(from: view, to: cell, inPosition: .Left, reduceMeasurement: .Width)
+    }
+}
