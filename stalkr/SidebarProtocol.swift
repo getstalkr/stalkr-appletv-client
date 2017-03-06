@@ -11,4 +11,6 @@ import Foundation
 protocol SidebarProtocol: class {
     
     func focusedCell(withOption option: String)
+    
+    func selectedCell(withIndex index: IndexPath)
 }

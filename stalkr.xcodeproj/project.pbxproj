@@ -50,10 +50,11 @@
 		89C994CD1E5482C900DBADBA /* CellTrevisTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C994CC1E5482C900DBADBA /* CellTrevisTableCell.swift */; };
 		91895BF7AD0056EDD4A683AD /* Pods_stalkr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2584928AB2DB6CF074F0769D /* Pods_stalkr.framework */; };
 		CE2E76411E5C737C00D5EC5C /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E76401E5C737C00D5EC5C /* TableCell.swift */; };
-		CE3DC3121E54807D008F88EE /* ProjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DC3111E54807D008F88EE /* ProjectTableViewController.swift */; };
+		CE3DC3121E54807D008F88EE /* SidebarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DC3111E54807D008F88EE /* SidebarController.swift */; };
 		CE52C5371E60ED5100FC6C40 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */; };
 		CE52C5391E61059300FC6C40 /* SidebarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */; };
 		CE85B3CE1E5349D900DA7287 /* SegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */; };
+		CEAE127C1E6CEBB9002CCEDB /* LinkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE127B1E6CEBB9002CCEDB /* LinkerProtocol.swift */; };
 		CEE8497A1E55EF840033F512 /* DashboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE849791E55EF840033F512 /* DashboardProtocol.swift */; };
 		CEE8497C1E55F18F0033F512 /* ProjectViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -106,10 +107,11 @@
 		8DA58B41991C641DBFD4F4DC /* Pods-stalkr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stalkr.release.xcconfig"; path = "Pods/Target Support Files/Pods-stalkr/Pods-stalkr.release.xcconfig"; sourceTree = "<group>"; };
 		9924C7B765C9FBEEE07466DA /* Pods-stalkr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stalkr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stalkr/Pods-stalkr.debug.xcconfig"; sourceTree = "<group>"; };
 		CE2E76401E5C737C00D5EC5C /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
-		CE3DC3111E54807D008F88EE /* ProjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewController.swift; sourceTree = "<group>"; };
+		CE3DC3111E54807D008F88EE /* SidebarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarController.swift; sourceTree = "<group>"; };
 		CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarProtocol.swift; sourceTree = "<group>"; };
 		CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedViewController.swift; sourceTree = "<group>"; };
+		CEAE127B1E6CEBB9002CCEDB /* LinkerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkerProtocol.swift; sourceTree = "<group>"; };
 		CEE849791E55EF840033F512 /* DashboardProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardProtocol.swift; sourceTree = "<group>"; };
 		CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,7 +213,7 @@
 				89B337F21E48BB9F00610EA3 /* AppDelegate.swift */,
 				89B337F41E48BB9F00610EA3 /* GridViewController.swift */,
 				CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */,
-				CE3DC3111E54807D008F88EE /* ProjectTableViewController.swift */,
+				CE3DC3111E54807D008F88EE /* SidebarController.swift */,
 				CE2E76401E5C737C00D5EC5C /* TableCell.swift */,
 				897182921E6B6B1A0080D4DA /* ProjectsView */,
 				89B337F61E48BB9F00610EA3 /* Main.storyboard */,
@@ -285,6 +287,7 @@
 				CEE849791E55EF840033F512 /* DashboardProtocol.swift */,
 				CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */,
 				CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */,
+				CEAE127B1E6CEBB9002CCEDB /* LinkerProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -324,7 +327,7 @@
 				TargetAttributes = {
 					89B337EE1E48BB9F00610EA3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 56KUK57QCP;
+						DevelopmentTeam = CWK5G6U242;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -438,7 +441,7 @@
 				892DECC81E5E308900676056 /* CellTeamCommitsZoom.swift in Sources */,
 				CEE8497A1E55EF840033F512 /* DashboardProtocol.swift in Sources */,
 				89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */,
-				CE3DC3121E54807D008F88EE /* ProjectTableViewController.swift in Sources */,
+				CE3DC3121E54807D008F88EE /* SidebarController.swift in Sources */,
 				CEE8497C1E55F18F0033F512 /* ProjectViewProtocol.swift in Sources */,
 				892E73E31E58A581007483E1 /* CellTeamCommits.swift in Sources */,
 				89B338071E48C13200610EA3 /* CellPlaceholderWidthTwo.swift in Sources */,
@@ -452,6 +455,7 @@
 				89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */,
 				CE52C5371E60ED5100FC6C40 /* ProjectsViewController.swift in Sources */,
 				89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */,
+				CEAE127C1E6CEBB9002CCEDB /* LinkerProtocol.swift in Sources */,
 				8917E4AD1E6925FF001BD42A /* CommitRegister.swift in Sources */,
 				892E73DE1E589378007483E1 /* CellCommitsFeedTableCell.swift in Sources */,
 				892DECE61E5FD75100676056 /* CellConfigInput.swift in Sources */,
@@ -572,7 +576,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 56KUK57QCP;
+				DEVELOPMENT_TEAM = CWK5G6U242;
 				INFOPLIST_FILE = stalkr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = macabeus.stalkr;
@@ -587,7 +591,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 56KUK57QCP;
+				DEVELOPMENT_TEAM = CWK5G6U242;
 				INFOPLIST_FILE = stalkr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = macabeus.stalkr;

@@ -9,7 +9,7 @@
 import UIKit
 
 // TODO: rename this class
-class ProjectTableViewController: UITableViewController {
+class SidebarController: UITableViewController {
 
     //TODO: Populate arrays with data from user account
     var optionsNames: [String] = ["Projetos", "Criar projeto", "Conta"]
@@ -72,6 +72,10 @@ class ProjectTableViewController: UITableViewController {
                 changeUiToNotSelected(cell: previousCell)
             }
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        sidebarProtocol?.selectedCell(withIndex: indexPath)
     }
     
     func changeUiToNotSelected(cell: TableCell) {

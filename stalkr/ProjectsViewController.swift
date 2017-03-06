@@ -5,7 +5,6 @@
 //  Created by Edvaldo Junior on 24/02/17.
 //  Copyright © 2017 Bruno Macabeus Aquino. All rights reserved.
 //
-
 import UIKit
 import Cartography
 
@@ -23,18 +22,18 @@ class ProjectsViewController: UIViewController {
     var parentController: SegmentedViewController?
     var gridView: GridViewController?
     var projectsList: [Project] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         projectsTab.delegate = self
         projectsTab.dataSource = self
         projectsTab.backgroundColor = UIColor(white: 0, alpha: 0)
-                
+        
         projectsList = [Project(name: "Blau"), Project(name: "Save my Nails"), Project(name: "Eta bicho doido")]
         projectsList[0].show(grid: (self.gridView as! ProjectViewProtocol))
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gridIdentifier" {
             self.gridView = segue.destination as? GridViewController
@@ -55,12 +54,12 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellProjectTab", for: indexPath) as! CellProjectTab
-
+        
         let currentProject = projectsList[indexPath.item]
         
         cell.project = currentProject
         cell.grid = (self.gridView as! ProjectViewProtocol)
-
+        
         // set label
         cell.labelProjectName.text = currentProject.name
         cell.labelProjectName.sizeToFit()
@@ -78,7 +77,7 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
         cell.viewFooterLeft.layer.shadowOpacity = 0
         cell.viewFooterCenter.layer.shadowOpacity = 0
         cell.viewFooterRight.layer.shadowOpacity = 0
-
+        
         // constrains
         constrain(cell.labelProjectName, cell.viewFooterLeft, cell.viewFooterCenter, cell.viewFooterRight) { label, footerLeft, footerCenter, footerRight in
             
@@ -115,5 +114,5 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
         return true
     }
-
+    
 }

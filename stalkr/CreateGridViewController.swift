@@ -27,8 +27,8 @@ class CreateGridViewController: UITableViewController, CreateGridConfigInputDele
 
     var cellConfigList: [CellCreateGrid] = []
     var lastCellConfigSelected = IndexPath(row: 1, section: 0)
-    
     var currentScene: UIFocusEnvironment?
+    var linkerDelegate: LinkerProtocol?
     
     override var preferredFocusEnvironments: [UIFocusEnvironment] {
         if let scene = currentScene {
@@ -95,6 +95,7 @@ class CreateGridViewController: UITableViewController, CreateGridConfigInputDele
     }
     
     override func tableView(_ tableView: UITableView, didUpdateFocusIn context: UITableViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        
         if ((context.previouslyFocusedIndexPath) != nil) {
             let cell = tableView.cellForRow(at: context.previouslyFocusedIndexPath!)
             cell?.layer.shadowOpacity = 0.0
@@ -103,6 +104,8 @@ class CreateGridViewController: UITableViewController, CreateGridConfigInputDele
         if ((context.nextFocusedIndexPath) != nil) {
             let cell = tableView.cellForRow(at: context.nextFocusedIndexPath!)
             cell?.layer.shadowOpacity = 1.0
+            
+            linkerDelegate?.linkToSidebar(fromView: tableView.cellForRow(at: context.nextFocusedIndexPath!)!, toItem: IndexPath(row: 1, section: 0), inView: view)
         }
     }
     
@@ -140,7 +143,6 @@ class CreateGridViewController: UITableViewController, CreateGridConfigInputDele
         switch cellConfigList[lastCellConfigSelected.row] {
         case .configInput(let input, let cellName, _):
             cellConfigList[lastCellConfigSelected.row] = CellCreateGrid.configInput(input, cellName: cellName, textFieldValue: text)
-        
         default:
             return
         }
@@ -213,5 +215,4 @@ class CreateGridViewController: UITableViewController, CreateGridConfigInputDele
             return true
         }
     }
-
 }
