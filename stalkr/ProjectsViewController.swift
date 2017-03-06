@@ -17,15 +17,21 @@ struct Project {
 }
 
 class ProjectsViewController: UIViewController {
-    
+
     @IBOutlet weak var projectsTab: UICollectionView!
     var parentController: SegmentedViewController?
     var gridView: GridViewController?
     var projectsList: [Project] = []
     @IBOutlet weak var containerView: UIView!
-    
+
+    var selectedIndex = IndexPath()
+
     override var preferredFocusEnvironments: [UIFocusEnvironment] {
-            return [projectsTab]
+        
+        let cells = projectsTab.subviews.sorted(by: { (a, b) -> Bool in
+            return a.center.x < b.center.x
+        })
+        return cells
     }
     
     override func viewDidLoad() {
@@ -37,6 +43,8 @@ class ProjectsViewController: UIViewController {
         
         projectsList = [Project(name: "Blau"), Project(name: "Save my Nails"), Project(name: "Eta bicho doido")]
         projectsList[0].show(grid: (self.gridView as! ProjectViewProtocol))
+        
+        selectedIndex = IndexPath(row: 0, section: 0)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,6 +52,18 @@ class ProjectsViewController: UIViewController {
             self.gridView = segue.destination as? GridViewController
         }
     }
+    
+//    override func shouldUpdateFocus(in context: UIFocusUpdateContext) -> Bool {
+//        
+//        if let nextView = context.nextFocusedView {
+//            
+//            if nextView == projectsTab {
+//                projectsTab.cellForItem(at: selectedIndex)?.setNeedsFocusUpdate()
+//                projectsTab.cellForItem(at: selectedIndex)?.updateFocusIfNeeded()
+//            }
+//        }
+//        return true
+//    }
 }
 
 // code of project list collectionview
@@ -113,6 +133,22 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldUpdateFocusIn context: UICollectionViewFocusUpdateContext) -> Bool {
+        
+        if context.nextFocusedIndexPath != nil && context.previouslyFocusedIndexPath != nil {
+            selectedIndex = context.nextFocusedIndexPath!
+        }
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUpdateFocusIn context: UICollectionViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        
+        if context.nextFocusedIndexPath != nil && context.previouslyFocusedIndexPath == nil {
+            projectsTab.cellForItem(at: selectedIndex)?.setNeedsFocusUpdate()
+            projectsTab.cellForItem(at: selectedIndex)?.updateFocusIfNeeded()
+        }
     }
     
     // Focus

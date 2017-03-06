@@ -55,6 +55,7 @@
 		CE52C5391E61059300FC6C40 /* SidebarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */; };
 		CE85B3CE1E5349D900DA7287 /* SegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */; };
 		CECFF4001E6D861C0002EA8D /* FocusedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECFF3FF1E6D861C0002EA8D /* FocusedView.swift */; };
+		CECFF4021E6D9D0D0002EA8D /* FocusGuideHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECFF4011E6D9D0D0002EA8D /* FocusGuideHelper.swift */; };
 		CEE8497A1E55EF840033F512 /* DashboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE849791E55EF840033F512 /* DashboardProtocol.swift */; };
 		CEE8497C1E55F18F0033F512 /* ProjectViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -112,6 +113,7 @@
 		CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarProtocol.swift; sourceTree = "<group>"; };
 		CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedViewController.swift; sourceTree = "<group>"; };
 		CECFF3FF1E6D861C0002EA8D /* FocusedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusedView.swift; sourceTree = "<group>"; };
+		CECFF4011E6D9D0D0002EA8D /* FocusGuideHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusGuideHelper.swift; sourceTree = "<group>"; };
 		CEE849791E55EF840033F512 /* DashboardProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardProtocol.swift; sourceTree = "<group>"; };
 		CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,6 +227,7 @@
 				89B338031E48C0B700610EA3 /* SlotableCell */,
 				89B338181E49F7A400610EA3 /* StalkrExtensions.swift */,
 				CECFF3FF1E6D861C0002EA8D /* FocusedView.swift */,
+				CECFF4011E6D9D0D0002EA8D /* FocusGuideHelper.swift */,
 			);
 			path = stalkr;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				89939E0D1E6667DE007EDA4E /* CellConfigCreateButton.swift in Sources */,
 				89B3380B1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift in Sources */,
 				CE85B3CE1E5349D900DA7287 /* SegmentedViewController.swift in Sources */,
+				CECFF4021E6D9D0D0002EA8D /* FocusGuideHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
