@@ -10,7 +10,7 @@ import UIKit
 
 class SidebarController: UITableViewController {
 
-    var optionsNames: [String] = ["Projetos", "Criar projeto", "Conta"]
+    var optionsNames: [String] = ["Projects", "New project", "Account"]
     var icons: [UIImage] = [UIImage(named: "ProjectIcon")!, UIImage(named: "ProjectIcon")!, UIImage(named: "ProjectIcon")!]
         
     var sidebarProtocol: SidebarProtocol?

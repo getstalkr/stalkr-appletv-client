@@ -54,7 +54,6 @@
 		CE52C5371E60ED5100FC6C40 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */; };
 		CE52C5391E61059300FC6C40 /* SidebarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */; };
 		CE85B3CE1E5349D900DA7287 /* SegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */; };
-		CECFF4001E6D861C0002EA8D /* FocusedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECFF3FF1E6D861C0002EA8D /* FocusedView.swift */; };
 		CECFF4021E6D9D0D0002EA8D /* FocusGuideHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECFF4011E6D9D0D0002EA8D /* FocusGuideHelper.swift */; };
 		CEE8497A1E55EF840033F512 /* DashboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE849791E55EF840033F512 /* DashboardProtocol.swift */; };
 		CEE8497C1E55F18F0033F512 /* ProjectViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */; };
@@ -112,7 +111,6 @@
 		CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarProtocol.swift; sourceTree = "<group>"; };
 		CE85B3CD1E5349D900DA7287 /* SegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedViewController.swift; sourceTree = "<group>"; };
-		CECFF3FF1E6D861C0002EA8D /* FocusedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusedView.swift; sourceTree = "<group>"; };
 		CECFF4011E6D9D0D0002EA8D /* FocusGuideHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusGuideHelper.swift; sourceTree = "<group>"; };
 		CEE849791E55EF840033F512 /* DashboardProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardProtocol.swift; sourceTree = "<group>"; };
 		CEE8497B1E55F18F0033F512 /* ProjectViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewProtocol.swift; sourceTree = "<group>"; };
@@ -221,13 +219,12 @@
 				89B337F61E48BB9F00610EA3 /* Main.storyboard */,
 				89B337F91E48BB9F00610EA3 /* Assets.xcassets */,
 				89B337FB1E48BB9F00610EA3 /* Info.plist */,
+				CECFF4011E6D9D0D0002EA8D /* FocusGuideHelper.swift */,
 				89B3380C1E48C34E00610EA3 /* GridConfiguration.swift */,
 				89B3380E1E48C42200610EA3 /* GridLayout.swift */,
 				892DECE21E5FD6B400676056 /* CreateGrid */,
 				89B338031E48C0B700610EA3 /* SlotableCell */,
 				89B338181E49F7A400610EA3 /* StalkrExtensions.swift */,
-				CECFF3FF1E6D861C0002EA8D /* FocusedView.swift */,
-				CECFF4011E6D9D0D0002EA8D /* FocusGuideHelper.swift */,
 			);
 			path = stalkr;
 			sourceTree = "<group>";
@@ -453,7 +450,6 @@
 				892E73DC1E589378007483E1 /* CellCommitsFeed.swift in Sources */,
 				89B3380F1E48C42200610EA3 /* GridLayout.swift in Sources */,
 				892DECCE1E5F2E6100676056 /* CreateGridViewController.swift in Sources */,
-				CECFF4001E6D861C0002EA8D /* FocusedView.swift in Sources */,
 				89C994CD1E5482C900DBADBA /* CellTrevisTableCell.swift in Sources */,
 				CE2E76411E5C737C00D5EC5C /* TableCell.swift in Sources */,
 				89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */,

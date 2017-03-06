@@ -109,7 +109,7 @@ extension SegmentedViewController: SidebarProtocol {
         guideHelper.deseable()
         
         switch option {
-            case "Projetos":
+            case "Projects":
                 UIView.animate(withDuration: 0.5, animations: {
                     self.projectView.alpha = 1
                     self.createProjectView.alpha = 0
@@ -125,7 +125,7 @@ extension SegmentedViewController: SidebarProtocol {
                 guideHelper.linkByFocus(from: cell, to: segments[0], inPosition: .Right, reduceMeasurement: .WidthAndHeight, inView: self.view)
                 guideHelper.linkByFocus(from: segments[0], to: cell, inPosition: .Left, reduceMeasurement: .Width, inView: self.view)
                 guideHelper.linkByFocus(from: projectController!.containerView, to: cell, inPosition: .Left, reduceMeasurement: .Width, inView: projectController?.view)
-            case "Criar projeto":
+            case "New project":
                 UIView.animate(withDuration: 0.5, animations: {
                     self.projectView.alpha = 0
                     self.createProjectView.alpha = 1
@@ -138,7 +138,7 @@ extension SegmentedViewController: SidebarProtocol {
                 
                 guideHelper.linkByFocus(from: sidebarCell, to: createProjectView, inPosition: .Right, reduceMeasurement: .WidthAndHeight, inView: self.view)
                 guideHelper.linkByFocus(from: createProjectView, to: sidebarCell, inPosition: .Left, reduceMeasurement: .Width, inView: self.view)
-            case "Conta":
+            case "Account":
                 UIView.animate(withDuration: 0.5, animations: {
                     self.projectView.alpha = 0
                     self.createProjectView.alpha = 0

@@ -25,6 +25,8 @@ class ProjectsViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
 
     var selectedIndex = IndexPath()
+    
+    var guideHelper = FocusGuideHelper(withArrayOfFocus: [])
 
     override var preferredFocusEnvironments: [UIFocusEnvironment] {
         
@@ -53,17 +55,9 @@ class ProjectsViewController: UIViewController {
         }
     }
     
-//    override func shouldUpdateFocus(in context: UIFocusUpdateContext) -> Bool {
-//        
-//        if let nextView = context.nextFocusedView {
-//            
-//            if nextView == projectsTab {
-//                projectsTab.cellForItem(at: selectedIndex)?.setNeedsFocusUpdate()
-//                projectsTab.cellForItem(at: selectedIndex)?.updateFocusIfNeeded()
-//            }
-//        }
-//        return true
-//    }
+    override func shouldUpdateFocus(in context: UIFocusUpdateContext) -> Bool {
+        return super.shouldUpdateFocus(in: context)
+    }
 }
 
 // code of project list collectionview
@@ -137,8 +131,18 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, shouldUpdateFocusIn context: UICollectionViewFocusUpdateContext) -> Bool {
         
-        if context.nextFocusedIndexPath != nil && context.previouslyFocusedIndexPath != nil {
-            selectedIndex = context.nextFocusedIndexPath!
+        if context.nextFocusedIndexPath != nil {
+            guideHelper.deseable()
+            let segments = projectsTab.subviews.sorted(by: { (a, b) -> Bool in
+                return a.center.x < b.center.x
+            })
+            //Problemas com constraints. São necessárias modificações para esse trecho funcionar
+//            guideHelper.linkByFocus(from: segments[context.nextFocusedIndexPath!.row], to: containerView, inPosition: .Down, reduceMeasurement: .Height, inView: self.view)
+//            guideHelper.linkByFocus(from: containerView, to: segments[context.nextFocusedIndexPath!.row], inPosition: .Up, reduceMeasurement: .Height, inView: self.view)
+            
+            if context.previouslyFocusedIndexPath != nil {
+                selectedIndex = context.nextFocusedIndexPath!
+            }
         }
         return true
     }
