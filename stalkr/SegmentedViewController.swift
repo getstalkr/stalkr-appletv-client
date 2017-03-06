@@ -44,15 +44,9 @@ class SegmentedViewController: UIViewController {
         
     @IBOutlet weak var accountView: UIView!
     
-    var sidebarGuide = UIFocusGuide()
-    
-    var choosedViewGuide = UIFocusGuide()
-    
-    var auxiliarGuide = UIFocusGuide()
-    
     let gradientLayer = CAGradientLayer()
     
-    var focusArray: [UIFocusGuide] = []
+    var guideHelper = FocusGuideHelper(withArrayOfFocus: [])
 
     override func viewDidLoad() {
         
@@ -102,47 +96,6 @@ class SegmentedViewController: UIViewController {
     override func shouldUpdateFocus(in context: UIFocusUpdateContext) -> Bool {
         return super.shouldUpdateFocus(in: context)
     }
-    
-    func linkByFocus(from view1: UIView, to view2: UIView, inPosition pos: Pos, reduceMeasurement measure: Measurement, inView: UIView? = nil) -> UIFocusGuide {
-        
-        let focusGuide = UIFocusGuide()
-        if inView == nil {
-            self.view.addLayoutGuide(focusGuide)
-        } else {
-            inView!.addLayoutGuide(focusGuide)
-        }
-        
-        switch measure {
-        case .Height:
-            focusGuide.widthAnchor.constraint(equalTo: view1.widthAnchor).isActive = true
-            focusGuide.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        case .Width:
-            focusGuide.widthAnchor.constraint(equalToConstant: 10).isActive = true
-            focusGuide.heightAnchor.constraint(equalTo: view1.heightAnchor).isActive = true
-        case .None:
-            focusGuide.widthAnchor.constraint(equalTo: view1.widthAnchor).isActive = true
-            focusGuide.heightAnchor.constraint(equalTo: view1.heightAnchor).isActive = true
-        case .WidthAndHeight:
-            focusGuide.widthAnchor.constraint(equalToConstant: 10).isActive = true
-            focusGuide.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        }
-        
-        switch pos {
-        case .Up:
-            focusGuide.bottomAnchor.constraint(equalTo: view1.topAnchor, constant: 0).isActive = true
-        case .Down:
-            focusGuide.topAnchor.constraint(equalTo: view1.bottomAnchor, constant: 0).isActive = true
-        case .Left:
-            focusGuide.trailingAnchor.constraint(equalTo: view1.leadingAnchor, constant: 0).isActive = true
-        case .Right:
-            focusGuide.leadingAnchor.constraint(equalTo: view1.trailingAnchor, constant: 0).isActive = true
-        }
-        
-        focusGuide.centerYAnchor.constraint(equalTo: view1.centerYAnchor).isActive = true
-        focusGuide.preferredFocusEnvironments = [view2]
-        
-        return focusGuide
-    }
 }
 
 //MARK: SidebarProtocol
@@ -153,9 +106,7 @@ extension SegmentedViewController: SidebarProtocol {
         
         labelTitle.text = option
         
-        sidebarGuide.isEnabled = false
-        choosedViewGuide.isEnabled = false
-        auxiliarGuide.isEnabled = false
+        guideHelper.deseable()
         
         switch option {
             case "Projetos":
@@ -171,9 +122,9 @@ extension SegmentedViewController: SidebarProtocol {
                 let segments = projectController!.projectsTab.subviews.sorted(by: { (a, b) -> Bool in
                     return a.center.x < b.center.x
                 })
-                sidebarGuide = linkByFocus(from: cell, to: segments[0], inPosition: .Right, reduceMeasurement: .WidthAndHeight)
-                choosedViewGuide = linkByFocus(from: segments[0], to: cell, inPosition: .Left, reduceMeasurement: .Width)
-                auxiliarGuide = linkByFocus(from: projectController!.containerView, to: cell, inPosition: .Left, reduceMeasurement: .Width, inView: projectController?.view)
+                guideHelper.linkByFocus(from: cell, to: segments[0], inPosition: .Right, reduceMeasurement: .WidthAndHeight, inView: self.view)
+                guideHelper.linkByFocus(from: segments[0], to: cell, inPosition: .Left, reduceMeasurement: .Width, inView: self.view)
+                guideHelper.linkByFocus(from: projectController!.containerView, to: cell, inPosition: .Left, reduceMeasurement: .Width, inView: projectController?.view)
             case "Criar projeto":
                 UIView.animate(withDuration: 0.5, animations: {
                     self.projectView.alpha = 0
@@ -185,8 +136,8 @@ extension SegmentedViewController: SidebarProtocol {
                     return
                 }
                 
-                sidebarGuide = linkByFocus(from: sidebarCell, to: createProjectView, inPosition: .Right, reduceMeasurement: .WidthAndHeight)
-                choosedViewGuide = linkByFocus(from: createProjectView, to: sidebarCell, inPosition: .Left, reduceMeasurement: .Width)
+                guideHelper.linkByFocus(from: sidebarCell, to: createProjectView, inPosition: .Right, reduceMeasurement: .WidthAndHeight, inView: self.view)
+                guideHelper.linkByFocus(from: createProjectView, to: sidebarCell, inPosition: .Left, reduceMeasurement: .Width, inView: self.view)
             case "Conta":
                 UIView.animate(withDuration: 0.5, animations: {
                     self.projectView.alpha = 0
@@ -198,8 +149,8 @@ extension SegmentedViewController: SidebarProtocol {
                     return
                 }
                 
-                sidebarGuide = linkByFocus(from: sidebarCell, to: accountView, inPosition: .Right, reduceMeasurement: .WidthAndHeight)
-                choosedViewGuide = linkByFocus(from: accountView, to: sidebarCell, inPosition: .Left, reduceMeasurement: .Width)
+                guideHelper.linkByFocus(from: sidebarCell, to: accountView, inPosition: .Right, reduceMeasurement: .WidthAndHeight, inView: self.view)
+                guideHelper.linkByFocus(from: accountView, to: sidebarCell, inPosition: .Left, reduceMeasurement: .Width, inView: self.view)
             default:
                 UIView.animate(withDuration: 0.5, animations: {
                     self.projectView.alpha = 1

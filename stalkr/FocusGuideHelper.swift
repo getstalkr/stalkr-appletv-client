@@ -10,9 +10,9 @@ import UIKit
 
 class FocusGuideHelper: NSObject {
 
-    var arrayFocus: [UIFocusGuide] = []
+    var arrayFocus: [UIFocusGuide]
     
-    func linkByFocus(from view1: UIView, to view2: UIView, inPosition pos: Pos, reduceMeasurement measure: Measurement, inView: UIView? = nil) -> UIFocusGuide {
+    func linkByFocus(from view1: UIView, to view2: UIView, inPosition pos: Pos, reduceMeasurement measure: Measurement, inView: UIView? = nil) {
         
         let focusGuide = UIFocusGuide()
         if inView == nil {
@@ -50,7 +50,7 @@ class FocusGuideHelper: NSObject {
         focusGuide.centerYAnchor.constraint(equalTo: view1.centerYAnchor).isActive = true
         focusGuide.preferredFocusEnvironments = [view2]
         
-        return focusGuide
+        arrayFocus.append(focusGuide)
     }
     
     func deseable() {
@@ -60,4 +60,7 @@ class FocusGuideHelper: NSObject {
         }
     }
     
+    init(withArrayOfFocus focus: [UIFocusGuide]) {
+        arrayFocus = focus
+    }
 }
