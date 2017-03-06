@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="3481" y="868"/>
         </scene>
-        <!--Segmented View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="jWs-BP-Tgm">
             <objects>
-                <viewController id="5fm-2u-0sW" customClass="SegmentedViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5fm-2u-0sW" customClass="MainViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cAd-o9-2di"/>
                         <viewControllerLayoutGuide type="bottom" id="2OB-s8-wgB"/>

@@ -24,7 +24,7 @@ enum Measurement {
     case WidthAndHeight
 }
 
-class SegmentedViewController: UIViewController {
+class MainViewController: UIViewController {
     
     @IBOutlet weak var labelTitle: UILabel!
     
@@ -100,7 +100,7 @@ class SegmentedViewController: UIViewController {
 
 //MARK: SidebarProtocol
 
-extension SegmentedViewController: SidebarProtocol {
+extension MainViewController: SidebarProtocol {
     
     func focusedCell(withOption option: String) {
         
