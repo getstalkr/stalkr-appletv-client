@@ -19,6 +19,7 @@ struct Project {
 class ProjectsViewController: UIViewController {
     
     @IBOutlet weak var projectsTab: UICollectionView!
+    @IBOutlet weak var viewProjectsTabFooter: UIView!
     var parentController: SegmentedViewController?
     var gridView: GridViewController?
     var projectsList: [Project] = []
@@ -29,6 +30,8 @@ class ProjectsViewController: UIViewController {
         projectsTab.delegate = self
         projectsTab.dataSource = self
         projectsTab.backgroundColor = UIColor(white: 0, alpha: 0)
+        
+        viewProjectsTabFooter.backgroundColor = UIColor.projectTabNotSelected
         
         projectsList = [Project(name: "Blau"), Project(name: "Save my Nails"), Project(name: "Eta bicho doido")]
         projectsList[0].show(grid: (self.gridView as! ProjectViewProtocol))
@@ -65,22 +68,15 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
         cell.labelProjectName.sizeToFit()
         
         // colors
-        cell.viewFooterLeft.backgroundColor = UIColor.projectTabNotSelected
         cell.viewFooterCenter.backgroundColor = UIColor.projectTabNotSelected
-        cell.viewFooterRight.backgroundColor = UIColor.projectTabNotSelected
         cell.labelProjectName.textColor = UIColor.projectTabNotSelected
         
         // shadow
-        cell.viewFooterLeft.layer.shadowColor = UIColor.white.cgColor
         cell.viewFooterCenter.layer.shadowColor = UIColor.white.cgColor
-        cell.viewFooterRight.layer.shadowColor = UIColor.white.cgColor
-        cell.viewFooterLeft.layer.shadowOpacity = 0
         cell.viewFooterCenter.layer.shadowOpacity = 0
-        cell.viewFooterRight.layer.shadowOpacity = 0
         
         // constrains
-        constrain(cell.labelProjectName, cell.viewFooterLeft, cell.viewFooterCenter, cell.viewFooterRight) { label, footerLeft, footerCenter, footerRight in
-            
+        constrain(cell.labelProjectName, cell.viewFooterCenter) { label, footerCenter in
             label.top == label.superview!.topMargin
             label.left == label.superview!.leftMargin + 15
             label.right == label.superview!.rightMargin + 15
@@ -88,20 +84,11 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
             footerCenter.top == label.bottom + 5
             footerCenter.width == cell.labelProjectName.frame.width
             footerCenter.left == label.left
-            
-            footerLeft.top == footerCenter.top
-            footerLeft.left == footerLeft.superview!.left
-            footerLeft.right == footerCenter.left
-            
-            footerRight.top == footerCenter.top
-            footerRight.left == footerCenter.right
-            footerRight.right == footerRight.superview!.right
-            
-            footerLeft.height == 5
+
             footerCenter.height == 5
-            footerRight.height == 5
         }
         
+
         //
         if indexPath.item == 0 {
             cell.changeToSelected()
