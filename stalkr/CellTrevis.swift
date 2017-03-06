@@ -78,10 +78,21 @@ class CellTrevis: SlotableCellDefault, SlotableCell, SubscriberCell, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellTrevisTableCell", for: indexPath) as! CellTrevisTableCell
         let currentBuild = travisBuildsLog[indexPath.row]
         
-        cell.viewLeft.backgroundColor = UIColor.stalkrSuccess // TODO
+        switch currentBuild.state {
+        case .running:
+            cell.viewLeft.backgroundColor = UIColor.yellow
+            cell.labelCheckmark.text = "."
+            cell.labelCheckmark.textColor = UIColor.yellow
+        case .success:
+            cell.viewLeft.backgroundColor = UIColor.stalkrSuccess
+            cell.labelCheckmark.text = "✓"
+            cell.labelCheckmark.textColor = UIColor.stalkrSuccess
+        case .failed:
+            cell.viewLeft.backgroundColor = UIColor.stalkrError
+            cell.labelCheckmark.text = "x"
+            cell.labelCheckmark.textColor = UIColor.stalkrError
+        }
         
-        cell.labelCheckmark.text = "✓" // TODO
-        cell.labelCheckmark.textColor = UIColor.stalkrSuccess
         cell.labelCommitMessage.text = "\(currentBuild.eventType) #\(currentBuild.number)"
         cell.textCommitMessage.text = currentBuild.message
         cell.textCommitMessage.textColor = UIColor.fontPullMessage

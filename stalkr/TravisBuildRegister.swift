@@ -9,6 +9,12 @@
 import Foundation
 import SwiftyJSON
 
+enum TravisSates {
+    case running
+    case success
+    case failed
+}
+
 struct TravisBuildRegister {
     let number: String
     let branch: String
@@ -17,6 +23,7 @@ struct TravisBuildRegister {
     let eventType: String
     let duration: Int
     let dateFinish: Date?
+    let state: TravisSates
     
     init(json: JSON) {
         self.number = json["number"].stringValue
@@ -30,6 +37,14 @@ struct TravisBuildRegister {
             self.eventType = "Push"
         }
         self.duration = json["duration"].intValue
+        
+        if json["state"].stringValue == "created" || json["state"].stringValue == "started" {
+            self.state = .running
+        } else if json["result"].intValue == 0 {
+            self.state = .success
+        } else {
+            self.state = .failed
+        }
         
         let finishedAt = json["finished_at"].stringValue
         if finishedAt != "" {

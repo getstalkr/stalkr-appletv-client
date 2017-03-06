@@ -297,10 +297,10 @@
             </objects>
             <point key="canvasLocation" x="-2309" y="1948"/>
         </scene>
-        <!--Project Table View Controller-->
+        <!--Sidebar Controller-->
         <scene sceneID="8qx-2t-Fuc">
             <objects>
-                <tableViewController storyboardIdentifier="ProjectTableViewController" id="8PL-Ka-4f6" customClass="ProjectTableViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ProjectTableViewController" id="8PL-Ka-4f6" customClass="SidebarController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="66" sectionFooterHeight="66" id="Ebf-zl-vZe">
                         <rect key="frame" x="0.0" y="0.0" width="386" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -28,7 +28,7 @@ class SegmentedViewController: UIViewController {
     
     @IBOutlet weak var labelTitle: UILabel!
     
-    var sidebarController: ProjectTableViewController?
+    var sidebarController: SidebarController?
     
     var projectController: ProjectsViewController?
     
@@ -87,7 +87,7 @@ class SegmentedViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "tableIdentifier" {
-            self.sidebarController = segue.destination as? ProjectTableViewController
+            self.sidebarController = segue.destination as? SidebarController
             self.sidebarController?.sidebarProtocol = self
         } else if segue.identifier == "projectsIdentifier" {
             self.projectController = segue.destination as? ProjectsViewController
