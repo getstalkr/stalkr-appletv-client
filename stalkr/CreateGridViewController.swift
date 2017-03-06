@@ -24,6 +24,8 @@ class CreateGridViewController: UITableViewController, CreateGridConfigInputDele
     var cellConfigList: [CellCreateGrid] = []
     var lastCellConfigSelected = IndexPath(row: 1, section: 0)
     
+    var linkerDelegate: LinkerProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,6 +80,7 @@ class CreateGridViewController: UITableViewController, CreateGridConfigInputDele
     }
     
     override func tableView(_ tableView: UITableView, didUpdateFocusIn context: UITableViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        
         if ((context.previouslyFocusedIndexPath) != nil) {
             let cell = tableView.cellForRow(at: context.previouslyFocusedIndexPath!)
             cell?.layer.shadowOpacity = 0.0
@@ -86,6 +89,8 @@ class CreateGridViewController: UITableViewController, CreateGridConfigInputDele
         if ((context.nextFocusedIndexPath) != nil) {
             let cell = tableView.cellForRow(at: context.nextFocusedIndexPath!)
             cell?.layer.shadowOpacity = 1.0
+            
+            linkerDelegate?.linkToSidebar(fromView: tableView.cellForRow(at: context.nextFocusedIndexPath!)!, toItem: IndexPath(row: 1, section: 0), inView: view)
         }
     }
     
@@ -139,5 +144,4 @@ class CreateGridViewController: UITableViewController, CreateGridConfigInputDele
             return true
         }
     }
-
 }

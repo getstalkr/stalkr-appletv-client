@@ -11,5 +11,5 @@ import UIKit
 
 protocol LinkerProtocol: class {
     
-    func linkToSidebar(fromView: UIView, toItem: IndexPath)
+    func linkToSidebar(fromView: UIView, toItem: IndexPath, inView: UIView)
 }

@@ -94,6 +94,7 @@ class SegmentedViewController: UIViewController {
         } else if segue.identifier == "createProjectIdentifier" {
             print("CRIOU")
             self.createProjectController = segue.destination as? CreateGridViewController
+            self.createProjectController?.linkerDelegate = self
         }
     }
     
@@ -142,19 +143,13 @@ extension SegmentedViewController: SidebarProtocol {
                     self.createProjectView.alpha = 1
                     self.accountView.alpha = 0
                     
-                    //Falhou, pois a tableView do grid não foi instanciada ainda
-                    
-//                    guard let sidebarCell = self.sidebarController!.tableView.cellForRow(at: IndexPath(row: 1, section: 0)) else {
-//                        print("\ncell\n")
-//                        return
-//                    }
-//                    guard let createGridCell = self.createProjectController!.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? CellConfigInput else {
-//                        print("\ncell\n")
-//                        return
-//                    }
-//                    let textFieldCell = createGridCell.inputField!
-//                    self.sidebarGuide = self.linkByFocus(from: sidebarCell, to: textFieldCell, inPosition: .Right, reduceMeasurement: .Width)
-//                    self.choosedViewGuide = self.linkByFocus(from: textFieldCell, to: sidebarCell, inPosition: .Left, reduceMeasurement: .Width)
+                    guard let sidebarCell = self.sidebarController!.tableView.cellForRow(at: IndexPath(row: 1, section: 0)) else {
+                        print("\ncell\n")
+                        return
+                    }
+
+                    self.sidebarGuide = self.linkByFocus(from: sidebarCell, to: self.createProjectView, inPosition: .Right, reduceMeasurement: .WidthAndHeight)
+                    self.choosedViewGuide = self.linkByFocus(from: self.createProjectView, to: sidebarCell, inPosition: .Left, reduceMeasurement: .Width)
                 })
             default:
                 UIView.animate(withDuration: 0.5, animations: {
@@ -165,10 +160,15 @@ extension SegmentedViewController: SidebarProtocol {
         }
     }
     
-    func linkByFocus(from view1: UIView, to view2: UIView, inPosition pos: Pos, reduceMeasurement measure: Measurement) -> UIFocusGuide {
+    func linkByFocus(from view1: UIView, to view2: UIView, inPosition pos: Pos, reduceMeasurement measure: Measurement, inView: UIView? = nil) -> UIFocusGuide {
         
         let focusGuide = UIFocusGuide()
-        self.view.addLayoutGuide(focusGuide)
+        if inView == nil {
+            self.view.addLayoutGuide(focusGuide)
+        } else {
+            inView!.addLayoutGuide(focusGuide)
+        }
+        
         switch measure {
             case .Height:
                 focusGuide.widthAnchor.constraint(equalTo: view1.widthAnchor).isActive = true
@@ -211,12 +211,12 @@ extension SegmentedViewController: SidebarProtocol {
 
 extension SegmentedViewController: LinkerProtocol {
 
-    func linkToSidebar(fromView: UIView, toItem: IndexPath) {
+    func linkToSidebar(fromView: UIView, toItem: IndexPath, inView: UIView) {
         
         guard let cell = self.sidebarController?.tableView.cellForRow(at: toItem) else {
             print("\ncell\n")
             return
         }
-        self.choosedViewGuide = self.linkByFocus(from: view, to: cell, inPosition: .Left, reduceMeasurement: .Width)
+        self.choosedViewGuide = self.linkByFocus(from: view, to: cell, inPosition: .Left, reduceMeasurement: .Width, inView: inView)
     }
 }
