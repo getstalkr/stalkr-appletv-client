@@ -30,17 +30,8 @@ class ProjectsViewController: UIViewController {
     
     var shouldSelectEspecificTab = false
     
-    var parentController: MainViewController?
-
-    override var preferredFocusEnvironments: [UIFocusEnvironment] {
-        
-        let cells = projectsTab.subviews.sorted(by: { (a, b) -> Bool in
-            return a.center.x < b.center.x
-        })
-        return [cells[selectedIndex.row]]
-    }
-    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         projectsTab.delegate = self
@@ -56,6 +47,7 @@ class ProjectsViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "gridIdentifier" {
             self.gridView = segue.destination as? GridViewController
         }
@@ -110,7 +102,6 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
             footerCenter.height == 5
         }
         
-        
         if indexPath.item == 0 {
             cell.changeToSelected()
         }
@@ -135,11 +126,6 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didUpdateFocusIn context: UICollectionViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        
-        if context.nextFocusedIndexPath != nil && context.previouslyFocusedIndexPath == nil {
-            projectsTab.cellForItem(at: selectedIndex)?.setNeedsFocusUpdate()
-            projectsTab.cellForItem(at: selectedIndex)?.updateFocusIfNeeded()
-        }
         
         let cells = projectsTab.subviews.sorted(by: { (a, b) -> Bool in
             return a.center.x < b.center.x
