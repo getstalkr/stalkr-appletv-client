@@ -25,29 +25,25 @@ let rawConfig = [
     
     "[" +
         "[" +
-            "{ \"cell\": \"CellPlaceholderWidthTwo\", \"params\": {} }," +
-            "{ \"cell\": \"CellPlaceholderHeightTwo\", \"params\": {} }" +
+            "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
+            "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"CocoaPods\", \"project\": \"CocoaPods\" } }," +
+            "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
         "]," +
         "[" +
-            "{ \"cell\": \"CellPlaceholderTwoXTwo\", \"params\": {} }" +
-        "]," +
-        "[" +
-            "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é sayajin\" } }" +
+            "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
+            "{ \"cell\": \"CellCommitsFeed\", \"params\": { \"owner\": \"CocoaPods\", \"project\": \"CocoaPods\" } }" +
         "]" +
     "]",
     
     "[" +
         "[" +
-            "{ \"cell\": \"CellPlaceholderWidthTwo\", \"params\": {} }," +
-            "{ \"cell\": \"CellPlaceholderHeightTwo\", \"params\": {} }" +
+            "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
+            "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"facebook\", \"project\": \"jest\" } }," +
+            "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
         "]," +
         "[" +
-            "{ \"cell\": \"CellPlaceholderWidthTwo\", \"params\": {} }" +
-        "]," +
-        "[" +
-            "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus sayajin\" } }," +
-            "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é lindo\" } }," +
-            "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é o galã\" } }" +
+            "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
+            "{ \"cell\": \"CellCommitsFeed\", \"params\": { \"owner\": \"facebook\", \"project\": \"jest\" } }" +
         "]" +
     "]"
 ]

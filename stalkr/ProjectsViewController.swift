@@ -45,7 +45,7 @@ class ProjectsViewController: UIViewController {
         
         viewProjectsTabFooter.backgroundColor = UIColor.projectTabNotSelected
         
-        projectsList = [Project(name: "Blau"), Project(name: "Save my Nails"), Project(name: "Eta bicho doido")]
+        projectsList = [Project(name: "TestProject"), Project(name: "CocoaPods"), Project(name: "Jest")]
         projectsList[0].show(grid: (self.gridView as! ProjectViewProtocol))
         
         selectedIndex = IndexPath(row: 0, section: 0)

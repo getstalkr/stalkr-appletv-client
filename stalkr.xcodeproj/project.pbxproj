@@ -27,16 +27,8 @@
 		89B337F81E48BB9F00610EA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B337F61E48BB9F00610EA3 /* Main.storyboard */; };
 		89B337FA1E48BB9F00610EA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89B337F91E48BB9F00610EA3 /* Assets.xcassets */; };
 		89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338011E48C08400610EA3 /* SlotableCell.swift */; };
-		89B338051E48C0DE00610EA3 /* CellPlaceholderSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338041E48C0DE00610EA3 /* CellPlaceholderSmall.swift */; };
-		89B338071E48C13200610EA3 /* CellPlaceholderWidthTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338061E48C13200610EA3 /* CellPlaceholderWidthTwo.swift */; };
-		89B338091E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338081E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift */; };
-		89B3380B1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3380A1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift */; };
 		89B3380D1E48C34E00610EA3 /* GridConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3380C1E48C34E00610EA3 /* GridConfiguration.swift */; };
 		89B3380F1E48C42200610EA3 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3380E1E48C42200610EA3 /* GridLayout.swift */; };
-		89B338111E49ED2400610EA3 /* CellPlaceholderSmall.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B338101E49ED2400610EA3 /* CellPlaceholderSmall.xib */; };
-		89B338131E49F5EA00610EA3 /* CellPlaceholderWidthTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B338121E49F5EA00610EA3 /* CellPlaceholderWidthTwo.xib */; };
-		89B338151E49F60200610EA3 /* CellPlaceholderHeightTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B338141E49F60200610EA3 /* CellPlaceholderHeightTwo.xib */; };
-		89B338171E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B338161E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib */; };
 		89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338181E49F7A400610EA3 /* StalkrExtensions.swift */; };
 		89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C467541E596250003CF8F2 /* CellDeployStatus.swift */; };
 		89C467571E596258003CF8F2 /* CellDeployStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C467561E596258003CF8F2 /* CellDeployStatus.xib */; };
@@ -86,16 +78,8 @@
 		89B337F91E48BB9F00610EA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89B337FB1E48BB9F00610EA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89B338011E48C08400610EA3 /* SlotableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotableCell.swift; sourceTree = "<group>"; };
-		89B338041E48C0DE00610EA3 /* CellPlaceholderSmall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellPlaceholderSmall.swift; sourceTree = "<group>"; };
-		89B338061E48C13200610EA3 /* CellPlaceholderWidthTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellPlaceholderWidthTwo.swift; sourceTree = "<group>"; };
-		89B338081E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellPlaceholderHeightTwo.swift; sourceTree = "<group>"; };
-		89B3380A1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellPlaceholderTwoXTwo.swift; sourceTree = "<group>"; };
 		89B3380C1E48C34E00610EA3 /* GridConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridConfiguration.swift; sourceTree = "<group>"; };
 		89B3380E1E48C42200610EA3 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
-		89B338101E49ED2400610EA3 /* CellPlaceholderSmall.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellPlaceholderSmall.xib; sourceTree = "<group>"; };
-		89B338121E49F5EA00610EA3 /* CellPlaceholderWidthTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellPlaceholderWidthTwo.xib; sourceTree = "<group>"; };
-		89B338141E49F60200610EA3 /* CellPlaceholderHeightTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellPlaceholderHeightTwo.xib; sourceTree = "<group>"; };
-		89B338161E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellPlaceholderTwoXTwo.xib; sourceTree = "<group>"; };
 		89B338181E49F7A400610EA3 /* StalkrExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StalkrExtensions.swift; sourceTree = "<group>"; };
 		89C467541E596250003CF8F2 /* CellDeployStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDeployStatus.swift; sourceTree = "<group>"; };
 		89C467561E596258003CF8F2 /* CellDeployStatus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellDeployStatus.xib; sourceTree = "<group>"; };
@@ -244,14 +228,6 @@
 				89B338011E48C08400610EA3 /* SlotableCell.swift */,
 				89276ED71E54BBE800D99D4E /* SubscriberCell.swift */,
 				892DECC91E5F258400676056 /* SlotableCellConfiguration.swift */,
-				89B338041E48C0DE00610EA3 /* CellPlaceholderSmall.swift */,
-				89B338101E49ED2400610EA3 /* CellPlaceholderSmall.xib */,
-				89B338061E48C13200610EA3 /* CellPlaceholderWidthTwo.swift */,
-				89B338121E49F5EA00610EA3 /* CellPlaceholderWidthTwo.xib */,
-				89B338081E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift */,
-				89B338141E49F60200610EA3 /* CellPlaceholderHeightTwo.xib */,
-				89B3380A1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift */,
-				89B338161E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib */,
 				89C994C91E5481D700DBADBA /* CellTrevis */,
 				892E73E01E589380007483E1 /* CellCommitsFeed */,
 				892E73E11E58A555007483E1 /* CellTeamCommits */,
@@ -365,17 +341,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				89B337FA1E48BB9F00610EA3 /* Assets.xcassets in Resources */,
-				89B338131E49F5EA00610EA3 /* CellPlaceholderWidthTwo.xib in Resources */,
 				89A6663F1E5DB9C0007F8A7A /* CellTeamCommitsZoom.xib in Resources */,
 				89C994AD1E547CDE00DBADBA /* CellTrevis.xib in Resources */,
 				892E73E51E58A59B007483E1 /* CellTeamCommits.xib in Resources */,
 				89C467571E596258003CF8F2 /* CellDeployStatus.xib in Resources */,
-				89B338151E49F60200610EA3 /* CellPlaceholderHeightTwo.xib in Resources */,
-				89B338111E49ED2400610EA3 /* CellPlaceholderSmall.xib in Resources */,
 				89C994CB1E54820900DBADBA /* CellTrevisTableCell.xib in Resources */,
 				892E73EA1E58F56F007483E1 /* CellCloudPerformance.xib in Resources */,
 				892E73DF1E589378007483E1 /* CellCommitsFeedTableCell.xib in Resources */,
-				89B338171E49F61300610EA3 /* CellPlaceholderTwoXTwo.xib in Resources */,
 				892E73DD1E589378007483E1 /* CellCommitsFeed.xib in Resources */,
 				89B337F81E48BB9F00610EA3 /* Main.storyboard in Resources */,
 			);
@@ -442,12 +414,10 @@
 				89B337F51E48BB9F00610EA3 /* GridViewController.swift in Sources */,
 				89E5DC561E6DEECD0029DDC0 /* CellConfigTitle.swift in Sources */,
 				8912784D1E6B20000037CAC7 /* CellProjectTab.swift in Sources */,
-				89B338051E48C0DE00610EA3 /* CellPlaceholderSmall.swift in Sources */,
 				89C7784C1E6EEB86008926E7 /* ProjectInformationViewController.swift in Sources */,
 				89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */,
 				CE52C5391E61059300FC6C40 /* SidebarProtocol.swift in Sources */,
 				89C994AB1E547C6E00DBADBA /* CellTrevis.swift in Sources */,
-				89B338091E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift in Sources */,
 				892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */,
 				89E5DC541E6DE4610029DDC0 /* CreateGridViewController.swift in Sources */,
 				892DECC81E5E308900676056 /* CellTeamCommitsZoom.swift in Sources */,
@@ -456,7 +426,6 @@
 				CE3DC3121E54807D008F88EE /* SidebarController.swift in Sources */,
 				CEE8497C1E55F18F0033F512 /* ProjectViewProtocol.swift in Sources */,
 				892E73E31E58A581007483E1 /* CellTeamCommits.swift in Sources */,
-				89B338071E48C13200610EA3 /* CellPlaceholderWidthTwo.swift in Sources */,
 				89276ED81E54BBE800D99D4E /* SubscriberCell.swift in Sources */,
 				89E5DC5C1E6E5E020029DDC0 /* CellConfigDivision.swift in Sources */,
 				892E73E81E58F487007483E1 /* CellCloudPerformance.swift in Sources */,
@@ -469,10 +438,8 @@
 				CE52C5371E60ED5100FC6C40 /* ProjectsViewController.swift in Sources */,
 				89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */,
 				89E5DC581E6DEEE20029DDC0 /* CellConfigInput.swift in Sources */,
-				CEAE127C1E6CEBB9002CCEDB /* LinkerProtocol.swift in Sources */,
 				8917E4AD1E6925FF001BD42A /* CommitRegister.swift in Sources */,
 				892E73DE1E589378007483E1 /* CellCommitsFeedTableCell.swift in Sources */,
-				89B3380B1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift in Sources */,
 				CE85B3CE1E5349D900DA7287 /* MainViewController.swift in Sources */,
 				CECFF4021E6D9D0D0002EA8D /* FocusGuideHelper.swift in Sources */,
 			);
