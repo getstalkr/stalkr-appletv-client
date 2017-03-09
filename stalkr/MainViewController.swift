@@ -83,11 +83,13 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "tableIdentifier" {
+            
             self.sidebarController = segue.destination as? SidebarController
             self.sidebarController?.sidebarProtocol = self
+            
         } else if segue.identifier == "projectsIdentifier" {
             self.projectController = segue.destination as? ProjectsViewController
-            self.projectController?.parentController = self
+            
         } else if segue.identifier == "createProjectIdentifier" {
             self.createProjectController = segue.destination as? CreateGridViewController
         }
@@ -162,7 +164,7 @@ extension MainViewController: SidebarProtocol {
         }
     }
     
-    //TODO: Chamar focusedCell, depois mudar o focus para o sidebarGuide
+    //TODO: Find a way to explicitly changing focus (without any swipe gesture)
     func selectedCell(withIndex index: IndexPath) {
 
     }

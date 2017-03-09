@@ -69,14 +69,16 @@ class SidebarController: UITableViewController {
             
             changeUiToNotSelected(cell: previousCell)
             if context.nextFocusedIndexPath == nil {
-                previousCell.alpha = 1.0
-                previousCell.contentView.backgroundColor = UIColor(netHex: 0x1B1D36)
+                changeUiToSelected(cell: previousCell)
             }
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         sidebarProtocol?.selectedCell(withIndex: indexPath)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func changeUiToNotSelected(cell: TableCell) {
@@ -85,8 +87,8 @@ class SidebarController: UITableViewController {
     
     func changeUiToSelected(cell: TableCell) {
         
+        cell.alpha = 1.0
         cell.contentView.backgroundColor = UIColor(netHex: 0x1B1D36)
-        cell.contentView.backgroundColor = cell.contentView.backgroundColor?.withAlphaComponent(0.5)
     }
     
     func changeUiToFocused(cell: TableCell) {
