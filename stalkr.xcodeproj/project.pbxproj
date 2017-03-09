@@ -13,9 +13,6 @@
 		892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DD7C31E5624F1000482C0 /* TravisBuildRegister.swift */; };
 		892DECC81E5E308900676056 /* CellTeamCommitsZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DECC71E5E308900676056 /* CellTeamCommitsZoom.swift */; };
 		892DECCA1E5F258400676056 /* SlotableCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DECC91E5F258400676056 /* SlotableCellConfiguration.swift */; };
-		892DECCE1E5F2E6100676056 /* CreateGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DECCD1E5F2E6100676056 /* CreateGridViewController.swift */; };
-		892DECE41E5FD70C00676056 /* CellConfigTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DECE31E5FD70C00676056 /* CellConfigTitle.swift */; };
-		892DECE61E5FD75100676056 /* CellConfigInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DECE51E5FD75100676056 /* CellConfigInput.swift */; };
 		892E73DC1E589378007483E1 /* CellCommitsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E73D81E589378007483E1 /* CellCommitsFeed.swift */; };
 		892E73DD1E589378007483E1 /* CellCommitsFeed.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892E73D91E589378007483E1 /* CellCommitsFeed.xib */; };
 		892E73DE1E589378007483E1 /* CellCommitsFeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E73DA1E589378007483E1 /* CellCommitsFeedTableCell.swift */; };
@@ -24,7 +21,6 @@
 		892E73E51E58A59B007483E1 /* CellTeamCommits.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892E73E41E58A59B007483E1 /* CellTeamCommits.xib */; };
 		892E73E81E58F487007483E1 /* CellCloudPerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E73E71E58F487007483E1 /* CellCloudPerformance.swift */; };
 		892E73EA1E58F56F007483E1 /* CellCloudPerformance.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892E73E91E58F56F007483E1 /* CellCloudPerformance.xib */; };
-		89939E0D1E6667DE007EDA4E /* CellConfigCreateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89939E0C1E6667DE007EDA4E /* CellConfigCreateButton.swift */; };
 		89A6663F1E5DB9C0007F8A7A /* CellTeamCommitsZoom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A6663E1E5DB9C0007F8A7A /* CellTeamCommitsZoom.xib */; };
 		89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B337F21E48BB9F00610EA3 /* AppDelegate.swift */; };
 		89B337F51E48BB9F00610EA3 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B337F41E48BB9F00610EA3 /* GridViewController.swift */; };
@@ -44,10 +40,17 @@
 		89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338181E49F7A400610EA3 /* StalkrExtensions.swift */; };
 		89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C467541E596250003CF8F2 /* CellDeployStatus.swift */; };
 		89C467571E596258003CF8F2 /* CellDeployStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C467561E596258003CF8F2 /* CellDeployStatus.xib */; };
+		89C7784A1E6E7775008926E7 /* CellConfigFinish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C778491E6E7775008926E7 /* CellConfigFinish.swift */; };
+		89C7784C1E6EEB86008926E7 /* ProjectInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C7784B1E6EEB86008926E7 /* ProjectInformationViewController.swift */; };
 		89C994AB1E547C6E00DBADBA /* CellTrevis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C994AA1E547C6E00DBADBA /* CellTrevis.swift */; };
 		89C994AD1E547CDE00DBADBA /* CellTrevis.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994AC1E547CDE00DBADBA /* CellTrevis.xib */; };
 		89C994CB1E54820900DBADBA /* CellTrevisTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994CA1E54820900DBADBA /* CellTrevisTableCell.xib */; };
 		89C994CD1E5482C900DBADBA /* CellTrevisTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C994CC1E5482C900DBADBA /* CellTrevisTableCell.swift */; };
+		89E5DC541E6DE4610029DDC0 /* CreateGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DC531E6DE4610029DDC0 /* CreateGridViewController.swift */; };
+		89E5DC561E6DEECD0029DDC0 /* CellConfigTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DC551E6DEECD0029DDC0 /* CellConfigTitle.swift */; };
+		89E5DC581E6DEEE20029DDC0 /* CellConfigInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DC571E6DEEE20029DDC0 /* CellConfigInput.swift */; };
+		89E5DC5A1E6E02C90029DDC0 /* CollectionStepByStepLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DC591E6E02C90029DDC0 /* CollectionStepByStepLayout.swift */; };
+		89E5DC5C1E6E5E020029DDC0 /* CellConfigDivision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DC5B1E6E5E020029DDC0 /* CellConfigDivision.swift */; };
 		91895BF7AD0056EDD4A683AD /* Pods_stalkr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2584928AB2DB6CF074F0769D /* Pods_stalkr.framework */; };
 		CE2E76411E5C737C00D5EC5C /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E76401E5C737C00D5EC5C /* TableCell.swift */; };
 		CE3DC3121E54807D008F88EE /* SidebarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DC3111E54807D008F88EE /* SidebarController.swift */; };
@@ -67,9 +70,6 @@
 		892DD7C31E5624F1000482C0 /* TravisBuildRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravisBuildRegister.swift; sourceTree = "<group>"; };
 		892DECC71E5E308900676056 /* CellTeamCommitsZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTeamCommitsZoom.swift; sourceTree = "<group>"; };
 		892DECC91E5F258400676056 /* SlotableCellConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotableCellConfiguration.swift; sourceTree = "<group>"; };
-		892DECCD1E5F2E6100676056 /* CreateGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGridViewController.swift; sourceTree = "<group>"; };
-		892DECE31E5FD70C00676056 /* CellConfigTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigTitle.swift; sourceTree = "<group>"; };
-		892DECE51E5FD75100676056 /* CellConfigInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigInput.swift; sourceTree = "<group>"; };
 		892E73D81E589378007483E1 /* CellCommitsFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCommitsFeed.swift; sourceTree = "<group>"; };
 		892E73D91E589378007483E1 /* CellCommitsFeed.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCommitsFeed.xib; sourceTree = "<group>"; };
 		892E73DA1E589378007483E1 /* CellCommitsFeedTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCommitsFeedTableCell.swift; sourceTree = "<group>"; };
@@ -78,7 +78,6 @@
 		892E73E41E58A59B007483E1 /* CellTeamCommits.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTeamCommits.xib; sourceTree = "<group>"; };
 		892E73E71E58F487007483E1 /* CellCloudPerformance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCloudPerformance.swift; sourceTree = "<group>"; };
 		892E73E91E58F56F007483E1 /* CellCloudPerformance.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCloudPerformance.xib; sourceTree = "<group>"; };
-		89939E0C1E6667DE007EDA4E /* CellConfigCreateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigCreateButton.swift; sourceTree = "<group>"; };
 		89A6663E1E5DB9C0007F8A7A /* CellTeamCommitsZoom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTeamCommitsZoom.xib; sourceTree = "<group>"; };
 		89B337EF1E48BB9F00610EA3 /* stalkr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stalkr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B337F21E48BB9F00610EA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,10 +99,17 @@
 		89B338181E49F7A400610EA3 /* StalkrExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StalkrExtensions.swift; sourceTree = "<group>"; };
 		89C467541E596250003CF8F2 /* CellDeployStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDeployStatus.swift; sourceTree = "<group>"; };
 		89C467561E596258003CF8F2 /* CellDeployStatus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellDeployStatus.xib; sourceTree = "<group>"; };
+		89C778491E6E7775008926E7 /* CellConfigFinish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigFinish.swift; sourceTree = "<group>"; };
+		89C7784B1E6EEB86008926E7 /* ProjectInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectInformationViewController.swift; sourceTree = "<group>"; };
 		89C994AA1E547C6E00DBADBA /* CellTrevis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTrevis.swift; sourceTree = "<group>"; };
 		89C994AC1E547CDE00DBADBA /* CellTrevis.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTrevis.xib; sourceTree = "<group>"; };
 		89C994CA1E54820900DBADBA /* CellTrevisTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTrevisTableCell.xib; sourceTree = "<group>"; };
 		89C994CC1E5482C900DBADBA /* CellTrevisTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTrevisTableCell.swift; sourceTree = "<group>"; };
+		89E5DC531E6DE4610029DDC0 /* CreateGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGridViewController.swift; sourceTree = "<group>"; };
+		89E5DC551E6DEECD0029DDC0 /* CellConfigTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigTitle.swift; sourceTree = "<group>"; };
+		89E5DC571E6DEEE20029DDC0 /* CellConfigInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigInput.swift; sourceTree = "<group>"; };
+		89E5DC591E6E02C90029DDC0 /* CollectionStepByStepLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionStepByStepLayout.swift; sourceTree = "<group>"; };
+		89E5DC5B1E6E5E020029DDC0 /* CellConfigDivision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigDivision.swift; sourceTree = "<group>"; };
 		8DA58B41991C641DBFD4F4DC /* Pods-stalkr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stalkr.release.xcconfig"; path = "Pods/Target Support Files/Pods-stalkr/Pods-stalkr.release.xcconfig"; sourceTree = "<group>"; };
 		9924C7B765C9FBEEE07466DA /* Pods-stalkr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stalkr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stalkr/Pods-stalkr.debug.xcconfig"; sourceTree = "<group>"; };
 		CE2E76401E5C737C00D5EC5C /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
@@ -139,10 +145,13 @@
 		892DECE21E5FD6B400676056 /* CreateGrid */ = {
 			isa = PBXGroup;
 			children = (
-				892DECCD1E5F2E6100676056 /* CreateGridViewController.swift */,
-				892DECE31E5FD70C00676056 /* CellConfigTitle.swift */,
-				892DECE51E5FD75100676056 /* CellConfigInput.swift */,
-				89939E0C1E6667DE007EDA4E /* CellConfigCreateButton.swift */,
+				89C7784B1E6EEB86008926E7 /* ProjectInformationViewController.swift */,
+				89E5DC531E6DE4610029DDC0 /* CreateGridViewController.swift */,
+				89E5DC5B1E6E5E020029DDC0 /* CellConfigDivision.swift */,
+				89E5DC551E6DEECD0029DDC0 /* CellConfigTitle.swift */,
+				89E5DC571E6DEEE20029DDC0 /* CellConfigInput.swift */,
+				89C778491E6E7775008926E7 /* CellConfigFinish.swift */,
+				89E5DC591E6E02C90029DDC0 /* CollectionStepByStepLayout.swift */,
 			);
 			name = CreateGrid;
 			sourceTree = "<group>";
@@ -327,7 +336,7 @@
 				TargetAttributes = {
 					89B337EE1E48BB9F00610EA3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = CWK5G6U242;
+						DevelopmentTeam = 56KUK57QCP;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -428,16 +437,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				892DECCA1E5F258400676056 /* SlotableCellConfiguration.swift in Sources */,
+				89E5DC5A1E6E02C90029DDC0 /* CollectionStepByStepLayout.swift in Sources */,
 				89B3380D1E48C34E00610EA3 /* GridConfiguration.swift in Sources */,
 				89B337F51E48BB9F00610EA3 /* GridViewController.swift in Sources */,
+				89E5DC561E6DEECD0029DDC0 /* CellConfigTitle.swift in Sources */,
 				8912784D1E6B20000037CAC7 /* CellProjectTab.swift in Sources */,
 				89B338051E48C0DE00610EA3 /* CellPlaceholderSmall.swift in Sources */,
+				89C7784C1E6EEB86008926E7 /* ProjectInformationViewController.swift in Sources */,
 				89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */,
 				CE52C5391E61059300FC6C40 /* SidebarProtocol.swift in Sources */,
 				89C994AB1E547C6E00DBADBA /* CellTrevis.swift in Sources */,
 				89B338091E48C18C00610EA3 /* CellPlaceholderHeightTwo.swift in Sources */,
 				892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */,
-				892DECE41E5FD70C00676056 /* CellConfigTitle.swift in Sources */,
+				89E5DC541E6DE4610029DDC0 /* CreateGridViewController.swift in Sources */,
 				892DECC81E5E308900676056 /* CellTeamCommitsZoom.swift in Sources */,
 				CEE8497A1E55EF840033F512 /* DashboardProtocol.swift in Sources */,
 				89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */,
@@ -446,20 +458,20 @@
 				892E73E31E58A581007483E1 /* CellTeamCommits.swift in Sources */,
 				89B338071E48C13200610EA3 /* CellPlaceholderWidthTwo.swift in Sources */,
 				89276ED81E54BBE800D99D4E /* SubscriberCell.swift in Sources */,
+				89E5DC5C1E6E5E020029DDC0 /* CellConfigDivision.swift in Sources */,
 				892E73E81E58F487007483E1 /* CellCloudPerformance.swift in Sources */,
 				892E73DC1E589378007483E1 /* CellCommitsFeed.swift in Sources */,
 				89B3380F1E48C42200610EA3 /* GridLayout.swift in Sources */,
-				892DECCE1E5F2E6100676056 /* CreateGridViewController.swift in Sources */,
 				89C994CD1E5482C900DBADBA /* CellTrevisTableCell.swift in Sources */,
 				CE2E76411E5C737C00D5EC5C /* TableCell.swift in Sources */,
+				89C7784A1E6E7775008926E7 /* CellConfigFinish.swift in Sources */,
 				89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */,
 				CE52C5371E60ED5100FC6C40 /* ProjectsViewController.swift in Sources */,
 				89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */,
+				89E5DC581E6DEEE20029DDC0 /* CellConfigInput.swift in Sources */,
 				CEAE127C1E6CEBB9002CCEDB /* LinkerProtocol.swift in Sources */,
 				8917E4AD1E6925FF001BD42A /* CommitRegister.swift in Sources */,
 				892E73DE1E589378007483E1 /* CellCommitsFeedTableCell.swift in Sources */,
-				892DECE61E5FD75100676056 /* CellConfigInput.swift in Sources */,
-				89939E0D1E6667DE007EDA4E /* CellConfigCreateButton.swift in Sources */,
 				89B3380B1E48C1C400610EA3 /* CellPlaceholderTwoXTwo.swift in Sources */,
 				CE85B3CE1E5349D900DA7287 /* SegmentedViewController.swift in Sources */,
 			);
@@ -576,7 +588,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = CWK5G6U242;
+				DEVELOPMENT_TEAM = 56KUK57QCP;
 				INFOPLIST_FILE = stalkr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = macabeus.stalkr;
@@ -591,7 +603,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = CWK5G6U242;
+				DEVELOPMENT_TEAM = 56KUK57QCP;
 				INFOPLIST_FILE = stalkr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = macabeus.stalkr;

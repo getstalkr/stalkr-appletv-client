@@ -122,41 +122,41 @@ extension SegmentedViewController: SidebarProtocol {
         
         switch option {
         case "Projetos":
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.projectView.alpha = 1
-                    self.createProjectView.alpha = 0
-                    self.accountView.alpha = 0
+            UIView.animate(withDuration: 0.5, animations: {
+                self.projectView.alpha = 1
+                self.createProjectView.alpha = 0
+                self.accountView.alpha = 0
                     
-                    guard let cell = self.sidebarController!.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) else {
-                        print("\ncell\n")
-                        return
-                    }
-                    let segments = self.projectController!.projectsTab.subviews.sorted(by: { (a, b) -> Bool in
-                        return a.center.x < b.center.x
-                    })
-                    self.sidebarGuide = self.linkByFocus(from: cell, to: segments[0], inPosition: .Right, reduceMeasurement: .WidthAndHeight)
-                    self.choosedViewGuide = self.linkByFocus(from: segments[0], to: cell, inPosition: .Left, reduceMeasurement: .WidthAndHeight)
+                guard let cell = self.sidebarController!.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) else {
+                    print("\ncell\n")
+                    return
+                }
+                let segments = self.projectController!.projectsTab.subviews.sorted(by: { (a, b) -> Bool in
+                    return a.center.x < b.center.x
                 })
-            case "Criar projeto":
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.projectView.alpha = 0
-                    self.createProjectView.alpha = 1
-                    self.accountView.alpha = 0
-                    
-                    guard let sidebarCell = self.sidebarController!.tableView.cellForRow(at: IndexPath(row: 1, section: 0)) else {
-                        print("\ncell\n")
-                        return
-                    }
-
-                    self.sidebarGuide = self.linkByFocus(from: sidebarCell, to: self.createProjectView, inPosition: .Right, reduceMeasurement: .WidthAndHeight)
-                    self.choosedViewGuide = self.linkByFocus(from: self.createProjectView, to: sidebarCell, inPosition: .Left, reduceMeasurement: .Width)
-                })
-            default:
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.projectView.alpha = 0
-                    self.createProjectView.alpha = 0
-                    self.accountView.alpha = 1
+                self.sidebarGuide = self.linkByFocus(from: cell, to: segments[0], inPosition: .Right, reduceMeasurement: .WidthAndHeight)
+                self.choosedViewGuide = self.linkByFocus(from: segments[0], to: cell, inPosition: .Left, reduceMeasurement: .WidthAndHeight)
             })
+        case "Criar projeto":
+            UIView.animate(withDuration: 0.5, animations: {
+                self.projectView.alpha = 0
+                self.createProjectView.alpha = 1
+                self.accountView.alpha = 0
+                    
+                guard let sidebarCell = self.sidebarController!.tableView.cellForRow(at: IndexPath(row: 1, section: 0)) else {
+                    print("\ncell\n")
+                    return
+                }
+
+                self.sidebarGuide = self.linkByFocus(from: sidebarCell, to: self.createProjectView, inPosition: .Right, reduceMeasurement: .WidthAndHeight)
+                self.choosedViewGuide = self.linkByFocus(from: self.createProjectView, to: sidebarCell, inPosition: .Left, reduceMeasurement: .Width)
+            })
+        default:
+            UIView.animate(withDuration: 0.5, animations: {
+                self.projectView.alpha = 0
+                self.createProjectView.alpha = 0
+                self.accountView.alpha = 1
+        })
         }
     }
     

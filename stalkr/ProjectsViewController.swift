@@ -87,7 +87,6 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
 
             footerCenter.height == 5
         }
-        
 
         //
         if indexPath.item == 0 {
