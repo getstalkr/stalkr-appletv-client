@@ -87,6 +87,7 @@ class MainViewController: UIViewController {
             self.sidebarController?.sidebarProtocol = self
         } else if segue.identifier == "projectsIdentifier" {
             self.projectController = segue.destination as? ProjectsViewController
+            self.projectController?.parentController = self
         } else if segue.identifier == "createProjectIdentifier" {
             print("CRIOU")
             self.createProjectController = segue.destination as? CreateGridViewController
@@ -124,7 +125,11 @@ extension MainViewController: SidebarProtocol {
                 })
                 guideHelper.linkByFocus(from: cell, to: segments[0], inPosition: .Right, reduceMeasurement: .WidthAndHeight, inView: self.view)
                 guideHelper.linkByFocus(from: segments[0], to: cell, inPosition: .Left, reduceMeasurement: .Width, inView: self.view)
-                guideHelper.linkByFocus(from: projectController!.containerView, to: cell, inPosition: .Left, reduceMeasurement: .Width, inView: projectController?.view)
+//                guideHelper.linkByFocus(from: projectController!.containerView, to: cell, inPosition: .Left, reduceMeasurement: .Width, inView: projectController?.view)
+                let cells = projectController!.projectsTab.subviews.sorted(by: { (a, b) -> Bool in
+                    return a.center.x < b.center.x
+                })
+                //guideHelper.linkByFocus(from: projectController!.containerView, to: cells[projectController!.selectedIndex.row], inPosition: .Left, reduceMeasurement: .Width, inView: projectController?.view)
             case "NEW PROJECT":
                 UIView.animate(withDuration: 0.5, animations: {
                     self.projectView.alpha = 0

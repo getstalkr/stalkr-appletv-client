@@ -27,13 +27,17 @@ class ProjectsViewController: UIViewController {
     var selectedIndex = IndexPath()
     
     var guideHelper = FocusGuideHelper(withArrayOfFocus: [])
+    
+    var shouldSelectEspecificTab = false
+    
+    var parentController: MainViewController?
 
     override var preferredFocusEnvironments: [UIFocusEnvironment] {
         
         let cells = projectsTab.subviews.sorted(by: { (a, b) -> Bool in
             return a.center.x < b.center.x
         })
-        return cells
+        return [cells[selectedIndex.row]]
     }
     
     override func viewDidLoad() {
@@ -45,7 +49,7 @@ class ProjectsViewController: UIViewController {
         
         viewProjectsTabFooter.backgroundColor = UIColor.projectTabNotSelected
         
-        projectsList = [Project(name: "Blau"), Project(name: "Save my Nails"), Project(name: "Eta bicho doido")]
+        projectsList = [Project(name: "Blau"), Project(name: "Save my nails"), Project(name: "Eta bicho doido")]
         projectsList[0].show(grid: (self.gridView as! ProjectViewProtocol))
         
         selectedIndex = IndexPath(row: 0, section: 0)
@@ -105,31 +109,30 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
 
             footerCenter.height == 5
         }
-        
+
 
         //
         if indexPath.item == 0 {
             cell.changeToSelected()
         }
-        
+
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, shouldUpdateFocusIn context: UICollectionViewFocusUpdateContext) -> Bool {
         
+        if context.previouslyFocusedIndexPath != nil && context.nextFocusedIndexPath == nil {
+            shouldSelectEspecificTab = true
+        } else {
+            shouldSelectEspecificTab = false
+        }
+        print("\nselect = \(shouldSelectEspecificTab)\n")
         if context.nextFocusedIndexPath != nil {
-//            guideHelper.deseable()
-//            let segments = projectsTab.subviews.sorted(by: { (a, b) -> Bool in
-//                return a.center.x < b.center.x
-//            })
-//            Problemas com constraints. São necessárias modificações para esse trecho funcionar
-//            guideHelper.linkByFocus(from: segments[context.nextFocusedIndexPath!.row], to: containerView, inPosition: .Down, reduceMeasurement: .Height, inView: self.view)
-//            guideHelper.linkByFocus(from: containerView, to: segments[context.nextFocusedIndexPath!.row], inPosition: .Up, reduceMeasurement: .Height, inView: self.view)
-            
             if context.previouslyFocusedIndexPath != nil {
                 selectedIndex = context.nextFocusedIndexPath!
             }
         }
+        
         return true
     }
     
@@ -139,11 +142,24 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
             projectsTab.cellForItem(at: selectedIndex)?.setNeedsFocusUpdate()
             projectsTab.cellForItem(at: selectedIndex)?.updateFocusIfNeeded()
         }
+        
+        let cells = projectsTab.subviews.sorted(by: { (a, b) -> Bool in
+            return a.center.x < b.center.x
+        })
+        
+        print("\n\nNUM = \(cells.count)\n\n")
+        
+        guideHelper.deseable()
+        
+        guideHelper.linkByFocus(from: containerView, to: cells[selectedIndex.row], inPosition: .Left, reduceMeasurement: .Width, inView: self.view)
     }
     
     // Focus
     func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
+
+        if shouldSelectEspecificTab && indexPath.row != selectedIndex.row {
+            return false
+        }
         return true
     }
-    
 }

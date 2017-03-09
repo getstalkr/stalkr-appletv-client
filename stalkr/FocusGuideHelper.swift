@@ -22,29 +22,29 @@ class FocusGuideHelper: NSObject {
         }
         
         switch measure {
-        case .Height:
-            focusGuide.widthAnchor.constraint(equalTo: view1.widthAnchor).isActive = true
-            focusGuide.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        case .Width:
-            focusGuide.widthAnchor.constraint(equalToConstant: 10).isActive = true
-            focusGuide.heightAnchor.constraint(equalTo: view1.heightAnchor).isActive = true
-        case .None:
-            focusGuide.widthAnchor.constraint(equalTo: view1.widthAnchor).isActive = true
-            focusGuide.heightAnchor.constraint(equalTo: view1.heightAnchor).isActive = true
-        case .WidthAndHeight:
-            focusGuide.widthAnchor.constraint(equalToConstant: 10).isActive = true
-            focusGuide.heightAnchor.constraint(equalToConstant: 10).isActive = true
+            case .Height:
+                focusGuide.widthAnchor.constraint(equalTo: view1.widthAnchor).isActive = true
+                focusGuide.heightAnchor.constraint(equalToConstant: 10).isActive = true
+            case .Width:
+                focusGuide.widthAnchor.constraint(equalToConstant: 10).isActive = true
+                focusGuide.heightAnchor.constraint(equalTo: view1.heightAnchor).isActive = true
+            case .None:
+                focusGuide.widthAnchor.constraint(equalTo: view1.widthAnchor).isActive = true
+                focusGuide.heightAnchor.constraint(equalTo: view1.heightAnchor).isActive = true
+            case .WidthAndHeight:
+                focusGuide.widthAnchor.constraint(equalToConstant: 10).isActive = true
+                focusGuide.heightAnchor.constraint(equalToConstant: 10).isActive = true
         }
         
         switch pos {
         case .Up:
-            focusGuide.bottomAnchor.constraint(equalTo: view1.topAnchor, constant: 0).isActive = true
+            focusGuide.bottomAnchor.constraint(equalTo: view1.topAnchor, constant: -5).isActive = true
         case .Down:
-            focusGuide.topAnchor.constraint(equalTo: view1.bottomAnchor, constant: 0).isActive = true
+            focusGuide.topAnchor.constraint(equalTo: view1.bottomAnchor, constant: 5).isActive = true
         case .Left:
-            focusGuide.trailingAnchor.constraint(equalTo: view1.leadingAnchor, constant: 0).isActive = true
+            focusGuide.trailingAnchor.constraint(equalTo: view1.leadingAnchor, constant: -2).isActive = true
         case .Right:
-            focusGuide.leadingAnchor.constraint(equalTo: view1.trailingAnchor, constant: 0).isActive = true
+            focusGuide.leadingAnchor.constraint(equalTo: view1.trailingAnchor, constant: 2).isActive = true
         }
         
         focusGuide.centerYAnchor.constraint(equalTo: view1.centerYAnchor).isActive = true
