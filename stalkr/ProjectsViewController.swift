@@ -8,21 +8,13 @@
 import UIKit
 import Cartography
 
-struct Project {
-    let name: String
-    
-    func show(grid: ProjectViewProtocol) {
-        grid.didChangeProject(toProjectNamed: self.name)
-    }
-}
-
 class ProjectsViewController: UIViewController {
 
     @IBOutlet weak var projectsTab: UICollectionView!
     @IBOutlet weak var viewProjectsTabFooter: UIView!
+    @IBOutlet weak var containerView: UIView!
     var gridView: GridViewController?
     var projectsList: [Project] = []
-    @IBOutlet weak var containerView: UIView!
 
     var selectedIndex = IndexPath()
     
@@ -44,11 +36,6 @@ class ProjectsViewController: UIViewController {
         projectsTab.backgroundColor = UIColor(white: 0, alpha: 0)
         
         viewProjectsTabFooter.backgroundColor = UIColor.projectTabNotSelected
-        
-        projectsList = [Project(name: "TestProject"), Project(name: "CocoaPods"), Project(name: "Jest")]
-        projectsList[0].show(grid: (self.gridView as! ProjectViewProtocol))
-        
-        selectedIndex = IndexPath(row: 0, section: 0)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -64,6 +51,17 @@ class ProjectsViewController: UIViewController {
 
 // code of project list collectionview
 extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func reloadProjectsList() {
+        projectsList = UserSession.shared.projects!
+        projectsList[0].show(atProjectView: (self.gridView as! ProjectViewProtocol))
+        
+        selectedIndex = IndexPath(row: 0, section: 0)
+        
+        projectsTab.reloadData()
+        self.projectsTab.layoutIfNeeded()
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

@@ -34,7 +34,7 @@ class CellProjectTab: UICollectionViewCell {
                 })
             }
         } else if self === context.nextFocusedItem {
-            project!.show(grid: grid!)
+            project!.show(atProjectView: grid!)
             
             coordinator.addCoordinatedAnimations({
                 self.changeToFocused()

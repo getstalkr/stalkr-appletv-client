@@ -17,6 +17,9 @@ fileprivate var counter = 0
 class GridViewController: UICollectionViewController {
     
     let pusher = Pusher(key: "5cdc3c711f606f43aada")
+    
+    var currentProject: Project?
+    
     private var _gridConfiguration: GridConfiguration?
     var gridConfiguration: GridConfiguration {
         get {
@@ -31,7 +34,7 @@ class GridViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.gridConfiguration = GridConfiguration(gridName: "nothing")
+        self.gridConfiguration = GridConfiguration(json: "[[]]")
         
         if let layout = collectionView?.collectionViewLayout as? GridLayout {
             layout.delegate = self
@@ -251,12 +254,14 @@ extension GridViewController: GridLayoutDelegate {
 
 extension GridViewController: ProjectViewProtocol {
     
-    func didChangeProject(toProjectNamed name: String) {
-        if name == self.gridConfiguration.name {
+    func didChangeProject(_ project: Project) {
+        if project === self.currentProject {
             return
         }
         
-        self.gridConfiguration = GridConfiguration(gridName: name)
+        self.currentProject = project
+        
+        self.gridConfiguration = self.currentProject!.grid
         (self.collectionView?.collectionViewLayout as! GridLayout).clearCache()
 
     }

@@ -10,57 +10,16 @@ import Foundation
 import SwiftyJSON
 import UIKit
 
-let rawConfig = [
-    "[" +
-        "[" +
-            "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
-            "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"ythecombinator\", \"project\": \"simple-add\" } }," +
-            "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
-        "]," +
-        "[" +
-            "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
-            "{ \"cell\": \"CellCommitsFeed\", \"params\": { \"owner\": \"ythecombinator\", \"project\": \"simple-add\" } }" +
-        "]" +
-    "]",
-    
-    "[" +
-        "[" +
-            "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
-            "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"CocoaPods\", \"project\": \"CocoaPods\" } }," +
-            "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
-        "]," +
-        "[" +
-            "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
-            "{ \"cell\": \"CellCommitsFeed\", \"params\": { \"owner\": \"CocoaPods\", \"project\": \"CocoaPods\" } }" +
-        "]" +
-    "]",
-    
-    "[" +
-        "[" +
-            "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
-            "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"facebook\", \"project\": \"jest\" } }," +
-            "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
-        "]," +
-        "[" +
-            "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
-            "{ \"cell\": \"CellCommitsFeed\", \"params\": { \"owner\": \"facebook\", \"project\": \"jest\" } }" +
-        "]" +
-    "]"
-]
-
 struct Slot {
     var cell: SlotableCell
     var params: [String: Any]
 }
 
-class JSONConfig {
+fileprivate class JSONConfig { // TODO: Isso aqui não precisa ser uma classe!
     
-    let json: JSON // todo: talvez ser private?
     let slots: [[Slot]]
     
-    init(rawConfig: String) {
-        json = JSON(parseJSON: rawConfig)
-        
+    init(json: JSON) {
         slots = json.arrayValue.map { rows -> [Slot] in
             rows.arrayValue.map { cell -> Slot in
                 // cell class
@@ -77,10 +36,9 @@ class JSONConfig {
     }
 }
 
-class GridConfiguration {
+class GridConfiguration { // TODO: Talvez renomear para apenas "Grid"
     
     private var config: JSONConfig?
-    let name: String
     let slots: [[Slot]]
     let gridConfigZoomOut: GridConfiguration?
     var isZoom: Bool {
@@ -89,32 +47,17 @@ class GridConfiguration {
         }
     }
     
-    init(gridName: String) {
-        // load config
-        if gridName == "nothing" {
-            config = JSONConfig(rawConfig: "[[]]")
-            slots = [[]]
-        } else {
-            if gridName == "TestProject" {
-                config = JSONConfig(rawConfig: rawConfig[0])
-            } else if gridName == "CocoaPods" {
-                config = JSONConfig(rawConfig: rawConfig[1])
-            } else {
-                config = JSONConfig(rawConfig: rawConfig[2])
-            }
-            slots = config!.slots
-        }
+    init(json: JSON) {
+        config = JSONConfig(json: json)
+        slots = config!.slots
         
-        //
-        self.name = gridName
-        self.gridConfigZoomOut = nil
+        gridConfigZoomOut = nil
     }
     
     init(zoomAtX x: Int, y: Int, grid: GridConfiguration) {
         let slot = grid.slots[y][x]
         slots = [[slot]]
         
-        self.name = "gridZoom"
         self.gridConfigZoomOut = grid
     }
 }

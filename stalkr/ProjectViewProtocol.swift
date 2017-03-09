@@ -10,5 +10,5 @@ import Foundation
 
 protocol ProjectViewProtocol: class {
     
-    func didChangeProject(toProjectNamed name: String)
+    func didChangeProject(_ project: Project)
 }

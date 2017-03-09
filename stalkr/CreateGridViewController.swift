@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftRichString
+import SwiftyJSON
 
 enum CellCreateGrid {
     case name(String)
@@ -162,22 +163,40 @@ class CreateGridViewController: UICollectionViewController {
                 }
             }
             
-            // TODO: Persistir esses dados num servidor e da feedback visual ao usuário
+            // TODO: da feedback visual ao usuário
             let json = "" +
-                "[" +
+                "{" +
+                    "\"name\": \"\(configGridName)\"," +
+                    "\"grid\": [" +
+                        "[" +
+                            "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
+                            "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"\(configlCellCommitsFeed["owner"]!)\", \"project\": \"\(configlCellCommitsFeed["project"]!)\" } }," +
+                            "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
+                        "]," +
+                        "[" +
+                            "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
+                            "{ \"cell\": \"CellCommitsFeed\", \"params\": { \"owner\": \"\(configlCellCommitsFeed["owner"]!)\", \"project\": \"\(configlCellCommitsFeed["project"]!)\" } }" +
+                        "]" +
+                    "]" +
+                "}"
+            
+            // O código morto abaixo está mantido por ser útil na hora de debugar a parte de criar projeto, sem precisar preencher os campos
+            /*let json = "{" +
+                "\"name\": \"Project Test\"," +
+                "\"grid\": [" +
                     "[" +
                         "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
-                        "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"\(configlCellCommitsFeed["owner"]!)\", \"project\": \"\(configlCellCommitsFeed["project"]!)\" } }," +
+                        "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"ythecombinator\", \"project\": \"simple-add\" } }," +
                         "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
                     "]," +
                     "[" +
                         "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
-                        "{ \"cell\": \"CellCommitsFeed\", \"params\": { \"owner\": \"\(configlCellCommitsFeed["owner"]!)\", \"project\": \"\(configlCellCommitsFeed["project"]!)\" } }" +
+                        "{ \"cell\": \"CellCommitsFeed\", \"params\": { \"owner\": \"ythecombinator\", \"project\": \"simple-add\" } }" +
                     "]" +
-                "]"
+                "]" +
+            "}"*/
             
-            print(configGridName)
-            print(json)
+            UserSession.shared.addProject(project: Project(json: JSON(parseJSON: json)))
         }
     }
 }

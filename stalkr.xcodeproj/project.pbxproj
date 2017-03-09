@@ -38,6 +38,8 @@
 		89C994AD1E547CDE00DBADBA /* CellTrevis.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994AC1E547CDE00DBADBA /* CellTrevis.xib */; };
 		89C994CB1E54820900DBADBA /* CellTrevisTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994CA1E54820900DBADBA /* CellTrevisTableCell.xib */; };
 		89C994CD1E5482C900DBADBA /* CellTrevisTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C994CC1E5482C900DBADBA /* CellTrevisTableCell.swift */; };
+		89D598B51E718C4900B27927 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D598B41E718C4900B27927 /* UserSession.swift */; };
+		89D598B71E718E2D00B27927 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D598B61E718E2D00B27927 /* Project.swift */; };
 		89E5DC541E6DE4610029DDC0 /* CreateGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DC531E6DE4610029DDC0 /* CreateGridViewController.swift */; };
 		89E5DC561E6DEECD0029DDC0 /* CellConfigTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DC551E6DEECD0029DDC0 /* CellConfigTitle.swift */; };
 		89E5DC581E6DEEE20029DDC0 /* CellConfigInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DC571E6DEEE20029DDC0 /* CellConfigInput.swift */; };
@@ -89,6 +91,8 @@
 		89C994AC1E547CDE00DBADBA /* CellTrevis.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTrevis.xib; sourceTree = "<group>"; };
 		89C994CA1E54820900DBADBA /* CellTrevisTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTrevisTableCell.xib; sourceTree = "<group>"; };
 		89C994CC1E5482C900DBADBA /* CellTrevisTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTrevisTableCell.swift; sourceTree = "<group>"; };
+		89D598B41E718C4900B27927 /* UserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		89D598B61E718E2D00B27927 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		89E5DC531E6DE4610029DDC0 /* CreateGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGridViewController.swift; sourceTree = "<group>"; };
 		89E5DC551E6DEECD0029DDC0 /* CellConfigTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigTitle.swift; sourceTree = "<group>"; };
 		89E5DC571E6DEEE20029DDC0 /* CellConfigInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigInput.swift; sourceTree = "<group>"; };
@@ -212,8 +216,8 @@
 				89B337F91E48BB9F00610EA3 /* Assets.xcassets */,
 				89B337FB1E48BB9F00610EA3 /* Info.plist */,
 				CECFF4011E6D9D0D0002EA8D /* FocusGuideHelper.swift */,
-				89B3380C1E48C34E00610EA3 /* GridConfiguration.swift */,
-				89B3380E1E48C42200610EA3 /* GridLayout.swift */,
+				89D598B41E718C4900B27927 /* UserSession.swift */,
+				89D598B81E718E3D00B27927 /* Project */,
 				897182921E6B6B1A0080D4DA /* ProjectsView */,
 				892DECE21E5FD6B400676056 /* CreateGrid */,
 				89B338031E48C0B700610EA3 /* SlotableCell */,
@@ -256,6 +260,16 @@
 				89C994CA1E54820900DBADBA /* CellTrevisTableCell.xib */,
 			);
 			name = CellTrevis;
+			sourceTree = "<group>";
+		};
+		89D598B81E718E3D00B27927 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				89D598B61E718E2D00B27927 /* Project.swift */,
+				89B3380C1E48C34E00610EA3 /* GridConfiguration.swift */,
+				89B3380E1E48C42200610EA3 /* GridLayout.swift */,
+			);
+			name = Project;
 			sourceTree = "<group>";
 		};
 		BE5274D6EDF17265D484357B /* Pods */ = {
@@ -439,9 +453,11 @@
 				89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */,
 				89E5DC581E6DEEE20029DDC0 /* CellConfigInput.swift in Sources */,
 				8917E4AD1E6925FF001BD42A /* CommitRegister.swift in Sources */,
+				89D598B51E718C4900B27927 /* UserSession.swift in Sources */,
 				892E73DE1E589378007483E1 /* CellCommitsFeedTableCell.swift in Sources */,
 				CE85B3CE1E5349D900DA7287 /* MainViewController.swift in Sources */,
 				CECFF4021E6D9D0D0002EA8D /* FocusGuideHelper.swift in Sources */,
+				89D598B71E718E2D00B27927 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
