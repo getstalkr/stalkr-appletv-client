@@ -95,9 +95,9 @@ class GridConfiguration {
             config = JSONConfig(rawConfig: "[[]]")
             slots = [[]]
         } else {
-            if gridName == "Blau" {
+            if gridName == "TestProject" {
                 config = JSONConfig(rawConfig: rawConfig[0])
-            } else if gridName == "Save my Nails" {
+            } else if gridName == "CocoaPods" {
                 config = JSONConfig(rawConfig: rawConfig[1])
             } else {
                 config = JSONConfig(rawConfig: rawConfig[2])
