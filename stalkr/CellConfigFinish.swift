@@ -1,21 +1,25 @@
 //
-//  CellConfigInput.swift
+//  CellConfigFinish.swift
 //  stalkr
 //
-//  Created by Bruno Macabeus Aquino on 06/03/17.
+//  Created by Bruno Macabeus Aquino on 07/03/17.
 //  Copyright © 2017 Bruno Macabeus Aquino. All rights reserved.
 //
 
 import UIKit
 
-class CellConfigInput: UICollectionViewCell {
+class CellConfigFinish: UICollectionViewCell {
     
-    @IBOutlet weak var labelField: UILabel!
+    @IBOutlet weak var viewCircle: UIView!
+    
+    func startCell() {
+        viewCircle.asCircle()
+    }
     
     override var canBecomeFocused: Bool {
         return true
     }
-    
+
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         
         self.layer.shadowColor = UIColor.white.cgColor
@@ -30,7 +34,7 @@ class CellConfigInput: UICollectionViewCell {
         } else if self === context.nextFocusedItem {
             
             coordinator.addCoordinatedAnimations({
-                self.layer.shadowOpacity = 0.6
+                self.layer.shadowOpacity = 1
             }, completion: {
                 
             })

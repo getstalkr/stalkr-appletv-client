@@ -2,167 +2,152 @@
 //  CreateGridViewController.swift
 //  stalkr
 //
-//  Created by Bruno Macabeus Aquino on 23/02/17.
+//  Created by Bruno Macabeus Aquino on 06/03/17.
 //  Copyright © 2017 Bruno Macabeus Aquino. All rights reserved.
 //
 
 import UIKit
 import SwiftRichString
 
-protocol CreateGridConfigInputDelegate {
-    func finishEditFieldText(text: String)
-}
-
-protocol CreateGridButtonCreateProjectDelegate {
-    func buttonCreateProjectClicked()
-}
-
 enum CellCreateGrid {
     case name(String)
-    case configInput(ConfigInput, cellName: String, textFieldValue: String)
-    case buttonCreateProject()
+    case input(ConfigInput, cellName: String, currentValue: String)
+    case finish()
 }
 
-class CreateGridViewController: UITableViewController, CreateGridConfigInputDelegate, CreateGridButtonCreateProjectDelegate {
+class CreateGridViewController: UICollectionViewController {
 
     var cellConfigList: [CellCreateGrid] = []
     var lastCellConfigSelected = IndexPath(row: 1, section: 0)
+    var currentScene: UIFocusEnvironment?
+    let showInput = ShowInput()
     
+    override var preferredFocusEnvironments: [UIFocusEnvironment] {
+        if let scene = currentScene {
+            return [scene]
+        } else {
+            return super.preferredFocusEnvironments
+        }
+    }
+   
+    // load
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        cellConfigList.append(CellCreateGrid.name("Project"))
-        cellConfigList.append(CellCreateGrid.configInput(ConfigInput(name: "projectName", label: "Project name", inputType: .text, obligatory: true), cellName: "project", textFieldValue: ""))
 
+        if let layout = collectionView?.collectionViewLayout as? CollectionStepByStepLayout {
+            layout.delegate = self
+        }
+        
+        //
+        cellConfigList.append(CellCreateGrid.name("Dashboard"))
+        cellConfigList.append(CellCreateGrid.input(ConfigInput(name: "projectName", label: "Name", inputType: .text, obligatory: true), cellName: "project", currentValue: ""))
+        
         listAllSlotableCell.forEach { slotableCellClass in
             let configs = (slotableCellClass as! SlotableCell.Type).configurations
             if configs.count > 0 {
                 let cellName = (slotableCellClass as! SlotableCell.Type).cellName
                 
                 cellConfigList.append(CellCreateGrid.name(cellName))
-                configs.forEach { cellConfigList.append(CellCreateGrid.configInput($0, cellName: slotableCellClass.className(), textFieldValue: "")) }
+                configs.forEach { cellConfigList.append(CellCreateGrid.input($0, cellName: slotableCellClass.className(), currentValue: "")) }
             }
         }
         
-        cellConfigList.append(CellCreateGrid.buttonCreateProject())
+        cellConfigList.append(CellCreateGrid.finish())
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return cellConfigList.count
     }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let currentCell = cellConfigList[indexPath.row]
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch cellConfigList[section] {
+        case .name(_):
+            return 2
+        default:
+            return 1
+        }
+    }
+
+    // show cells
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let currentCell = cellConfigList[indexPath.section]
+        
+        if Mirror(reflecting: currentCell).children.first?.label! == "name" && indexPath.item == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellDivision", for: indexPath) as! CellConfigDivision
+            
+            cell.startCell()
+            
+            return cell
+        }
         
         switch currentCell {
         case .name(let name):
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CellConfigTitle", for: indexPath) as! CellConfigTitle
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellConfigTitle", for: indexPath) as! CellConfigTitle
+            
             cell.labelTitle.text = name
             
             return cell
-        case .configInput(let input, _, let value):
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CellConfigInput", for: indexPath) as! CellConfigInput
-            if input.obligatory {
-                cell.labelParamName.attributedText = input.label + " (obligatory)".set(style: .fontItalic)
+        case .input(let input, _, let value):
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellConfigInput", for: indexPath) as! CellConfigInput
+            // if input.obligatory { ... // TODO: Colocar na UI algo para diferenciar quando o campo é obrigatório/opcional
+            
+            if value == "" {
+                cell.labelField.text = input.label
             } else {
-                cell.labelParamName.text = input.label
+                cell.labelField.text = value
             }
-            cell.delegate = self
-            cell.inputField.text = value
-            cell.layer.shadowColor = UIColor.black.cgColor
             
             return cell
-        case .buttonCreateProject():
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CellConfigCreateButton", for: indexPath) as! CellConfigCreateButton
-            cell.delegate = self
+        case .finish:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellConfigFinish", for: indexPath) as! CellConfigFinish
+            
+            cell.startCell()
             
             return cell
         }
     }
     
-    override func tableView(_ tableView: UITableView, didUpdateFocusIn context: UITableViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+    // focus
+    override func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
         
-        if ((context.previouslyFocusedIndexPath) != nil) {
-            let cell = tableView.cellForRow(at: context.previouslyFocusedIndexPath!)
-            cell?.layer.shadowOpacity = 0.0
-        }
-        
-        if ((context.nextFocusedIndexPath) != nil) {
-            let cell = tableView.cellForRow(at: context.nextFocusedIndexPath!)
-            cell?.layer.shadowOpacity = 1.0
-        }
+        return true
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let currentCell = cellConfigList[indexPath.row]
+    // input
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        switch currentCell {
-        case .name(_):
-            return 60
-        case .configInput(_):
-            return 130
-        case .buttonCreateProject():
-            return 130
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        switch cellConfigList[indexPath.row] {
-        case .configInput(_):
-            lastCellConfigSelected = indexPath
-            let cell = tableView.cellForRow(at: indexPath) as! CellConfigInput
-            cell.inputField.becomeFirstResponder()
-            
-        case .buttonCreateProject():
-            let cell = tableView.cellForRow(at: indexPath) as! CellConfigCreateButton
-            cell.btnCreateProject(cell)
-            
-        default:
-            return
-        }
-    }
-    
-    func finishEditFieldText(text: String) {
-        switch cellConfigList[lastCellConfigSelected.row] {
-        case .configInput(let input, let cellName, _):
-            cellConfigList[lastCellConfigSelected.row] = CellCreateGrid.configInput(input, cellName: cellName, textFieldValue: text)
-        default:
-            return
-        }
-    }
-    
-    func buttonCreateProjectClicked() {
-        var configGridName: String = ""
-        var configCellPlaceholderSmall: [String:String] = [:]
-        var configlCellCloudPerformance: [String:String] = [:]
-        var configlCellTrevis: [String:String] = [:]
-        var configlCellTeamCommits: [String:String] = [:]
-        var configlCellDeployStatus: [String:String] = [:]
-        var configlCellCommitsFeed: [String:String] = [:]
+        let cell = collectionView.cellForItem(at: indexPath)
         
-        
-        var pos = -1
-        for i in cellConfigList {
-            pos += 1
-            
-            //
-            if case .configInput = i { } else { continue }
-            
-            //
-            if case let .configInput(config, cellName, value) = i {
-                if config.obligatory && value == "" {
-                    self.tableView.selectRow(at: IndexPath(row: pos, section: 0), animated: true, scrollPosition: .middle)
-                    // todo: precisa mudar o focus para a célula selecionada
-                    // todo: precisa destacar o nome "obrigatório" nas células
+        if let cell = cell as? CellConfigInput {
+            showInput.callback = { text in
+                // TODO: é preciso atualizar o status de "cheio" e "vazio" daquela bolinha da cell step
+                cell.labelField.text = text
+                
+                switch self.cellConfigList[indexPath.section] {
+                case .input(let input, let cellName, _):
+                    self.cellConfigList[indexPath.section] = CellCreateGrid.input(input, cellName: cellName, currentValue: text)
+                default:
                     return
                 }
+            }
+        
+            showInput.start(view: cell)
+        
+        } else if ((cell as? CellConfigFinish) != nil) {
+            let inputs = cellConfigList.filter { Mirror(reflecting: $0).children.first?.label! == "input" }
             
-                //
+            var configGridName: String = ""
+            var configCellPlaceholderSmall: [String:String] = [:]
+            var configlCellCloudPerformance: [String:String] = [:]
+            var configlCellTrevis: [String:String] = [:]
+            var configlCellTeamCommits: [String:String] = [:]
+            var configlCellDeployStatus: [String:String] = [:]
+            var configlCellCommitsFeed: [String:String] = [:]
+            
+            for case let .input(config, cellName, value) in inputs {
+                // if config.obligatory && value == "" { ... // TODO: Se estiver faltando um parametro obrigatorio, algo deve ser feito
+                    
                 switch cellName {
                 case "project":
                     configGridName = value
@@ -170,37 +155,61 @@ class CreateGridViewController: UITableViewController, CreateGridConfigInputDele
                     configCellPlaceholderSmall[config.name] = value
                 case "CellTrevis":
                     configlCellTrevis[config.name] = value
+                case "CellCommitsFeed":
+                    configlCellCommitsFeed[config.name] = value
                 default:
                     break
                 }
             }
+            
+            // TODO: Persistir esses dados num servidor e da feedback visual ao usuário
+            let json = "" +
+                "[" +
+                    "[" +
+                        "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
+                        "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"\(configlCellCommitsFeed["owner"]!)\", \"project\": \"\(configlCellCommitsFeed["project"]!)\" } }," +
+                        "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
+                    "]," +
+                    "[" +
+                        "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
+                        "{ \"cell\": \"CellCommitsFeed\", \"params\": { \"owner\": \"\(configlCellCommitsFeed["owner"]!)\", \"project\": \"\(configlCellCommitsFeed["project"]!)\" } }" +
+                    "]" +
+                "]"
+            
+            print(configGridName)
+            print(json)
+        }
+    }
+}
+
+extension CreateGridViewController: CollectionStepyByStepLayoutDelegate {
+    
+    func numberOfInputsAtStep(section: Int) -> Int {
+        var count = 0
+        var sectionCurrent = section + 1
+        while cellConfigList.count != sectionCurrent && Mirror(reflecting: cellConfigList[sectionCurrent]).children.first?.label! != "name" {
+            count += 1
+            sectionCurrent += 1
         }
         
-        let json = "" +
-            "[" +
-                "[" +
-                    "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
-                    "{ \"cell\": \"CellTrevis\", \"params\": { }, \"websocket\": { \"channel\": \"travis-builds-\(configlCellTrevis["trevisUser"]!)-\(configlCellTrevis["trevisRepository"]!)\", \"event\": \"status-requested\" } }," +
-                    "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
-                "]," +
-                "[" +
-                    "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
-                    "{ \"cell\": \"CellCommitsFeed\", \"params\": { } }" +
-                "]" +
-            "]"
-        
-        print(configGridName)
-        print(json)
+        return count
     }
     
-    override func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
-        switch cellConfigList[indexPath.row] {
-        case .name(_):
-            return false
-        case .configInput(_):
-            return true
-        case .buttonCreateProject():
-            return true
+    func cellTypeAt(section: Int, row: Int) -> CellStepByStepType {
+        let currentCell = cellConfigList[section]
+        
+        if Mirror(reflecting: currentCell).children.first?.label! == "name" && row == 0 {
+            return .step
+        } else {
+            switch currentCell {
+            case .name:
+                return .name
+            case .input:
+                return .input
+            case .finish:
+                return .finish
+            }
         }
     }
+
 }

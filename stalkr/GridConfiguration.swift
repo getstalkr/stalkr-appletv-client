@@ -25,29 +25,25 @@ let rawConfig = [
     
     "[" +
         "[" +
-            "{ \"cell\": \"CellPlaceholderWidthTwo\", \"params\": {} }," +
-            "{ \"cell\": \"CellPlaceholderHeightTwo\", \"params\": {} }" +
+            "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
+            "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"CocoaPods\", \"project\": \"CocoaPods\" } }," +
+            "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
         "]," +
         "[" +
-            "{ \"cell\": \"CellPlaceholderTwoXTwo\", \"params\": {} }" +
-        "]," +
-        "[" +
-            "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é sayajin\" } }" +
+            "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
+            "{ \"cell\": \"CellCommitsFeed\", \"params\": { \"owner\": \"CocoaPods\", \"project\": \"CocoaPods\" } }" +
         "]" +
     "]",
     
     "[" +
         "[" +
-            "{ \"cell\": \"CellPlaceholderWidthTwo\", \"params\": {} }," +
-            "{ \"cell\": \"CellPlaceholderHeightTwo\", \"params\": {} }" +
+            "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
+            "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"facebook\", \"project\": \"jest\" } }," +
+            "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
         "]," +
         "[" +
-            "{ \"cell\": \"CellPlaceholderWidthTwo\", \"params\": {} }" +
-        "]," +
-        "[" +
-            "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus sayajin\" } }," +
-            "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é lindo\" } }," +
-            "{ \"cell\": \"CellPlaceholderSmall\", \"params\": { \"label\": \"macabeus é o galã\" } }" +
+            "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
+            "{ \"cell\": \"CellCommitsFeed\", \"params\": { \"owner\": \"facebook\", \"project\": \"jest\" } }" +
         "]" +
     "]"
 ]
@@ -99,9 +95,9 @@ class GridConfiguration {
             config = JSONConfig(rawConfig: "[[]]")
             slots = [[]]
         } else {
-            if gridName == "Blau" {
+            if gridName == "TestProject" {
                 config = JSONConfig(rawConfig: rawConfig[0])
-            } else if gridName == "Save my Nails" {
+            } else if gridName == "CocoaPods" {
                 config = JSONConfig(rawConfig: rawConfig[1])
             } else {
                 config = JSONConfig(rawConfig: rawConfig[2])

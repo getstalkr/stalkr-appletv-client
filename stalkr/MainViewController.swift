@@ -89,7 +89,6 @@ class MainViewController: UIViewController {
             self.projectController = segue.destination as? ProjectsViewController
             self.projectController?.parentController = self
         } else if segue.identifier == "createProjectIdentifier" {
-            print("CRIOU")
             self.createProjectController = segue.destination as? CreateGridViewController
         }
     }
@@ -117,7 +116,6 @@ extension MainViewController: SidebarProtocol {
                     self.accountView.alpha = 0
                 })
                 guard let cell = sidebarController!.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) else {
-                    print("\ncell\n")
                     return
                 }
                 let segments = projectController!.projectsTab.subviews.sorted(by: { (a, b) -> Bool in
@@ -125,11 +123,7 @@ extension MainViewController: SidebarProtocol {
                 })
                 guideHelper.linkByFocus(from: cell, to: segments[0], inPosition: .Right, reduceMeasurement: .WidthAndHeight, inView: self.view)
                 guideHelper.linkByFocus(from: segments[0], to: cell, inPosition: .Left, reduceMeasurement: .Width, inView: self.view)
-//                guideHelper.linkByFocus(from: projectController!.containerView, to: cell, inPosition: .Left, reduceMeasurement: .Width, inView: projectController?.view)
-                let cells = projectController!.projectsTab.subviews.sorted(by: { (a, b) -> Bool in
-                    return a.center.x < b.center.x
-                })
-                //guideHelper.linkByFocus(from: projectController!.containerView, to: cells[projectController!.selectedIndex.row], inPosition: .Left, reduceMeasurement: .Width, inView: projectController?.view)
+            
             case "NEW PROJECT":
                 UIView.animate(withDuration: 0.5, animations: {
                     self.projectView.alpha = 0
@@ -137,12 +131,12 @@ extension MainViewController: SidebarProtocol {
                     self.accountView.alpha = 0
                 })
                 guard let sidebarCell = sidebarController!.tableView.cellForRow(at: IndexPath(row: 1, section: 0)) else {
-                    print("\ncell\n")
                     return
                 }
                 
                 guideHelper.linkByFocus(from: sidebarCell, to: createProjectView, inPosition: .Right, reduceMeasurement: .WidthAndHeight, inView: self.view)
                 guideHelper.linkByFocus(from: createProjectView, to: sidebarCell, inPosition: .Left, reduceMeasurement: .Width, inView: self.view)
+            
             case "MY ACCOUNT":
                 UIView.animate(withDuration: 0.5, animations: {
                     self.projectView.alpha = 0
@@ -150,12 +144,12 @@ extension MainViewController: SidebarProtocol {
                     self.accountView.alpha = 1
                 })
                 guard let sidebarCell = sidebarController!.tableView.cellForRow(at: IndexPath(row: 2, section: 0)) else {
-                    print("\ncell\n")
                     return
                 }
                 
                 guideHelper.linkByFocus(from: sidebarCell, to: accountView, inPosition: .Right, reduceMeasurement: .WidthAndHeight, inView: self.view)
                 guideHelper.linkByFocus(from: accountView, to: sidebarCell, inPosition: .Left, reduceMeasurement: .Width, inView: self.view)
+            
             default:
                 UIView.animate(withDuration: 0.5, animations: {
                     self.projectView.alpha = 1

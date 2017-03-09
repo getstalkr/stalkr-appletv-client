@@ -49,7 +49,7 @@ class ProjectsViewController: UIViewController {
         
         viewProjectsTabFooter.backgroundColor = UIColor.projectTabNotSelected
         
-        projectsList = [Project(name: "Blau"), Project(name: "Save my nails"), Project(name: "Eta bicho doido")]
+        projectsList = [Project(name: "TestProject"), Project(name: "CocoaPods"), Project(name: "Jest")]
         projectsList[0].show(grid: (self.gridView as! ProjectViewProtocol))
         
         selectedIndex = IndexPath(row: 0, section: 0)
@@ -109,9 +109,8 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
 
             footerCenter.height == 5
         }
-
-
-        //
+        
+        
         if indexPath.item == 0 {
             cell.changeToSelected()
         }
@@ -126,7 +125,6 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
         } else {
             shouldSelectEspecificTab = false
         }
-        print("\nselect = \(shouldSelectEspecificTab)\n")
         if context.nextFocusedIndexPath != nil {
             if context.previouslyFocusedIndexPath != nil {
                 selectedIndex = context.nextFocusedIndexPath!
@@ -146,9 +144,7 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
         let cells = projectsTab.subviews.sorted(by: { (a, b) -> Bool in
             return a.center.x < b.center.x
         })
-        
-        print("\n\nNUM = \(cells.count)\n\n")
-        
+                
         guideHelper.deseable()
         
         guideHelper.linkByFocus(from: containerView, to: cells[selectedIndex.row], inPosition: .Left, reduceMeasurement: .Width, inView: self.view)

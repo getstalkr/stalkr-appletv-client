@@ -59,15 +59,18 @@ class SidebarController: UITableViewController {
             
             let nextCell = tableView.cellForRow(at: next)! as! TableCell
             changeUiToFocused(cell: nextCell)
+            if context.previouslyFocusedIndexPath == nil {
+                nextCell.alpha = nextCell.defaultAlpha
+            }
         }
         
         if let previously = context.previouslyFocusedIndexPath {
             let previousCell = tableView.cellForRow(at: previously)! as! TableCell
-
+            
+            changeUiToNotSelected(cell: previousCell)
             if context.nextFocusedIndexPath == nil {
-                changeUiToSelected(cell: previousCell)
-            } else {
-                changeUiToNotSelected(cell: previousCell)
+                previousCell.alpha = 1.0
+                previousCell.contentView.backgroundColor = UIColor(netHex: 0x1B1D36)
             }
         }
     }
@@ -78,19 +81,18 @@ class SidebarController: UITableViewController {
     
     func changeUiToNotSelected(cell: TableCell) {
         cell.contentView.backgroundColor = .clear
-        cell.alpha = cell.defaultAlpha
     }
     
     func changeUiToSelected(cell: TableCell) {
+        
         cell.contentView.backgroundColor = UIColor(netHex: 0x1B1D36)
         cell.contentView.backgroundColor = cell.contentView.backgroundColor?.withAlphaComponent(0.5)
-        cell.alpha = 1
     }
     
     func changeUiToFocused(cell: TableCell) {
+        
         cell.contentView.backgroundColor = UIColor(netHex: 0x1B1D36)
         cell.contentView.backgroundColor = cell.contentView.backgroundColor?.withAlphaComponent(1)
-        cell.alpha = 1
     }
 }
 
