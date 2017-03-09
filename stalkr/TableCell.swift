@@ -29,7 +29,7 @@ class TableCell: UITableViewCell {
         
         self.imageView?.frame = CGRect(x: bounds.width * 0.1, y: bounds.height / 2 - imageSize.height / 2, width: imageSize.width, height: imageSize.height)
         self.alpha = defaultAlpha
-        self.textLabel?.textColor = UIColor(netHex: 0xB865D2)
+        self.textLabel?.textColor = UIColor.white//UIColor(netHex: 0xB865D2)
         self.focusStyle = .custom
     }
 }

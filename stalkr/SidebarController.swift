@@ -8,11 +8,9 @@
 
 import UIKit
 
-// TODO: rename this class
 class SidebarController: UITableViewController {
 
-    //TODO: Populate arrays with data from user account
-    var optionsNames: [String] = ["Projetos", "Criar projeto", "Conta"]
+    var optionsNames: [String] = ["DASHBOARD", "NEW PROJECT", "MY ACCOUNT"]
     var icons: [UIImage] = [UIImage(named: "ProjectIcon")!, UIImage(named: "ProjectIcon")!, UIImage(named: "ProjectIcon")!]
         
     var sidebarProtocol: SidebarProtocol?

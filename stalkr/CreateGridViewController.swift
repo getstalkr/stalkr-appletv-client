@@ -20,7 +20,6 @@ class CreateGridViewController: UICollectionViewController {
     var cellConfigList: [CellCreateGrid] = []
     var lastCellConfigSelected = IndexPath(row: 1, section: 0)
     var currentScene: UIFocusEnvironment?
-    var linkerDelegate: LinkerProtocol?
     let showInput = ShowInput()
     
     override var preferredFocusEnvironments: [UIFocusEnvironment] {
@@ -30,7 +29,7 @@ class CreateGridViewController: UICollectionViewController {
             return super.preferredFocusEnvironments
         }
     }
-    
+   
     // load
     override func viewDidLoad() {
         super.viewDidLoad()

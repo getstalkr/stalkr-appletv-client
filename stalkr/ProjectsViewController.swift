@@ -17,12 +17,24 @@ struct Project {
 }
 
 class ProjectsViewController: UIViewController {
-    
+
     @IBOutlet weak var projectsTab: UICollectionView!
     @IBOutlet weak var viewProjectsTabFooter: UIView!
-    var parentController: SegmentedViewController?
     var gridView: GridViewController?
     var projectsList: [Project] = []
+    @IBOutlet weak var containerView: UIView!
+
+    var selectedIndex = IndexPath()
+    
+    var guideHelper = FocusGuideHelper(withArrayOfFocus: [])
+
+    override var preferredFocusEnvironments: [UIFocusEnvironment] {
+        
+        let cells = projectsTab.subviews.sorted(by: { (a, b) -> Bool in
+            return a.center.x < b.center.x
+        })
+        return cells
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +47,18 @@ class ProjectsViewController: UIViewController {
         
         projectsList = [Project(name: "Blau"), Project(name: "Save my Nails"), Project(name: "Eta bicho doido")]
         projectsList[0].show(grid: (self.gridView as! ProjectViewProtocol))
+        
+        selectedIndex = IndexPath(row: 0, section: 0)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gridIdentifier" {
             self.gridView = segue.destination as? GridViewController
         }
+    }
+    
+    override func shouldUpdateFocus(in context: UIFocusUpdateContext) -> Bool {
+        return super.shouldUpdateFocus(in: context)
     }
 }
 
@@ -94,6 +112,32 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldUpdateFocusIn context: UICollectionViewFocusUpdateContext) -> Bool {
+        
+        if context.nextFocusedIndexPath != nil {
+//            guideHelper.deseable()
+//            let segments = projectsTab.subviews.sorted(by: { (a, b) -> Bool in
+//                return a.center.x < b.center.x
+//            })
+//            Problemas com constraints. São necessárias modificações para esse trecho funcionar
+//            guideHelper.linkByFocus(from: segments[context.nextFocusedIndexPath!.row], to: containerView, inPosition: .Down, reduceMeasurement: .Height, inView: self.view)
+//            guideHelper.linkByFocus(from: containerView, to: segments[context.nextFocusedIndexPath!.row], inPosition: .Up, reduceMeasurement: .Height, inView: self.view)
+            
+            if context.previouslyFocusedIndexPath != nil {
+                selectedIndex = context.nextFocusedIndexPath!
+            }
+        }
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUpdateFocusIn context: UICollectionViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        
+        if context.nextFocusedIndexPath != nil && context.previouslyFocusedIndexPath == nil {
+            projectsTab.cellForItem(at: selectedIndex)?.setNeedsFocusUpdate()
+            projectsTab.cellForItem(at: selectedIndex)?.updateFocusIfNeeded()
+        }
     }
     
     // Focus
