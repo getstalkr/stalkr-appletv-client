@@ -175,6 +175,7 @@
 		897182921E6B6B1A0080D4DA /* ProjectsView */ = {
 			isa = PBXGroup;
 			children = (
+				89B337F41E48BB9F00610EA3 /* GridViewController.swift */,
 				CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */,
 				8912784C1E6B20000037CAC7 /* CellProjectTab.swift */,
 			);
@@ -204,17 +205,16 @@
 			children = (
 				CEE849781E55EF420033F512 /* Protocols */,
 				89B337F21E48BB9F00610EA3 /* AppDelegate.swift */,
-				89B337F41E48BB9F00610EA3 /* GridViewController.swift */,
 				CE85B3CD1E5349D900DA7287 /* MainViewController.swift */,
 				CE3DC3111E54807D008F88EE /* SidebarController.swift */,
 				CE2E76401E5C737C00D5EC5C /* TableCell.swift */,
-				897182921E6B6B1A0080D4DA /* ProjectsView */,
 				89B337F61E48BB9F00610EA3 /* Main.storyboard */,
 				89B337F91E48BB9F00610EA3 /* Assets.xcassets */,
 				89B337FB1E48BB9F00610EA3 /* Info.plist */,
 				CECFF4011E6D9D0D0002EA8D /* FocusGuideHelper.swift */,
 				89B3380C1E48C34E00610EA3 /* GridConfiguration.swift */,
 				89B3380E1E48C42200610EA3 /* GridLayout.swift */,
+				897182921E6B6B1A0080D4DA /* ProjectsView */,
 				892DECE21E5FD6B400676056 /* CreateGrid */,
 				89B338031E48C0B700610EA3 /* SlotableCell */,
 				89B338181E49F7A400610EA3 /* StalkrExtensions.swift */,
