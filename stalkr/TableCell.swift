@@ -10,14 +10,10 @@ import UIKit
 
 class TableCell: UITableViewCell {
     
-    var defaultAlpha: CGFloat = 0.4
+    var defaultAlpha: CGFloat = 0.5
 
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
     
     override func layoutSubviews() {
@@ -29,7 +25,7 @@ class TableCell: UITableViewCell {
         
         self.imageView?.frame = CGRect(x: bounds.width * 0.1, y: bounds.height / 2 - imageSize.height / 2, width: imageSize.width, height: imageSize.height)
         self.alpha = defaultAlpha
-        self.textLabel?.textColor = UIColor.white//UIColor(netHex: 0xB865D2)
+        self.textLabel?.textColor = UIColor.white
         self.focusStyle = .custom
     }
 }
