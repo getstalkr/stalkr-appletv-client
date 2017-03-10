@@ -8,8 +8,9 @@
 
 import UIKit
 import Charts
+import SwiftyJSON
 
-class CellTeamCommits: SlotableCellDefault, SlotableCell {
+class CellTeamCommits: SlotableCellDefault, SlotableCell, SubscriberCell {
 
     @IBOutlet weak var viewChart: BarChartView!
     static let cellName = "Team Commits"
@@ -17,11 +18,45 @@ class CellTeamCommits: SlotableCellDefault, SlotableCell {
     let slotHeight = 1
     let haveZoom = true
     
-    static let configurations: [ConfigInput] = []
+    // config
+    static let configurations: [ConfigInput] = [
+        ConfigInput(name: "owner", label: "Github's user", inputType: .text, obligatory: true),
+        ConfigInput(name: "project", label: "Github's repository", inputType: .text, obligatory: true)
+    ]
 
+    
+    // subscriber
+    let webSockets = [
+        WebSocketConfig(
+            requestStartUrl: "https://stalkr-api-commits-history-git.herokuapp.com",
+            requestStartParams: { config in
+                return ["owner": config["owner"] as! String, "project": config["project"] as! String]
+            },
+            channel: { config in
+                let owner = config["owner"] as! String
+                let project = config["project"] as! String
+                
+                return "participation-\(owner)-\(project)"
+            },
+            event: "status-requested"
+        )
+    ]
+    
+    let webSocketHandles: [String: (_ data: JSON, _ cell: SlotableCell) -> Void] = [
+        "status-requested": { json, cell in
+            let commits = json["payload"].arrayValue.map { $0.intValue }
+            (cell as! CellTeamCommits).drawChart(commits: Array(commits.suffix(5)))
+        }
+    ]
+    
+    //
     func load(params: [String: Any]) {
+        drawChart(commits: [])
+    }
+    
+    func drawChart(commits: [Int]) {
         var dataEntries: [BarChartDataEntry] = []
-        let visitorCounts = [1, 2, 3, 4, 5, 6]
+        let visitorCounts = commits
         for i in 0..<visitorCounts.count {
             let dataEntry = BarChartDataEntry(x: Double(i), y: Double(visitorCounts[i]))
             dataEntries.append(dataEntry)

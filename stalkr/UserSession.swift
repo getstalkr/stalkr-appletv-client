@@ -18,7 +18,7 @@ class UserSession {
                 "[" +
                     "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
                     "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"CocoaPods\", \"project\": \"CocoaPods\" } }," +
-                    "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
+                    "{ \"cell\": \"CellTeamCommits\", \"params\": { \"owner\": \"CocoaPods\", \"project\": \"CocoaPods\" } }" +
                 "]," +
                 "[" +
                     "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
@@ -33,7 +33,7 @@ class UserSession {
                 "[" +
                     "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
                     "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"facebook\", \"project\": \"jest\" } }," +
-                    "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
+                    "{ \"cell\": \"CellTeamCommits\", \"params\": { \"owner\": \"facebook\", \"project\": \"jest\" } }" +
                 "]," +
                 "[" +
                     "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +

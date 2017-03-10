@@ -8,13 +8,45 @@
 
 import UIKit
 import Charts
+import SwiftyJSON
 
-class CellTeamCommitsZoom: ZoomCell, SlotableCell {
+// TODO: Muito código repetido com a CellTeamCommits
+class CellTeamCommitsZoom: ZoomCell, SlotableCell, SubscriberCell {
     
     @IBOutlet weak var viewChart: BarChartView!
+    
+    // subscriber
+    let webSockets = [
+        WebSocketConfig(
+            requestStartUrl: "https://stalkr-api-commits-history-git.herokuapp.com",
+            requestStartParams: { config in
+                return ["owner": config["owner"] as! String, "project": config["project"] as! String]
+        },
+            channel: { config in
+                let owner = config["owner"] as! String
+                let project = config["project"] as! String
+                
+                return "participation-\(owner)-\(project)"
+        },
+            event: "status-requested"
+        )
+    ]
+    
+    let webSocketHandles: [String: (_ data: JSON, _ cell: SlotableCell) -> Void] = [
+        "status-requested": { json, cell in
+            let commits = json["payload"].arrayValue.map { $0.intValue }
+            (cell as! CellTeamCommitsZoom).drawChart(commits: Array(commits.suffix(25)))
+        }
+    ]
+    
+    //
     func load(params: [String: Any]) {
+        drawChart(commits: [])
+    }
+    
+    func drawChart(commits: [Int]) {
         var dataEntries: [BarChartDataEntry] = []
-        let visitorCounts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+        let visitorCounts = commits
         for i in 0..<visitorCounts.count {
             let dataEntry = BarChartDataEntry(x: Double(i), y: Double(visitorCounts[i]))
             dataEntries.append(dataEntry)
