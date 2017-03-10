@@ -65,10 +65,10 @@ class CreateGridViewController: UICollectionViewController, CollectionStepByStep
             switch cellName {
             case "project":
                 configGridName = value
-            case "CellPlaceholderSmall":
-                configCellPlaceholderSmall[config.name] = value
             case "CellTrevis":
                 configlCellTrevis[config.name] = value
+            case "CellTeamCommits":
+                configlCellTeamCommits[config.name] = value
             case "CellCommitsFeed":
                 configlCellCommitsFeed[config.name] = value
             default:
@@ -76,15 +76,14 @@ class CreateGridViewController: UICollectionViewController, CollectionStepByStep
             }
         }
         
-        // TODO: da feedback visual ao usuário
         let json = "" +
             "{" +
                 "\"name\": \"\(configGridName)\"," +
                 "\"grid\": [" +
                     "[" +
                         "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
-                        "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"\(configlCellCommitsFeed["owner"]!)\", \"project\": \"\(configlCellCommitsFeed["project"]!)\" } }," +
-                        "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
+                        "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"\(configlCellTrevis["owner"]!)\", \"project\": \"\(configlCellTrevis["project"]!)\" } }," +
+                        "{ \"cell\": \"CellTeamCommits\", \"params\": { \"owner\": \"\(configlCellTeamCommits["owner"]!)\", \"project\": \"\(configlCellTeamCommits["project"]!)\" } }" +
                     "]," +
                     "[" +
                         "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
@@ -103,12 +102,13 @@ class CreateGridViewController: UICollectionViewController, CollectionStepByStep
                     "{ \"cell\": \"CellTeamCommits\", \"params\": { } }" +
                 "]," +
                 "[" +
-                    "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
+                    "{ \"cell\": \"CellDeployStatus\", \"params\": { \"owner\": \"ythecombinator\", \"project\": \"simple-add\" } }," +
                     "{ \"cell\": \"CellCommitsFeed\", \"params\": { \"owner\": \"ythecombinator\", \"project\": \"simple-add\" } }" +
                 "]" +
             "]" +
          "}"*/
         
+        // TODO: da feedback visual ao usuário quando salvar
         UserSession.shared.addProject(project: Project(json: JSON(parseJSON: json)))
     }
 
