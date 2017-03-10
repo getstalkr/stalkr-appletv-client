@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import FontAwesomeKit
 
 class SidebarController: UITableViewController {
 
-    var optionsNames: [String] = ["DASHBOARD", "NEW PROJECT", "MY ACCOUNT"]
-    var icons: [UIImage] = [UIImage(named: "ProjectIcon")!, UIImage(named: "ProjectIcon")!, UIImage(named: "ProjectIcon")!]
+    let optionsNames: [String] = ["DASHBOARD", "NEW PROJECT", "MY ACCOUNT"]
+    
+    let icons: [UIImage] = [
+        FAKMaterialIcons.viewDashboardIcon(withSize: 20).image(with: CGSize(width: 20, height: 20)),
+        FAKIonIcons.plusCircledIcon(withSize: 20).image(with: CGSize(width: 20, height: 20)),
+        FAKMaterialIcons.accountIcon(withSize: 20).image(with: CGSize(width: 20, height: 20)),
+    ]
         
     var sidebarProtocol: SidebarProtocol?
     

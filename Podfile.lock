@@ -4,6 +4,27 @@ PODS:
   - Charts (3.0.1):
     - Charts/Core (= 3.0.1)
   - Charts/Core (3.0.1)
+  - FontAwesomeKit (2.2.1):
+    - FontAwesomeKit/Core (= 2.2.1)
+    - FontAwesomeKit/FontAwesome (= 2.2.1)
+    - FontAwesomeKit/FoundationIcons (= 2.2.1)
+    - FontAwesomeKit/IonIcons (= 2.2.1)
+    - FontAwesomeKit/Material (= 2.2.1)
+    - FontAwesomeKit/Octicons (= 2.2.1)
+    - FontAwesomeKit/Zocial (= 2.2.1)
+  - FontAwesomeKit/Core (2.2.1)
+  - FontAwesomeKit/FontAwesome (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/FoundationIcons (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/IonIcons (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/Material (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/Octicons (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/Zocial (2.2.1):
+    - FontAwesomeKit/Core
   - Kingfisher (3.4.0)
   - NVActivityIndicatorView (3.5.1)
   - PromiseKit (4.1.7):
@@ -26,6 +47,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.4)
   - Cartography
   - Charts
+  - FontAwesomeKit (~> 2.2.0)
   - Kingfisher (~> 3.4)
   - NVActivityIndicatorView (~> 3.5)
   - PromiseKit
@@ -39,6 +61,7 @@ SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
   Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
+  FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
   Kingfisher: 5690cfb3d1bddf3a98d679a3a34d0b7294974ed2
   NVActivityIndicatorView: 075563b3547445ebcff840e3297ce9dd4a23731f
   PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
@@ -47,6 +70,6 @@ SPEC CHECKSUMS:
   SwiftRichString: f09656f5d44b07fc4423225f96eab43e463221e6
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: eec99fe7cea8ac6cea2b640027eeba244bae8d66
+PODFILE CHECKSUM: 790445bb8121fd15855354c6771b1abf7b59249f
 
 COCOAPODS: 1.2.0

@@ -17,5 +17,6 @@ target 'stalkr' do
   pod 'PromiseKit/UIKit', '~> 4.0'
   pod 'Alamofire', '~> 4.4'
   pod 'NVActivityIndicatorView', '~> 3.5'
+  pod 'FontAwesomeKit', '~> 2.2.0'
 
 end
