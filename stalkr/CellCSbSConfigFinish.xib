@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="dark"/>
+    </device>
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellCSbSConfigFinish" id="wPj-9s-noQ" customClass="CellConfigFinish" customModule="stalkr" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="56" height="58"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="56" height="58"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Uv-5a-xhU">
+                        <rect key="frame" x="8" y="8" width="40" height="40"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxh-9m-zFO">
+                                <rect key="frame" x="15" y="10" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.22352941179999999" green="0.66666666669999997" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mxh-9m-zFO" firstAttribute="centerY" secondItem="2Uv-5a-xhU" secondAttribute="centerY" id="Iuu-oA-3Y5"/>
+                            <constraint firstAttribute="height" constant="40" id="cQB-1g-jcp"/>
+                            <constraint firstAttribute="width" constant="40" id="gmw-yT-HZu"/>
+                            <constraint firstItem="mxh-9m-zFO" firstAttribute="centerX" secondItem="2Uv-5a-xhU" secondAttribute="centerX" id="sO7-qM-SRe"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="leadingMargin" secondItem="2Uv-5a-xhU" secondAttribute="leading" id="0uP-95-mVw"/>
+                <constraint firstAttribute="topMargin" secondItem="2Uv-5a-xhU" secondAttribute="top" id="FPJ-cD-dEY"/>
+            </constraints>
+            <size key="customSize" width="56" height="58"/>
+            <connections>
+                <outlet property="viewCircle" destination="2Uv-5a-xhU" id="Rit-Zm-nqy"/>
+            </connections>
+            <point key="canvasLocation" x="-320" y="302"/>
+        </collectionViewCell>
+    </objects>
+</document>

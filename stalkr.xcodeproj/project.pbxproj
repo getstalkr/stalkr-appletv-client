@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		890E0C7A1E7237530083C76E /* CellCSbSDivision.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890E0C791E7237530083C76E /* CellCSbSDivision.xib */; };
+		890E0C7C1E7237F80083C76E /* CollectionStepByStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E0C7B1E7237F80083C76E /* CollectionStepByStep.swift */; };
+		890E0C7E1E7247400083C76E /* CellCSbSConfigFinish.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890E0C7D1E7247400083C76E /* CellCSbSConfigFinish.xib */; };
+		890E0C801E7247480083C76E /* CellCSbSConfigTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890E0C7F1E7247480083C76E /* CellCSbSConfigTitle.xib */; };
+		890E0C821E7247500083C76E /* CellCSbSConfigInput.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890E0C811E7247500083C76E /* CellCSbSConfigInput.xib */; };
+		890E0C851E7248990083C76E /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E0C841E7248990083C76E /* AccountViewController.swift */; };
+		890E0C871E7249200083C76E /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E0C861E7249200083C76E /* CreateAccountViewController.swift */; };
 		8912784D1E6B20000037CAC7 /* CellProjectTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8912784C1E6B20000037CAC7 /* CellProjectTab.swift */; };
 		8917E4AD1E6925FF001BD42A /* CommitRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8917E4AC1E6925FF001BD42A /* CommitRegister.swift */; };
 		89276ED81E54BBE800D99D4E /* SubscriberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89276ED71E54BBE800D99D4E /* SubscriberCell.swift */; };
@@ -58,6 +65,13 @@
 
 /* Begin PBXFileReference section */
 		2584928AB2DB6CF074F0769D /* Pods_stalkr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stalkr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		890E0C791E7237530083C76E /* CellCSbSDivision.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCSbSDivision.xib; sourceTree = "<group>"; };
+		890E0C7B1E7237F80083C76E /* CollectionStepByStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionStepByStep.swift; sourceTree = "<group>"; };
+		890E0C7D1E7247400083C76E /* CellCSbSConfigFinish.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCSbSConfigFinish.xib; sourceTree = "<group>"; };
+		890E0C7F1E7247480083C76E /* CellCSbSConfigTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCSbSConfigTitle.xib; sourceTree = "<group>"; };
+		890E0C811E7247500083C76E /* CellCSbSConfigInput.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCSbSConfigInput.xib; sourceTree = "<group>"; };
+		890E0C841E7248990083C76E /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		890E0C861E7249200083C76E /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		8912784C1E6B20000037CAC7 /* CellProjectTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellProjectTab.swift; sourceTree = "<group>"; };
 		8917E4AC1E6925FF001BD42A /* CommitRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitRegister.swift; sourceTree = "<group>"; };
 		89276ED71E54BBE800D99D4E /* SubscriberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriberCell.swift; sourceTree = "<group>"; };
@@ -130,16 +144,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		890E0C781E7236E90083C76E /* CollectionStepByStep */ = {
+			isa = PBXGroup;
+			children = (
+				890E0C7B1E7237F80083C76E /* CollectionStepByStep.swift */,
+				89E5DC591E6E02C90029DDC0 /* CollectionStepByStepLayout.swift */,
+				890E0C791E7237530083C76E /* CellCSbSDivision.xib */,
+				890E0C7D1E7247400083C76E /* CellCSbSConfigFinish.xib */,
+				890E0C7F1E7247480083C76E /* CellCSbSConfigTitle.xib */,
+				890E0C811E7247500083C76E /* CellCSbSConfigInput.xib */,
+				89E5DC5B1E6E5E020029DDC0 /* CellConfigDivision.swift */,
+				89E5DC551E6DEECD0029DDC0 /* CellConfigTitle.swift */,
+				89E5DC571E6DEEE20029DDC0 /* CellConfigInput.swift */,
+				89C778491E6E7775008926E7 /* CellConfigFinish.swift */,
+			);
+			name = CollectionStepByStep;
+			sourceTree = "<group>";
+		};
+		890E0C831E72485C0083C76E /* AccountView */ = {
+			isa = PBXGroup;
+			children = (
+				890E0C841E7248990083C76E /* AccountViewController.swift */,
+				890E0C861E7249200083C76E /* CreateAccountViewController.swift */,
+			);
+			name = AccountView;
+			sourceTree = "<group>";
+		};
 		892DECE21E5FD6B400676056 /* CreateGrid */ = {
 			isa = PBXGroup;
 			children = (
 				89C7784B1E6EEB86008926E7 /* ProjectInformationViewController.swift */,
 				89E5DC531E6DE4610029DDC0 /* CreateGridViewController.swift */,
-				89E5DC5B1E6E5E020029DDC0 /* CellConfigDivision.swift */,
-				89E5DC551E6DEECD0029DDC0 /* CellConfigTitle.swift */,
-				89E5DC571E6DEEE20029DDC0 /* CellConfigInput.swift */,
-				89C778491E6E7775008926E7 /* CellConfigFinish.swift */,
-				89E5DC591E6E02C90029DDC0 /* CollectionStepByStepLayout.swift */,
 			);
 			name = CreateGrid;
 			sourceTree = "<group>";
@@ -220,7 +255,9 @@
 				89D598B81E718E3D00B27927 /* Project */,
 				897182921E6B6B1A0080D4DA /* ProjectsView */,
 				892DECE21E5FD6B400676056 /* CreateGrid */,
+				890E0C831E72485C0083C76E /* AccountView */,
 				89B338031E48C0B700610EA3 /* SlotableCell */,
+				890E0C781E7236E90083C76E /* CollectionStepByStep */,
 				89B338181E49F7A400610EA3 /* StalkrExtensions.swift */,
 			);
 			path = stalkr;
@@ -357,12 +394,16 @@
 				89B337FA1E48BB9F00610EA3 /* Assets.xcassets in Resources */,
 				89A6663F1E5DB9C0007F8A7A /* CellTeamCommitsZoom.xib in Resources */,
 				89C994AD1E547CDE00DBADBA /* CellTrevis.xib in Resources */,
+				890E0C7E1E7247400083C76E /* CellCSbSConfigFinish.xib in Resources */,
 				892E73E51E58A59B007483E1 /* CellTeamCommits.xib in Resources */,
 				89C467571E596258003CF8F2 /* CellDeployStatus.xib in Resources */,
 				89C994CB1E54820900DBADBA /* CellTrevisTableCell.xib in Resources */,
 				892E73EA1E58F56F007483E1 /* CellCloudPerformance.xib in Resources */,
 				892E73DF1E589378007483E1 /* CellCommitsFeedTableCell.xib in Resources */,
+				890E0C801E7247480083C76E /* CellCSbSConfigTitle.xib in Resources */,
 				892E73DD1E589378007483E1 /* CellCommitsFeed.xib in Resources */,
+				890E0C821E7247500083C76E /* CellCSbSConfigInput.xib in Resources */,
+				890E0C7A1E7237530083C76E /* CellCSbSDivision.xib in Resources */,
 				89B337F81E48BB9F00610EA3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,12 +469,14 @@
 				89B337F51E48BB9F00610EA3 /* GridViewController.swift in Sources */,
 				89E5DC561E6DEECD0029DDC0 /* CellConfigTitle.swift in Sources */,
 				8912784D1E6B20000037CAC7 /* CellProjectTab.swift in Sources */,
+				890E0C871E7249200083C76E /* CreateAccountViewController.swift in Sources */,
 				89C7784C1E6EEB86008926E7 /* ProjectInformationViewController.swift in Sources */,
 				89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */,
 				CE52C5391E61059300FC6C40 /* SidebarProtocol.swift in Sources */,
 				89C994AB1E547C6E00DBADBA /* CellTrevis.swift in Sources */,
 				892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */,
 				89E5DC541E6DE4610029DDC0 /* CreateGridViewController.swift in Sources */,
+				890E0C851E7248990083C76E /* AccountViewController.swift in Sources */,
 				892DECC81E5E308900676056 /* CellTeamCommitsZoom.swift in Sources */,
 				CEE8497A1E55EF840033F512 /* DashboardProtocol.swift in Sources */,
 				89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */,
@@ -442,6 +485,7 @@
 				892E73E31E58A581007483E1 /* CellTeamCommits.swift in Sources */,
 				89276ED81E54BBE800D99D4E /* SubscriberCell.swift in Sources */,
 				89E5DC5C1E6E5E020029DDC0 /* CellConfigDivision.swift in Sources */,
+				890E0C7C1E7237F80083C76E /* CollectionStepByStep.swift in Sources */,
 				892E73E81E58F487007483E1 /* CellCloudPerformance.swift in Sources */,
 				892E73DC1E589378007483E1 /* CellCommitsFeed.swift in Sources */,
 				89B3380F1E48C42200610EA3 /* GridLayout.swift in Sources */,
