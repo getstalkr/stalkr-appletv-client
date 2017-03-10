@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P47-bc-AFb">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P47-bc-AFb">
     <device id="appleTV" orientation="landscape">
         <adaptation id="dark"/>
     </device>
@@ -102,22 +102,22 @@
                                                     <segue destination="8PL-Ka-4f6" kind="embed" identifier="tableIdentifier" id="1Bh-um-Rmy"/>
                                                 </connections>
                                             </containerView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stalkr" translatesAutoresizingMaskIntoConstraints="NO" id="xU3-6z-p94">
-                                                <rect key="frame" x="41" y="24" width="305" height="97"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="xU3-6z-p94">
+                                                <rect key="frame" x="123" y="26" width="140" height="97"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="xU3-6z-p94" secondAttribute="height" multiplier="240:97" constant="65" id="AvJ-D1-cAv"/>
+                                                    <constraint firstAttribute="width" secondItem="xU3-6z-p94" secondAttribute="height" multiplier="240:97" constant="-100" id="AvJ-D1-cAv"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.29803921568627451" alpha="0.099020761986301373" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="QHA-3Q-ZCw" secondAttribute="height" multiplier="193:450" id="J6j-jO-xFO"/>
-                                            <constraint firstItem="xU3-6z-p94" firstAttribute="top" secondItem="QHA-3Q-ZCw" secondAttribute="top" constant="24" id="REi-wH-YfH"/>
+                                            <constraint firstItem="xU3-6z-p94" firstAttribute="top" secondItem="QHA-3Q-ZCw" secondAttribute="top" constant="26" id="REi-wH-YfH"/>
                                             <constraint firstAttribute="trailing" secondItem="Khn-QB-1nk" secondAttribute="trailing" id="VAz-4n-fPy"/>
-                                            <constraint firstItem="Khn-QB-1nk" firstAttribute="top" secondItem="xU3-6z-p94" secondAttribute="bottom" constant="43" id="a2l-Ds-Bgx"/>
+                                            <constraint firstItem="Khn-QB-1nk" firstAttribute="top" secondItem="xU3-6z-p94" secondAttribute="bottom" constant="41" id="a2l-Ds-Bgx"/>
                                             <constraint firstItem="xU3-6z-p94" firstAttribute="centerX" secondItem="QHA-3Q-ZCw" secondAttribute="centerX" id="axw-8G-MOZ"/>
                                             <constraint firstItem="Khn-QB-1nk" firstAttribute="centerX" secondItem="QHA-3Q-ZCw" secondAttribute="centerX" id="jNN-CX-eMf"/>
-                                            <constraint firstItem="xU3-6z-p94" firstAttribute="width" secondItem="QHA-3Q-ZCw" secondAttribute="height" multiplier="4:15" constant="65" id="l4v-hx-LLy"/>
+                                            <constraint firstItem="xU3-6z-p94" firstAttribute="width" secondItem="QHA-3Q-ZCw" secondAttribute="height" multiplier="4:15" constant="-100" id="l4v-hx-LLy"/>
                                             <constraint firstItem="Khn-QB-1nk" firstAttribute="leading" secondItem="QHA-3Q-ZCw" secondAttribute="leading" id="rcQ-4K-Kfa"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -458,6 +458,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Stalkr" width="300" height="100"/>
+        <image name="logo" width="764" height="529"/>
     </resources>
 </document>
