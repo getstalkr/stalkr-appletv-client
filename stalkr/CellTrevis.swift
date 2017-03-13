@@ -24,8 +24,8 @@ class CellTrevis: SlotableCellDefault, SlotableCell, SubscriberCell, UITableView
     
     // config
     static let configurations: [ConfigInput] = [
-        ConfigInput(name: "owner", label: "Trevis' user", inputType: .text, obligatory: true),
-        ConfigInput(name: "project", label: "Trevis' repository", inputType: .text, obligatory: true)
+        ConfigInput(name: "owner", label: "Travis' user", inputType: .text, obligatory: true),
+        ConfigInput(name: "project", label: "Travis' repository", inputType: .text, obligatory: true)
     ]
     
     // subscriber
