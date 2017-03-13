@@ -43,10 +43,9 @@ class GridViewController: UICollectionViewController {
         // load xibs
         // todas as classes que implementam o protocolo SlotableCell podem ser exibidas na collectionview
         // todos os nibs da collectionview terão como indentifier o mesmo nome da classe que implementa o protocolo SlotableCell
-        listAllSlotableCell.forEach { i in
-            let stringClassName = i.className()
-            collectionView?.register(UINib(nibName: stringClassName, bundle: nil),
-                                     forCellWithReuseIdentifier: stringClassName)
+        listAllSlotableCell.forEach { slotableCell in
+            collectionView?.register(UINib(nibName: slotableCell.className, bundle: nil),
+                                     forCellWithReuseIdentifier: slotableCell.className)
         }
         
         //

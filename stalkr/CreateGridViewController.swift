@@ -35,13 +35,13 @@ class CreateGridViewController: UICollectionViewController, CollectionStepByStep
         cellConfigList.append(CellCreateGrid.name("Dashboard"))
         cellConfigList.append(CellCreateGrid.input(ConfigInput(name: "projectName", label: "Name", inputType: .text, obligatory: true), cellName: "project", currentValue: ""))
         
-        listAllSlotableCell.forEach { slotableCellClass in
-            let configs = (slotableCellClass as! SlotableCell.Type).configurations
+        listAllSlotableCell.forEach { slotableCell in
+            let configs = (slotableCell.classObject as! SlotableCell.Type).configurations
             if configs.count > 0 {
-                let cellName = (slotableCellClass as! SlotableCell.Type).cellName
+                let cellName = (slotableCell.classObject as! SlotableCell.Type).cellName
                 
                 cellConfigList.append(CellCreateGrid.name(cellName))
-                configs.forEach { cellConfigList.append(CellCreateGrid.input($0, cellName: slotableCellClass.className(), currentValue: "")) }
+                configs.forEach { cellConfigList.append(CellCreateGrid.input($0, cellName: slotableCell.className, currentValue: "")) }
             }
         }
         

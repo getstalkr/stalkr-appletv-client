@@ -132,12 +132,6 @@ class ZoomCell: SlotableCellDefault {
 }
 
 // lista com todos as classes que implementam o protocolo SlotableCell
-// todo: talvez haja alguma forma mística de gerar essa listagem automaticamente
-let listAllSlotableCell: [NSObject.Type] = [
-    CellTrevis.self,
-    CellCommitsFeed.self,
-    CellTeamCommits.self,
-    CellTeamCommitsZoom.self,
-    CellCloudPerformance.self,
-    CellDeployStatus.self
-]
+let listAllSlotableCell = {
+    return subscribersOfSlotableCell()
+}()
