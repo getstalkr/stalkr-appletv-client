@@ -50,6 +50,10 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
     
     func reloadProjectsList() {
         projectsList = UserSession.shared.projects!
+        if projectsList.count == 0 {
+            return
+        }
+        
         projectsList[0].show(atProjectView: (self.gridView as! ProjectViewProtocol))
         
         selectedIndex = IndexPath(row: 0, section: 0)

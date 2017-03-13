@@ -126,10 +126,12 @@ extension MainViewController: SidebarProtocol {
                 let segments = projectController!.projectsTab.visibleCells.sorted(by: { (a, b) -> Bool in
                     return a.center.x < b.center.x
                 })
-
-                guideHelper.linkByFocus(from: cell, to: segments[0], inPosition: .Right, reduceMeasurement: .WidthAndHeight, inView: self.view)
-                guideHelper.linkByFocus(from: segments[0], to: cell, inPosition: .Left, reduceMeasurement: .Width, inView: self.view)
-            case "NEW PROJECT":
+                
+                if segments.count > 0 {
+                    guideHelper.linkByFocus(from: cell, to: segments[0], inPosition: .Right, reduceMeasurement: .WidthAndHeight, inView: self.view)
+                    guideHelper.linkByFocus(from: segments[0], to: cell, inPosition: .Left, reduceMeasurement: .Width, inView: self.view)
+                }
+            case "NEW DASHBOARD":
                 UIView.animate(withDuration: 0.5, animations: {
                     self.projectView.alpha = 0
                     self.createProjectView.alpha = 1

@@ -11,7 +11,7 @@ import FontAwesomeKit
 
 class SidebarController: UITableViewController {
 
-    let optionsNames: [String] = ["DASHBOARD", "NEW PROJECT", "MY ACCOUNT"]
+    let optionsNames: [String] = ["DASHBOARD", "NEW DASHBOARD", "MY ACCOUNT"]
     
     let icons: [UIImage] = [
         FAKMaterialIcons.viewDashboardIcon(withSize: 20).image(with: CGSize(width: 20, height: 20)),
