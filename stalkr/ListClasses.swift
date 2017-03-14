@@ -58,16 +58,22 @@ func subclasses(of classMother: AnyClass) -> [ClassInfo] {
 }
 
 // List classes that subscribers a protocol
-func subscribersOfSlotableCell() -> [ClassInfo] { // TODO: Pass a protocol as parameter, without using @objc
+func subscribers(cond: (AnyObject) -> Any?) -> [ClassInfo] {
     var subscribersList = [ClassInfo]()
-
+    
     var count = UInt32(0)
     let classList = objc_copyClassList(&count)!
     
     for i in 0..<Int(count) {
         if let classInfo = ClassInfo(classList[i]) {
             
-            if let _ = classInfo.classObject as? SlotableCell.Type {
+            // skip native Swift and Foundation classes, to do not crash
+            if classInfo.classNameFull.components(separatedBy: ".").count == 1 {
+                continue
+            }
+            
+            //
+            if cond(classInfo.classObject) != nil {
                 subscribersList.append(classInfo)
             }
         }
