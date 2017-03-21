@@ -58,7 +58,7 @@ func subclasses(of classMother: AnyClass) -> [ClassInfo] {
 }
 
 // List classes that subscribers a protocol
-func subscribers(cond: (AnyObject) -> Any?) -> [ClassInfo] {
+func subscribers<T>(of: T.Type) -> [ClassInfo] {
     var subscribersList = [ClassInfo]()
     
     var count = UInt32(0)
@@ -73,7 +73,7 @@ func subscribers(cond: (AnyObject) -> Any?) -> [ClassInfo] {
             }
             
             //
-            if cond(classInfo.classObject) != nil {
+            if classInfo.classObject is T {
                 subscribersList.append(classInfo)
             }
         }

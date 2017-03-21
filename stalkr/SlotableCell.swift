@@ -133,5 +133,5 @@ class ZoomCell: SlotableCellDefault {
 
 // lista com todos as classes que implementam o protocolo SlotableCell
 let listAllSlotableCell = {
-    return subscribers(cond: {$0 as? SlotableCell.Type })
+    return subscribers(of: SlotableCell.Type.self )
 }()
