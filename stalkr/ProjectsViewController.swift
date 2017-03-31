@@ -54,7 +54,7 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
             return
         }
         
-        projectsList[0].show(atProjectView: (self.gridView as! ProjectViewProtocol))
+        projectsList[0].show(atProjectView: (self.gridView!))
         
         selectedIndex = IndexPath(row: 0, section: 0)
         
@@ -77,7 +77,7 @@ extension ProjectsViewController: UICollectionViewDelegate, UICollectionViewData
         let currentProject = projectsList[indexPath.item]
         
         cell.project = currentProject
-        cell.grid = (self.gridView as! ProjectViewProtocol)
+        cell.grid = (self.gridView!)
         
         // set label
         cell.labelProjectName.text = currentProject.name

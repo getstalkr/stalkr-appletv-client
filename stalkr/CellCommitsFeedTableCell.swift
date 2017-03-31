@@ -16,16 +16,5 @@ class CellCommitsFeedTableCell: UITableViewCell {
     @IBOutlet weak var textMessage: UITextView!
     @IBOutlet weak var labelCommitHash: UILabel!
     @IBOutlet weak var labelBranch: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
 
 }

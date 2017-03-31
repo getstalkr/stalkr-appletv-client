@@ -20,16 +20,5 @@ class CellTrevisTableCell: UITableViewCell {
     @IBOutlet weak var labelPastTime: UILabel!
     @IBOutlet weak var labelRunTime: UILabel!
     @IBOutlet weak var labelTotalTime: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
 }

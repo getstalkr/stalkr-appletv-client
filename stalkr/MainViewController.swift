@@ -26,32 +26,21 @@ enum Measurement {
 
 class MainViewController: UIViewController {
     
-    @IBOutlet weak var labelTitle: UILabel!
-    
-    var sidebarController: SidebarController?
-    
-    var projectController: ProjectsViewController?
-    
-    var createProjectController: CreateGridViewController?
-        
-    var seletionBar: UIView = UIView()
-    
     @IBOutlet weak var sidebarView: UIView!
-    
+    @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var createProjectView: UIView!
-    
     @IBOutlet weak var projectView: UIView!
-        
     @IBOutlet weak var accountView: UIView!
-    
+    var sidebarController: SidebarController?
+    var projectController: ProjectsViewController?
+    var createProjectController: CreateGridViewController?
+    var seletionBar: UIView = UIView()
     let gradientLayer = CAGradientLayer()
-    
     var guideHelper = FocusGuideHelper(withArrayOfFocus: [])
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
         addGradientToBackground()
     }
     
@@ -76,14 +65,9 @@ class MainViewController: UIViewController {
         self.view.layer.addSublayer(gradientLayer)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "tableIdentifier" {
-            
             self.sidebarController = segue.destination as? SidebarController
             self.sidebarController?.sidebarProtocol = self
             
@@ -101,7 +85,6 @@ class MainViewController: UIViewController {
 }
 
 //MARK: SidebarProtocol
-
 extension MainViewController: SidebarProtocol {
     
     func focusedCell(withOption option: String) {
@@ -131,6 +114,7 @@ extension MainViewController: SidebarProtocol {
                     guideHelper.linkByFocus(from: cell, to: segments[0], inPosition: .Right, reduceMeasurement: .WidthAndHeight, inView: self.view)
                     guideHelper.linkByFocus(from: segments[0], to: cell, inPosition: .Left, reduceMeasurement: .Width, inView: self.view)
                 }
+            
             case "NEW DASHBOARD":
                 UIView.animate(withDuration: 0.5, animations: {
                     self.projectView.alpha = 0

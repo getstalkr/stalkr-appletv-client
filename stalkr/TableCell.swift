@@ -11,10 +11,6 @@ import UIKit
 class TableCell: UITableViewCell {
     
     var defaultAlpha: CGFloat = 0.5
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
     
     override func layoutSubviews() {
         
