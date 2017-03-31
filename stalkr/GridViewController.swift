@@ -93,7 +93,7 @@ class GridViewController: UICollectionViewController {
                         json = JSON(arrayLiteral: [])
                     }
                     
-                    (cell as! SlotableCellDefault).stopLoading() // todo: não sei se aqui é o lugar ideal para interromper a animação de loading
+                    (cell as! LoadingViewProtocol).loadingView!.stop() // todo: não sei se aqui é o lugar ideal para interromper a animação de loading
                     (cell as! SubscriberCell).getHandle(event: webSocket.event, cell: cell as! SlotableCell)(json, cell as! SlotableCell)
                 }
                 
@@ -102,7 +102,7 @@ class GridViewController: UICollectionViewController {
                 pusher.connect()
                 
                 // start websocket on server
-                (cell as! SlotableCellDefault).showLoading(message: "Fetching data...")
+                (cell as! LoadingViewProtocol).loadingView!.show(message: "Fetching data...")
                 Alamofire.request(
                     webSocket.requestStartUrl,
                     method: .post,
@@ -113,7 +113,7 @@ class GridViewController: UICollectionViewController {
                     let statusCode = (response.response?.statusCode)!
                     
                     if statusCode != 200 {
-                        (cell as! SlotableCellDefault).errorLoading(message: "Something went wrong.\nCheck your connection and reload the app.")
+                        (cell as! LoadingViewProtocol).loadingView!.error(message: "Something went wrong.\nCheck your connection and reload the app.")
                     }
                 }
             }

@@ -16,6 +16,7 @@
 		890E0C871E7249200083C76E /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E0C861E7249200083C76E /* CreateAccountViewController.swift */; };
 		8912784D1E6B20000037CAC7 /* CellProjectTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8912784C1E6B20000037CAC7 /* CellProjectTab.swift */; };
 		8917E4AD1E6925FF001BD42A /* CommitRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8917E4AC1E6925FF001BD42A /* CommitRegister.swift */; };
+		891F50C61E8DF4E80085A060 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891F50C51E8DF4E70085A060 /* LoadingView.swift */; };
 		89276ED81E54BBE800D99D4E /* SubscriberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89276ED71E54BBE800D99D4E /* SubscriberCell.swift */; };
 		892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DD7C31E5624F1000482C0 /* TravisBuildRegister.swift */; };
 		892DECC81E5E308900676056 /* CellTeamCommitsZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DECC71E5E308900676056 /* CellTeamCommitsZoom.swift */; };
@@ -75,6 +76,7 @@
 		890E0C861E7249200083C76E /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		8912784C1E6B20000037CAC7 /* CellProjectTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellProjectTab.swift; sourceTree = "<group>"; };
 		8917E4AC1E6925FF001BD42A /* CommitRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitRegister.swift; sourceTree = "<group>"; };
+		891F50C51E8DF4E70085A060 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		89276ED71E54BBE800D99D4E /* SubscriberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriberCell.swift; sourceTree = "<group>"; };
 		892DD7C31E5624F1000482C0 /* TravisBuildRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravisBuildRegister.swift; sourceTree = "<group>"; };
 		892DECC71E5E308900676056 /* CellTeamCommitsZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTeamCommitsZoom.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				89B337FB1E48BB9F00610EA3 /* Info.plist */,
 				CECFF4011E6D9D0D0002EA8D /* FocusGuideHelper.swift */,
 				89D598B41E718C4900B27927 /* UserSession.swift */,
+				891F50C51E8DF4E70085A060 /* LoadingView.swift */,
 				89D598B81E718E3D00B27927 /* Project */,
 				897182921E6B6B1A0080D4DA /* ProjectsView */,
 				892DECE21E5FD6B400676056 /* CreateGrid */,
@@ -487,6 +490,7 @@
 				89C994AB1E547C6E00DBADBA /* CellTrevis.swift in Sources */,
 				8961C98D1E761E4900D84B5C /* ListClasses.swift in Sources */,
 				892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */,
+				891F50C61E8DF4E80085A060 /* LoadingView.swift in Sources */,
 				89E5DC541E6DE4610029DDC0 /* CreateGridViewController.swift in Sources */,
 				890E0C851E7248990083C76E /* AccountViewController.swift in Sources */,
 				892DECC81E5E308900676056 /* CellTeamCommitsZoom.swift in Sources */,

@@ -23,10 +23,9 @@ protocol SlotableCell {
     func load(params: [String: Any])
 }
 
-class SlotableCellDefault: UICollectionViewCell {
+class SlotableCellDefault: UICollectionViewCell, LoadingViewProtocol {
     
-    var loadingView: NVActivityIndicatorView?
-    var loadingLabel: UILabel?
+    var loadingView: LoadingView?
     
     var scaleWhenFocused: Bool {
         get {
@@ -39,28 +38,8 @@ class SlotableCellDefault: UICollectionViewCell {
         
         self.layer.shadowColor = UIColor.white.cgColor
         
-        // start loading views
-        // TODO: talvez seja bom jogar toda essa lógica de loading num protocol
-        loadingView = NVActivityIndicatorView(frame: self.contentView.frame,
-                                              type: NVActivityIndicatorType.ballClipRotatePulse)
-        loadingView!.color = UIColor.init(red: 184/255, green: 101/255, blue: 210/255, alpha: 0.2)
-        loadingView!.alpha = 0
-        
-        loadingLabel = UILabel(frame: frame)
-        loadingLabel!.numberOfLines = 0
-        loadingLabel!.text = ""
-        loadingLabel!.textColor = UIColor.init(red: 184/255, green: 101/255, blue: 210/255, alpha: 0.9)
-        
-        self.contentView.addSubview(loadingView!)
-        self.contentView.addSubview(loadingLabel!)
-
-        constrain(loadingView!, loadingLabel!) { animate, label in
-            animate.width == animate.superview!.width * 2 / 3
-            animate.height == animate.width
-            animate.center == animate.superview!.center
-            
-            label.center == animate.center
-        }
+        // start loading
+        self.loadingView = LoadingView(inView: self.contentView, animationType: NVActivityIndicatorType.ballClipRotatePulse)
     }
     
     override var canBecomeFocused: Bool {
@@ -91,28 +70,6 @@ class SlotableCellDefault: UICollectionViewCell {
             })
         }
     }
-    
-    // loadings methods
-    func showLoading(message: String) {
-        loadingView!.alpha = 1
-        loadingView!.startAnimating()
-        loadingLabel!.text = message
-    }
-
-    func errorLoading(message: String) {
-        loadingView!.stopAnimating()
-        loadingLabel!.attributedText = "Oops\n" + message.set(style: Style({
-            $0.font = FontAttribute(FontName.HelveticaNeue, size: 15)
-        }))
-        loadingLabel!.textColor = UIColor.stalkrError
-    }
-
-    func stopLoading() {
-        loadingView!.alpha = 0
-        loadingView!.stopAnimating()
-        loadingLabel!.alpha = 0
-    }
-    
 }
 
 class ZoomCell: SlotableCellDefault {
