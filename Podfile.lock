@@ -1,9 +1,9 @@
 PODS:
   - Alamofire (4.4.0)
-  - Cartography (1.0.1)
-  - Charts (3.0.1):
-    - Charts/Core (= 3.0.1)
-  - Charts/Core (3.0.1)
+  - Cartography (1.1.0)
+  - Charts (3.0.2):
+    - Charts/Core (= 3.0.2)
+  - Charts/Core (3.0.2)
   - FontAwesomeKit (2.2.1):
     - FontAwesomeKit/Core (= 2.2.1)
     - FontAwesomeKit/FontAwesome (= 2.2.1)
@@ -25,23 +25,25 @@ PODS:
     - FontAwesomeKit/Core
   - FontAwesomeKit/Zocial (2.2.1):
     - FontAwesomeKit/Core
-  - Kingfisher (3.4.0)
-  - NVActivityIndicatorView (3.5.1)
-  - PromiseKit (4.1.7):
-    - PromiseKit/Foundation (= 4.1.7)
-    - PromiseKit/QuartzCore (= 4.1.7)
-    - PromiseKit/UIKit (= 4.1.7)
-  - PromiseKit/CorePromise (4.1.7)
-  - PromiseKit/Foundation (4.1.7):
+  - Kingfisher (3.6.2)
+  - NVActivityIndicatorView (3.6.1)
+  - PromiseKit (4.2.0):
+    - PromiseKit/Foundation (= 4.2.0)
+    - PromiseKit/QuartzCore (= 4.2.0)
+    - PromiseKit/UIKit (= 4.2.0)
+  - PromiseKit/CorePromise (4.2.0)
+  - PromiseKit/Foundation (4.2.0):
     - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (4.1.7):
+  - PromiseKit/QuartzCore (4.2.0):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (4.1.7):
+  - PromiseKit/UIKit (4.2.0):
     - PromiseKit/CorePromise
   - PusherSwift (4.0.1)
   - RelativeFormatter (0.8.3)
-  - SwiftRichString (0.9.4)
+  - SwiftRichString (0.9.8)
   - SwiftyJSON (3.1.4)
+  - TvLightSegments (0.1.0):
+    - Cartography (~> 1.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -56,20 +58,22 @@ DEPENDENCIES:
   - RelativeFormatter
   - SwiftRichString
   - SwiftyJSON (~> 3.1.4)
+  - TvLightSegments (~> 0.1.0)
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
-  Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
+  Cartography: '0538ccb4044acbbda2266335fc58cb4228794d90'
+  Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
   FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
-  Kingfisher: 5690cfb3d1bddf3a98d679a3a34d0b7294974ed2
-  NVActivityIndicatorView: 075563b3547445ebcff840e3297ce9dd4a23731f
-  PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
+  Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
+  NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
+  PromiseKit: '08dfb783c161ddcd95b7912421f14c5113fd8318'
   PusherSwift: 8249a1c3634943cf7e1e9a691468357d53ab7e5f
   RelativeFormatter: 13508ccd19bbab46ca95cf847a0db6e80601c9a4
-  SwiftRichString: f09656f5d44b07fc4423225f96eab43e463221e6
+  SwiftRichString: d42eeaefceea340e27b8a33945e0fac1ee21f58f
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  TvLightSegments: a2f970ca56e0709cc10b86e5a3e457675755adb9
 
-PODFILE CHECKSUM: 790445bb8121fd15855354c6771b1abf7b59249f
+PODFILE CHECKSUM: 14eec334674f98c194310f812666f0488ad87ad6
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1

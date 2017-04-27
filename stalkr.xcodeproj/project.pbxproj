@@ -14,7 +14,6 @@
 		890E0C821E7247500083C76E /* CellCSbSConfigInput.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890E0C811E7247500083C76E /* CellCSbSConfigInput.xib */; };
 		890E0C851E7248990083C76E /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E0C841E7248990083C76E /* AccountViewController.swift */; };
 		890E0C871E7249200083C76E /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E0C861E7249200083C76E /* CreateAccountViewController.swift */; };
-		8912784D1E6B20000037CAC7 /* CellProjectTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8912784C1E6B20000037CAC7 /* CellProjectTab.swift */; };
 		8917E4AD1E6925FF001BD42A /* CommitRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8917E4AC1E6925FF001BD42A /* CommitRegister.swift */; };
 		891F50C61E8DF4E80085A060 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891F50C51E8DF4E70085A060 /* LoadingView.swift */; };
 		89276ED81E54BBE800D99D4E /* SubscriberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89276ED71E54BBE800D99D4E /* SubscriberCell.swift */; };
@@ -74,7 +73,6 @@
 		890E0C811E7247500083C76E /* CellCSbSConfigInput.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCSbSConfigInput.xib; sourceTree = "<group>"; };
 		890E0C841E7248990083C76E /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		890E0C861E7249200083C76E /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		8912784C1E6B20000037CAC7 /* CellProjectTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellProjectTab.swift; sourceTree = "<group>"; };
 		8917E4AC1E6925FF001BD42A /* CommitRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitRegister.swift; sourceTree = "<group>"; };
 		891F50C51E8DF4E70085A060 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		89276ED71E54BBE800D99D4E /* SubscriberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriberCell.swift; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 			children = (
 				89B337F41E48BB9F00610EA3 /* GridViewController.swift */,
 				CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */,
-				8912784C1E6B20000037CAC7 /* CellProjectTab.swift */,
 			);
 			name = ProjectsView;
 			sourceTree = "<group>";
@@ -467,7 +464,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -482,7 +479,6 @@
 				89B3380D1E48C34E00610EA3 /* GridConfiguration.swift in Sources */,
 				89B337F51E48BB9F00610EA3 /* GridViewController.swift in Sources */,
 				89E5DC561E6DEECD0029DDC0 /* CellConfigTitle.swift in Sources */,
-				8912784D1E6B20000037CAC7 /* CellProjectTab.swift in Sources */,
 				890E0C871E7249200083C76E /* CreateAccountViewController.swift in Sources */,
 				89C7784C1E6EEB86008926E7 /* ProjectInformationViewController.swift in Sources */,
 				89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */,
@@ -638,6 +634,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = stalkrdashboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
 			};
 			name = Debug;
 		};
@@ -653,6 +650,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = stalkrdashboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
 			};
 			name = Release;
 		};

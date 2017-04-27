@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P47-bc-AFb">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P47-bc-AFb">
     <device id="appleTV" orientation="landscape">
         <adaptation id="dark"/>
     </device>
     <dependencies>
         <deployment identifier="tvOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,7 +15,7 @@
         <scene sceneID="Ezv-RH-SgA">
             <objects>
                 <collectionViewController id="TRe-5o-Hak" customClass="GridViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="pgC-4I-7aS">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="pgC-4I-7aS">
                         <rect key="frame" x="0.0" y="0.0" width="1215" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewLayout key="collectionViewLayout" id="12X-FW-jGH" customClass="GridLayout" customModule="stalkr" customModuleProvider="target">
@@ -181,7 +181,7 @@
         <scene sceneID="qMe-XH-RTd">
             <objects>
                 <collectionViewController id="Vjr-hk-LrM" customClass="CreateGridViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Q0G-C4-W4n" customClass="CollectionStepByStep" customModule="stalkr" customModuleProvider="target">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Q0G-C4-W4n" customClass="CollectionStepByStep" customModule="stalkr" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1183" height="737"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewLayout key="collectionViewLayout" id="3qR-Hj-n0E" customClass="CollectionStepByStepLayout" customModule="stalkr" customModuleProvider="target"/>
@@ -196,7 +196,7 @@
         <scene sceneID="O5r-F7-1f9">
             <objects>
                 <collectionViewController id="dTG-eE-EF3" customClass="CreateAccountViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="eqw-cl-mSD" customClass="CollectionStepByStep" customModule="stalkr" customModuleProvider="target">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="eqw-cl-mSD" customClass="CollectionStepByStep" customModule="stalkr" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1183" height="737"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewLayout key="collectionViewLayout" id="JMg-jp-hux" customClass="CollectionStepByStepLayout" customModule="stalkr" customModuleProvider="target"/>
@@ -214,7 +214,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q79-Ff-gLF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3485" y="3706"/>
+            <point key="canvasLocation" x="3484.5" y="3705.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Ep-q7-Hz3">
@@ -244,7 +244,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.95022302865982056" green="0.75401997566223145" blue="0.035687629133462906" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="TableCell" customModule="stalkr" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="TableCell" customModule="stalkr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="66" width="386" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UW4-Tw-7UH" id="9Fg-35-gqH">
@@ -293,76 +293,35 @@
                                     <segue destination="TRe-5o-Hak" kind="embed" identifier="gridIdentifier" id="v29-tx-yHG"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bxb-hY-oSg">
-                                <rect key="frame" x="4" y="50" width="1219" height="5"/>
-                                <color key="backgroundColor" red="0.42352941179999998" green="0.44705882349999998" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="5" id="XSF-w7-eP7"/>
-                                </constraints>
-                            </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pap-gW-QyV">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vDh-SH-Hnc" customClass="TvLightSegments" customModule="TvLightSegments">
                                 <rect key="frame" x="4" y="0.0" width="1215" height="86"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="86" id="n1R-Y8-gZW"/>
+                                    <constraint firstAttribute="height" constant="86" id="Zpb-bU-9yE"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="HnW-Ho-Ag9">
-                                    <size key="itemSize" width="275" height="68"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Etg-XK-shX">
+                                    <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellProjectTab" id="Nqu-pT-Xt0" customClass="CellProjectTab" customModule="stalkr" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="68"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="275" height="68"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Project Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DR6-T4-XQR">
-                                                    <rect key="frame" x="8" y="16" width="251" height="37"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                                    <color key="textColor" red="0.42352941176470588" green="0.44705882352941173" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Kp-WP-5im">
-                                                    <rect key="frame" x="8" y="50" width="302" height="5"/>
-                                                    <color key="backgroundColor" red="0.42352941176470588" green="0.44705882352941173" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="9" id="cRQ-rb-H7y"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                        </view>
-                                        <size key="customSize" width="275" height="68"/>
-                                        <connections>
-                                            <outlet property="labelProjectName" destination="DR6-T4-XQR" id="Y9D-RR-XIu"/>
-                                            <outlet property="viewFooterCenter" destination="5Kp-WP-5im" id="tgF-8d-6Tc"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="pap-gW-QyV" firstAttribute="width" secondItem="lcN-im-5jw" secondAttribute="width" id="4hf-s8-OIh"/>
-                            <constraint firstItem="Bxb-hY-oSg" firstAttribute="width" secondItem="pap-gW-QyV" secondAttribute="width" constant="4" id="6Be-rX-SRx"/>
-                            <constraint firstItem="lcN-im-5jw" firstAttribute="top" secondItem="pap-gW-QyV" secondAttribute="bottom" constant="8" id="6uG-D6-sdB"/>
-                            <constraint firstItem="Bxb-hY-oSg" firstAttribute="centerY" secondItem="pap-gW-QyV" secondAttribute="centerY" constant="9" id="9X3-5w-sTp"/>
-                            <constraint firstItem="pap-gW-QyV" firstAttribute="leading" secondItem="geW-Jy-08H" secondAttribute="leadingMargin" constant="-16" id="GPP-Gy-b4i"/>
-                            <constraint firstItem="pap-gW-QyV" firstAttribute="top" secondItem="q8n-wA-5Ii" secondAttribute="bottom" id="GS3-wI-mFQ"/>
-                            <constraint firstItem="Bxb-hY-oSg" firstAttribute="leading" secondItem="geW-Jy-08H" secondAttribute="leadingMargin" constant="-16" id="Wff-PU-ijg"/>
+                            <constraint firstItem="lcN-im-5jw" firstAttribute="top" secondItem="vDh-SH-Hnc" secondAttribute="bottom" constant="8" id="DJE-Mf-RUm"/>
+                            <constraint firstItem="vDh-SH-Hnc" firstAttribute="leading" secondItem="geW-Jy-08H" secondAttribute="leadingMargin" constant="-16" id="TBK-0a-4ei"/>
                             <constraint firstItem="lcN-im-5jw" firstAttribute="leading" secondItem="geW-Jy-08H" secondAttribute="leadingMargin" constant="-16" id="Ysd-Nx-oUP"/>
                             <constraint firstItem="lcN-im-5jw" firstAttribute="width" secondItem="geW-Jy-08H" secondAttribute="width" constant="-8" id="gfT-uv-JDT"/>
                             <constraint firstItem="94K-Cw-zT3" firstAttribute="top" secondItem="lcN-im-5jw" secondAttribute="bottom" constant="2" id="kH0-2Y-lVl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vDh-SH-Hnc" secondAttribute="trailing" constant="-16" id="oDU-In-efE"/>
+                            <constraint firstItem="vDh-SH-Hnc" firstAttribute="top" secondItem="q8n-wA-5Ii" secondAttribute="bottom" id="qfF-RQ-Ujp"/>
                             <constraint firstItem="lcN-im-5jw" firstAttribute="trailing" secondItem="geW-Jy-08H" secondAttribute="trailingMargin" constant="16" id="vt4-KJ-Jlt"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="lcN-im-5jw" id="3hl-qH-bgt"/>
-                        <outlet property="projectsTab" destination="pap-gW-QyV" id="18v-TX-NAW"/>
-                        <outlet property="viewProjectsTabFooter" destination="Bxb-hY-oSg" id="o5u-F8-gCf"/>
+                        <outlet property="dashboardsTab" destination="vDh-SH-Hnc" id="yjh-EK-2Ui"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5i0-Lz-kOl" userLabel="First Responder" sceneMemberID="firstResponder"/>

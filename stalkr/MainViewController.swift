@@ -106,7 +106,7 @@ extension MainViewController: SidebarProtocol {
 
                 projectController!.reloadProjectsList()
                 
-                let segments = projectController!.projectsTab.visibleCells.sorted(by: { (a, b) -> Bool in
+                let segments = projectController!.dashboardsTab.visibleCells.sorted(by: { (a, b) -> Bool in
                     return a.center.x < b.center.x
                 })
                 

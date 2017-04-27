@@ -11,6 +11,7 @@ import PusherSwift
 import SwiftyJSON
 import PromiseKit
 import Alamofire
+import TvLightSegments
 
 fileprivate var counter = 0
 
@@ -251,9 +252,11 @@ extension GridViewController: GridLayoutDelegate {
     }
 }
 
-extension GridViewController: ProjectViewProtocol {
+extension GridViewController: TvLightSegmentsDisplay {
     
-    func didChangeProject(_ project: Project) {
+    func didChangeSegment(_ segmentItem: TvLightSegmentsItem) {
+        let project = segmentItem as! Project
+        
         if project === self.currentProject {
             return
         }
@@ -262,6 +265,6 @@ extension GridViewController: ProjectViewProtocol {
         
         self.gridConfiguration = self.currentProject!.grid
         (self.collectionView?.collectionViewLayout as! GridLayout).clearCache()
-
     }
+    
 }

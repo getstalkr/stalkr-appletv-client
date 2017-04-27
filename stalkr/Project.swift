@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import TvLightSegments
 
 class Project {
     let name: String
@@ -17,8 +18,12 @@ class Project {
         self.name = json.dictionaryValue["name"]!.stringValue
         self.grid = GridConfiguration(json: json.dictionaryValue["grid"]!)
     }
+
+}
+
+extension Project: TvLightSegmentsItem {
     
-    func show(atProjectView projectView: ProjectViewProtocol) {
-        projectView.didChangeProject(self)
+    func tvLightSegmentsName() -> String {
+        return name
     }
 }
