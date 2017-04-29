@@ -13,8 +13,6 @@ import PromiseKit
 import Alamofire
 import TvLightSegments
 
-fileprivate var counter = 0
-
 class GridViewController: UICollectionViewController {
     
     let pusher = Pusher(key: "5cdc3c711f606f43aada")
