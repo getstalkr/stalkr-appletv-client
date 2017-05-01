@@ -19,5 +19,5 @@ target 'stalkr' do
   pod 'NVActivityIndicatorView', '~> 3.5'
   pod 'FontAwesomeKit', '~> 2.2.0'
   pod 'TvLightSegments', '~> 0.1.0'
-
+  pod 'GridView', '~> 0.1.2'
 end

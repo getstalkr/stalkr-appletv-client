@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import GridView
 
 struct WebSocketConfig {
     let requestStartUrl: String

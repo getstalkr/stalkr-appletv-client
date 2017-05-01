@@ -11,16 +11,13 @@ import UIKit
 import NVActivityIndicatorView
 import Cartography
 import SwiftRichString
+import GridView
 
-protocol SlotableCell {
+protocol StalkrCell {
     
     static var cellName: String { get }
-    var slotWidth: Int { get }
-    var slotHeight: Int { get }
-    var haveZoom: Bool { get }
+    static var haveZoom: Bool { get }
     static var configurations: [ConfigInput] { get }
-    
-    func load(params: [String: Any])
 }
 
 class SlotableCellDefault: UICollectionViewCell, LoadingViewProtocol {
@@ -75,9 +72,9 @@ class SlotableCellDefault: UICollectionViewCell, LoadingViewProtocol {
 class ZoomCell: SlotableCellDefault {
     
     static let cellName = ""
-    let slotWidth = 1
-    let slotHeight = 1
-    let haveZoom = false
+    static let slotWidth = 1
+    static let slotHeight = 1
+    static let haveZoom = false
     static let configurations: [ConfigInput] = []
     
     override var scaleWhenFocused: Bool {
@@ -88,7 +85,7 @@ class ZoomCell: SlotableCellDefault {
 
 }
 
-// lista com todos as classes que implementam o protocolo SlotableCell
+// list all classes that subscriber the protocol SlotableCell
 let listAllSlotableCell = {
     return subscribers(of: SlotableCell.Type.self )
 }()

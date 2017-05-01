@@ -11,14 +11,15 @@ import Kingfisher
 import SwiftRichString
 import SwiftyJSON
 import RelativeFormatter
+import GridView
 
-class CellCommitsFeed: SlotableCellDefault, SlotableCell, SubscriberCell, UITableViewDelegate, UITableViewDataSource {
+class CellCommitsFeed: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var table: UITableView!
     static let cellName = "Commits Feed"
-    let slotWidth = 1
-    let slotHeight = 1
-    let haveZoom = false
+    static let slotWidth = 1
+    static let slotHeight = 1
+    static let haveZoom = false
     let cellHeight = (UINib(nibName: "CellCommitsFeedTableCell", bundle: nil).instantiate(withOwner: nil, options: nil).last as! UIView).frame.size.height
     
     var commitsLog: [CommitRegister] = []

@@ -9,6 +9,7 @@
 import UIKit
 import Charts
 import SwiftyJSON
+import GridView
 
 // TODO: Muito código repetido com a CellTeamCommits
 class CellTeamCommitsZoom: ZoomCell, SlotableCell, SubscriberCell {

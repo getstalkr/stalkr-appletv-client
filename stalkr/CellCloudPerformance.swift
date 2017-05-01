@@ -8,15 +8,16 @@
 
 import UIKit
 import Charts
+import GridView
 
-class CellCloudPerformance: SlotableCellDefault, SlotableCell {
+class CellCloudPerformance: SlotableCellDefault, SlotableCell, StalkrCell {
     
     @IBOutlet weak var viewChart: LineChartView!
     @IBOutlet weak var viewDivision: UIView!
     static let cellName = "Cloud Performances"
-    let slotWidth = 1
-    let slotHeight = 1
-    let haveZoom = false
+    static let slotWidth = 1
+    static let slotHeight = 1
+    static let haveZoom = false
     
     static let configurations: [ConfigInput] = []
 

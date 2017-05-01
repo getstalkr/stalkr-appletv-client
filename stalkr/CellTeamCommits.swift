@@ -9,14 +9,15 @@
 import UIKit
 import Charts
 import SwiftyJSON
+import GridView
 
-class CellTeamCommits: SlotableCellDefault, SlotableCell, SubscriberCell {
+class CellTeamCommits: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell {
 
     @IBOutlet weak var viewChart: BarChartView!
     static let cellName = "Team Commits"
-    let slotWidth = 1
-    let slotHeight = 1
-    let haveZoom = true
+    static let slotWidth = 1
+    static let slotHeight = 1
+    static let haveZoom = true
     
     // config
     static let configurations: [ConfigInput] = [

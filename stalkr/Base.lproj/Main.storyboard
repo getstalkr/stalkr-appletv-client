@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P47-bc-AFb">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P47-bc-AFb">
     <device id="appleTV" orientation="landscape">
         <adaptation id="dark"/>
     </device>
     <dependencies>
         <deployment identifier="tvOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,9 +14,9 @@
         <!--Grid View Controller-->
         <scene sceneID="Ezv-RH-SgA">
             <objects>
-                <collectionViewController id="TRe-5o-Hak" customClass="GridViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="pgC-4I-7aS">
-                        <rect key="frame" x="0.0" y="0.0" width="1215" height="734"/>
+                <collectionViewController id="TRe-5o-Hak" customClass="GridViewController" customModule="GridView" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="pgC-4I-7aS">
+                        <rect key="frame" x="0.0" y="0.0" width="1151" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewLayout key="collectionViewLayout" id="12X-FW-jGH" customClass="GridLayout" customModule="stalkr" customModuleProvider="target">
                             <userDefinedRuntimeAttributes>
@@ -46,7 +46,41 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pv-4W-19l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3481" y="868"/>
+            <point key="canvasLocation" x="5085" y="915"/>
+        </scene>
+        <!--Embeded Grid Controller-->
+        <scene sceneID="okg-Je-atZ">
+            <objects>
+                <viewController id="toL-QN-CHC" customClass="EmbededGridController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="o4j-rD-g2t"/>
+                        <viewControllerLayoutGuide type="bottom" id="HnI-Bg-RQf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vdr-bh-OJc">
+                        <rect key="frame" x="0.0" y="0.0" width="1151" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HbB-Ws-mRw">
+                                <rect key="frame" x="0.0" y="0.0" width="1151" height="736"/>
+                                <connections>
+                                    <segue destination="TRe-5o-Hak" kind="embed" identifier="segueGrid" id="YZm-JG-phh"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="HbB-Ws-mRw" firstAttribute="top" secondItem="o4j-rD-g2t" secondAttribute="bottom" id="6IB-2z-hfH"/>
+                            <constraint firstItem="HnI-Bg-RQf" firstAttribute="top" secondItem="HbB-Ws-mRw" secondAttribute="bottom" id="8Wi-bN-5z5"/>
+                            <constraint firstItem="HbB-Ws-mRw" firstAttribute="leading" secondItem="Vdr-bh-OJc" secondAttribute="leadingMargin" constant="-20" id="8xa-rP-gzh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HbB-Ws-mRw" secondAttribute="trailing" constant="-20" id="FFa-7L-uLX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="container" destination="HbB-Ws-mRw" id="d1y-lU-oXE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sfp-aT-AbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3500.5" y="915"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="jWs-BP-Tgm">
@@ -181,7 +215,7 @@
         <scene sceneID="qMe-XH-RTd">
             <objects>
                 <collectionViewController id="Vjr-hk-LrM" customClass="CreateGridViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Q0G-C4-W4n" customClass="CollectionStepByStep" customModule="stalkr" customModuleProvider="target">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Q0G-C4-W4n" customClass="CollectionStepByStep" customModule="stalkr" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1183" height="737"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewLayout key="collectionViewLayout" id="3qR-Hj-n0E" customClass="CollectionStepByStepLayout" customModule="stalkr" customModuleProvider="target"/>
@@ -196,20 +230,11 @@
         <scene sceneID="O5r-F7-1f9">
             <objects>
                 <collectionViewController id="dTG-eE-EF3" customClass="CreateAccountViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="eqw-cl-mSD" customClass="CollectionStepByStep" customModule="stalkr" customModuleProvider="target">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="eqw-cl-mSD" customClass="CollectionStepByStep" customModule="stalkr" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1183" height="737"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewLayout key="collectionViewLayout" id="JMg-jp-hux" customClass="CollectionStepByStepLayout" customModule="stalkr" customModuleProvider="target"/>
-                        <cells>
-                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="2U1-Ie-qXi">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
+                        <cells/>
                     </collectionView>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q79-Ff-gLF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -244,7 +269,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.95022302865982056" green="0.75401997566223145" blue="0.035687629133462906" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="TableCell" customModule="stalkr" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="TableCell" customModule="stalkr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="66" width="386" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UW4-Tw-7UH" id="9Fg-35-gqH">
@@ -288,16 +313,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcN-im-5jw">
-                                <rect key="frame" x="4" y="94" width="1215" height="734"/>
+                                <rect key="frame" x="36" y="94" width="1151" height="736"/>
                                 <connections>
-                                    <segue destination="TRe-5o-Hak" kind="embed" identifier="gridIdentifier" id="v29-tx-yHG"/>
+                                    <segue destination="toL-QN-CHC" kind="embed" identifier="segueEmbededGrid" id="6FZ-qX-fTc"/>
                                 </connections>
                             </containerView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vDh-SH-Hnc" customClass="TvLightSegments" customModule="TvLightSegments">
                                 <rect key="frame" x="4" y="0.0" width="1215" height="86"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="86" id="Zpb-bU-9yE"/>
+                                    <constraint firstAttribute="height" constant="86" id="0Tn-YF-bF4"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Etg-XK-shX">
                                     <size key="itemSize" width="50" height="50"/>
@@ -309,14 +334,13 @@
                             </collectionView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="lcN-im-5jw" firstAttribute="top" secondItem="vDh-SH-Hnc" secondAttribute="bottom" constant="8" id="DJE-Mf-RUm"/>
-                            <constraint firstItem="vDh-SH-Hnc" firstAttribute="leading" secondItem="geW-Jy-08H" secondAttribute="leadingMargin" constant="-16" id="TBK-0a-4ei"/>
-                            <constraint firstItem="lcN-im-5jw" firstAttribute="leading" secondItem="geW-Jy-08H" secondAttribute="leadingMargin" constant="-16" id="Ysd-Nx-oUP"/>
-                            <constraint firstItem="lcN-im-5jw" firstAttribute="width" secondItem="geW-Jy-08H" secondAttribute="width" constant="-8" id="gfT-uv-JDT"/>
-                            <constraint firstItem="94K-Cw-zT3" firstAttribute="top" secondItem="lcN-im-5jw" secondAttribute="bottom" constant="2" id="kH0-2Y-lVl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vDh-SH-Hnc" secondAttribute="trailing" constant="-16" id="oDU-In-efE"/>
-                            <constraint firstItem="vDh-SH-Hnc" firstAttribute="top" secondItem="q8n-wA-5Ii" secondAttribute="bottom" id="qfF-RQ-Ujp"/>
-                            <constraint firstItem="lcN-im-5jw" firstAttribute="trailing" secondItem="geW-Jy-08H" secondAttribute="trailingMargin" constant="16" id="vt4-KJ-Jlt"/>
+                            <constraint firstItem="94K-Cw-zT3" firstAttribute="top" secondItem="lcN-im-5jw" secondAttribute="bottom" id="8jT-ig-S4o"/>
+                            <constraint firstItem="lcN-im-5jw" firstAttribute="leading" secondItem="geW-Jy-08H" secondAttribute="leadingMargin" constant="16" id="BBE-Dl-Jn4"/>
+                            <constraint firstItem="vDh-SH-Hnc" firstAttribute="top" secondItem="q8n-wA-5Ii" secondAttribute="bottom" id="BdL-Lu-4Wz"/>
+                            <constraint firstItem="vDh-SH-Hnc" firstAttribute="leading" secondItem="geW-Jy-08H" secondAttribute="leadingMargin" constant="-16" id="J2U-Hn-8Se"/>
+                            <constraint firstItem="lcN-im-5jw" firstAttribute="top" secondItem="vDh-SH-Hnc" secondAttribute="bottom" constant="8" id="JOr-hT-wBJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vDh-SH-Hnc" secondAttribute="trailing" constant="-16" id="Qnj-CB-Lpu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lcN-im-5jw" secondAttribute="trailing" constant="16" id="vMH-Th-eQb"/>
                         </constraints>
                     </view>
                     <connections>

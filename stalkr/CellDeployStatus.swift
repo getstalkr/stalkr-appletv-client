@@ -8,8 +8,9 @@
 
 import UIKit
 import Cartography
+import GridView
 
-class CellDeployStatus: SlotableCellDefault, SlotableCell {
+class CellDeployStatus: SlotableCellDefault, SlotableCell, StalkrCell {
     
     @IBOutlet weak var labelCellTitle: UILabel!
     @IBOutlet weak var viewCircleStatus: UIView!
@@ -22,9 +23,9 @@ class CellDeployStatus: SlotableCellDefault, SlotableCell {
     @IBOutlet weak var labelChargeValue: UILabel!
     @IBOutlet weak var labelChargeLegend: UILabel!
     static let cellName = "Deploy Status"
-    let slotWidth = 1
-    let slotHeight = 1
-    let haveZoom = false
+    static let slotWidth = 1
+    static let slotHeight = 1
+    static let haveZoom = false
     
     static let configurations: [ConfigInput] = []
     

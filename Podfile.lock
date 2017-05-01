@@ -25,6 +25,7 @@ PODS:
     - FontAwesomeKit/Core
   - FontAwesomeKit/Zocial (2.2.1):
     - FontAwesomeKit/Core
+  - GridView (0.1.2)
   - Kingfisher (3.6.2)
   - NVActivityIndicatorView (3.6.1)
   - PromiseKit (4.2.0):
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - Cartography
   - Charts
   - FontAwesomeKit (~> 2.2.0)
+  - GridView (~> 0.1.2)
   - Kingfisher (~> 3.4)
   - NVActivityIndicatorView (~> 3.5)
   - PromiseKit
@@ -62,18 +64,19 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  Cartography: '0538ccb4044acbbda2266335fc58cb4228794d90'
+  Cartography: 0538ccb4044acbbda2266335fc58cb4228794d90
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
   FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
+  GridView: 73159354925164d5c1ff0c0180edb23a64ee3fa8
   Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
   NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
-  PromiseKit: '08dfb783c161ddcd95b7912421f14c5113fd8318'
+  PromiseKit: 08dfb783c161ddcd95b7912421f14c5113fd8318
   PusherSwift: 8249a1c3634943cf7e1e9a691468357d53ab7e5f
   RelativeFormatter: 13508ccd19bbab46ca95cf847a0db6e80601c9a4
   SwiftRichString: d42eeaefceea340e27b8a33945e0fac1ee21f58f
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TvLightSegments: a2f970ca56e0709cc10b86e5a3e457675755adb9
 
-PODFILE CHECKSUM: 14eec334674f98c194310f812666f0488ad87ad6
+PODFILE CHECKSUM: 6fa1524be76d237fc4f70719407f09b42b22e99b
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.2.0

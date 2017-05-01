@@ -9,6 +9,7 @@
 import UIKit
 import SwiftRichString
 import SwiftyJSON
+import GridView
 
 class CreateGridViewController: UICollectionViewController, CollectionStepByStepProtocol {
 
@@ -36,12 +37,16 @@ class CreateGridViewController: UICollectionViewController, CollectionStepByStep
         cellConfigList.append(CellCreateGrid.input(ConfigInput(name: "projectName", label: "Name", inputType: .text, obligatory: true), cellName: "project", currentValue: ""))
         
         listAllSlotableCell.forEach { slotableCell in
-            let configs = (slotableCell.classObject as! SlotableCell.Type).configurations
-            if configs.count > 0 {
-                let cellName = (slotableCell.classObject as! SlotableCell.Type).cellName
+            if let configCell = slotableCell.classObject as? StalkrCell.Type {
+            
+                let configs = configCell.configurations
+                if configs.count > 0 {
+                    let cellName = configCell.cellName
                 
-                cellConfigList.append(CellCreateGrid.name(cellName))
-                configs.forEach { cellConfigList.append(CellCreateGrid.input($0, cellName: slotableCell.className, currentValue: "")) }
+                    cellConfigList.append(CellCreateGrid.name(cellName))
+                    configs.forEach { cellConfigList.append(CellCreateGrid.input($0, cellName: slotableCell.className, currentValue: "")) }
+                }
+                
             }
         }
         

@@ -10,14 +10,15 @@ import UIKit
 import SwiftRichString
 import SwiftyJSON
 import RelativeFormatter
+import GridView
 
-class CellTrevis: SlotableCellDefault, SlotableCell, SubscriberCell, UITableViewDelegate, UITableViewDataSource {
+class CellTrevis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var table: UITableView!
     static let cellName = "Travis"
-    let slotWidth = 1
-    let slotHeight = 2
-    let haveZoom = false
+    static let slotWidth = 1
+    static let slotHeight = 2
+    static let haveZoom = false
     let cellHeight = (UINib(nibName: "CellTrevisTableCell", bundle: nil).instantiate(withOwner: nil, options: nil).last as! UIView).frame.size.height
     
     var travisBuildsLog: [TravisBuildRegister] = []
