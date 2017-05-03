@@ -50,20 +50,18 @@ class CollectionStepByStep: UICollectionView, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let currentCell = delegateStepByStep!.cellConfigList[indexPath.section]
-
-        if Mirror(reflecting: currentCell).children.first?.label! == "name" && indexPath.item == 0 {
-            let cell = self.dequeueReusableCell(withReuseIdentifier: "CellCSbSDivision", for: indexPath) as! CellConfigDivision
-            
-            cell.startCell()
-            
-            return cell
-        }
         
         switch currentCell {
         case .name(let name):
-            let cell = self.dequeueReusableCell(withReuseIdentifier: "CellCSbSConfigTitle", for: indexPath) as! CellConfigTitle
+            let cell: UICollectionViewCell
             
-            cell.labelTitle.text = name
+            if indexPath.item == 0 {
+                cell = self.dequeueReusableCell(withReuseIdentifier: "CellCSbSDivision", for: indexPath)
+                (cell as! CellConfigDivision).startCell()
+            } else {
+                cell = self.dequeueReusableCell(withReuseIdentifier: "CellCSbSConfigTitle", for: indexPath)
+                (cell as! CellConfigTitle).labelTitle.text = name
+            }
             
             return cell
         case .input(let input, _, let value):
@@ -132,17 +130,19 @@ class CollectionStepByStep: UICollectionView, UICollectionViewDataSource, UIColl
     func cellTypeAt(section: Int, row: Int) -> CellStepByStepType {
         let currentCell = delegateStepByStep!.cellConfigList[section]
         
-        if Mirror(reflecting: currentCell).children.first?.label! == "name" && row == 0 {
-            return .step
-        } else {
-            switch currentCell {
-            case .name:
+        switch currentCell {
+        case .name:
+            if row == 0 {
+                return .step
+            } else {
                 return .name
-            case .input:
-                return .input
-            case .finish:
-                return .finish
             }
+
+        case .input:
+            return .input
+        
+        case .finish:
+            return .finish
         }
     }
     

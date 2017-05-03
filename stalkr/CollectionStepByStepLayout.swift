@@ -39,8 +39,8 @@ class CollectionStepByStepLayout: UICollectionViewLayout {
         
         if cache.isEmpty {
             // inicializar variáveis com as dimensões
-            let stepColumnWidth = contentWidth * 5 / 100
-            let rightColumnWidth = contentWidth * 85 / 100
+            let stepColumnWidth = contentWidth * 5 / 100 // bolinha do step vai ter 5% do tamanho da view
+            let rightColumnWidth = contentWidth * 85 / 100 // e o resto, 85%
             
             // preencher collection view
             var previusY: Int = 0
