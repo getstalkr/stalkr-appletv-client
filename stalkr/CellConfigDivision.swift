@@ -19,7 +19,6 @@ class CellConfigDivision: UICollectionViewCell {
         viewCircle.asCircle()
         viewDashed.alpha = 0.2
         viewDashed.backgroundColor = UIColor.clear
-        viewDashed.addDashedBorder()
 
         constrain(self.viewCircle, self.labelResult, self.viewDashed) { circle, label, dashed in
             circle.top == circle.superview!.top
@@ -31,10 +30,15 @@ class CellConfigDivision: UICollectionViewCell {
             
             dashed.top == circle.bottom
             dashed.centerX == dashed.superview!.centerX
-            dashed.height == self.frame.height - viewCircle.frame.height// + 5
+            dashed.height == self.frame.height - viewCircle.frame.height
             dashed.width == 1
         }
         
+        // we need call "setNeedsLayout" and "layoutIfNeeded": https://github.com/robb/Cartography/issues/258
+        viewDashed.setNeedsLayout()
+        viewDashed.layoutIfNeeded()
+        
+        viewDashed.addDashedBorder()
     }
     
     override var canBecomeFocused: Bool {
