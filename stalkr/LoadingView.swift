@@ -17,11 +17,17 @@ protocol LoadingViewProtocol {
 }
 
 class LoadingView {
-    var animation: NVActivityIndicatorView
-    var label: UILabel
+    private let animation: NVActivityIndicatorView
+    private let label: UILabel
+    private let superView: UIView
+    private let hideExcept: [UIView]
+    private var hidded: [UIView] = []
     
-    init(inView view: UIView, animationType: NVActivityIndicatorType) {
-        let size = min(view.frame.width, view.frame.height)
+    init(inView view: UIView, animationType: NVActivityIndicatorType, hideExcept: [UIView]) {
+        superView = view
+        self.hideExcept = hideExcept
+        
+        let size = min(superView.frame.width, superView.frame.height)
         animation = NVActivityIndicatorView(
             frame: CGRect(x: 0, y: 0, width: size, height: size),
             type: animationType
@@ -34,8 +40,8 @@ class LoadingView {
         label.text = ""
         label.textColor = #colorLiteral(red: 0.7215686275, green: 0.3960784314, blue: 0.8235294118, alpha: 0.9)
         
-        view.addSubview(animation)
-        view.addSubview(label)
+        superView.addSubview(animation)
+        superView.addSubview(label)
         
         constrain(animation, label) { animate, label in
             animate.width == animate.width
@@ -47,8 +53,16 @@ class LoadingView {
     }
 
     func show(message: String) {
+        superView.subviews.forEach {
+            if !($0 === label || $0 === animation || hideExcept.contains($0)) {
+                $0.alpha = 0
+                hidded.append($0)
+            }
+        }
+        
         animation.alpha = 1
         animation.startAnimating()
+        label.alpha = 1
         label.text = message
     }
     
@@ -61,6 +75,13 @@ class LoadingView {
     }
     
     func stop() {
+        hidded.forEach { $0.alpha = 1 }
+        hidded.removeAll()
+        
+        superView.subviews.forEach {
+            $0.alpha = 1
+        }
+        
         animation.alpha = 0
         animation.stopAnimating()
         label.alpha = 0

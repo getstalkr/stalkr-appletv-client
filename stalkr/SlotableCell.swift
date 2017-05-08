@@ -23,7 +23,23 @@ protocol StalkrCell {
 class SlotableCellDefault: UICollectionViewCell, LoadingViewProtocol {
     
     lazy var loadingView: LoadingView = {
-        return LoadingView(inView: self.contentView, animationType: NVActivityIndicatorType.ballClipRotatePulse)
+        // get label cell title
+        let labelCellTitle = self.contentView.subviews
+            .filter { ($0 as? UILabel) != nil }
+            .sorted { $0.frame.minY > $1.frame.minY }
+            .first
+        
+        var hideExcept: [UIView] = []
+        if let labelCellTitle = labelCellTitle {
+            hideExcept.append(labelCellTitle)
+        }
+        
+        //
+        return LoadingView(
+            inView: self.contentView,
+            animationType: NVActivityIndicatorType.ballClipRotatePulse,
+            hideExcept: hideExcept
+        )
     }()
     
     var scaleWhenFocused: Bool {
