@@ -25,9 +25,9 @@ class CellCommitsFeed: SlotableCellDefault, SlotableCell, StalkrCell, Subscriber
     var commitsLog: [CommitRegister] = []
     
     // config
-    static let configurations: [ConfigInput] = [
-        ConfigInput(name: "owner", label: "GitHub's user", inputType: .text, obligatory: true),
-        ConfigInput(name: "project", label: "GitHub's repository", inputType: .text, obligatory: true)
+    static let configurations: [StalkrCellConfig] = [
+        StalkrCellConfig(name: "owner", label: "GitHub's user", obligatory: true),
+        StalkrCellConfig(name: "project", label: "GitHub's repository", obligatory: true)
     ]
 
     // subscriber

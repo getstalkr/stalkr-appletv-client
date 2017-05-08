@@ -24,9 +24,9 @@ class CellTrevis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell,
     var travisBuildsLog: [TravisBuildRegister] = []
     
     // config
-    static let configurations: [ConfigInput] = [
-        ConfigInput(name: "owner", label: "Travis' user", inputType: .text, obligatory: true),
-        ConfigInput(name: "project", label: "Travis' repository", inputType: .text, obligatory: true)
+    static let configurations: [StalkrCellConfig] = [
+        StalkrCellConfig(name: "owner", label: "Travis' user", obligatory: true),
+        StalkrCellConfig(name: "project", label: "Travis' repository", obligatory: true)
     ]
     
     // subscriber

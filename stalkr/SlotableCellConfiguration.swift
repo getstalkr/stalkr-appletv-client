@@ -8,14 +8,8 @@
 
 import Foundation
 
-enum InputType {
-    case text
-    case number
-}
-
-struct ConfigInput {
+struct StalkrCellConfig {
     let name: String
     let label: String
-    let inputType: InputType
     let obligatory: Bool
 }

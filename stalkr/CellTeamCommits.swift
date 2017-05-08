@@ -20,9 +20,9 @@ class CellTeamCommits: SlotableCellDefault, SlotableCell, StalkrCell, Subscriber
     static let haveZoom = true
     
     // config
-    static let configurations: [ConfigInput] = [
-        ConfigInput(name: "owner", label: "Github's user", inputType: .text, obligatory: true),
-        ConfigInput(name: "project", label: "Github's repository", inputType: .text, obligatory: true)
+    static let configurations: [StalkrCellConfig] = [
+        StalkrCellConfig(name: "owner", label: "Github's user", obligatory: true),
+        StalkrCellConfig(name: "project", label: "Github's repository", obligatory: true)
     ]
 
     

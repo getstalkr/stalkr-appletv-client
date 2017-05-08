@@ -17,7 +17,7 @@ protocol StalkrCell {
     
     static var cellName: String { get }
     static var haveZoom: Bool { get }
-    static var configurations: [ConfigInput] { get }
+    static var configurations: [StalkrCellConfig] { get }
 }
 
 class SlotableCellDefault: UICollectionViewCell, LoadingViewProtocol {
@@ -75,7 +75,7 @@ class ZoomCell: SlotableCellDefault {
     static let slotWidth = 1
     static let slotHeight = 1
     static let haveZoom = false
-    static let configurations: [ConfigInput] = []
+    static let configurations: [StalkrCellConfig] = []
     
     override var scaleWhenFocused: Bool {
         get {

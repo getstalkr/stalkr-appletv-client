@@ -211,10 +211,10 @@
             </objects>
             <point key="canvasLocation" x="-205" y="1948"/>
         </scene>
-        <!--Create Grid View Controller-->
+        <!--Input Step By Step-->
         <scene sceneID="qMe-XH-RTd">
             <objects>
-                <collectionViewController id="Vjr-hk-LrM" customClass="CreateGridViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="Vjr-hk-LrM" customClass="InputStepByStep" customModule="InputStepByStep" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Q0G-C4-W4n" customClass="CollectionStepByStep" customModule="stalkr" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1183" height="737"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,10 +226,10 @@
             </objects>
             <point key="canvasLocation" x="3484.5" y="1987.5"/>
         </scene>
-        <!--Create Account View Controller-->
+        <!--Input Step By Step-->
         <scene sceneID="O5r-F7-1f9">
             <objects>
-                <collectionViewController id="dTG-eE-EF3" customClass="CreateAccountViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="dTG-eE-EF3" customClass="InputStepByStep" customModule="InputStepByStep" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="eqw-cl-mSD" customClass="CollectionStepByStep" customModule="stalkr" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1183" height="737"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -352,10 +352,10 @@
             </objects>
             <point key="canvasLocation" x="1861.5" y="867"/>
         </scene>
-        <!--Project Information View Controller-->
+        <!--Create Grid View Controller-->
         <scene sceneID="ptV-DQ-Udr">
             <objects>
-                <viewController id="A5B-Eq-7Pd" customClass="ProjectInformationViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="A5B-Eq-7Pd" customClass="CreateGridViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="myI-Df-fX8"/>
                         <viewControllerLayoutGuide type="bottom" id="tU8-f3-sLI"/>
@@ -367,7 +367,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hj8-Qo-DCO">
                                 <rect key="frame" x="20" y="66" width="1183" height="737"/>
                                 <connections>
-                                    <segue destination="Vjr-hk-LrM" kind="embed" identifier="createIdentifier" id="Djc-cU-GfV"/>
+                                    <segue destination="Vjr-hk-LrM" kind="embed" identifier="segueInputStepByStep" id="Djc-cU-GfV"/>
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROJECT INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wo-RU-pDB">
@@ -391,6 +391,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Hj8-Qo-DCO" secondAttribute="trailing" id="q5R-a5-NRm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="container" destination="Hj8-Qo-DCO" id="Pda-OL-cgm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="303-fE-FAq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -420,7 +423,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIZ-cS-J7f">
                                 <rect key="frame" x="20" y="73" width="1183" height="737"/>
                                 <connections>
-                                    <segue destination="dTG-eE-EF3" kind="embed" identifier="createAccountIdentifier" id="gpp-sr-jYb"/>
+                                    <segue destination="dTG-eE-EF3" kind="embed" identifier="segueInputStepByStep" id="xRI-B4-uCC"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -434,6 +437,9 @@
                             <constraint firstItem="wxI-U4-5ES" firstAttribute="top" secondItem="XuH-nv-p9d" secondAttribute="bottom" constant="20" id="p87-SK-d20"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="container" destination="jIZ-cS-J7f" id="BS7-58-lhH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M0G-54-2qq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

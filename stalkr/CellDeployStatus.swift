@@ -27,7 +27,7 @@ class CellDeployStatus: SlotableCellDefault, SlotableCell, StalkrCell {
     static let slotHeight = 1
     static let haveZoom = false
     
-    static let configurations: [ConfigInput] = []
+    static let configurations: [StalkrCellConfig] = []
     
     func load(params: [String: Any]) {
         self.viewCircleStatus.layer.cornerRadius = self.viewCircleStatus.frame.width / 2

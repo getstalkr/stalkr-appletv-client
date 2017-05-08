@@ -19,7 +19,7 @@ class CellCloudPerformance: SlotableCellDefault, SlotableCell, StalkrCell {
     static let slotHeight = 1
     static let haveZoom = false
     
-    static let configurations: [ConfigInput] = []
+    static let configurations: [StalkrCellConfig] = []
 
     func load(params: [String: Any]) {
         var dataEntry: [ChartDataEntry] = []
