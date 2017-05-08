@@ -69,7 +69,7 @@ extension EmbededGridController: GridViewDelegate {
                         json = JSON(arrayLiteral: [])
                     }
                     
-                    (cell as! LoadingViewProtocol).loadingView!.stop() // todo: não sei se aqui é o lugar ideal para interromper a animação de loading
+                    (cell as! LoadingViewProtocol).loadingView.stop()
                     (cell as! SubscriberCell).getHandle(event: webSocket.event, cell: cell as! SlotableCell)(json, cell as! SlotableCell)
                 }
                 
@@ -78,7 +78,7 @@ extension EmbededGridController: GridViewDelegate {
                 pusher.connect()
                 
                 // start websocket on server
-                (cell as! LoadingViewProtocol).loadingView!.show(message: "Fetching data...")
+                (cell as! LoadingViewProtocol).loadingView.show(message: "Fetching data...")
                 Alamofire.request(
                     webSocket.requestStartUrl,
                     method: .post,
@@ -89,7 +89,7 @@ extension EmbededGridController: GridViewDelegate {
                         let statusCode = (response.response?.statusCode)!
                         
                         if statusCode != 200 {
-                            (cell as! LoadingViewProtocol).loadingView!.error(message: "Something went wrong.\nCheck your connection and reload the app.")
+                            (cell as! LoadingViewProtocol).loadingView.error(message: "Something went wrong.\nCheck your connection and reload the app.")
                         }
                 }
             }

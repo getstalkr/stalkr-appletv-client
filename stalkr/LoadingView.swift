@@ -13,7 +13,7 @@ import SwiftRichString
 
 
 protocol LoadingViewProtocol {
-    var loadingView: LoadingView? { get set }
+    var loadingView: LoadingView { get }
 }
 
 class LoadingView {
@@ -21,21 +21,25 @@ class LoadingView {
     var label: UILabel
     
     init(inView view: UIView, animationType: NVActivityIndicatorType) {
-        animation = NVActivityIndicatorView(frame: view.frame, type: animationType)
-        animation.color = UIColor.init(red: 184/255, green: 101/255, blue: 210/255, alpha: 0.2)
+        let size = min(view.frame.width, view.frame.height)
+        animation = NVActivityIndicatorView(
+            frame: CGRect(x: 0, y: 0, width: size, height: size),
+            type: animationType
+        )
+        animation.color = #colorLiteral(red: 0.7215686275, green: 0.3960784314, blue: 0.8235294118, alpha: 0.2)
         animation.alpha = 0
         
         label = UILabel(frame: view.frame)
         label.numberOfLines = 0
         label.text = ""
-        label.textColor = UIColor.init(red: 184/255, green: 101/255, blue: 210/255, alpha: 0.9)
+        label.textColor = #colorLiteral(red: 0.7215686275, green: 0.3960784314, blue: 0.8235294118, alpha: 0.9)
         
         view.addSubview(animation)
         view.addSubview(label)
         
         constrain(animation, label) { animate, label in
-            animate.width == animate.superview!.width * 2 / 3
-            animate.height == animate.width
+            animate.width == animate.width
+            animate.height == animate.height
             animate.center == animate.superview!.center
             
             label.center == animate.center

@@ -22,7 +22,9 @@ protocol StalkrCell {
 
 class SlotableCellDefault: UICollectionViewCell, LoadingViewProtocol {
     
-    var loadingView: LoadingView?
+    lazy var loadingView: LoadingView = {
+        return LoadingView(inView: self.contentView, animationType: NVActivityIndicatorType.ballClipRotatePulse)
+    }()
     
     var scaleWhenFocused: Bool {
         get {
@@ -34,9 +36,6 @@ class SlotableCellDefault: UICollectionViewCell, LoadingViewProtocol {
         super.awakeFromNib()
         
         self.layer.shadowColor = UIColor.white.cgColor
-        
-        // start loading
-        self.loadingView = LoadingView(inView: self.contentView, animationType: NVActivityIndicatorType.ballClipRotatePulse)
     }
     
     override var canBecomeFocused: Bool {
