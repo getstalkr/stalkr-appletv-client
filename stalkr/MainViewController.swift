@@ -8,21 +8,6 @@
 
 import UIKit
 
-enum Pos {
-    
-    case Up
-    case Left
-    case Down
-    case Right
-}
-
-enum Measurement {
-    
-    case Width
-    case Height
-    case None
-    case WidthAndHeight
-}
 
 class MainViewController: UIViewController {
     
