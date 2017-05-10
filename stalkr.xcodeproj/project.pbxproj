@@ -40,7 +40,7 @@
 		89D598B51E718C4900B27927 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D598B41E718C4900B27927 /* UserSession.swift */; };
 		89D598B71E718E2D00B27927 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D598B61E718E2D00B27927 /* Project.swift */; };
 		91895BF7AD0056EDD4A683AD /* Pods_stalkr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2584928AB2DB6CF074F0769D /* Pods_stalkr.framework */; };
-		CE2E76411E5C737C00D5EC5C /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E76401E5C737C00D5EC5C /* TableCell.swift */; };
+		CE2E76411E5C737C00D5EC5C /* CellSidebarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E76401E5C737C00D5EC5C /* CellSidebarMenu.swift */; };
 		CE3DC3121E54807D008F88EE /* SidebarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DC3111E54807D008F88EE /* SidebarController.swift */; };
 		CE52C5371E60ED5100FC6C40 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */; };
 		CE52C5391E61059300FC6C40 /* SidebarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */; };
@@ -87,7 +87,7 @@
 		89D598B61E718E2D00B27927 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		8DA58B41991C641DBFD4F4DC /* Pods-stalkr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stalkr.release.xcconfig"; path = "Pods/Target Support Files/Pods-stalkr/Pods-stalkr.release.xcconfig"; sourceTree = "<group>"; };
 		9924C7B765C9FBEEE07466DA /* Pods-stalkr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stalkr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stalkr/Pods-stalkr.debug.xcconfig"; sourceTree = "<group>"; };
-		CE2E76401E5C737C00D5EC5C /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		CE2E76401E5C737C00D5EC5C /* CellSidebarMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellSidebarMenu.swift; sourceTree = "<group>"; };
 		CE3DC3111E54807D008F88EE /* SidebarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarController.swift; sourceTree = "<group>"; };
 		CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarProtocol.swift; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 				89B337F21E48BB9F00610EA3 /* AppDelegate.swift */,
 				CE85B3CD1E5349D900DA7287 /* MainViewController.swift */,
 				CE3DC3111E54807D008F88EE /* SidebarController.swift */,
-				CE2E76401E5C737C00D5EC5C /* TableCell.swift */,
+				CE2E76401E5C737C00D5EC5C /* CellSidebarMenu.swift */,
 				89B337F61E48BB9F00610EA3 /* Main.storyboard */,
 				89B337F91E48BB9F00610EA3 /* Assets.xcassets */,
 				89B337FB1E48BB9F00610EA3 /* Info.plist */,
@@ -436,7 +436,7 @@
 				892E73E81E58F487007483E1 /* CellCloudPerformance.swift in Sources */,
 				892E73DC1E589378007483E1 /* CellCommitsFeed.swift in Sources */,
 				89C994CD1E5482C900DBADBA /* CellTrevisTableCell.swift in Sources */,
-				CE2E76411E5C737C00D5EC5C /* TableCell.swift in Sources */,
+				CE2E76411E5C737C00D5EC5C /* CellSidebarMenu.swift in Sources */,
 				89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */,
 				CE52C5371E60ED5100FC6C40 /* ProjectsViewController.swift in Sources */,
 				89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */,
