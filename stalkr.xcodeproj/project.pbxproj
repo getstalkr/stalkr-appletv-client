@@ -46,7 +46,6 @@
 		CE52C5391E61059300FC6C40 /* SidebarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */; };
 		CE85B3CE1E5349D900DA7287 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85B3CD1E5349D900DA7287 /* MainViewController.swift */; };
 		CECFF4021E6D9D0D0002EA8D /* FocusGuideHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECFF4011E6D9D0D0002EA8D /* FocusGuideHelper.swift */; };
-		CEE8497A1E55EF840033F512 /* DashboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE849791E55EF840033F512 /* DashboardProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,7 +92,6 @@
 		CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarProtocol.swift; sourceTree = "<group>"; };
 		CE85B3CD1E5349D900DA7287 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CECFF4011E6D9D0D0002EA8D /* FocusGuideHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusGuideHelper.swift; sourceTree = "<group>"; };
-		CEE849791E55EF840033F512 /* DashboardProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,7 +201,6 @@
 		89B337F11E48BB9F00610EA3 /* stalkr */ = {
 			isa = PBXGroup;
 			children = (
-				CEE849781E55EF420033F512 /* Protocols */,
 				89B337F21E48BB9F00610EA3 /* AppDelegate.swift */,
 				CE85B3CD1E5349D900DA7287 /* MainViewController.swift */,
 				CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */,
@@ -276,14 +273,6 @@
 				8DA58B41991C641DBFD4F4DC /* Pods-stalkr.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		CEE849781E55EF420033F512 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				CEE849791E55EF840033F512 /* DashboardProtocol.swift */,
-			);
-			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,7 +416,6 @@
 				891F50C61E8DF4E80085A060 /* LoadingView.swift in Sources */,
 				890E0C851E7248990083C76E /* AccountViewController.swift in Sources */,
 				892DECC81E5E308900676056 /* CellTeamCommitsZoom.swift in Sources */,
-				CEE8497A1E55EF840033F512 /* DashboardProtocol.swift in Sources */,
 				89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */,
 				CE3DC3121E54807D008F88EE /* SidebarController.swift in Sources */,
 				892E73E31E58A581007483E1 /* CellTeamCommits.swift in Sources */,
