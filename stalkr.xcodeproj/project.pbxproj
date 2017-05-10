@@ -206,6 +206,7 @@
 				CEE849781E55EF420033F512 /* Protocols */,
 				89B337F21E48BB9F00610EA3 /* AppDelegate.swift */,
 				CE85B3CD1E5349D900DA7287 /* MainViewController.swift */,
+				CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */,
 				CE3DC3111E54807D008F88EE /* SidebarController.swift */,
 				CE2E76401E5C737C00D5EC5C /* CellSidebarMenu.swift */,
 				89B337F61E48BB9F00610EA3 /* Main.storyboard */,
@@ -281,7 +282,6 @@
 			isa = PBXGroup;
 			children = (
 				CEE849791E55EF840033F512 /* DashboardProtocol.swift */,
-				CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";

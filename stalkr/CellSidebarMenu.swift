@@ -12,6 +12,11 @@ class CellSidebarMenu: UITableViewCell {
     
     let alphaNotFocused: CGFloat = 0.5
     var sidebarProtocol: SidebarProtocol?
+    var myOption: SidebarOptions? {
+        willSet(newValue) {
+            self.textLabel!.text = newValue!.description
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,7 +31,7 @@ class CellSidebarMenu: UITableViewCell {
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         
         if self === context.nextFocusedItem {
-            sidebarProtocol?.focusedCell(withOption: self.textLabel!.text!) // todo: ficar usando o texto da label para isso é algo muito inseguro
+            sidebarProtocol?.focusedCell(withOption: self.myOption!)
             
             self.changeUiToFocused()
         }

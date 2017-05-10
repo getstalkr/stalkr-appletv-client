@@ -87,14 +87,14 @@ class MainViewController: UIViewController {
 //MARK: SidebarProtocol
 extension MainViewController: SidebarProtocol {
     
-    func focusedCell(withOption option: String) {
+    func focusedCell(withOption option: SidebarOptions) {
         
-        labelTitle.text = option
+        labelTitle.text = option.description
         
         guideHelper.deseable()
         
         switch option {
-            case "DASHBOARD":
+            case .dashboard:
                 UIView.animate(withDuration: 0.5, animations: {
                     self.projectView.alpha = 1
                     self.createProjectView.alpha = 0
@@ -115,7 +115,7 @@ extension MainViewController: SidebarProtocol {
                     guideHelper.linkByFocus(from: segments[0], to: cell, inPosition: .Left, reduceMeasurement: .Width, inView: self.view)
                 }
             
-            case "NEW DASHBOARD":
+            case .newDasboard:
                 UIView.animate(withDuration: 0.5, animations: {
                     self.projectView.alpha = 0
                     self.createProjectView.alpha = 1
@@ -128,7 +128,7 @@ extension MainViewController: SidebarProtocol {
                 guideHelper.linkByFocus(from: sidebarCell, to: createProjectView, inPosition: .Right, reduceMeasurement: .WidthAndHeight, inView: self.view)
                 guideHelper.linkByFocus(from: createProjectView, to: sidebarCell, inPosition: .Left, reduceMeasurement: .Width, inView: self.view)
             
-            case "MY ACCOUNT":
+            case .myAccount:
                 UIView.animate(withDuration: 0.5, animations: {
                     self.projectView.alpha = 0
                     self.createProjectView.alpha = 0
@@ -140,18 +140,6 @@ extension MainViewController: SidebarProtocol {
                 
                 guideHelper.linkByFocus(from: sidebarCell, to: accountView, inPosition: .Right, reduceMeasurement: .WidthAndHeight, inView: self.view)
                 guideHelper.linkByFocus(from: accountView, to: sidebarCell, inPosition: .Left, reduceMeasurement: .Width, inView: self.view)
-            
-            default:
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.projectView.alpha = 1
-                    self.createProjectView.alpha = 0
-                    self.accountView.alpha = 0
-                })
         }
-    }
-    
-    //TODO: Find a way to explicitly changing focus (without any swipe gesture)
-    func selectedCell(withIndex index: IndexPath) {
-
     }
 }

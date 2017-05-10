@@ -8,9 +8,19 @@
 
 import Foundation
 
+enum SidebarOptions: String, CustomStringConvertible {
+    case dashboard = "Dashboard"
+    case newDasboard = "New Dasboard"
+    case myAccount = "My Account"
+    
+    static let allValues = [dashboard, newDasboard, myAccount]
+    
+    var description: String {
+        return self.rawValue.uppercased()
+    }
+}
+
 protocol SidebarProtocol: class {
     
-    func focusedCell(withOption option: String)
-    
-    func selectedCell(withIndex index: IndexPath)
+    func focusedCell(withOption option: SidebarOptions)
 }

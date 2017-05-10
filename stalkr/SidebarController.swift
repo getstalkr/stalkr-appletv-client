@@ -10,8 +10,6 @@ import UIKit
 import FontAwesomeKit
 
 class SidebarController: UITableViewController {
-
-    let optionsNames: [String] = ["DASHBOARD", "NEW DASHBOARD", "MY ACCOUNT"]
     
     var sidebarProtocol: SidebarProtocol?
 
@@ -20,7 +18,7 @@ class SidebarController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return optionsNames.count
+        return SidebarOptions.allValues.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -28,7 +26,7 @@ class SidebarController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CellSidebarMenu
         
         cell.sidebarProtocol = sidebarProtocol
-        cell.textLabel!.text = optionsNames[indexPath.row]
+        cell.myOption = SidebarOptions.allValues[indexPath.row]
         
         return cell
     }
