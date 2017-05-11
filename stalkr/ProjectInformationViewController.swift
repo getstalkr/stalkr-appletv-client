@@ -13,6 +13,7 @@ import InputStepByStep
 class CreateGridViewController: UIViewController, InputStepByStepProtocol {
 
     @IBOutlet weak var container: InputStepByStep!
+    let guideHelper = FocusGuideHelper(withArrayOfFocus: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,5 +79,10 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
             self.container = (segue.destination as! InputStepByStep)
             self.container!.delegate = self
         }
+    }
+    
+    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        
+        guideHelper.enable()
     }
 }

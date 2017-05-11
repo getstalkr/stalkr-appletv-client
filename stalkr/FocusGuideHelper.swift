@@ -9,17 +9,17 @@
 import UIKit
 
 enum Pos {    
-    case Up
-    case Left
-    case Down
-    case Right
+    case up
+    case left
+    case down
+    case right
 }
 
 enum Measurement {    
-    case Width
-    case Height
-    case None
-    case WidthAndHeight
+    case width
+    case height
+    case none
+    case widthAndHeight
 }
 
 class FocusGuideHelper: NSObject {
@@ -36,42 +36,49 @@ class FocusGuideHelper: NSObject {
         }
         
         switch measure {
-            case .Height:
+            case .height:
                 focusGuide.widthAnchor.constraint(equalTo: view1.widthAnchor).isActive = true
                 focusGuide.heightAnchor.constraint(equalToConstant: 10).isActive = true
-            case .Width:
+            case .width:
                 focusGuide.widthAnchor.constraint(equalToConstant: 10).isActive = true
                 focusGuide.heightAnchor.constraint(equalTo: view1.heightAnchor).isActive = true
-            case .None:
+            case .none:
                 focusGuide.widthAnchor.constraint(equalTo: view1.widthAnchor).isActive = true
                 focusGuide.heightAnchor.constraint(equalTo: view1.heightAnchor).isActive = true
-            case .WidthAndHeight:
+            case .widthAndHeight:
                 focusGuide.widthAnchor.constraint(equalToConstant: 10).isActive = true
                 focusGuide.heightAnchor.constraint(equalToConstant: 10).isActive = true
         }
         
         switch pos {
-        case .Up:
+        case .up:
             focusGuide.bottomAnchor.constraint(equalTo: view1.topAnchor, constant: -5).isActive = true
-        case .Down:
+        case .down:
             focusGuide.topAnchor.constraint(equalTo: view1.bottomAnchor, constant: 5).isActive = true
-        case .Left:
-            focusGuide.trailingAnchor.constraint(equalTo: view1.leadingAnchor, constant: -2).isActive = true
-        case .Right:
+        case .left:
+            focusGuide.trailingAnchor.constraint(equalTo: view1.leadingAnchor, constant: -(focusGuide.layoutFrame.width * 2) - 1).isActive = true
+        case .right:
             focusGuide.leadingAnchor.constraint(equalTo: view1.trailingAnchor, constant: 2).isActive = true
         }
         
         focusGuide.centerYAnchor.constraint(equalTo: view1.centerYAnchor).isActive = true
         focusGuide.preferredFocusEnvironments = [view2]
         
+        
         arrayFocus.append(focusGuide)
     }
     
     func deseable() {
-        
         for guide in arrayFocus {
             guide.isEnabled = false
         }
+    }
+    
+    func enable() {
+        for guide in arrayFocus {
+            guide.isEnabled = true
+        }
+        
     }
     
     init(withArrayOfFocus focus: [UIFocusGuide]) {
