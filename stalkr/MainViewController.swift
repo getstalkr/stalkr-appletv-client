@@ -22,7 +22,7 @@ class MainViewController: UIViewController {
     var accountViewController: AccountViewController?
     var seletionBar: UIView = UIView()
     let gradientLayer = CAGradientLayer()
-    let guideHelper = FocusGuideHelper(withArrayOfFocus: [])
+    let guideHelper = FocusGuideHelper()
 
     override func viewDidLoad() {
         
@@ -68,8 +68,9 @@ class MainViewController: UIViewController {
         }
     }
     
-    override func shouldUpdateFocus(in context: UIFocusUpdateContext) -> Bool {
-        return super.shouldUpdateFocus(in: context)
+    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        
+        guideHelper.updateFocusTemp(in: context)
     }
 }
 
@@ -80,109 +81,92 @@ extension MainViewController: SidebarProtocol {
         
         labelTitle.text = option.description
         
-        guideHelper.deseable()
-        
         switch option {
-            case .dashboard:
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.projectView.alpha = 1
-                    self.createProjectView.alpha = 0
-                    self.accountView.alpha = 0
-                })
-                guard let cellDashboard = sidebarController!.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) else {
-                    return
-                }
-
-                projectController!.reloadProjectsList()
-                
-                let segments = projectController!.dashboardsTab.visibleCells.sorted {
-                    $0.center.x < $1.center.x
-                }
-                
-                if segments.count > 0 { // if we have at least one project
-                    guideHelper.linkByFocus(
-                        from: cellDashboard,
-                        to: segments[0],
-                        inPosition: .right,
-                        reduceMeasurement: .widthAndHeight,
-                        inView: self.view
-                    )
-                    
-                    guideHelper.linkByFocus(
-                        from: segments[0],
-                        to: cellDashboard,
-                        inPosition: .left,
-                        reduceMeasurement: .width,
-                        inView: self.view
-                    )
-                    
-                    projectController!.guideHelper.linkByFocus(
-                        from: projectController!.gridView!.view,
-                        to: cellDashboard,
-                        inPosition: .left,
-                        reduceMeasurement: .width,
-                        inView: projectController!.gridView!.view
-                    )
-                }
+        case .dashboard:
+            UIView.animate(withDuration: 0.5, animations: {
+                self.projectView.alpha = 1
+                self.createProjectView.alpha = 0
+                self.accountView.alpha = 0
+            })
+            guard let cellDashboard = sidebarController!.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) else {
+                return
+            }
             
-            case .newDasboard:
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.projectView.alpha = 0
-                    self.createProjectView.alpha = 1
-                    self.accountView.alpha = 0
-                })
-                guard let cellNewDashboard = sidebarController!.tableView.cellForRow(at: IndexPath(row: 1, section: 0)) else {
-                    return
-                }
-                
-                projectController!.guideHelper.deseable()
-                
-                guideHelper.linkByFocus(
-                    from: cellNewDashboard,
-                    to: createProjectController!.container.view,
+            projectController!.reloadProjectsList()
+            
+            let segments = projectController!.dashboardsTab.visibleCells.sorted {
+                $0.center.x < $1.center.x
+            }
+            
+            if segments.count > 0 { // if we have at least one project
+                guideHelper.linkByFocusTemporary(
+                    from: cellDashboard,
+                    to: segments[0],
                     inPosition: .right,
                     reduceMeasurement: .widthAndHeight,
                     inView: self.view
                 )
                 
-                createProjectController!.guideHelper.linkByFocus(
-                    from: createProjectView,
-                    to: cellNewDashboard,
+                guideHelper.linkByFocusAutoexclude(
+                    from: segments[0],
+                    to: cellDashboard,
                     inPosition: .left,
                     reduceMeasurement: .width,
-                    inView: createProjectView
+                    inView: self.view,
+                    closure: { context in
+                        return (context.previouslyFocusedView == segments[0]) &&
+                            (context.nextFocusedView == self.sidebarController!.view)
+                    },
+                    identifier: "from projects segmenets to sidemenu"
                 )
-                createProjectController!.guideHelper.deseable()
+                
+                projectController!.guideHelper.linkByFocus(
+                    from: projectController!.gridView!.view,
+                    to: cellDashboard,
+                    inPosition: .left,
+                    reduceMeasurement: .width,
+                    activedWhen: { context in
+                        return (context.nextFocusedView as? SlotableCellDefault) != nil
+                    },
+                    identifier: "grid to sidemenu"
+                )
+            }
             
-            case .myAccount:
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.projectView.alpha = 0
-                    self.createProjectView.alpha = 0
-                    self.accountView.alpha = 1
-                })
-                guard let cellAccount = sidebarController!.tableView.cellForRow(at: IndexPath(row: 2, section: 0)) else {
-                    return
-                }
-                
-                projectController!.guideHelper.deseable()
-                
-                guideHelper.linkByFocus(
-                    from: cellAccount,
-                    to: accountViewController!.container.view,
-                    inPosition: .right,
-                    reduceMeasurement: .widthAndHeight,
-                    inView: self.view
-                )
-                
-                accountViewController!.guideHelper.linkByFocus(
-                    from: createProjectView,
-                    to: cellAccount,
-                    inPosition: .left,
-                    reduceMeasurement: .width,
-                    inView: accountView
-                )
-                accountViewController!.guideHelper.deseable()
-                accountViewController!.guideHelperMain = guideHelper
+        case .newDasboard:
+            UIView.animate(withDuration: 0.5, animations: {
+                self.projectView.alpha = 0
+                self.createProjectView.alpha = 1
+                self.accountView.alpha = 0
+            })
+            guard let cellNewDashboard = sidebarController!.tableView.cellForRow(at: IndexPath(row: 1, section: 0)) else {
+                return
+            }
+            
+            guideHelper.linkByFocusTemporary(
+                from: cellNewDashboard,
+                to: createProjectController!.container.view,
+                inPosition: .right,
+                reduceMeasurement: .widthAndHeight,
+                inView: self.view
+            )
+            
+        case .myAccount:
+            UIView.animate(withDuration: 0.5, animations: {
+                self.projectView.alpha = 0
+                self.createProjectView.alpha = 0
+                self.accountView.alpha = 1
+            })
+            guard let cellAccount = sidebarController!.tableView.cellForRow(at: IndexPath(row: 2, section: 0)) else {
+                return
+            }
+            
+            guideHelper.linkByFocusTemporary(
+                from: cellAccount,
+                to: accountViewController!.container.view,
+                inPosition: .right,
+                reduceMeasurement: .widthAndHeight,
+                inView: self.view
+            )
         }
     }
 }

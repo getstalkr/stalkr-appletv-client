@@ -12,8 +12,6 @@ import InputStepByStep
 class AccountViewController: UIViewController, InputStepByStepProtocol {
 
     @IBOutlet weak var container: InputStepByStep!
-    let guideHelper = FocusGuideHelper(withArrayOfFocus: [])
-    var guideHelperMain: FocusGuideHelper?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +42,5 @@ class AccountViewController: UIViewController, InputStepByStepProtocol {
             self.container!.delegate = self
         }
     }
-    
-    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        
-        guideHelper.enable()
-        guideHelperMain!.deseable()
-    }
+
 }

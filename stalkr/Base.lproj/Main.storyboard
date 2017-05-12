@@ -15,7 +15,7 @@
         <scene sceneID="Ezv-RH-SgA">
             <objects>
                 <collectionViewController id="TRe-5o-Hak" customClass="GridViewController" customModule="GridView" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="pgC-4I-7aS">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="pgC-4I-7aS">
                         <rect key="frame" x="0.0" y="0.0" width="1151" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewLayout key="collectionViewLayout" id="12X-FW-jGH" customClass="GridLayout" customModule="stalkr" customModuleProvider="target">
@@ -215,7 +215,7 @@
         <scene sceneID="qMe-XH-RTd">
             <objects>
                 <collectionViewController id="Vjr-hk-LrM" customClass="InputStepByStep" customModule="InputStepByStep" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Q0G-C4-W4n" customClass="CollectionStepByStep" customModule="stalkr" customModuleProvider="target">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Q0G-C4-W4n" customClass="CollectionStepByStep" customModule="stalkr" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1183" height="737"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewLayout key="collectionViewLayout" id="3qR-Hj-n0E" customClass="CollectionStepByStepLayout" customModule="stalkr" customModuleProvider="target"/>
@@ -230,7 +230,7 @@
         <scene sceneID="O5r-F7-1f9">
             <objects>
                 <collectionViewController id="dTG-eE-EF3" customClass="InputStepByStep" customModule="InputStepByStep" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="eqw-cl-mSD" customClass="CollectionStepByStep" customModule="stalkr" customModuleProvider="target">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="eqw-cl-mSD" customClass="CollectionStepByStep" customModule="stalkr" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1183" height="737"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewLayout key="collectionViewLayout" id="JMg-jp-hux" customClass="CollectionStepByStepLayout" customModule="stalkr" customModuleProvider="target"/>

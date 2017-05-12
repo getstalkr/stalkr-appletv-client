@@ -11,6 +11,8 @@ import FontAwesomeKit
 
 class SidebarController: UITableViewController {
     
+    var shouldSelectEspecificTab = false
+    var currentSelected = IndexPath(row: 0, section: 0)
     var sidebarProtocol: SidebarProtocol?
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,5 +31,24 @@ class SidebarController: UITableViewController {
         cell.myOption = SidebarOptions.allValues[indexPath.row]
         
         return cell
+    }
+    
+    override func shouldUpdateFocus(in context: UIFocusUpdateContext) -> Bool {
+        if let cell = context.nextFocusedItem as? CellSidebarMenu {
+            currentSelected = tableView.indexPath(for: cell)!
+            shouldSelectEspecificTab = false
+        } else {
+            shouldSelectEspecificTab = true
+        }
+        
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
+        if shouldSelectEspecificTab && currentSelected.row != indexPath.row {
+            return false
+        }
+        
+        return true
     }
 }

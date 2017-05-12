@@ -12,7 +12,7 @@ class ProjectsViewController: UIViewController {
 
     @IBOutlet weak var dashboardsTab: TvLightSegments!
     @IBOutlet weak var containerView: UIView!
-    let guideHelper = FocusGuideHelper(withArrayOfFocus: [])
+    let guideHelper = FocusGuideHelper()
     var gridView: EmbededGridController?
     var projectsList: [Project] = []
 
@@ -44,13 +44,6 @@ class ProjectsViewController: UIViewController {
     
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         
-        if (context.previouslyFocusedItem as? CellSegment) != nil &&
-            (context.nextFocusedItem as? SlotableCellDefault) != nil {
-            
-            guideHelper.enable()
-        } else if (context.nextFocusedItem as? CellSegment) != nil {
-            
-            guideHelper.deseable()
-        }
+        guideHelper.updateFocusTemp(in: context)
     }
 }

@@ -22,11 +22,19 @@ enum Measurement {
     case widthAndHeight
 }
 
+struct FocusGuideConditional {
+    let identifier: String?
+    let focus: UIFocusGuide
+    let condition: (UIFocusUpdateContext) -> (Bool)
+}
+
 class FocusGuideHelper: NSObject {
 
-    var arrayFocus: [UIFocusGuide]
+    private var arrayFocus: [UIFocusGuide] = []
+    private var arrayFocusAutoexclude: [FocusGuideConditional] = []
+    private var arrayFocusActivedWhen: [FocusGuideConditional] = []
     
-    func linkByFocus(from view1: UIView, to view2: UIView, inPosition pos: Pos, reduceMeasurement measure: Measurement, inView: UIView? = nil) {
+    func linkByFocus(from view1: UIView, to view2: UIView, inPosition pos: Pos, reduceMeasurement measure: Measurement, inView: UIView? = nil) -> UIFocusGuide {
         
         let focusGuide = UIFocusGuide()
         if inView == nil {
@@ -36,18 +44,18 @@ class FocusGuideHelper: NSObject {
         }
         
         switch measure {
-            case .height:
-                focusGuide.widthAnchor.constraint(equalTo: view1.widthAnchor).isActive = true
-                focusGuide.heightAnchor.constraint(equalToConstant: 10).isActive = true
-            case .width:
-                focusGuide.widthAnchor.constraint(equalToConstant: 10).isActive = true
-                focusGuide.heightAnchor.constraint(equalTo: view1.heightAnchor).isActive = true
-            case .none:
-                focusGuide.widthAnchor.constraint(equalTo: view1.widthAnchor).isActive = true
-                focusGuide.heightAnchor.constraint(equalTo: view1.heightAnchor).isActive = true
-            case .widthAndHeight:
-                focusGuide.widthAnchor.constraint(equalToConstant: 10).isActive = true
-                focusGuide.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        case .height:
+            focusGuide.widthAnchor.constraint(equalTo: view1.widthAnchor).isActive = true
+            focusGuide.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        case .width:
+            focusGuide.widthAnchor.constraint(equalToConstant: 10).isActive = true
+            focusGuide.heightAnchor.constraint(equalTo: view1.heightAnchor).isActive = true
+        case .none:
+            focusGuide.widthAnchor.constraint(equalTo: view1.widthAnchor).isActive = true
+            focusGuide.heightAnchor.constraint(equalTo: view1.heightAnchor).isActive = true
+        case .widthAndHeight:
+            focusGuide.widthAnchor.constraint(equalToConstant: 10).isActive = true
+            focusGuide.heightAnchor.constraint(equalToConstant: 10).isActive = true
         }
         
         switch pos {
@@ -64,24 +72,85 @@ class FocusGuideHelper: NSObject {
         focusGuide.centerYAnchor.constraint(equalTo: view1.centerYAnchor).isActive = true
         focusGuide.preferredFocusEnvironments = [view2]
         
-        
         arrayFocus.append(focusGuide)
+        
+        return focusGuide
     }
     
-    func deseable() {
-        for guide in arrayFocus {
-            guide.isEnabled = false
-        }
+    func linkByFocusTemporary(from view1: UIView, to view2: UIView, inPosition pos: Pos, reduceMeasurement measure: Measurement, inView: UIView? = nil) {
+        
+        let newFocus = linkByFocus(from: view1, to: view2, inPosition: pos, reduceMeasurement: measure, inView: inView)
+        
+        let focused = UIScreen.main.focusedItem!
+        arrayFocusAutoexclude.append(
+            FocusGuideConditional(
+                identifier: "TEMP of '\(focused)' to '\(view2)'",
+                focus: newFocus,
+                condition: { context in
+                    return context.previouslyFocusedItem?.isEqual(focused) == true
+                }
+            )
+        )
     }
     
-    func enable() {
-        for guide in arrayFocus {
-            guide.isEnabled = true
+    func linkByFocusAutoexclude(from view1: UIView, to view2: UIView, inPosition pos: Pos, reduceMeasurement measure: Measurement, inView: UIView? = nil, closure: @escaping (UIFocusUpdateContext) -> (Bool), identifier: String) {
+        
+        if (arrayFocusAutoexclude.first { $0.identifier == identifier }) != nil {
+            return
         }
         
+        let newFocus = linkByFocus(from: view1, to: view2, inPosition: pos, reduceMeasurement: measure, inView: inView)
+        
+        arrayFocusAutoexclude.append(
+            FocusGuideConditional(identifier: identifier, focus: newFocus, condition: closure)
+        )
+    }
+
+    func linkByFocus(from view1: UIView, to view2: UIView, inPosition pos: Pos, reduceMeasurement measure: Measurement, inView: UIView? = nil, activedWhen closure: @escaping (UIFocusUpdateContext) -> (Bool), identifier: String) {
+        
+        if (arrayFocusActivedWhen.first { $0.identifier == identifier }) != nil {
+            return
+        }
+        
+        let newFocus = linkByFocus(from: view1, to: view2, inPosition: pos, reduceMeasurement: measure, inView: inView)
+        
+        arrayFocusActivedWhen.append(
+            FocusGuideConditional(identifier: identifier, focus: newFocus, condition: closure)
+        )
     }
     
-    init(withArrayOfFocus focus: [UIFocusGuide]) {
-        arrayFocus = focus
+    func removeAll() {
+        arrayFocus.removeAll()
+    }
+    
+    func disableAll() {
+        arrayFocus.forEach { $0.isEnabled = false }
+    }
+    
+    func enableAll() {
+        arrayFocus.forEach { $0.isEnabled = true }
+    }
+    
+    func updateFocusTemp(in context: UIFocusUpdateContext) {
+        var iteratorAutoexclude = arrayFocusAutoexclude.makeIterator()
+        while let element = iteratorAutoexclude.next() {
+            
+            if element.condition(context) {
+                element.focus.isEnabled = false
+                arrayFocus.remove(at: arrayFocus.index(of: element.focus)!)
+                arrayFocusAutoexclude = arrayFocusAutoexclude.filter {
+                    $0.focus != element.focus
+                }
+            }
+            
+        }
+        
+        arrayFocusActivedWhen.forEach { element in
+            if element.condition(context) {
+                element.focus.isEnabled = true
+            } else {
+                element.focus.isEnabled = false
+            }
+        }
     }
 }
