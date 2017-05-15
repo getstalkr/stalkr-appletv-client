@@ -9,6 +9,7 @@
 import UIKit
 import Charts
 import SwiftyJSON
+import PusherSwift
 import GridView
 
 // TODO: Muito código repetido com a CellTeamCommits
@@ -17,6 +18,8 @@ class CellTeamCommitsZoom: ZoomCell, SlotableCell, SubscriberCell {
     @IBOutlet weak var viewChart: BarChartView!
     
     // subscriber
+    var pusher: Pusher?
+    
     let webSockets = [
         WebSocketConfig(
             requestStartUrl: "https://stalkr-api-commits-history-git.herokuapp.com",

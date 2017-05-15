@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import SwiftyJSON
-import PusherSwift
-import Alamofire
 import PromiseKit
 import TvLightSegments
 import GridView
@@ -18,7 +15,6 @@ class EmbededGridController: UIViewController {
 
     @IBOutlet weak var container: UIView!
     var gridView: GridViewController?
-    let pusher = Pusher(key: "5cdc3c711f606f43aada")
     var currentProject: Project?
     var gridIsZoom = false // "true" if zooming in cell
     
@@ -52,47 +48,11 @@ extension EmbededGridController: GridViewDelegate {
     
     func setup(cell: UICollectionViewCell, params: [String: Any]) {
         // start websockets, if need
-        if let cellSubscriber = cell as? SubscriberCell {
-            cellSubscriber.webSockets.forEach { webSocket in
-                
-                // subscribe in channel
-                let channelName = webSocket.channel(params)
-                let channel = pusher.subscribe(channelName)
-                
-                // function to converter data "Any?" to "JSON", and pass the current cell
-                func wrapper(data: Any?) {
-                    let json: JSON
-                    if let object = data as? [String : Any],
-                        let jsonData = try? JSONSerialization.data(withJSONObject: object, options: .prettyPrinted) {
-                        json = JSON(data: jsonData)
-                    } else {
-                        json = JSON(arrayLiteral: [])
-                    }
-                    
-                    (cell as! LoadingViewProtocol).loadingView.stop()
-                    (cell as! SubscriberCell).getHandle(event: webSocket.event, cell: cell as! SlotableCell)(json, cell as! SlotableCell)
-                }
-                
-                let _ = channel.bind(eventName: webSocket.event, callback: wrapper)
-                
-                pusher.connect()
-                
-                // start websocket on server
-                (cell as! LoadingViewProtocol).loadingView.show(message: "Fetching data...")
-                Alamofire.request(
-                    webSocket.requestStartUrl,
-                    method: .post,
-                    parameters: webSocket.requestStartParams(params),
-                    encoding: JSONEncoding.default,
-                    headers: ["Content-Type": "application/json"]
-                    ).responseJSON { response in
-                        let statusCode = (response.response?.statusCode)!
-                        
-                        if statusCode != 200 {
-                            (cell as! LoadingViewProtocol).loadingView.error(message: "Something went wrong.\nCheck your connection and reload the app.")
-                        }
-                }
-            }
+        if var cellSubscriber = cell as? SubscriberCell {
+            cellSubscriber.pusher = cellSubscriber.subscriber(
+                pusherKey: params["pusher_key"]! as! String,
+                params: params
+            )
         }
         
         // create gestures related a zoom

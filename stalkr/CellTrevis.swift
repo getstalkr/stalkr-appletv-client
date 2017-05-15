@@ -10,6 +10,7 @@ import UIKit
 import SwiftRichString
 import SwiftyJSON
 import RelativeFormatter
+import PusherSwift
 import GridView
 
 class CellTrevis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell, UITableViewDelegate, UITableViewDataSource {
@@ -25,11 +26,14 @@ class CellTrevis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell,
     
     // config
     static let configurations: [StalkrCellConfig] = [
+        StalkrCellConfig(name: "pusher_key", label: "Pusher key", obligatory: true),
         StalkrCellConfig(name: "owner", label: "Travis' user", obligatory: true),
         StalkrCellConfig(name: "project", label: "Travis' repository", obligatory: true)
     ]
     
     // subscriber
+    var pusher: Pusher?
+    
     let webSockets = [
         WebSocketConfig(
             requestStartUrl: "https://stalkr-api-builds-travis.herokuapp.com",

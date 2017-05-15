@@ -16,13 +16,42 @@ class UserSession {
             "\"name\": \"CocoaPods\"," +
             "\"grid\": [" +
                 "[" +
-                    "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
-                    "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"CocoaPods\", \"project\": \"CocoaPods\" } }," +
-                    "{ \"cell\": \"CellTeamCommits\", \"params\": { \"owner\": \"CocoaPods\", \"project\": \"CocoaPods\" } }" +
+                    "{" +
+                        "\"cell\": \"CellCloudPerformance\"," +
+                        "\"params\": {" +
+                        "}" +
+                    "}," +
+                    "{" +
+                        "\"cell\": \"CellTrevis\"," +
+                        "\"params\": {" +
+                            "\"pusher_key\": \"5cdc3c711f606f43aada\"," +
+                            "\"owner\": \"CocoaPods\"," +
+                            "\"project\": \"CocoaPods\"" +
+                        "}" +
+                    "}," +
+                    "{" +
+                        "\"cell\": \"CellTeamCommits\"," +
+                        "\"params\": {" +
+                            "\"pusher_key\": \"5cdc3c711f606f43aada\"," +
+                            "\"owner\": \"CocoaPods\"," +
+                            "\"project\": \"CocoaPods\"" +
+                        "}" +
+                    "}" +
                 "]," +
                 "[" +
-                    "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
-                    "{ \"cell\": \"CellCommitsFeed\", \"params\": { \"owner\": \"CocoaPods\", \"project\": \"CocoaPods\" } }" +
+                    "{" +
+                        "\"cell\": \"CellDeployStatus\"," +
+                        "\"params\": {" +
+                        "}" +
+                    "}," +
+                    "{" +
+                        "\"cell\": \"CellCommitsFeed\"," +
+                        "\"params\": {" +
+                            "\"pusher_key\": \"5cdc3c711f606f43aada\"," +
+                            "\"owner\": \"CocoaPods\"," +
+                            "\"project\": \"CocoaPods\"" +
+                        "}" +
+                    "}" +
                 "]" +
             "]" +
         "}",
@@ -31,13 +60,42 @@ class UserSession {
             "\"name\": \"Jest\"," +
             "\"grid\": [" +
                 "[" +
-                    "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
-                    "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"facebook\", \"project\": \"jest\" } }," +
-                    "{ \"cell\": \"CellTeamCommits\", \"params\": { \"owner\": \"facebook\", \"project\": \"jest\" } }" +
+                    "{" +
+                        "\"cell\": \"CellCloudPerformance\"," +
+                        "\"params\": {" +
+                        "}" +
+                    "}," +
+                    "{" +
+                        "\"cell\": \"CellTrevis\"," +
+                        "\"params\": {" +
+                            "\"pusher_key\": \"5cdc3c711f606f43aada\"," +
+                            "\"owner\": \"facebook\"," +
+                            "\"project\": \"jest\"" +
+                        "}" +
+                    "}," +
+                    "{" +
+                        "\"cell\": \"CellTeamCommits\"," +
+                        "\"params\": {" +
+                            "\"pusher_key\": \"5cdc3c711f606f43aada\"," +
+                            "\"owner\": \"facebook\"," +
+                            "\"project\": \"jest\"" +
+                        "}" +
+                    "}" +
                 "]," +
                 "[" +
-                    "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
-                    "{ \"cell\": \"CellCommitsFeed\", \"params\": { \"owner\": \"facebook\", \"project\": \"jest\" } }" +
+                    "{" +
+                        "\"cell\": \"CellDeployStatus\"," +
+                        "\"params\": {" +
+                        "}" +
+                    "}," +
+                    "{" +
+                        "\"cell\": \"CellCommitsFeed\"," +
+                        "\"params\": {" +
+                            "\"pusher_key\": \"5cdc3c711f606f43aada\"," +
+                            "\"owner\": \"facebook\"," +
+                            "\"project\": \"jest\"" +
+                        "}" +
+                    "}" +
                 "]" +
             "]" +
         "}"

@@ -9,6 +9,7 @@
 import UIKit
 import Charts
 import SwiftyJSON
+import PusherSwift
 import GridView
 
 class CellTeamCommits: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell {
@@ -21,12 +22,15 @@ class CellTeamCommits: SlotableCellDefault, SlotableCell, StalkrCell, Subscriber
     
     // config
     static let configurations: [StalkrCellConfig] = [
+        StalkrCellConfig(name: "pusher_key", label: "Pusher key", obligatory: true),
         StalkrCellConfig(name: "owner", label: "Github's user", obligatory: true),
         StalkrCellConfig(name: "project", label: "Github's repository", obligatory: true)
     ]
 
     
     // subscriber
+    var pusher: Pusher?
+    
     let webSockets = [
         WebSocketConfig(
             requestStartUrl: "https://stalkr-api-commits-history-git.herokuapp.com",

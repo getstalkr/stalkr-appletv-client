@@ -57,13 +57,42 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
                 "\"name\": \"\(configGridName)\"," +
                 "\"grid\": [" +
                     "[" +
-                        "{ \"cell\": \"CellCloudPerformance\", \"params\": { } }," +
-                        "{ \"cell\": \"CellTrevis\", \"params\": { \"owner\": \"\(configlCellTrevis["owner"]!)\", \"project\": \"\(configlCellTrevis["project"]!)\" } }," +
-                        "{ \"cell\": \"CellTeamCommits\", \"params\": { \"owner\": \"\(configlCellTeamCommits["owner"]!)\", \"project\": \"\(configlCellTeamCommits["project"]!)\" } }" +
+                        "{" +
+                            "\"cell\": \"CellCloudPerformance\"," +
+                            "\"params\": {" +
+                            "}" +
+                        "}," +
+                        "{" +
+                            "\"cell\": \"CellTrevis\"," +
+                            "\"params\": {" +
+                                "\"pusher_key\": \"\(configlCellTrevis["pusher_key"]!)\"," +
+                                "\"owner\": \"\(configlCellTrevis["owner"]!)\"," +
+                                "\"project\": \"\(configlCellTrevis["project"]!)\"" +
+                            "}" +
+                        "}," +
+                        "{" +
+                            "\"cell\": \"CellTeamCommits\"," +
+                            "\"params\": {" +
+                                "\"pusher_key\": \"\(configlCellTeamCommits["pusher_key"]!)\"," +
+                                "\"owner\": \"\(configlCellTeamCommits["owner"]!)\"," +
+                                "\"project\": \"\(configlCellTeamCommits["project"]!)\"" +
+                            "}" +
+                        "}" +
                     "]," +
                     "[" +
-                        "{ \"cell\": \"CellDeployStatus\", \"params\": { } }," +
-                        "{ \"cell\": \"CellCommitsFeed\", \"params\": { \"owner\": \"\(configlCellCommitsFeed["owner"]!)\", \"project\": \"\(configlCellCommitsFeed["project"]!)\" } }" +
+                        "{" +
+                            "\"cell\": \"CellDeployStatus\"," +
+                            "\"params\": {" +
+                            "}" +
+                        "}," +
+                        "{" +
+                            "\"cell\": \"CellCommitsFeed\"," +
+                            "\"params\": {" +
+                                "\"pusher_key\": \"\(configlCellCommitsFeed["pusher_key"]!)\"," +
+                                "\"owner\": \"\(configlCellCommitsFeed["owner"]!)\"," +
+                                "\"project\": \"\(configlCellCommitsFeed["project"]!)\"" +
+                            "}" +
+                        "}" +
                     "]" +
                 "]" +
             "}"

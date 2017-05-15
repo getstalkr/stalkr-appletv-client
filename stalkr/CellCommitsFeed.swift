@@ -11,6 +11,7 @@ import Kingfisher
 import SwiftRichString
 import SwiftyJSON
 import RelativeFormatter
+import PusherSwift
 import GridView
 
 class CellCommitsFeed: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell, UITableViewDelegate, UITableViewDataSource {
@@ -26,11 +27,14 @@ class CellCommitsFeed: SlotableCellDefault, SlotableCell, StalkrCell, Subscriber
     
     // config
     static let configurations: [StalkrCellConfig] = [
+        StalkrCellConfig(name: "pusher_key", label: "Pusher key", obligatory: true),
         StalkrCellConfig(name: "owner", label: "GitHub's user", obligatory: true),
         StalkrCellConfig(name: "project", label: "GitHub's repository", obligatory: true)
     ]
 
     // subscriber
+    var pusher: Pusher?
+    
     let webSockets = [
         WebSocketConfig(
             requestStartUrl: "https://stalkr-api-commits-github.herokuapp.com",
