@@ -4,6 +4,7 @@ PODS:
   - Charts (3.0.2):
     - Charts/Core (= 3.0.2)
   - Charts/Core (3.0.2)
+  - FocusGuideHelper (0.1.0)
   - FontAwesomeKit (2.2.1):
     - FontAwesomeKit/Core (= 2.2.1)
     - FontAwesomeKit/FontAwesome (= 2.2.1)
@@ -52,6 +53,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.4)
   - Cartography
   - Charts
+  - FocusGuideHelper (from `/Users/macabeus/Desktop/FocusGuideHelper`)
   - FontAwesomeKit (~> 2.2.0)
   - GridView (~> 0.1.2)
   - InputStepByStep (~> 0.0.1-beta)
@@ -65,10 +67,15 @@ DEPENDENCIES:
   - SwiftyJSON (~> 3.1.4)
   - TvLightSegments (~> 0.1.0)
 
+EXTERNAL SOURCES:
+  FocusGuideHelper:
+    :path: /Users/macabeus/Desktop/FocusGuideHelper
+
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   Cartography: 0538ccb4044acbbda2266335fc58cb4228794d90
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
+  FocusGuideHelper: 880b9ac2e888b974a9acbb74e950f736c7ca20eb
   FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
   GridView: 73159354925164d5c1ff0c0180edb23a64ee3fa8
   InputStepByStep: 7d843015b8bb968c1ea0a88a43f1fdd42ba11c23
@@ -81,6 +88,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TvLightSegments: a2f970ca56e0709cc10b86e5a3e457675755adb9
 
-PODFILE CHECKSUM: 202f7cfaa7eaa7d74537fef2aa15f3e89d52afb2
+PODFILE CHECKSUM: b1dc169b6f8df46780924487050742348d956753
 
 COCOAPODS: 1.2.0

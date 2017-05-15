@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FocusGuideHelper
 
 
 class MainViewController: UIViewController {
@@ -70,7 +71,7 @@ class MainViewController: UIViewController {
     
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         
-        guideHelper.updateFocusTemp(in: context)
+        guideHelper.updateFocus(in: context)
     }
 }
 
@@ -94,41 +95,32 @@ extension MainViewController: SidebarProtocol {
             
             projectController!.reloadProjectsList()
             
-            let segments = projectController!.dashboardsTab.visibleCells.sorted {
-                $0.center.x < $1.center.x
-            }
+            let firstTab = projectController!.dashboardsTab.visibleCells.sorted(by: {
+                    $0.center.x < $1.center.x
+                }).first
             
-            if segments.count > 0 { // if we have at least one project
-                guideHelper.linkByFocusTemporary(
+            if let firstTab = firstTab { // if we have at least one project
+                guideHelper.addLinkByFocusTemporary(
                     from: cellDashboard,
-                    to: segments[0],
-                    inPosition: .right,
-                    reduceMeasurement: .widthAndHeight,
-                    inView: self.view
+                    to: firstTab,
+                    inPosition: .right
                 )
                 
-                guideHelper.linkByFocusAutoexclude(
-                    from: segments[0],
+                projectController!.guideHelper.addLinkByFocus(
+                    from: firstTab,
                     to: cellDashboard,
                     inPosition: .left,
-                    reduceMeasurement: .width,
-                    inView: self.view,
-                    closure: { context in
-                        return (context.previouslyFocusedView == segments[0]) &&
-                            (context.nextFocusedView == self.sidebarController!.view)
-                    },
-                    identifier: "from projects segmenets to sidemenu"
+                    identifier: "projects segmenets to sidemenu"
                 )
                 
-                projectController!.guideHelper.linkByFocus(
+                projectController!.guideHelper.addLinkByFocus(
                     from: projectController!.gridView!.view,
                     to: cellDashboard,
                     inPosition: .left,
-                    reduceMeasurement: .width,
+                    identifier: "grid to sidemenu",
                     activedWhen: { context in
                         return (context.nextFocusedView as? SlotableCellDefault) != nil
-                    },
-                    identifier: "grid to sidemenu"
+                    }
                 )
             }
             
@@ -142,12 +134,10 @@ extension MainViewController: SidebarProtocol {
                 return
             }
             
-            guideHelper.linkByFocusTemporary(
+            guideHelper.addLinkByFocusTemporary(
                 from: cellNewDashboard,
                 to: createProjectController!.container.view,
-                inPosition: .right,
-                reduceMeasurement: .widthAndHeight,
-                inView: self.view
+                inPosition: .right
             )
             
         case .myAccount:
@@ -160,12 +150,10 @@ extension MainViewController: SidebarProtocol {
                 return
             }
             
-            guideHelper.linkByFocusTemporary(
+            guideHelper.addLinkByFocusTemporary(
                 from: cellAccount,
                 to: accountViewController!.container.view,
-                inPosition: .right,
-                reduceMeasurement: .widthAndHeight,
-                inView: self.view
+                inPosition: .right
             )
         }
     }

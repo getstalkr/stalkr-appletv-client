@@ -45,7 +45,6 @@
 		CE52C5371E60ED5100FC6C40 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */; };
 		CE52C5391E61059300FC6C40 /* SidebarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */; };
 		CE85B3CE1E5349D900DA7287 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85B3CD1E5349D900DA7287 /* MainViewController.swift */; };
-		CECFF4021E6D9D0D0002EA8D /* FocusGuideHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECFF4011E6D9D0D0002EA8D /* FocusGuideHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,7 +90,6 @@
 		CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarProtocol.swift; sourceTree = "<group>"; };
 		CE85B3CD1E5349D900DA7287 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		CECFF4011E6D9D0D0002EA8D /* FocusGuideHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusGuideHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,7 +207,6 @@
 				89B337F61E48BB9F00610EA3 /* Main.storyboard */,
 				89B337F91E48BB9F00610EA3 /* Assets.xcassets */,
 				89B337FB1E48BB9F00610EA3 /* Info.plist */,
-				CECFF4011E6D9D0D0002EA8D /* FocusGuideHelper.swift */,
 				89D598B41E718C4900B27927 /* UserSession.swift */,
 				891F50C51E8DF4E70085A060 /* LoadingView.swift */,
 				89D598B81E718E3D00B27927 /* Project */,
@@ -432,7 +429,6 @@
 				89D598B51E718C4900B27927 /* UserSession.swift in Sources */,
 				892E73DE1E589378007483E1 /* CellCommitsFeedTableCell.swift in Sources */,
 				CE85B3CE1E5349D900DA7287 /* MainViewController.swift in Sources */,
-				CECFF4021E6D9D0D0002EA8D /* FocusGuideHelper.swift in Sources */,
 				89D598B71E718E2D00B27927 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

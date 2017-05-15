@@ -7,6 +7,7 @@
 //
 import UIKit
 import TvLightSegments
+import FocusGuideHelper
 
 class ProjectsViewController: UIViewController {
 
@@ -44,6 +45,6 @@ class ProjectsViewController: UIViewController {
     
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         
-        guideHelper.updateFocusTemp(in: context)
+        guideHelper.updateFocus(in: context)
     }
 }
