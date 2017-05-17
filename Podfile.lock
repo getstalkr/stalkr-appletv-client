@@ -27,9 +27,9 @@ PODS:
   - FontAwesomeKit/Zocial (2.2.1):
     - FontAwesomeKit/Core
   - GridView (0.1.2)
-  - InputStepByStep (0.0.1-beta):
+  - InputStepByStep (0.0.2-beta):
     - Cartography (~> 1.1)
-  - Kingfisher (3.6.2)
+  - Kingfisher (3.9.1)
   - NVActivityIndicatorView (3.6.1)
   - PromiseKit (4.2.0):
     - PromiseKit/Foundation (= 4.2.0)
@@ -42,7 +42,7 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.2.0):
     - PromiseKit/CorePromise
-  - PusherSwift (4.0.1)
+  - PusherSwift (4.1.0)
   - RelativeFormatter (0.8.3)
   - SwiftRichString (0.9.8)
   - SwiftyJSON (3.1.4)
@@ -56,7 +56,7 @@ DEPENDENCIES:
   - FocusGuideHelper (~> 0.1.0)
   - FontAwesomeKit (~> 2.2.0)
   - GridView (~> 0.1.2)
-  - InputStepByStep (~> 0.0.1-beta)
+  - InputStepByStep (~> 0.0.2-beta)
   - Kingfisher (~> 3.4)
   - NVActivityIndicatorView (~> 3.5)
   - PromiseKit
@@ -74,16 +74,16 @@ SPEC CHECKSUMS:
   FocusGuideHelper: 69f901fe857bd19db6068eb2ef9bda5f25fa4916
   FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
   GridView: 73159354925164d5c1ff0c0180edb23a64ee3fa8
-  InputStepByStep: 7d843015b8bb968c1ea0a88a43f1fdd42ba11c23
-  Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
+  InputStepByStep: b096a266aaff3c082288fe208d2ade863900b1e7
+  Kingfisher: 6729a0baaa458245bfb8cd5a1296c71c10d6eb6c
   NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
   PromiseKit: 08dfb783c161ddcd95b7912421f14c5113fd8318
-  PusherSwift: 8249a1c3634943cf7e1e9a691468357d53ab7e5f
+  PusherSwift: 13257260d77445f44ee26d7843e9311186b26e79
   RelativeFormatter: 13508ccd19bbab46ca95cf847a0db6e80601c9a4
   SwiftRichString: d42eeaefceea340e27b8a33945e0fac1ee21f58f
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TvLightSegments: a2f970ca56e0709cc10b86e5a3e457675755adb9
 
-PODFILE CHECKSUM: f2f5d76524b8509adbcca66f5d4d3924983b6d3a
+PODFILE CHECKSUM: f31d794bde4d82d77cd6ef8b72de93564cf11d4f
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1
