@@ -47,57 +47,85 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
     }()
     
     func cellFinishAction(inputValues: [String: [String: String]]) {
-        let configGridName: String = inputValues["Dashboard"]!["projectName"]!
-        let configlCellTrevis: [String: String] = inputValues["Travis"]!
-        var configlCellTeamCommits: [String: String] = inputValues["Team Commits"]!
-        var configlCellCommitsFeed: [String:String] = inputValues["Commits Feed"]!
+        ////
+        // collected data from the InputStepyByStep
+        guard let configGridName: String = inputValues["Dashboard"]!["projectName"] else {
+            // todo: need show a visual feedback
+            print("Do you need set a projectName")
+            return
+        }
+        // todo: need be flexible, for when a new cell is added we don't need update this code
+        let configCellTravis: [String: String] = inputValues["Travis"]!
+        let configCellTeamCommits: [String: String] = inputValues["Team Commits"]!
+        let configCellCommitsFeed: [String:String] = inputValues["Commits Feed"]!
+        
+        ////
+        // convert config to JSON of a cell
+        var cellTravis: String? = nil
+        if configCellTravis.count == 3 {
+            cellTravis = "" +
+                "{" +
+                    "\"cell\": \"CellTrevis\"," +
+                    "\"params\": {" +
+                        "\"pusher_key\": \"\(configCellTravis["pusher_key"]!)\"," +
+                        "\"owner\": \"\(configCellTravis["owner"]!)\"," +
+                        "\"project\": \"\(configCellTravis["project"]!)\"" +
+                    "}" +
+                "}"
+        }
+
+        var cellTeamCommits: String? = nil
+        if configCellTeamCommits.count == 3 {
+            cellTeamCommits = "" +
+                "{" +
+                    "\"cell\": \"CellTeamCommits\"," +
+                    "\"params\": {" +
+                        "\"pusher_key\": \"\(configCellTeamCommits["pusher_key"]!)\"," +
+                        "\"owner\": \"\(configCellTeamCommits["owner"]!)\"," +
+                        "\"project\": \"\(configCellTeamCommits["project"]!)\"" +
+                    "}" +
+                "}"
+        }
+        
+        var cellCommitsFeed: String? = nil
+        if configCellCommitsFeed.count == 3 {
+            cellCommitsFeed = "" +
+                "{" +
+                    "\"cell\": \"CellCommitsFeed\"," +
+                    "\"params\": {" +
+                        "\"pusher_key\": \"\(configCellCommitsFeed["pusher_key"]!)\"," +
+                        "\"owner\": \"\(configCellCommitsFeed["owner"]!)\"," +
+                        "\"project\": \"\(configCellCommitsFeed["project"]!)\"" +
+                    "}" +
+                "}"
+        }
+        
+        ////
+        // join the data of cells in dashboard's JSON
+        let firstRow: String?
+        
+        let firstRowArray = [cellTravis, cellTeamCommits].flatMap({ $0 })
+        if firstRowArray.count == 0 {
+            firstRow = nil
+        } else {
+            firstRow = firstRowArray.joined(separator: ",")
+        }
+        
+        let secondRow = cellCommitsFeed
+        
+        let grid = "[" +
+                [firstRow, secondRow].flatMap({ $0 }).flatMap({ "[\($0)]" }).joined(separator: ",") +
+            "]"
         
         let json = "" +
             "{" +
                 "\"name\": \"\(configGridName)\"," +
-                "\"grid\": [" +
-                    "[" +
-                        "{" +
-                            "\"cell\": \"CellCloudPerformance\"," +
-                            "\"params\": {" +
-                            "}" +
-                        "}," +
-                        "{" +
-                            "\"cell\": \"CellTrevis\"," +
-                            "\"params\": {" +
-                                "\"pusher_key\": \"\(configlCellTrevis["pusher_key"]!)\"," +
-                                "\"owner\": \"\(configlCellTrevis["owner"]!)\"," +
-                                "\"project\": \"\(configlCellTrevis["project"]!)\"" +
-                            "}" +
-                        "}," +
-                        "{" +
-                            "\"cell\": \"CellTeamCommits\"," +
-                            "\"params\": {" +
-                                "\"pusher_key\": \"\(configlCellTeamCommits["pusher_key"]!)\"," +
-                                "\"owner\": \"\(configlCellTeamCommits["owner"]!)\"," +
-                                "\"project\": \"\(configlCellTeamCommits["project"]!)\"" +
-                            "}" +
-                        "}" +
-                    "]," +
-                    "[" +
-                        "{" +
-                            "\"cell\": \"CellDeployStatus\"," +
-                            "\"params\": {" +
-                            "}" +
-                        "}," +
-                        "{" +
-                            "\"cell\": \"CellCommitsFeed\"," +
-                            "\"params\": {" +
-                                "\"pusher_key\": \"\(configlCellCommitsFeed["pusher_key"]!)\"," +
-                                "\"owner\": \"\(configlCellCommitsFeed["owner"]!)\"," +
-                                "\"project\": \"\(configlCellCommitsFeed["project"]!)\"" +
-                            "}" +
-                        "}" +
-                    "]" +
-                "]" +
+                "\"grid\": \(grid)" +
             "}"
         
-        // TODO: da feedback visual ao usuário quando salvar
+        ////
+        // save
+        // TODO: need show a visual feedback when is saved
         UserSession.shared.addProject(project: Project(json: JSON(parseJSON: json)))
     }
     
