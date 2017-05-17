@@ -32,7 +32,7 @@
 		89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338181E49F7A400610EA3 /* StalkrExtensions.swift */; };
 		89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C467541E596250003CF8F2 /* CellDeployStatus.swift */; };
 		89C467571E596258003CF8F2 /* CellDeployStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C467561E596258003CF8F2 /* CellDeployStatus.xib */; };
-		89C7784C1E6EEB86008926E7 /* ProjectInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C7784B1E6EEB86008926E7 /* ProjectInformationViewController.swift */; };
+		89C7784C1E6EEB86008926E7 /* CreateGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C7784B1E6EEB86008926E7 /* CreateGridViewController.swift */; };
 		89C994AB1E547C6E00DBADBA /* CellTrevis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C994AA1E547C6E00DBADBA /* CellTrevis.swift */; };
 		89C994AD1E547CDE00DBADBA /* CellTrevis.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994AC1E547CDE00DBADBA /* CellTrevis.xib */; };
 		89C994CB1E54820900DBADBA /* CellTrevisTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994CA1E54820900DBADBA /* CellTrevisTableCell.xib */; };
@@ -76,7 +76,7 @@
 		89B338181E49F7A400610EA3 /* StalkrExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StalkrExtensions.swift; sourceTree = "<group>"; };
 		89C467541E596250003CF8F2 /* CellDeployStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDeployStatus.swift; sourceTree = "<group>"; };
 		89C467561E596258003CF8F2 /* CellDeployStatus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellDeployStatus.xib; sourceTree = "<group>"; };
-		89C7784B1E6EEB86008926E7 /* ProjectInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectInformationViewController.swift; sourceTree = "<group>"; };
+		89C7784B1E6EEB86008926E7 /* CreateGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGridViewController.swift; sourceTree = "<group>"; };
 		89C994AA1E547C6E00DBADBA /* CellTrevis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTrevis.swift; sourceTree = "<group>"; };
 		89C994AC1E547CDE00DBADBA /* CellTrevis.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTrevis.xib; sourceTree = "<group>"; };
 		89C994CA1E54820900DBADBA /* CellTrevisTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTrevisTableCell.xib; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		892DECE21E5FD6B400676056 /* CreateGrid */ = {
 			isa = PBXGroup;
 			children = (
-				89C7784B1E6EEB86008926E7 /* ProjectInformationViewController.swift */,
+				89C7784B1E6EEB86008926E7 /* CreateGridViewController.swift */,
 			);
 			name = CreateGrid;
 			sourceTree = "<group>";
@@ -404,7 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				892DECCA1E5F258400676056 /* SlotableCellConfiguration.swift in Sources */,
-				89C7784C1E6EEB86008926E7 /* ProjectInformationViewController.swift in Sources */,
+				89C7784C1E6EEB86008926E7 /* CreateGridViewController.swift in Sources */,
 				89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */,
 				CE52C5391E61059300FC6C40 /* SidebarProtocol.swift in Sources */,
 				89C994AB1E547C6E00DBADBA /* CellTrevis.swift in Sources */,

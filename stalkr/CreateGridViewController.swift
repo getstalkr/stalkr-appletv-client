@@ -1,5 +1,5 @@
 //
-//  ProjectInformationViewController.swift
+//  CreateGridViewController.swift
 //  stalkr
 //
 //  Created by Bruno Macabeus Aquino on 07/03/17.
