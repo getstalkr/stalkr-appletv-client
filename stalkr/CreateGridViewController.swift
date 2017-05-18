@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import InputStepByStep
+import AlertPro
 
 class CreateGridViewController: UIViewController, InputStepByStepProtocol {
 
@@ -47,11 +48,12 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
     }()
     
     func cellFinishAction(inputValues: [String: [String: String]]) {
+        // todo: when show a alert, the focus gets weird
+        
         ////
         // collected data from the InputStepyByStep
         guard let configGridName: String = inputValues["Dashboard"]!["projectName"] else {
-            // todo: need show a visual feedback
-            print("Do you need set a projectName")
+            hrShowErrorAlert(withMessage: "Do you need set a name for your dashboard")
             return
         }
         // todo: need be flexible, for when a new cell is added we don't need update this code
@@ -125,7 +127,7 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
         
         ////
         // save
-        // TODO: need show a visual feedback when is saved
+        hrShowAlert(withTitle: "Success", message: "New dashboard created!")
         UserSession.shared.addProject(project: Project(json: JSON(parseJSON: json)))
     }
     
