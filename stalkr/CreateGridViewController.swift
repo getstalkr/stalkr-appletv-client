@@ -127,8 +127,8 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
         
         ////
         // save
+        UserSession.shared.addProject(json: json)
         hrShowAlert(withTitle: "Success", message: "New dashboard created!")
-        UserSession.shared.addProject(project: Project(json: JSON(parseJSON: json)))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -7,10 +7,12 @@
 //
 
 import Foundation
-import SwiftyJSON
+import SwiftyJSON // todo: in future, we need remove this "import" in this file, because UserSession shouldn't know JSON!!
 
 class UserSession {
     static let shared = UserSession()
+    private lazy var projectsJson: [String] = self.loadProjectsJson() ?? []
+    /*// this dead code is keep because it's useful for test a full dashboard
     private var projectsJson = [
         "{" +
             "\"name\": \"CocoaPods\"," +
@@ -100,7 +102,7 @@ class UserSession {
             "]" +
         "}"
     ]
-    
+    */
     var projects: [Project]?
     
     init() {
@@ -109,8 +111,22 @@ class UserSession {
         }
     }
     
-    func addProject(project: Project) {
+    func addProject(json: String) {
+        projectsJson.append(json)
+        
+        let project = Project(json: JSON(parseJSON: json))
         projects!.append(project)
+        
+        saveProjectsJson()
+    }
+    
+    func saveProjectsJson() {
+        let defaults = UserDefaults.standard
+        defaults.set(projectsJson, forKey: "projectsJson")
     }
 
+    func loadProjectsJson() -> [String]? {
+        let defaults = UserDefaults.standard
+        return defaults.stringArray(forKey: "projectsJson")
+    }
 }
