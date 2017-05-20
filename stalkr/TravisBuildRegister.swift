@@ -22,7 +22,7 @@ struct TravisBuildRegister {
     let authorName: String
     let message: String
     let eventType: String
-    let duration: Int
+    let dateStarted: Date?
     let dateFinish: Date?
     let state: TravisSates
     
@@ -40,7 +40,6 @@ struct TravisBuildRegister {
             self.eventType = "Push"
         }
         self.authorName = jsonBuild["authorName"]!.stringValue
-        self.duration = 0 // TODO
         
         let statusMessage = jsonBuild["statusMessage"]!.stringValue
         if statusMessage == "Pending" {
@@ -51,11 +50,14 @@ struct TravisBuildRegister {
             self.state = .failed
         }
         
-        let finishedAt = jsonBuild["startedAt"]!.stringValue
-        if finishedAt != "" {
-            let index = finishedAt.index(finishedAt.startIndex, offsetBy: 10)
-            self.dateFinish = finishedAt.substring(to: index).toDate(format: "yyyy-MM-dd")
+        if let startedAt = jsonBuild["startedAt"]?.string,
+            let finishedAt = jsonBuild["finishedAt"]?.string {
+            
+            self.dateStarted = startedAt.toDate(format: "yyyy-MM-dd'T'HH:mm:ss'Z'")
+            self.dateFinish = finishedAt.toDate(format: "yyyy-MM-dd'T'HH:mm:ss'Z'")
         } else {
+            
+            self.dateStarted = nil
             self.dateFinish = nil
         }
     }

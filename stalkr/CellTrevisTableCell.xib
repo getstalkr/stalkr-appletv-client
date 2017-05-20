@@ -73,22 +73,22 @@
                         <rect key="frame" x="42" y="139" width="580" height="93"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="agL-a3-jvR">
-                                <rect key="frame" x="0.0" y="0.0" width="260" height="93"/>
+                                <rect key="frame" x="0.0" y="0.0" width="286" height="93"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJG-q8-nC1">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Commit ab2defg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFm-vg-jLm">
-                                        <rect key="frame" x="0.0" y="36" width="260" height="21"/>
+                                        <rect key="frame" x="0.0" y="36" width="286" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Branch Master" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PG-LQ-zOx">
-                                        <rect key="frame" x="0.0" y="72" width="260" height="21"/>
+                                        <rect key="frame" x="0.0" y="72" width="286" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -96,22 +96,22 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="lGy-rV-5dT">
-                                <rect key="frame" x="260" y="0.0" width="320" height="93"/>
+                                <rect key="frame" x="286" y="0.0" width="294" height="93"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 months ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhH-VH-PEg">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ran for 0 min 42 sec" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhy-Mi-p8q">
-                                        <rect key="frame" x="0.0" y="36" width="320" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total time: 6 mim" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnp-0o-kDZ">
-                                        <rect key="frame" x="0.0" y="72" width="320" height="21"/>
+                                        <rect key="frame" x="0.0" y="36" width="294" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhy-Mi-p8q">
+                                        <rect key="frame" x="0.0" y="72" width="294" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -148,7 +148,6 @@
                 <outlet property="labelCommitMessage" destination="DtL-2P-PuQ" id="eFU-X8-0qA"/>
                 <outlet property="labelCommitterName" destination="qJG-q8-nC1" id="hkh-px-Glz"/>
                 <outlet property="labelPastTime" destination="fhH-VH-PEg" id="Zx4-Lb-iCQ"/>
-                <outlet property="labelRunTime" destination="Dhy-Mi-p8q" id="Us6-4S-mBW"/>
                 <outlet property="labelTotalTime" destination="hnp-0o-kDZ" id="GLW-ba-n0j"/>
                 <outlet property="textCommitMessage" destination="hUc-KI-WAN" id="q7K-19-bCA"/>
                 <outlet property="viewLeft" destination="bcr-2f-6ec" id="3eS-7Y-S8I"/>

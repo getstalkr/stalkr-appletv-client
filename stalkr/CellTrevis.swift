@@ -116,8 +116,9 @@ class CellTrevis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell,
         cell.labelCommitterName.text = currentBuild.authorName
         cell.labelCommitCode.attributedText = "Commit " + currentBuild.commit.set(style: .fontBold)
         
-        if let dateFinish = currentBuild.dateFinish {
-            let dateFinishRelativeFormatted = dateFinish.relativeFormatted()
+        if let dateStarted = currentBuild.dateStarted {
+            
+            let dateFinishRelativeFormatted = dateStarted.relativeFormatted()
             let splited = dateFinishRelativeFormatted.components(separatedBy: " ")
             
             if splited.count == 3 && splited[2] == "ago" {
@@ -126,11 +127,26 @@ class CellTrevis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell,
                 cell.labelPastTime.attributedText = dateFinishRelativeFormatted.set(style: .fontBold)
             }
             
-            cell.labelRunTime.attributedText = "Ran for " + "\(currentBuild.duration / 60) min \(currentBuild.duration % 60) sec".set(style: .fontBold)
-            cell.labelTotalTime.attributedText = "Total time: " + "6 min".set(style: .fontBold) // TODO
+            if let dateFinish = currentBuild.dateFinish {
+                
+                let dateComponentsFormatter = DateComponentsFormatter()
+                dateComponentsFormatter.allowedUnits = [.year, .month, .day, .hour, .minute, .second]
+                dateComponentsFormatter.maximumUnitCount = 2
+                dateComponentsFormatter.unitsStyle = .abbreviated
+                
+                let totalTime = dateComponentsFormatter.string(from: dateStarted, to: dateFinish)
+                
+                if let totalTime = totalTime {
+                    cell.labelTotalTime.attributedText = "Total time: " + totalTime.set(style: .fontBold)
+                } else {
+                    cell.labelTotalTime.text = ""
+                }
+            } else {
+                cell.labelTotalTime.text = ""
+            }
+        
         } else {
             cell.labelPastTime.text = ""
-            cell.labelRunTime.text = ""
             cell.labelTotalTime.text = ""
         }
         

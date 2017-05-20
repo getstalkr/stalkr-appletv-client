@@ -18,7 +18,6 @@ class CellTrevisTableCell: UITableViewCell {
     @IBOutlet weak var labelCommitCode: UILabel!
     @IBOutlet weak var labelBranch: UILabel!
     @IBOutlet weak var labelPastTime: UILabel!
-    @IBOutlet weak var labelRunTime: UILabel!
     @IBOutlet weak var labelTotalTime: UILabel!
 
 }
