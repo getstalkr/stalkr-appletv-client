@@ -11,9 +11,34 @@ import SwiftyJSON // todo: in future, we need remove this "import" in this file,
 
 class UserSession {
     static let shared = UserSession()
-    private lazy var projectsJson: [String] = self.loadProjectsJson() ?? []
-    /*// this dead code is keep because it's useful for test a full dashboard
+    //private lazy var projectsJson: [String] = self.loadProjectsJson() ?? []
+    // this dead code is keep because it's useful for test a full dashboard
     private var projectsJson = [
+        "{" +
+            "\"name\": \"My Little Test\"," +
+            "\"grid\": [" +
+                "[" +
+                    "{" +
+                        "\"cell\": \"CellTrevis\"," +
+                        "\"params\": {" +
+                            "\"pusher_key\": \"770713b7ff6732d20fb1\"," +
+                            "\"stalkr_project\": \"testing-hooks\"," +
+                            "\"stalkr_team\": \"ythecombinator\"" +
+                        "}" +
+                    "}," +
+                    "{" +
+                        "\"cell\": \"CellCommitsFeed\"," +
+                        "\"params\": {" +
+                            "\"pusher_key\": \"5cdc3c711f606f43aada\"," +
+                            "\"stalkr_project\": \"testing-hooks\"," +
+                            "\"stalkr_team\": \"ythecombinator\"" +
+                        "}" +
+                    "}" +
+                "]" +
+            "]" +
+        "}",
+        
+        
         "{" +
             "\"name\": \"CocoaPods\"," +
             "\"grid\": [" +
@@ -50,8 +75,8 @@ class UserSession {
                         "\"cell\": \"CellCommitsFeed\"," +
                         "\"params\": {" +
                             "\"pusher_key\": \"5cdc3c711f606f43aada\"," +
-                            "\"owner\": \"CocoaPods\"," +
-                            "\"project\": \"CocoaPods\"" +
+                            "\"stalkr_project\": \"testing-hooks\"," +
+                            "\"stalkr_team\": \"ythecombinator\"" +
                         "}" +
                     "}" +
                 "]" +
@@ -94,15 +119,15 @@ class UserSession {
                         "\"cell\": \"CellCommitsFeed\"," +
                         "\"params\": {" +
                             "\"pusher_key\": \"5cdc3c711f606f43aada\"," +
-                            "\"owner\": \"facebook\"," +
-                            "\"project\": \"jest\"" +
+                            "\"stalkr_project\": \"testing-hooks\"," +
+                            "\"stalkr_team\": \"ythecombinator\"" +
                         "}" +
                     "}" +
                 "]" +
             "]" +
         "}"
     ]
-    */
+    
     var projects: [Project]?
     
     init() {

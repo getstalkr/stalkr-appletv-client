@@ -19,6 +19,7 @@ struct TravisBuildRegister {
     let number: String
     let branch: String
     let commit: String
+    let authorName: String
     let message: String
     let eventType: String
     let duration: Int
@@ -26,27 +27,31 @@ struct TravisBuildRegister {
     let state: TravisSates
     
     init(json: JSON) {
-        self.number = json["number"].stringValue
-        self.branch = json["branch"].stringValue
-        let commit = json["commit"].stringValue
-        self.commit = commit.substring(to: commit.index(commit.startIndex, offsetBy: 7))
-        self.message = json["message"].stringValue
+        let jsonBuild = json["received"].dictionaryValue["build"]!.dictionaryValue
+        let jsonCommit = json["received"].dictionaryValue["commit"]!.dictionaryValue
+        
+        self.number = jsonBuild["number"]!.stringValue
+        self.branch = jsonCommit["branch"]!.stringValue
+        self.commit = jsonCommit["sha"]!.stringValue.substring(with: 0...7)
+        self.message = jsonCommit["message"]!.stringValue
         if json["event_type"].stringValue == "pull_request" {
             self.eventType = "Pull Request"
         } else {
             self.eventType = "Push"
         }
-        self.duration = json["duration"].intValue
+        self.authorName = jsonBuild["authorName"]!.stringValue
+        self.duration = 0 // TODO
         
-        if json["state"].stringValue == "created" || json["state"].stringValue == "started" {
+        let statusMessage = jsonBuild["statusMessage"]!.stringValue
+        if statusMessage == "Pending" {
             self.state = .running
-        } else if json["result"].intValue == 0 {
+        } else if statusMessage == "Passed" || statusMessage == "Fixed" {
             self.state = .success
         } else {
             self.state = .failed
         }
         
-        let finishedAt = json["finished_at"].stringValue
+        let finishedAt = jsonBuild["startedAt"]!.stringValue
         if finishedAt != "" {
             let index = finishedAt.index(finishedAt.startIndex, offsetBy: 10)
             self.dateFinish = finishedAt.substring(to: index).toDate(format: "yyyy-MM-dd")

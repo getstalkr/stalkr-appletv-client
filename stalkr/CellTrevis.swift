@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftRichString
-import SwiftyJSON
 import RelativeFormatter
 import PusherSwift
 import GridView
@@ -22,13 +21,13 @@ class CellTrevis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell,
     static let haveZoom = false
     let cellHeight = (UINib(nibName: "CellTrevisTableCell", bundle: nil).instantiate(withOwner: nil, options: nil).last as! UIView).frame.size.height
     
-    var travisBuildsLog: [TravisBuildRegister] = []
+    var travisBuildsLog: [(buildNumber: String, register: TravisBuildRegister)] = []
     
     // config
     static let configurations: [StalkrCellConfig] = [
         StalkrCellConfig(name: "pusher_key", label: "Pusher key", obligatory: true),
-        StalkrCellConfig(name: "owner", label: "Travis' user", obligatory: true),
-        StalkrCellConfig(name: "project", label: "Travis' repository", obligatory: true)
+        StalkrCellConfig(name: "stalkr_project", label: "Stalkr Project", obligatory: true),
+        StalkrCellConfig(name: "stalkr_team", label: "Stalkr Team", obligatory: true)
     ]
     
     // subscriber
@@ -36,25 +35,36 @@ class CellTrevis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell,
     
     let webSockets = [
         WebSocketConfig(
-            requestStartUrl: "https://stalkr-api-builds-travis.herokuapp.com",
-            requestStartParams: { config in
-                return ["owner": config["owner"] as! String, "project": config["project"] as! String]
-            },
             channel: { config in
-                let owner = config["owner"] as! String
-                let project = config["project"] as! String
+                let stalkrProject = config["stalkr_project"] as! String
+                let stalkrTeam = config["stalkr_team"] as! String
                 
-                return "builds-travis-\(owner)-\(project)"
+                return "\(stalkrProject)@\(stalkrTeam)"
             },
-            event: "status-requested"
+            event: "push",
+            
+            handle: { json, cell in
+                let cell = cell as! CellTrevis
+                
+                let travisRegister = TravisBuildRegister(json: json)
+                
+                // check if it's a new build, or a change of a previus buils
+                let indexOfPrevius = cell.travisBuildsLog.index(where: { number, _ in
+                    return number == travisRegister.number })
+                
+                if let indexOfPrevius = indexOfPrevius {
+                    cell.travisBuildsLog[indexOfPrevius] = (buildNumber: travisRegister.number, register: travisRegister)
+                } else {
+                    cell.travisBuildsLog.insert(
+                        (buildNumber: travisRegister.number, register: travisRegister),
+                        at: 0
+                    )
+                }
+                
+                //
+                cell.table.reloadData()
+            }
         )
-    ]
-    
-    let webSocketHandles: [String: (_ data: JSON, _ cell: SlotableCell) -> Void] = [
-        "status-requested": { json, cell in
-            (cell as! CellTrevis).travisBuildsLog = json["payload"].arrayValue.map { TravisBuildRegister(json: $0) }
-            (cell as! CellTrevis).table.reloadData()
-        }
     ]
     
     //
@@ -81,7 +91,7 @@ class CellTrevis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell,
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellTrevisTableCell", for: indexPath) as! CellTrevisTableCell
-        let currentBuild = travisBuildsLog[indexPath.row]
+        let (_, currentBuild) = travisBuildsLog[indexPath.row]
         
         switch currentBuild.state {
         case .running:
@@ -103,7 +113,7 @@ class CellTrevis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell,
         cell.textCommitMessage.textColor = UIColor.fontPullMessage
         
         cell.labelBranch.attributedText = "Branch " + currentBuild.branch.set(style: .fontBold)
-        cell.labelCommitterName.text = "matt" // TODO
+        cell.labelCommitterName.text = currentBuild.authorName
         cell.labelCommitCode.attributedText = "Commit " + currentBuild.commit.set(style: .fontBold)
         
         if let dateFinish = currentBuild.dateFinish {

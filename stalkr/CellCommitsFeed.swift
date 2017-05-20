@@ -28,8 +28,8 @@ class CellCommitsFeed: SlotableCellDefault, SlotableCell, StalkrCell, Subscriber
     // config
     static let configurations: [StalkrCellConfig] = [
         StalkrCellConfig(name: "pusher_key", label: "Pusher key", obligatory: true),
-        StalkrCellConfig(name: "owner", label: "GitHub's user", obligatory: true),
-        StalkrCellConfig(name: "project", label: "GitHub's repository", obligatory: true)
+        StalkrCellConfig(name: "stalkr_project", label: "Stalkr Project", obligatory: true),
+        StalkrCellConfig(name: "stalkr_team", label: "Stalkr Team", obligatory: true)
     ]
 
     // subscriber
@@ -37,27 +37,23 @@ class CellCommitsFeed: SlotableCellDefault, SlotableCell, StalkrCell, Subscriber
     
     let webSockets = [
         WebSocketConfig(
-            requestStartUrl: "https://stalkr-api-commits-github.herokuapp.com",
-            requestStartParams: { config in
-                return ["owner": config["owner"] as! String, "project": config["project"] as! String]
-            },
             channel: { config in
-                let owner = config["owner"] as! String
-                let project = config["project"] as! String
+                let stalkrProject = config["stalkr_project"] as! String
+                let stalkrTeam = config["stalkr_team"] as! String
                 
-                return "commits-github-\(owner)-\(project)"
+                return "\(stalkrProject)@\(stalkrTeam)"
             },
-            event: "status-requested"
+            event: "push",
+            
+            handle: { json, cell in
+                let cell = (cell as! CellCommitsFeed)
+                
+                cell.commitsLog.insert(CommitRegister(json: json), at: 0)
+                cell.table.reloadData()
+            }
         )
     ]
     
-    let webSocketHandles: [String: (_ data: JSON, _ cell: SlotableCell) -> Void] = [
-        "status-requested": { json, cell in
-            (cell as! CellCommitsFeed).commitsLog = json["payload"].arrayValue.map { CommitRegister(json: $0) }
-            (cell as! CellCommitsFeed).table.reloadData()
-        }
-    ]
- 
     //
     func load(params: [String: Any]) {
         self.table.delegate = self
@@ -84,8 +80,10 @@ class CellCommitsFeed: SlotableCellDefault, SlotableCell, StalkrCell, Subscriber
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellCommitsFeedTableCell", for: indexPath) as! CellCommitsFeedTableCell
         let currentCommit = commitsLog[indexPath.row]
         
-        cell.imagePhoto.kf.setImage(with: URL(string: currentCommit.imageUrl))
-        cell.imagePhoto.asCircle()
+        if let imageUrl = currentCommit.imageUrl {
+            cell.imagePhoto.kf.setImage(with: URL(string: imageUrl))
+            cell.imagePhoto.asCircle()
+        }
         cell.labelCommitterName.text = currentCommit.name
         cell.textMessage.textColor = UIColor.fontPullMessage
         cell.textMessage.text = currentCommit.message

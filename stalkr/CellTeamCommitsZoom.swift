@@ -22,25 +22,20 @@ class CellTeamCommitsZoom: ZoomCell, SlotableCell, SubscriberCell {
     
     let webSockets = [
         WebSocketConfig(
-            requestStartUrl: "https://stalkr-api-commits-history-git.herokuapp.com",
-            requestStartParams: { config in
-                return ["owner": config["owner"] as! String, "project": config["project"] as! String]
-        },
             channel: { config in
                 let owner = config["owner"] as! String
                 let project = config["project"] as! String
                 
                 return "participation-\(owner)-\(project)"
-        },
-            event: "status-requested"
+            },
+            event: "status-requested",
+            
+            handle: { json, cell in
+                // TODO: need be update with the new architecture
+                let commits = json["payload"].arrayValue.map { $0.intValue }
+                (cell as! CellTeamCommitsZoom).drawChart(commits: Array(commits.suffix(25)))
+            }
         )
-    ]
-    
-    let webSocketHandles: [String: (_ data: JSON, _ cell: SlotableCell) -> Void] = [
-        "status-requested": { json, cell in
-            let commits = json["payload"].arrayValue.map { $0.intValue }
-            (cell as! CellTeamCommitsZoom).drawChart(commits: Array(commits.suffix(25)))
-        }
     ]
     
     //

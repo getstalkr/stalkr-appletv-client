@@ -11,7 +11,7 @@ import SwiftyJSON
 
 struct CommitRegister {
     let name: String
-    let imageUrl: String
+    let imageUrl: String?
     let message: String
     let branch: String
     let sha: String
@@ -19,14 +19,18 @@ struct CommitRegister {
         
     init(json: JSON) {
         self.name = json["author"].dictionaryValue["name"]!.stringValue
-        self.imageUrl = json["author"].dictionaryValue["avatar"]!.stringValue
+        
+        self.imageUrl = json["author"].dictionaryValue["avatar"]?.stringValue
+        
         self.message = json["commit"].dictionaryValue["message"]!.stringValue
-        self.branch = "Master" // TODO
+        
+        let branch = json["commit"].dictionaryValue["branch"]!.stringValue
+        self.branch = branch.substring(to: branch.index(branch.startIndex, offsetBy: 7))
+        
         let sha = json["commit"].dictionaryValue["sha"]!.stringValue
-        self.sha = sha.substring(to: sha.index(sha.startIndex, offsetBy: 7))
+        self.sha = sha.substring(with: 0...7)
         
         let dateString = json["commit"].dictionaryValue["date"]!.stringValue
-        let index = dateString.index(dateString.startIndex, offsetBy: 10)
-        self.date = dateString.substring(to: index).toDate(format: "yyyy-MM-dd")!
+        self.date = dateString.substring(with: 0...19).toDate(format: "yyyy-MM-dd'T'HH:mm:ss")!
     }
 }
