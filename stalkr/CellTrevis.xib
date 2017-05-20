@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="appleTV" orientation="landscape">
         <adaptation id="dark"/>
     </device>
     <dependencies>
         <deployment identifier="tvOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -25,7 +25,6 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUILD STATUS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtd-Oc-0EB">
                         <rect key="frame" x="8" y="8" width="115" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="115" id="TSL-2e-8vN"/>
                             <constraint firstAttribute="height" constant="21" id="mRP-je-GjO"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -36,7 +35,6 @@
             </view>
             <constraints>
                 <constraint firstItem="P28-QJ-yJ5" firstAttribute="top" secondItem="qtd-Oc-0EB" secondAttribute="bottom" constant="7" id="1yU-14-fD1"/>
-                <constraint firstAttribute="trailing" secondItem="qtd-Oc-0EB" secondAttribute="trailing" constant="262" id="RO7-WN-nvg"/>
                 <constraint firstAttribute="bottom" secondItem="P28-QJ-yJ5" secondAttribute="bottom" constant="8" id="hGK-bp-yPW"/>
                 <constraint firstItem="P28-QJ-yJ5" firstAttribute="leading" secondItem="3qC-Ve-G5K" secondAttribute="leading" constant="8" id="hrL-U9-Spf"/>
                 <constraint firstAttribute="trailing" secondItem="P28-QJ-yJ5" secondAttribute="trailing" constant="8" id="lOy-8q-UqJ"/>
