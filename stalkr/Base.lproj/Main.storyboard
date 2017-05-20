@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P47-bc-AFb">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P47-bc-AFb">
     <device id="appleTV" orientation="landscape">
         <adaptation id="dark"/>
     </device>
@@ -15,10 +15,10 @@
         <scene sceneID="Ezv-RH-SgA">
             <objects>
                 <collectionViewController id="TRe-5o-Hak" customClass="GridViewController" customModule="GridView" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="pgC-4I-7aS">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="pgC-4I-7aS">
                         <rect key="frame" x="0.0" y="0.0" width="1151" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewLayout key="collectionViewLayout" id="12X-FW-jGH" customClass="GridLayout" customModule="stalkr" customModuleProvider="target">
+                        <collectionViewLayout key="collectionViewLayout" id="12X-FW-jGH">
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="horizontalInset">
                                     <integer key="value" value="15"/>
