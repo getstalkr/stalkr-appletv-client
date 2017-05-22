@@ -101,6 +101,7 @@ class ZoomCell: SlotableCellDefault {
 }
 
 // list all classes that subscriber the protocol SlotableCell
-let listAllSlotableCell = {
+let listAllSlotableCell: [ClassInfo] = [ClassInfo(CellTrevis.self)!, ClassInfo(CellCommitsFeed.self)!]
+/*let listAllSlotableCell = {
     return subscribers(of: SlotableCell.Type.self )
-}()
+}()*/

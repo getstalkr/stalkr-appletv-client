@@ -58,7 +58,7 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
         }
         // todo: need be flexible, for when a new cell is added we don't need update this code
         let configCellTravis: [String: String] = inputValues["Travis"]!
-        let configCellTeamCommits: [String: String] = inputValues["Team Commits"]!
+        //let configCellTeamCommits: [String: String] = inputValues["Team Commits"]!
         let configCellCommitsFeed: [String:String] = inputValues["Commits Feed"]!
         
         ////
@@ -70,13 +70,13 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
                     "\"cell\": \"CellTrevis\"," +
                     "\"params\": {" +
                         "\"pusher_key\": \"\(configCellTravis["pusher_key"]!)\"," +
-                        "\"owner\": \"\(configCellTravis["owner"]!)\"," +
-                        "\"project\": \"\(configCellTravis["project"]!)\"" +
+                        "\"stalkr_project\": \"\(configCellTravis["stalkr_project"]!)\"," +
+                        "\"stalkr_team\": \"\(configCellTravis["stalkr_team"]!)\"" +
                     "}" +
                 "}"
         }
 
-        var cellTeamCommits: String? = nil
+        /*var cellTeamCommits: String? = nil
         if configCellTeamCommits.count == 3 {
             cellTeamCommits = "" +
                 "{" +
@@ -87,7 +87,7 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
                         "\"project\": \"\(configCellTeamCommits["project"]!)\"" +
                     "}" +
                 "}"
-        }
+        }*/
         
         var cellCommitsFeed: String? = nil
         if configCellCommitsFeed.count == 3 {
@@ -96,15 +96,15 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
                     "\"cell\": \"CellCommitsFeed\"," +
                     "\"params\": {" +
                         "\"pusher_key\": \"\(configCellCommitsFeed["pusher_key"]!)\"," +
-                        "\"owner\": \"\(configCellCommitsFeed["owner"]!)\"," +
-                        "\"project\": \"\(configCellCommitsFeed["project"]!)\"" +
+                        "\"stalkr_project\": \"\(configCellCommitsFeed["stalkr_project"]!)\"," +
+                        "\"stalkr_team\": \"\(configCellCommitsFeed["stalkr_team"]!)\"" +
                     "}" +
                 "}"
         }
         
         ////
         // join the data of cells in dashboard's JSON
-        let firstRow: String?
+        /*let firstRow: String?
         
         let firstRowArray = [cellTravis, cellTeamCommits].flatMap({ $0 })
         if firstRowArray.count == 0 {
@@ -117,7 +117,19 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
         
         let grid = "[" +
                 [firstRow, secondRow].flatMap({ $0 }).flatMap({ "[\($0)]" }).joined(separator: ",") +
-            "]"
+            "]"*/
+        let firstRow: String?
+        
+        let firstRowArray = [cellTravis, cellCommitsFeed].flatMap({ $0 })
+        if firstRowArray.count == 0 {
+            firstRow = nil
+        } else {
+            firstRow = firstRowArray.joined(separator: ",")
+        }
+        
+        let grid = "[" +
+            [firstRow].flatMap({ $0 }).flatMap({ "[\($0)]" }).joined(separator: ",") +
+        "]"
         
         let json = "" +
             "{" +

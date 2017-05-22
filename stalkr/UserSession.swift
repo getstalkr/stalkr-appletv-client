@@ -11,9 +11,9 @@ import SwiftyJSON // todo: in future, we need remove this "import" in this file,
 
 class UserSession {
     static let shared = UserSession()
-    //private lazy var projectsJson: [String] = self.loadProjectsJson() ?? []
+    private lazy var projectsJson: [String] = self.loadProjectsJson() ?? []
     // this dead code is keep because it's useful for test a full dashboard
-    private var projectsJson = [
+    /*private var projectsJson = [
         "{" +
             "\"name\": \"My Little Test\"," +
             "\"grid\": [" +
@@ -126,7 +126,7 @@ class UserSession {
                 "]" +
             "]" +
         "}"
-    ]
+    ]*/
     
     var projects: [Project]?
     
