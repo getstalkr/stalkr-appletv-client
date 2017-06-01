@@ -42,6 +42,8 @@ class SlotableCellDefault: UICollectionViewCell, LoadingViewProtocol {
         )
     }()
     
+    var params: [String : Any] = [:]
+    
     var scaleWhenFocused: Bool {
         get {
             return true
@@ -63,8 +65,6 @@ class SlotableCellDefault: UICollectionViewCell, LoadingViewProtocol {
         if self === context.previouslyFocusedItem {
             
             coordinator.addCoordinatedAnimations({
-                self.transform = CGAffineTransform(scaleX: 0.98, y: 0.98)
-                
                 self.layer.shadowOpacity = 0.0
             }, completion: {
                 
@@ -72,10 +72,6 @@ class SlotableCellDefault: UICollectionViewCell, LoadingViewProtocol {
         } else if self === context.nextFocusedItem {
             
             coordinator.addCoordinatedAnimations({
-                if self.scaleWhenFocused {
-                    self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-                }
-                
                 self.layer.shadowOpacity = 1
             }, completion: {
                 

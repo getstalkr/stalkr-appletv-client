@@ -46,7 +46,7 @@ extension EmbededGridController: GridViewDelegate {
         return listAllSlotableCell.map { ($0.classObject as! SlotableCell.Type) }
     }
     
-    func setup(cell: UICollectionViewCell, params: [String: Any]) {
+    func setup(cell: SlotableCell, params: [String: Any]) {
         // start websockets, if need
         if var cellSubscriber = cell as? SubscriberCell {
             cellSubscriber.pusher = cellSubscriber.subscriber(
@@ -56,39 +56,40 @@ extension EmbededGridController: GridViewDelegate {
         }
         
         // create gestures related a zoom
+        let uiCell = (cell as! UICollectionViewCell)
+        
         if gridIsZoom {
             let tapZoomOut = UITapGestureRecognizer(target: self, action: #selector(self.zoomOut))
             tapZoomOut.allowedPressTypes = [NSNumber(value: UIPressType.menu.rawValue)];
-            cell.addGestureRecognizer(tapZoomOut)
+            uiCell.addGestureRecognizer(tapZoomOut)
         } else if (type(of: cell) as! StalkrCell.Type).haveZoom {
             let tapZoomCell = UITapGestureRecognizer(target: self, action: #selector(self.zoomCell))
             tapZoomCell.allowedPressTypes = [NSNumber(value: UIPressType.select.rawValue)];
-            cell.addGestureRecognizer(tapZoomCell)
+            uiCell.addGestureRecognizer(tapZoomCell)
         }
         
         //
-        cell.backgroundColor = UIColor.backgroundCell
-        cell.transform = CGAffineTransform(scaleX: 0.98, y: 0.98) // TODO: Gambiarra! Isso não deve ficar aqui, mas sim em SlotableCellDefault
-        cell.layer.cornerRadius = 10
+        uiCell.backgroundColor = UIColor.backgroundCell
+        uiCell.layer.cornerRadius = 10
     }
     
     // Gesture functions
-    func zoomCell(_ cell: UICollectionViewCell) {
-        if let focusedCell = UIScreen.main.focusedView as? UICollectionViewCell {
+    func zoomCell(_ cell: UITapGestureRecognizer) { // todo: talvez eu possa remover esse paraemtro
+        if let focusedCell = UIScreen.main.focusedView as? UICollectionViewCell { // todo: talvez usar guard let
             let indexPath = gridView!.collectionView!.indexPath(for: focusedCell)
             
             let zoomCell = NSClassFromString("stalkr." + (type(of: gridView!.collectionView!.cellForItem(at: indexPath!)!).className() + "Zoom"))! as! SlotableCell.Type
-            let params = (gridView!.gridConfiguration![indexPath!.section][indexPath!.row]).params
+            let params = gridView!.getParams(of: focusedCell)
             
             gridIsZoom = true
-            gridView!.gridConfiguration = [[Slot(cell: zoomCell, params: params)]]
+            gridView!.gridConfiguration = GridConfiguration(slots: [[Slot(cell: zoomCell, params: params)]])
             reloadGridWithAnimation()
         }
     }
     
     func zoomOut() {
         gridIsZoom = false
-        gridView!.gridConfiguration = self.currentProject!.slots
+        gridView!.gridConfiguration = GridConfiguration(slots: self.currentProject!.slots)
         reloadGridWithAnimation()
     }
 }
@@ -104,7 +105,7 @@ extension EmbededGridController: TvLightSegmentsDisplay {
         
         gridIsZoom = false
         currentProject = project
-        gridView!.gridConfiguration = currentProject!.slots
+        gridView!.gridConfiguration = GridConfiguration(slots: currentProject!.slots)
         reloadGridWithAnimation()
     }
     
