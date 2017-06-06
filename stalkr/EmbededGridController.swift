@@ -82,14 +82,14 @@ extension EmbededGridController: GridViewDelegate {
             let params = gridView!.getParams(of: focusedCell)
             
             gridIsZoom = true
-            gridView!.gridConfiguration = GridConfiguration(slots: [[Slot(cell: zoomCell, params: params)]])
+            gridView!.gridConfiguration = GridConfiguration.create(slots: [[Slot(cell: zoomCell, params: params)]])
             reloadGridWithAnimation()
         }
     }
     
     func zoomOut() {
         gridIsZoom = false
-        gridView!.gridConfiguration = GridConfiguration(slots: self.currentProject!.slots)
+        gridView!.gridConfiguration = GridConfiguration.create(slots: self.currentProject!.slots)
         reloadGridWithAnimation()
     }
     
@@ -117,7 +117,7 @@ extension EmbededGridController: TvLightSegmentsDisplay {
         
         gridIsZoom = false
         currentProject = project
-        gridView!.gridConfiguration = GridConfiguration(slots: currentProject!.slots)
+        gridView!.gridConfiguration = GridConfiguration.create(slots: currentProject!.slots)
         reloadGridWithAnimation()
     }
     
