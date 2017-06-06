@@ -51,9 +51,9 @@ class UserSession {
                     "{" +
                         "\"cell\": \"CellTrevis\"," +
                         "\"params\": {" +
-                            "\"pusher_key\": \"5cdc3c711f606f43aada\"," +
-                            "\"owner\": \"CocoaPods\"," +
-                            "\"project\": \"CocoaPods\"" +
+                            "\"pusher_key\": \"770713b7ff6732d20fb1\"," +
+                            "\"stalkr_project\": \"testing-hooks\"," +
+                            "\"stalkr_team\": \"ythecombinator\"" +
                         "}" +
                     "}," +
                     "{" +
@@ -95,9 +95,9 @@ class UserSession {
                     "{" +
                         "\"cell\": \"CellTrevis\"," +
                         "\"params\": {" +
-                            "\"pusher_key\": \"5cdc3c711f606f43aada\"," +
-                            "\"owner\": \"facebook\"," +
-                            "\"project\": \"jest\"" +
+                            "\"pusher_key\": \"770713b7ff6732d20fb1\"," +
+                            "\"stalkr_project\": \"testing-hooks\"," +
+                            "\"stalkr_team\": \"ythecombinator\"" +
                         "}" +
                     "}," +
                     "{" +
