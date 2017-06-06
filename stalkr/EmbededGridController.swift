@@ -92,6 +92,18 @@ extension EmbededGridController: GridViewDelegate {
         gridView!.gridConfiguration = GridConfiguration(slots: self.currentProject!.slots)
         reloadGridWithAnimation()
     }
+    
+    //
+    func gridView(_ gridView: GridViewController, shouldMoveCellAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func gridViewGestureToStartMoveAt(_ gridView: GridViewController) -> UIGestureRecognizer {
+        
+        let gesture = UILongPressGestureRecognizer()
+        gesture.minimumPressDuration = 0.75
+        return gesture
+    }
 }
 
 extension EmbededGridController: TvLightSegmentsDisplay {
