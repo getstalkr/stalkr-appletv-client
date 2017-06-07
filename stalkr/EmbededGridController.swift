@@ -42,6 +42,7 @@ class EmbededGridController: UIViewController {
 }
 
 extension EmbededGridController: GridViewDelegate {
+
     func getCellToRegister() -> [SlotableCell.Type] {
         return listAllSlotableCell.map { ($0.classObject as! SlotableCell.Type) }
     }
@@ -103,6 +104,15 @@ extension EmbededGridController: GridViewDelegate {
         let gesture = UILongPressGestureRecognizer()
         gesture.minimumPressDuration = 0.75
         return gesture
+    }
+    
+    func gridView(_ gridView: GridViewController, newGridConfiguration: GridConfiguration) {
+        
+        let indexOfCurrentProjectSelected = UserSession.shared.projects.index(
+            where: { $0 === currentProject! }
+        )!
+        UserSession.shared.projects[indexOfCurrentProjectSelected].slots = newGridConfiguration.slots
+        // todo: we need stored the new grid configuration in device
     }
 }
 
