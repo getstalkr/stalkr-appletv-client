@@ -83,7 +83,7 @@ extension EmbededGridController: GridViewDelegate {
             let params = gridView!.getParams(of: focusedCell)
             
             gridIsZoom = true
-            gridView!.gridConfiguration = GridConfiguration.create(slots: [[Slot(cell: zoomCell, params: params)]])
+            gridView!.gridConfiguration = GridConfiguration.create(slots: Slots(slots: [[Slot(cell: zoomCell, params: params)]]))
             reloadGridWithAnimation()
         }
     }

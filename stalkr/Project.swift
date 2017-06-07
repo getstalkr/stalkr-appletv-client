@@ -13,13 +13,13 @@ import GridView
 
 class Project {
     let name: String
-    var slots: [[Slot]]
+    var slots: Slots
     
     init(json: JSON) {
         self.name = json.dictionaryValue["name"]!.stringValue
         
         // create slots from JSON
-        slots = json.dictionaryValue["grid"]!.map { _, rows -> [Slot] in
+        let slotsArray = json.dictionaryValue["grid"]!.map { _, rows -> [Slot] in
             rows.arrayValue.map { cell -> Slot in
                 let cellClass = NSClassFromString("stalkr." + cell["cell"].stringValue)! as! NSObject.Type
                 let params = cell["params"].dictionaryObject!
@@ -27,6 +27,8 @@ class Project {
                 return Slot(cell: cellClass as! SlotableCell.Type, params: params)
             }
         }
+        
+        slots = Slots(slots: slotsArray)
     }
 
 }
