@@ -30,7 +30,7 @@ class ProjectsViewController: UIViewController {
     }
     
     func reloadProjectsList() {
-        projectsList = UserSession.shared.projects!
+        projectsList = UserSession.shared.projects
         if projectsList.count > 0 {
             dashboardsTab.set(segmentsItems: projectsList)
         }

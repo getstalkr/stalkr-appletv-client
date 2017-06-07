@@ -42,6 +42,7 @@ class EmbededGridController: UIViewController {
 }
 
 extension EmbededGridController: GridViewDelegate {
+
     func getCellToRegister() -> [SlotableCell.Type] {
         return listAllSlotableCell.map { ($0.classObject as! SlotableCell.Type) }
     }
@@ -82,14 +83,14 @@ extension EmbededGridController: GridViewDelegate {
             let params = gridView!.getParams(of: focusedCell)
             
             gridIsZoom = true
-            gridView!.gridConfiguration = GridConfiguration(slots: [[Slot(cell: zoomCell, params: params)]])
+            gridView!.gridConfiguration = GridConfiguration.create(slots: [[Slot(cell: zoomCell, params: params)]])
             reloadGridWithAnimation()
         }
     }
     
     func zoomOut() {
         gridIsZoom = false
-        gridView!.gridConfiguration = GridConfiguration(slots: self.currentProject!.slots)
+        gridView!.gridConfiguration = GridConfiguration.create(slots: self.currentProject!.slots)
         reloadGridWithAnimation()
     }
     
@@ -104,6 +105,15 @@ extension EmbededGridController: GridViewDelegate {
         gesture.minimumPressDuration = 0.75
         return gesture
     }
+    
+    func gridView(_ gridView: GridViewController, newGridConfiguration: GridConfiguration) {
+        
+        let indexOfCurrentProjectSelected = UserSession.shared.projects.index(
+            where: { $0 === currentProject! }
+        )!
+        UserSession.shared.projects[indexOfCurrentProjectSelected].slots = newGridConfiguration.slots
+        // todo: we need stored the new grid configuration in device
+    }
 }
 
 extension EmbededGridController: TvLightSegmentsDisplay {
@@ -117,7 +127,7 @@ extension EmbededGridController: TvLightSegmentsDisplay {
         
         gridIsZoom = false
         currentProject = project
-        gridView!.gridConfiguration = GridConfiguration(slots: currentProject!.slots)
+        gridView!.gridConfiguration = GridConfiguration.create(slots: currentProject!.slots)
         reloadGridWithAnimation()
     }
     

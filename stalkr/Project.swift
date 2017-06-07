@@ -13,7 +13,7 @@ import GridView
 
 class Project {
     let name: String
-    let slots: [[Slot]]
+    var slots: [[Slot]]
     
     init(json: JSON) {
         self.name = json.dictionaryValue["name"]!.stringValue
