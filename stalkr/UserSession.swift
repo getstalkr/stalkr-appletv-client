@@ -128,7 +128,7 @@ class UserSession {
         "}"
     ]
     
-    var projects: [Project]?
+    var projects: [Project]
     
     init() {
         projects = projectsJson.map {
@@ -140,7 +140,7 @@ class UserSession {
         projectsJson.append(json)
         
         let project = Project(json: JSON(parseJSON: json))
-        projects!.append(project)
+        projects.append(project)
         
         saveProjectsJson()
     }
