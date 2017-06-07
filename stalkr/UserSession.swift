@@ -128,7 +128,7 @@ class UserSession {
         "}"
     ]*/
     
-    var projects: [Project]
+    var projects: [Project] = []
     
     init() {
         projects = projectsJson.map {
