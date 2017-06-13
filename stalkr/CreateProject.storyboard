@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GGi-Bh-Y1J">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="dark"/>
+    </device>
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Input Step By Step-->
+        <scene sceneID="ExX-wf-1VH">
+            <objects>
+                <collectionViewController id="qhz-0j-OIU" customClass="InputStepByStep" customModule="InputStepByStep" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Lcq-zT-hR4">
+                        <rect key="frame" x="0.0" y="0.0" width="1880" height="987"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewLayout key="collectionViewLayout" id="9Jg-8Y-NAr"/>
+                        <cells/>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kmb-P1-Ekr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4102" y="1995"/>
+        </scene>
+        <!--Create Grid View Controller-->
+        <scene sceneID="XA3-q0-HwM">
+            <objects>
+                <viewController id="GGi-Bh-Y1J" customClass="CreateGridViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="45Z-pm-CgA"/>
+                        <viewControllerLayoutGuide type="bottom" id="SN8-s9-Nog"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gfa-g6-p27">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BHQ-2V-KZa">
+                                <rect key="frame" x="20" y="66" width="1880" height="987"/>
+                                <connections>
+                                    <segue destination="qhz-0j-OIU" kind="embed" identifier="segueInputStepByStep" id="W50-Pg-PIT"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROJECT INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBQ-ld-NyB">
+                                <rect key="frame" x="20" y="20" width="482" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="482" id="mdh-Hl-RLa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.050980392159999999" green="0.054901960780000002" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mBQ-ld-NyB" firstAttribute="leading" secondItem="gfa-g6-p27" secondAttribute="leading" constant="20" id="5fd-5c-ew8"/>
+                            <constraint firstItem="mBQ-ld-NyB" firstAttribute="top" secondItem="45Z-pm-CgA" secondAttribute="bottom" constant="20" id="Ux7-iM-VLz"/>
+                            <constraint firstItem="SN8-s9-Nog" firstAttribute="top" secondItem="BHQ-2V-KZa" secondAttribute="bottom" constant="27" id="csr-b2-ALE"/>
+                            <constraint firstItem="BHQ-2V-KZa" firstAttribute="top" secondItem="mBQ-ld-NyB" secondAttribute="bottom" constant="25" id="hlE-OY-wBM"/>
+                            <constraint firstItem="BHQ-2V-KZa" firstAttribute="leading" secondItem="gfa-g6-p27" secondAttribute="leadingMargin" id="ug9-gq-0U4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BHQ-2V-KZa" secondAttribute="trailing" id="wXj-BX-YAS"/>
+                            <constraint firstItem="BHQ-2V-KZa" firstAttribute="width" secondItem="gfa-g6-p27" secondAttribute="width" constant="-40" id="zBZ-tU-tXJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="container" destination="BHQ-2V-KZa" id="Vkh-43-x8d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mm4-qe-p6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1861.5" y="1988"/>
+        </scene>
+    </scenes>
+</document>
