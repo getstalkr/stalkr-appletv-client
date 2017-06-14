@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PromiseKit
 import FocusGuideHelper
 
 
@@ -14,16 +15,12 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var sidebarView: UIView!
     @IBOutlet weak var labelTitle: UILabel!
-    @IBOutlet weak var createProjectView: UIView!
-    @IBOutlet weak var projectView: UIView!
-    @IBOutlet weak var accountView: UIView!
-    var sidebarController: SidebarController?
-    var projectController: ProjectsViewController?
-    var createProjectController: CreateGridViewController?
-    var accountViewController: AccountViewController?
-    var seletionBar: UIView = UIView()
+    @IBOutlet weak var containerView: UIView!
     let gradientLayer = CAGradientLayer()
     let guideHelper = FocusGuideHelper()
+    var sidebarTable: UITableView!
+    var currentContainerController: UIViewController?
+    var currentSidebarOptionSelected: SidebarOptions?
 
     override func viewDidLoad() {
         
@@ -55,17 +52,10 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "tableIdentifier" {
-            self.sidebarController = segue.destination as? SidebarController
-            self.sidebarController?.sidebarProtocol = self
+            let sidebarController = segue.destination as! SidebarController
+            sidebarController.sidebarProtocol = self
             
-        } else if segue.identifier == "projectsIdentifier" {
-            self.projectController = segue.destination as? ProjectsViewController
-            
-        } else if segue.identifier == "createProjectIdentifier" {
-            self.createProjectController = segue.destination as? CreateGridViewController
-        
-        } else if segue.identifier == "accountIdentifier" {
-            self.accountViewController = segue.destination as? AccountViewController
+            sidebarTable = sidebarController.tableView
         }
     }
     
@@ -73,6 +63,7 @@ class MainViewController: UIViewController {
         
         guideHelper.updateFocus(in: context)
     }
+
 }
 
 //MARK: SidebarProtocol
@@ -80,24 +71,41 @@ extension MainViewController: SidebarProtocol {
     
     func focusedCell(withOption option: SidebarOptions) {
         
-        labelTitle.text = option.description
+        if currentSidebarOptionSelected == option {
+            updateSidemenuFocusGuide()
+            return
+        }
         
-        switch option {
-        case .dashboard:
-            UIView.animate(withDuration: 0.5, animations: {
-                self.projectView.alpha = 1
-                self.createProjectView.alpha = 0
-                self.accountView.alpha = 0
+        currentSidebarOptionSelected = option
+        
+        _ = firstly {
+            UIView.promise(animateWithDuration: 0.5, animations: {
+                self.containerView.alpha = 0
             })
-            guard let cellDashboard = sidebarController!.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) else {
-                return
+        }.then { _ -> Void in
+            // todo: fix this strange condition; we "need" it because of async
+            if self.currentSidebarOptionSelected == option {
+                self.changeContainerView(option: option)
+                self.updateSidemenuFocusGuide()
+            
+            
+                _ = UIView.promise(animateWithDuration: 0.5, animations: {
+                    self.containerView.alpha = 1
+                })
             }
+        }
+    }
+    
+    func updateSidemenuFocusGuide() {
+        
+        switch currentSidebarOptionSelected! {
+        case .dashboard:
+            let projectController = currentContainerController as! ProjectsViewController
+            let cellDashboard = sidebarTable.cellForRow(at: IndexPath(row: 0, section: 0))!
             
-            projectController!.reloadProjectsList()
-            
-            let firstTab = projectController!.dashboardsTab.visibleCells.sorted(by: {
-                    $0.center.x < $1.center.x
-                }).first
+            let firstTab = projectController.dashboardsTab.visibleCells.sorted(by: {
+                $0.center.x < $1.center.x
+            }).first
             
             if let firstTab = firstTab { // if we have at least one project
                 guideHelper.addLinkByFocusTemporary(
@@ -106,15 +114,15 @@ extension MainViewController: SidebarProtocol {
                     inPosition: .right
                 )
                 
-                projectController!.guideHelper.addLinkByFocus(
+                projectController.guideHelper.addLinkByFocus(
                     from: firstTab,
                     to: cellDashboard,
                     inPosition: .left,
                     identifier: "projects segmenets to sidemenu"
                 )
                 
-                projectController!.guideHelper.addLinkByFocus(
-                    from: projectController!.gridView!.view,
+                projectController.guideHelper.addLinkByFocus(
+                    from: projectController.gridView!.view,
                     to: cellDashboard,
                     inPosition: .left,
                     identifier: "grid to sidemenu",
@@ -125,36 +133,45 @@ extension MainViewController: SidebarProtocol {
             }
             
         case .newDasboard:
-            UIView.animate(withDuration: 0.5, animations: {
-                self.projectView.alpha = 0
-                self.createProjectView.alpha = 1
-                self.accountView.alpha = 0
-            })
-            guard let cellNewDashboard = sidebarController!.tableView.cellForRow(at: IndexPath(row: 1, section: 0)) else {
-                return
-            }
+            let createProjectController = currentContainerController as! CreateGridViewController
+            let cellNewDashboard = sidebarTable.cellForRow(at: IndexPath(row: 1, section: 0))!
             
             guideHelper.addLinkByFocusTemporary(
                 from: cellNewDashboard,
-                to: createProjectController!.container.view,
+                to: createProjectController.container.view,
                 inPosition: .right
             )
             
         case .myAccount:
-            UIView.animate(withDuration: 0.5, animations: {
-                self.projectView.alpha = 0
-                self.createProjectView.alpha = 0
-                self.accountView.alpha = 1
-            })
-            guard let cellAccount = sidebarController!.tableView.cellForRow(at: IndexPath(row: 2, section: 0)) else {
-                return
-            }
+            let accountController = currentContainerController as! AccountViewController
+            let cellAccount = sidebarTable.cellForRow(at: IndexPath(row: 2, section: 0))!
             
             guideHelper.addLinkByFocusTemporary(
                 from: cellAccount,
-                to: accountViewController!.container.view,
+                to: accountController.container.view,
                 inPosition: .right
             )
         }
+    }
+    
+    func setControllerAtContainer(_ controller: UIViewController) {
+        containerView.subviews.forEach { $0.removeFromSuperview() }
+        
+        addChildViewController(controller)
+        controller.view.frame.size = containerView.frame.size
+        containerView.addSubview(controller.view)
+        controller.didMove(toParentViewController: self)
+        
+        currentContainerController = controller
+    }
+    
+    func changeContainerView(option: SidebarOptions) {
+        labelTitle.text = option.description
+        
+        guard let controller = option.instantiateController else {
+            return
+        }
+        
+        setControllerAtContainer(controller)
     }
 }

@@ -146,8 +146,9 @@ class CellTrevis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell,
             }
         
         } else {
-            cell.labelPastTime.text = ""
-            cell.labelTotalTime.text = ""
+            // todo & warning: for some reason, if we set a blank text for this labels, the autolayout crash
+            cell.labelPastTime.text = " "
+            cell.labelTotalTime.text = " "
         }
         
         return cell

@@ -27,10 +27,12 @@ class ProjectsViewController: UIViewController {
         super.viewDidLoad()
         
         dashboardsTab.setup(viewDisplay: gridView!)
+        loadProjectsList()
     }
     
-    func reloadProjectsList() {
+    func loadProjectsList() {
         projectsList = UserSession.shared.projects
+
         if projectsList.count > 0 {
             dashboardsTab.set(segmentsItems: projectsList)
         }
