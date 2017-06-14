@@ -20,7 +20,7 @@ struct CommitRegister {
     init(json: JSON) {
         self.name = json["author"].dictionaryValue["name"]!.stringValue
         
-        self.imageUrl = json["author"].dictionaryValue["avatar"]?.stringValue
+        self.imageUrl = json["author"].dictionaryValue["avatarUrl"]?.stringValue
         
         self.message = json["commit"].dictionaryValue["message"]!.stringValue
         
