@@ -60,6 +60,7 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
         let configCellTravis: [String: String] = inputValues["Travis"]!
         //let configCellTeamCommits: [String: String] = inputValues["Team Commits"]!
         let configCellCommitsFeed: [String:String] = inputValues["Commits Feed"]!
+        let configCellCloudPerformance: [String:String] = inputValues["Cloud Performances"]!
         
         ////
         // convert config to JSON of a cell
@@ -102,11 +103,24 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
                 "}"
         }
         
+        var cellCloudPerformance: String? = nil
+        if configCellCloudPerformance.count == 3 {
+            cellCloudPerformance = "" +
+                "{" +
+                    "\"cell\": \"CellCloudPerformance\"," +
+                    "\"params\": {" +
+                        "\"pusher_key\": \"\(configCellCloudPerformance["pusher_key"]!)\"," +
+                        "\"stalkr_project\": \"\(configCellCloudPerformance["stalkr_project"]!)\"," +
+                        "\"stalkr_team\": \"\(configCellCloudPerformance["stalkr_team"]!)\"" +
+                    "}" +
+                "}"
+        }
+        
         ////
         // join the data of cells in dashboard's JSON
-        /*let firstRow: String?
+        let firstRow: String?
         
-        let firstRowArray = [cellTravis, cellTeamCommits].flatMap({ $0 })
+        let firstRowArray = [cellCloudPerformance, cellTravis].flatMap({ $0 })
         if firstRowArray.count == 0 {
             firstRow = nil
         } else {
@@ -117,19 +131,7 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
         
         let grid = "[" +
                 [firstRow, secondRow].flatMap({ $0 }).flatMap({ "[\($0)]" }).joined(separator: ",") +
-            "]"*/
-        let firstRow: String?
-        
-        let firstRowArray = [cellTravis, cellCommitsFeed].flatMap({ $0 })
-        if firstRowArray.count == 0 {
-            firstRow = nil
-        } else {
-            firstRow = firstRowArray.joined(separator: ",")
-        }
-        
-        let grid = "[" +
-            [firstRow].flatMap({ $0 }).flatMap({ "[\($0)]" }).joined(separator: ",") +
-        "]"
+            "]"
         
         let json = "" +
             "{" +
