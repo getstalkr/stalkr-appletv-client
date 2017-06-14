@@ -19,7 +19,7 @@ class CellCommitsFeed: SlotableCellDefault, SlotableCell, StalkrCell, Subscriber
     @IBOutlet weak var table: UITableView!
     static let cellName = "Commits Feed"
     static let slotWidth = 1
-    static let slotHeight = 2
+    static let slotHeight = 1
     static let haveZoom = false
     let cellHeight = (UINib(nibName: "CellCommitsFeedTableCell", bundle: nil).instantiate(withOwner: nil, options: nil).last as! UIView).frame.size.height
     
