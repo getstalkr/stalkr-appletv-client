@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SlW-z4-AIM">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="dark"/>
+    </device>
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Grid View Controller-->
+        <scene sceneID="6mX-P1-tng">
+            <objects>
+                <collectionViewController id="yGM-Pg-MOw" customClass="GridViewController" customModule="GridView" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="gql-XQ-nWL">
+                        <rect key="frame" x="0.0" y="0.0" width="1848" height="986"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewLayout key="collectionViewLayout" id="Gjf-NR-ZHX">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="horizontalInset">
+                                    <integer key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="verticalInset">
+                                    <integer key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="minimumItemWidth">
+                                    <integer key="value" value="150"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="maximumItemWidth">
+                                    <integer key="value" value="300"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="itemHeight">
+                                    <integer key="value" value="250"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </collectionViewLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="yGM-Pg-MOw" id="GKd-cb-GLH"/>
+                            <outlet property="delegate" destination="yGM-Pg-MOw" id="6us-PQ-IQf"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p70-eI-6Ti" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6277" y="511"/>
+        </scene>
+        <!--Embeded Grid Controller-->
+        <scene sceneID="Age-12-sqO">
+            <objects>
+                <viewController id="im2-Cv-rS7" customClass="EmbededGridController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zw2-5N-R9S"/>
+                        <viewControllerLayoutGuide type="bottom" id="l7y-Ob-i3p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eeP-ze-pO8">
+                        <rect key="frame" x="0.0" y="0.0" width="1848" height="986"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iXV-hJ-br8">
+                                <rect key="frame" x="0.0" y="0.0" width="1848" height="986"/>
+                                <connections>
+                                    <segue destination="yGM-Pg-MOw" kind="embed" identifier="segueGrid" id="fCv-YY-L8O"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="iXV-hJ-br8" secondAttribute="trailing" constant="-20" id="0ib-V2-uK2"/>
+                            <constraint firstItem="iXV-hJ-br8" firstAttribute="top" secondItem="zw2-5N-R9S" secondAttribute="bottom" id="6I2-Fh-DRQ"/>
+                            <constraint firstItem="l7y-Ob-i3p" firstAttribute="top" secondItem="iXV-hJ-br8" secondAttribute="bottom" id="SGg-lQ-eqU"/>
+                            <constraint firstItem="iXV-hJ-br8" firstAttribute="leading" secondItem="eeP-ze-pO8" secondAttribute="leadingMargin" constant="-20" id="VS9-Nk-ZCn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="container" destination="iXV-hJ-br8" id="MO7-ur-zlW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lh7-62-1sQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4086" y="511"/>
+        </scene>
+        <!--Projects View Controller-->
+        <scene sceneID="w3U-GC-PR6">
+            <objects>
+                <viewController id="SlW-z4-AIM" customClass="ProjectsViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hAX-L9-gYc"/>
+                        <viewControllerLayoutGuide type="bottom" id="LlB-jQ-IQS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bhW-VZ-A5q">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7R-M7-uee">
+                                <rect key="frame" x="36" y="94" width="1848" height="986"/>
+                                <connections>
+                                    <segue destination="im2-Cv-rS7" kind="embed" identifier="segueEmbededGrid" id="WsN-m1-LBg"/>
+                                </connections>
+                            </containerView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DyS-yH-JWo" customClass="TvLightSegments" customModule="TvLightSegments">
+                                <rect key="frame" x="36" y="0.0" width="1848" height="86"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="KaF-uN-9p1"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cgl-wk-FcS">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="g7R-M7-uee" secondAttribute="trailing" constant="16" id="1W6-BL-xcV"/>
+                            <constraint firstItem="DyS-yH-JWo" firstAttribute="top" secondItem="hAX-L9-gYc" secondAttribute="bottom" id="FJD-x5-46V"/>
+                            <constraint firstItem="g7R-M7-uee" firstAttribute="leading" secondItem="bhW-VZ-A5q" secondAttribute="leadingMargin" constant="16" id="YGg-Qh-VmO"/>
+                            <constraint firstItem="g7R-M7-uee" firstAttribute="top" secondItem="DyS-yH-JWo" secondAttribute="bottom" constant="8" id="ckT-JB-E1N"/>
+                            <constraint firstItem="DyS-yH-JWo" firstAttribute="leading" secondItem="bhW-VZ-A5q" secondAttribute="leadingMargin" constant="16" id="eoY-2C-4JG"/>
+                            <constraint firstItem="g7R-M7-uee" firstAttribute="top" secondItem="DyS-yH-JWo" secondAttribute="bottom" constant="8" id="fDW-q5-r1R"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DyS-yH-JWo" secondAttribute="trailing" constant="16" id="mE4-Hs-g9c"/>
+                            <constraint firstItem="LlB-jQ-IQS" firstAttribute="top" secondItem="g7R-M7-uee" secondAttribute="bottom" id="nb1-bg-PnL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="g7R-M7-uee" id="fhR-9u-wYb"/>
+                        <outlet property="dashboardsTab" destination="DyS-yH-JWo" id="NDi-GW-Bmf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vda-Es-Oii" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1862" y="464"/>
+        </scene>
+    </scenes>
+</document>

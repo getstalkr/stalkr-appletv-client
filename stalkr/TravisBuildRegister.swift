@@ -27,8 +27,8 @@ struct TravisBuildRegister {
     let state: TravisSates
     
     init(json: JSON) {
-        let jsonBuild = json["received"].dictionaryValue["build"]!.dictionaryValue
-        let jsonCommit = json["received"].dictionaryValue["commit"]!.dictionaryValue
+        let jsonBuild = json["build"].dictionaryValue
+        let jsonCommit = json["commit"].dictionaryValue
         
         self.number = jsonBuild["number"]!.stringValue
         self.branch = jsonCommit["branch"]!.stringValue

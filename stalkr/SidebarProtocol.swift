@@ -6,7 +6,7 @@
 //  Copyright © 2017 Bruno Macabeus Aquino. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum SidebarOptions: String, CustomStringConvertible {
     case dashboard = "Dashboard"
@@ -17,6 +17,19 @@ enum SidebarOptions: String, CustomStringConvertible {
     
     var description: String {
         return self.rawValue.uppercased()
+    }
+    
+    var instantiateController: UIViewController? {
+        switch self {
+        case .dashboard:
+            return UIStoryboard(name: "ProjectsView", bundle: nil).instantiateInitialViewController()
+            
+        case .newDasboard:
+            return UIStoryboard(name: "CreateProject", bundle: nil).instantiateInitialViewController()
+            
+        case .myAccount:
+            return UIStoryboard(name: "Account", bundle: nil).instantiateInitialViewController()
+        }
     }
 }
 

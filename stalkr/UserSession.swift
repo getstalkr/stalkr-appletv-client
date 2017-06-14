@@ -15,68 +15,33 @@ class UserSession {
     // this dead code is keep because it's useful for test a full dashboard
     /*private var projectsJson = [
         "{" +
-            "\"name\": \"My Little Test\"," +
-            "\"grid\": [" +
-                "[" +
-                    "{" +
-                        "\"cell\": \"CellTrevis\"," +
-                        "\"params\": {" +
-                            "\"pusher_key\": \"770713b7ff6732d20fb1\"," +
-                            "\"stalkr_project\": \"testing-hooks\"," +
-                            "\"stalkr_team\": \"ythecombinator\"" +
-                        "}" +
-                    "}," +
-                    "{" +
-                        "\"cell\": \"CellCommitsFeed\"," +
-                        "\"params\": {" +
-                            "\"pusher_key\": \"5cdc3c711f606f43aada\"," +
-                            "\"stalkr_project\": \"testing-hooks\"," +
-                            "\"stalkr_team\": \"ythecombinator\"" +
-                        "}" +
-                    "}" +
-                "]" +
-            "]" +
-        "}",
-        
-        
-        "{" +
             "\"name\": \"CocoaPods\"," +
             "\"grid\": [" +
                 "[" +
                     "{" +
                         "\"cell\": \"CellCloudPerformance\"," +
                         "\"params\": {" +
+                            "\"pusher_key\": \"4646f60bdd7d4d0f2899\"," +
+                            "\"stalkr_project\": \"espinosa\"," +
+                            "\"stalkr_team\": \"getstalkr\"" +
                         "}" +
                     "}," +
                     "{" +
                         "\"cell\": \"CellTrevis\"," +
                         "\"params\": {" +
-                            "\"pusher_key\": \"770713b7ff6732d20fb1\"," +
-                            "\"stalkr_project\": \"testing-hooks\"," +
-                            "\"stalkr_team\": \"ythecombinator\"" +
-                        "}" +
-                    "}," +
-                    "{" +
-                        "\"cell\": \"CellTeamCommits\"," +
-                        "\"params\": {" +
-                            "\"pusher_key\": \"5cdc3c711f606f43aada\"," +
-                            "\"owner\": \"CocoaPods\"," +
-                            "\"project\": \"CocoaPods\"" +
+                            "\"pusher_key\": \"529c821efa1e209fff32\"," +
+                            "\"stalkr_project\": \"espinosa\"," +
+                            "\"stalkr_team\": \"getstalkr\"" +
                         "}" +
                     "}" +
                 "]," +
                 "[" +
                     "{" +
-                        "\"cell\": \"CellDeployStatus\"," +
-                        "\"params\": {" +
-                        "}" +
-                    "}," +
-                    "{" +
                         "\"cell\": \"CellCommitsFeed\"," +
                         "\"params\": {" +
-                            "\"pusher_key\": \"5cdc3c711f606f43aada\"," +
-                            "\"stalkr_project\": \"testing-hooks\"," +
-                            "\"stalkr_team\": \"ythecombinator\"" +
+                            "\"pusher_key\": \"b15276962eac9654b76f\"," +
+                            "\"stalkr_project\": \"espinosa\"," +
+                            "\"stalkr_team\": \"getstalkr\"" +
                         "}" +
                     "}" +
                 "]" +
@@ -90,6 +55,9 @@ class UserSession {
                     "{" +
                         "\"cell\": \"CellCloudPerformance\"," +
                         "\"params\": {" +
+                            "\"pusher_key\": \"4646f60bdd7d4d0f2899\"," +
+                            "\"stalkr_project\": \"espinosa\"," +
+                            "\"stalkr_team\": \"getstalkr\"" +
                         "}" +
                     "}," +
                     "{" +

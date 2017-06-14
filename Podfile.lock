@@ -30,18 +30,18 @@ PODS:
   - GridView (0.1.2)
   - InputStepByStep (0.0.2-beta):
     - Cartography (~> 1.1)
-  - Kingfisher (3.9.1)
+  - Kingfisher (3.10.1)
   - NVActivityIndicatorView (3.6.1)
-  - PromiseKit (4.2.0):
-    - PromiseKit/Foundation (= 4.2.0)
-    - PromiseKit/QuartzCore (= 4.2.0)
-    - PromiseKit/UIKit (= 4.2.0)
-  - PromiseKit/CorePromise (4.2.0)
-  - PromiseKit/Foundation (4.2.0):
+  - PromiseKit (4.2.2):
+    - PromiseKit/Foundation (= 4.2.2)
+    - PromiseKit/QuartzCore (= 4.2.2)
+    - PromiseKit/UIKit (= 4.2.2)
+  - PromiseKit/CorePromise (4.2.2)
+  - PromiseKit/Foundation (4.2.2):
     - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (4.2.0):
+  - PromiseKit/QuartzCore (4.2.2):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (4.2.0):
+  - PromiseKit/UIKit (4.2.2):
     - PromiseKit/CorePromise
   - PusherSwift (4.1.0)
   - RelativeFormatter (0.8.3)
@@ -76,7 +76,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   GridView:
-    :commit: 6b1467ad0e046c35ac172d461137adbb3f3c8a28
+    :commit: 18089b058bd3a8af3ab0eb2fcf82c05ee0e9ccf9
     :git: https://github.com/macabeus/GridView.git
 
 SPEC CHECKSUMS:
@@ -88,9 +88,9 @@ SPEC CHECKSUMS:
   FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
   GridView: b7c93fe68c43956bbec88e7483b3efa3cebb3c8d
   InputStepByStep: b096a266aaff3c082288fe208d2ade863900b1e7
-  Kingfisher: 6729a0baaa458245bfb8cd5a1296c71c10d6eb6c
+  Kingfisher: 33a1b82140fcb14a9fc13f78dfde2a03ff8de8cb
   NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
-  PromiseKit: 08dfb783c161ddcd95b7912421f14c5113fd8318
+  PromiseKit: 00e8886881f151c7e573d06b437915b0bb2970ec
   PusherSwift: 13257260d77445f44ee26d7843e9311186b26e79
   RelativeFormatter: 13508ccd19bbab46ca95cf847a0db6e80601c9a4
   SwiftRichString: d42eeaefceea340e27b8a33945e0fac1ee21f58f
