@@ -50,7 +50,7 @@
                                                     <segue destination="8PL-Ka-4f6" kind="embed" identifier="tableIdentifier" id="1Bh-um-Rmy"/>
                                                 </connections>
                                             </containerView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="xU3-6z-p94">
+                                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="xU3-6z-p94">
                                                 <rect key="frame" x="123" y="26" width="140" height="97"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="xU3-6z-p94" secondAttribute="height" multiplier="240:97" constant="-100" id="AvJ-D1-cAv"/>
@@ -142,7 +142,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.95022302865982056" green="0.75401997566223145" blue="0.035687629133462906" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="CellSidebarMenu" customModule="stalkr" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="CellSidebarMenu" customModule="stalkr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="66" width="386" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UW4-Tw-7UH" id="9Fg-35-gqH">
@@ -175,6 +175,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="764" height="529"/>
+        <image name="logo" width="3333" height="2500"/>
     </resources>
 </document>
