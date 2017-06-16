@@ -13,7 +13,7 @@ enum SidebarOptions: String, CustomStringConvertible {
     case newDasboard = "New Dasboard"
     case myAccount = "My Account"
     
-    static let allValues = [dashboard, newDasboard/*, myAccount*/]
+    static let allValues = [dashboard, newDasboard, myAccount]
     
     var description: String {
         return self.rawValue.uppercased()

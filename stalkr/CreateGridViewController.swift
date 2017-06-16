@@ -58,7 +58,7 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
         }
         // todo: need be flexible, for when a new cell is added we don't need update this code
         let configCellTravis: [String: String] = inputValues["Travis"]!
-        //let configCellTeamCommits: [String: String] = inputValues["Team Commits"]!
+        let configCellTeamCommits: [String: String] = inputValues["Team Commits"]!
         let configCellCommitsFeed: [String:String] = inputValues["Commits Feed"]!
         let configCellCloudPerformance: [String:String] = inputValues["Cloud Performances"]!
         
@@ -71,13 +71,13 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
                     "\"cell\": \"CellTrevis\"," +
                     "\"params\": {" +
                         "\"pusher_key\": \"\(configCellTravis["pusher_key"]!)\"," +
-                        "\"stalkr_project\": \"\(configCellTravis["stalkr_project"]!)\"," +
-                        "\"stalkr_team\": \"\(configCellTravis["stalkr_team"]!)\"" +
+                        "\"owner\": \"\(configCellTravis["owner"]!)\"," +
+                        "\"project\": \"\(configCellTravis["project"]!)\"" +
                     "}" +
                 "}"
         }
 
-        /*var cellTeamCommits: String? = nil
+        var cellTeamCommits: String? = nil
         if configCellTeamCommits.count == 3 {
             cellTeamCommits = "" +
                 "{" +
@@ -88,7 +88,7 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
                         "\"project\": \"\(configCellTeamCommits["project"]!)\"" +
                     "}" +
                 "}"
-        }*/
+        }
         
         var cellCommitsFeed: String? = nil
         if configCellCommitsFeed.count == 3 {
@@ -97,8 +97,8 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
                     "\"cell\": \"CellCommitsFeed\"," +
                     "\"params\": {" +
                         "\"pusher_key\": \"\(configCellCommitsFeed["pusher_key"]!)\"," +
-                        "\"stalkr_project\": \"\(configCellCommitsFeed["stalkr_project"]!)\"," +
-                        "\"stalkr_team\": \"\(configCellCommitsFeed["stalkr_team"]!)\"" +
+                        "\"owner\": \"\(configCellCommitsFeed["owner"]!)\"," +
+                        "\"project\": \"\(configCellCommitsFeed["project"]!)\"" +
                     "}" +
                 "}"
         }
