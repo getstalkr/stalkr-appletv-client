@@ -1,5 +1,5 @@
 //
-//  SegmentedViewController.swift
+//  SideMenuBasedController.swift
 //  stalkr
 //
 //  Created by Edvaldo Junior on 14/02/17.
@@ -11,7 +11,7 @@ import PromiseKit
 import FocusGuideHelper
 
 
-class MainViewController: UIViewController {
+class SideMenuBasedController: UIViewController {
     
     @IBOutlet weak var sidebarView: UIView!
     @IBOutlet weak var labelTitle: UILabel!
@@ -67,7 +67,7 @@ class MainViewController: UIViewController {
 }
 
 //MARK: SidebarProtocol
-extension MainViewController: SidebarProtocol {
+extension SideMenuBasedController: SidebarProtocol {
     
     func focusedCell(withOption option: SidebarOptions) {
         

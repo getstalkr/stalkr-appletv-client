@@ -29,7 +29,7 @@
 		896BF3021EF031F3003AED46 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896BF3011EF031F3003AED46 /* Account.storyboard */; };
 		89A6663F1E5DB9C0007F8A7A /* CellTeamCommitsZoom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A6663E1E5DB9C0007F8A7A /* CellTeamCommitsZoom.xib */; };
 		89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B337F21E48BB9F00610EA3 /* AppDelegate.swift */; };
-		89B337F81E48BB9F00610EA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B337F61E48BB9F00610EA3 /* Main.storyboard */; };
+		89B337F81E48BB9F00610EA3 /* SideMenuBased.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B337F61E48BB9F00610EA3 /* SideMenuBased.storyboard */; };
 		89B337FA1E48BB9F00610EA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89B337F91E48BB9F00610EA3 /* Assets.xcassets */; };
 		89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338011E48C08400610EA3 /* SlotableCell.swift */; };
 		89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338181E49F7A400610EA3 /* StalkrExtensions.swift */; };
@@ -47,7 +47,7 @@
 		CE3DC3121E54807D008F88EE /* SidebarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DC3111E54807D008F88EE /* SidebarController.swift */; };
 		CE52C5371E60ED5100FC6C40 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */; };
 		CE52C5391E61059300FC6C40 /* SidebarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */; };
-		CE85B3CE1E5349D900DA7287 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85B3CD1E5349D900DA7287 /* MainViewController.swift */; };
+		CE85B3CE1E5349D900DA7287 /* SideMenuBasedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85B3CD1E5349D900DA7287 /* SideMenuBasedController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,7 +75,7 @@
 		89A6663E1E5DB9C0007F8A7A /* CellTeamCommitsZoom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTeamCommitsZoom.xib; sourceTree = "<group>"; };
 		89B337EF1E48BB9F00610EA3 /* stalkr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stalkr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B337F21E48BB9F00610EA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		89B337F71E48BB9F00610EA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		89B337F71E48BB9F00610EA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SideMenuBased.storyboard; sourceTree = "<group>"; };
 		89B337F91E48BB9F00610EA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89B337FB1E48BB9F00610EA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89B338011E48C08400610EA3 /* SlotableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotableCell.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		CE3DC3111E54807D008F88EE /* SidebarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarController.swift; sourceTree = "<group>"; };
 		CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarProtocol.swift; sourceTree = "<group>"; };
-		CE85B3CD1E5349D900DA7287 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CE85B3CD1E5349D900DA7287 /* SideMenuBasedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuBasedController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,11 +206,11 @@
 			isa = PBXGroup;
 			children = (
 				89B337F21E48BB9F00610EA3 /* AppDelegate.swift */,
-				CE85B3CD1E5349D900DA7287 /* MainViewController.swift */,
+				CE85B3CD1E5349D900DA7287 /* SideMenuBasedController.swift */,
 				CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */,
 				CE3DC3111E54807D008F88EE /* SidebarController.swift */,
 				CE2E76401E5C737C00D5EC5C /* CellSidebarMenu.swift */,
-				89B337F61E48BB9F00610EA3 /* Main.storyboard */,
+				89B337F61E48BB9F00610EA3 /* SideMenuBased.storyboard */,
 				892E1DD31EEECABD0098A0FC /* ProjectsView.storyboard */,
 				892E1DD51EEFFD620098A0FC /* CreateProject.storyboard */,
 				896BF3011EF031F3003AED46 /* Account.storyboard */,
@@ -356,7 +356,7 @@
 				892E73DD1E589378007483E1 /* CellCommitsFeed.xib in Resources */,
 				896BF3021EF031F3003AED46 /* Account.storyboard in Resources */,
 				892E1DD41EEECABD0098A0FC /* ProjectsView.storyboard in Resources */,
-				89B337F81E48BB9F00610EA3 /* Main.storyboard in Resources */,
+				89B337F81E48BB9F00610EA3 /* SideMenuBased.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,7 +440,7 @@
 				8917E4AD1E6925FF001BD42A /* CommitRegister.swift in Sources */,
 				89D598B51E718C4900B27927 /* UserSession.swift in Sources */,
 				892E73DE1E589378007483E1 /* CellCommitsFeedTableCell.swift in Sources */,
-				CE85B3CE1E5349D900DA7287 /* MainViewController.swift in Sources */,
+				CE85B3CE1E5349D900DA7287 /* SideMenuBasedController.swift in Sources */,
 				89D598B71E718E2D00B27927 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,12 +448,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		89B337F61E48BB9F00610EA3 /* Main.storyboard */ = {
+		89B337F61E48BB9F00610EA3 /* SideMenuBased.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				89B337F71E48BB9F00610EA3 /* Base */,
 			);
-			name = Main.storyboard;
+			name = SideMenuBased.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

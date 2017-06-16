@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Side Menu Based Controller-->
         <scene sceneID="jWs-BP-Tgm">
             <objects>
-                <viewController id="5fm-2u-0sW" customClass="MainViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5fm-2u-0sW" customClass="SideMenuBasedController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cAd-o9-2di"/>
                         <viewControllerLayoutGuide type="bottom" id="2OB-s8-wgB"/>
@@ -142,7 +142,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.95022302865982056" green="0.75401997566223145" blue="0.035687629133462906" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="CellSidebarMenu" customModule="stalkr" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="CellSidebarMenu" customModule="stalkr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="66" width="386" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UW4-Tw-7UH" id="9Fg-35-gqH">
