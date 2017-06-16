@@ -118,22 +118,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		890E0C831E72485C0083C76E /* AccountView */ = {
-			isa = PBXGroup;
-			children = (
-				890E0C841E7248990083C76E /* AccountViewController.swift */,
-			);
-			name = AccountView;
-			sourceTree = "<group>";
-		};
-		892DECE21E5FD6B400676056 /* CreateGrid */ = {
-			isa = PBXGroup;
-			children = (
-				89C7784B1E6EEB86008926E7 /* CreateGridViewController.swift */,
-			);
-			name = CreateGrid;
-			sourceTree = "<group>";
-		};
 		892E73E01E589380007483E1 /* CellCommitsFeed */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,15 +159,6 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
-		897182921E6B6B1A0080D4DA /* ProjectsView */ = {
-			isa = PBXGroup;
-			children = (
-				CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */,
-				893E5B671EB4495B00255CA9 /* EmbededGridController.swift */,
-			);
-			name = ProjectsView;
-			sourceTree = "<group>";
-		};
 		89B337E61E48BB9F00610EA3 = {
 			isa = PBXGroup;
 			children = (
@@ -206,22 +181,12 @@
 			isa = PBXGroup;
 			children = (
 				89B337F21E48BB9F00610EA3 /* AppDelegate.swift */,
-				CE85B3CD1E5349D900DA7287 /* SideMenuBasedController.swift */,
-				CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */,
-				CE3DC3111E54807D008F88EE /* SidebarController.swift */,
-				CE2E76401E5C737C00D5EC5C /* CellSidebarMenu.swift */,
-				89B337F61E48BB9F00610EA3 /* SideMenuBased.storyboard */,
-				892E1DD31EEECABD0098A0FC /* ProjectsView.storyboard */,
-				892E1DD51EEFFD620098A0FC /* CreateProject.storyboard */,
-				896BF3011EF031F3003AED46 /* Account.storyboard */,
 				89B337F91E48BB9F00610EA3 /* Assets.xcassets */,
 				89B337FB1E48BB9F00610EA3 /* Info.plist */,
 				89D598B41E718C4900B27927 /* UserSession.swift */,
 				891F50C51E8DF4E70085A060 /* LoadingView.swift */,
+				89C36AD41EF400E000E5342C /* Views */,
 				89D598B81E718E3D00B27927 /* Project */,
-				897182921E6B6B1A0080D4DA /* ProjectsView */,
-				892DECE21E5FD6B400676056 /* CreateGrid */,
-				890E0C831E72485C0083C76E /* AccountView */,
 				89B338031E48C0B700610EA3 /* SlotableCell */,
 				8961C98B1E761E1E00D84B5C /* Utils */,
 			);
@@ -241,6 +206,57 @@
 				89C467531E596230003CF8F2 /* CellDeployStatus */,
 			);
 			name = SlotableCell;
+			sourceTree = "<group>";
+		};
+		89C36AD41EF400E000E5342C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				89C36AD51EF400E600E5342C /* SideMenuBased */,
+				89C36AD61EF4010600E5342C /* Projects */,
+				89C36AD71EF4014100E5342C /* CreateProject */,
+				89C36AD81EF4017300E5342C /* Account */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		89C36AD51EF400E600E5342C /* SideMenuBased */ = {
+			isa = PBXGroup;
+			children = (
+				89B337F61E48BB9F00610EA3 /* SideMenuBased.storyboard */,
+				CE85B3CD1E5349D900DA7287 /* SideMenuBasedController.swift */,
+				CE52C5381E61059300FC6C40 /* SidebarProtocol.swift */,
+				CE3DC3111E54807D008F88EE /* SidebarController.swift */,
+				CE2E76401E5C737C00D5EC5C /* CellSidebarMenu.swift */,
+			);
+			name = SideMenuBased;
+			sourceTree = "<group>";
+		};
+		89C36AD61EF4010600E5342C /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				892E1DD31EEECABD0098A0FC /* ProjectsView.storyboard */,
+				CE52C5361E60ED5100FC6C40 /* ProjectsViewController.swift */,
+				893E5B671EB4495B00255CA9 /* EmbededGridController.swift */,
+			);
+			name = Projects;
+			sourceTree = "<group>";
+		};
+		89C36AD71EF4014100E5342C /* CreateProject */ = {
+			isa = PBXGroup;
+			children = (
+				892E1DD51EEFFD620098A0FC /* CreateProject.storyboard */,
+				89C7784B1E6EEB86008926E7 /* CreateGridViewController.swift */,
+			);
+			name = CreateProject;
+			sourceTree = "<group>";
+		};
+		89C36AD81EF4017300E5342C /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				896BF3011EF031F3003AED46 /* Account.storyboard */,
+				890E0C841E7248990083C76E /* AccountViewController.swift */,
+			);
+			name = Account;
 			sourceTree = "<group>";
 		};
 		89C467531E596230003CF8F2 /* CellDeployStatus */ = {
