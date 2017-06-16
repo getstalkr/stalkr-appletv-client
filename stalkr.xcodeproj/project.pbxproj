@@ -33,6 +33,7 @@
 		89B337FA1E48BB9F00610EA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89B337F91E48BB9F00610EA3 /* Assets.xcassets */; };
 		89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338011E48C08400610EA3 /* SlotableCell.swift */; };
 		89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338181E49F7A400610EA3 /* StalkrExtensions.swift */; };
+		89C36ADB1EF4035000E5342C /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C36ADA1EF4035000E5342C /* Authentication.storyboard */; };
 		89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C467541E596250003CF8F2 /* CellDeployStatus.swift */; };
 		89C467571E596258003CF8F2 /* CellDeployStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C467561E596258003CF8F2 /* CellDeployStatus.xib */; };
 		89C7784C1E6EEB86008926E7 /* CreateGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C7784B1E6EEB86008926E7 /* CreateGridViewController.swift */; };
@@ -80,6 +81,7 @@
 		89B337FB1E48BB9F00610EA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89B338011E48C08400610EA3 /* SlotableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotableCell.swift; sourceTree = "<group>"; };
 		89B338181E49F7A400610EA3 /* StalkrExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StalkrExtensions.swift; sourceTree = "<group>"; };
+		89C36ADA1EF4035000E5342C /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		89C467541E596250003CF8F2 /* CellDeployStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDeployStatus.swift; sourceTree = "<group>"; };
 		89C467561E596258003CF8F2 /* CellDeployStatus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellDeployStatus.xib; sourceTree = "<group>"; };
 		89C7784B1E6EEB86008926E7 /* CreateGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGridViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 		89C36AD41EF400E000E5342C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				89C36AD91EF402E100E5342C /* Authentication */,
 				89C36AD51EF400E600E5342C /* SideMenuBased */,
 				89C36AD61EF4010600E5342C /* Projects */,
 				89C36AD71EF4014100E5342C /* CreateProject */,
@@ -257,6 +260,14 @@
 				890E0C841E7248990083C76E /* AccountViewController.swift */,
 			);
 			name = Account;
+			sourceTree = "<group>";
+		};
+		89C36AD91EF402E100E5342C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				89C36ADA1EF4035000E5342C /* Authentication.storyboard */,
+			);
+			name = Authentication;
 			sourceTree = "<group>";
 		};
 		89C467531E596230003CF8F2 /* CellDeployStatus */ = {
@@ -368,6 +379,7 @@
 				89C994CB1E54820900DBADBA /* CellTrevisTableCell.xib in Resources */,
 				892E1DD61EEFFD630098A0FC /* CreateProject.storyboard in Resources */,
 				892E73EA1E58F56F007483E1 /* CellCloudPerformance.xib in Resources */,
+				89C36ADB1EF4035000E5342C /* Authentication.storyboard in Resources */,
 				892E73DF1E589378007483E1 /* CellCommitsFeedTableCell.xib in Resources */,
 				892E73DD1E589378007483E1 /* CellCommitsFeed.xib in Resources */,
 				896BF3021EF031F3003AED46 /* Account.storyboard in Resources */,
