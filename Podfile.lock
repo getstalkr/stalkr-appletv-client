@@ -45,6 +45,7 @@ PODS:
     - PromiseKit/CorePromise
   - PusherSwift (4.1.0)
   - RelativeFormatter (0.8.3)
+  - Starscream (2.0.4)
   - SwiftRichString (0.9.8)
   - SwiftyJSON (3.1.4)
   - TvLightSegments (0.1.0):
@@ -65,6 +66,7 @@ DEPENDENCIES:
   - PromiseKit/UIKit (~> 4.0)
   - PusherSwift
   - RelativeFormatter
+  - Starscream
   - SwiftRichString
   - SwiftyJSON (~> 3.1.4)
   - TvLightSegments (~> 0.1.0)
@@ -93,10 +95,11 @@ SPEC CHECKSUMS:
   PromiseKit: 00e8886881f151c7e573d06b437915b0bb2970ec
   PusherSwift: 13257260d77445f44ee26d7843e9311186b26e79
   RelativeFormatter: 13508ccd19bbab46ca95cf847a0db6e80601c9a4
+  Starscream: df5974ee928b157c8eda8af8de7c620276b7dfcc
   SwiftRichString: d42eeaefceea340e27b8a33945e0fac1ee21f58f
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TvLightSegments: a2f970ca56e0709cc10b86e5a3e457675755adb9
 
-PODFILE CHECKSUM: ef626f9304c01ceaec04573739fcf3ade8d111e6
+PODFILE CHECKSUM: a793d1350f0bcead73c3db4065882f8e67f7be09
 
 COCOAPODS: 1.2.1
