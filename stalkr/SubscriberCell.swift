@@ -9,7 +9,6 @@
 import Foundation
 import SwiftyJSON
 import PusherSwift
-import Alamofire
 import GridView
 
 // todo: we need uncouple Pusher in Stalkr
