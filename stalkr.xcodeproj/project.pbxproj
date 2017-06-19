@@ -34,6 +34,7 @@
 		89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338011E48C08400610EA3 /* SlotableCell.swift */; };
 		89B338191E49F7A400610EA3 /* StalkrExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B338181E49F7A400610EA3 /* StalkrExtensions.swift */; };
 		89C36ADB1EF4035000E5342C /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C36ADA1EF4035000E5342C /* Authentication.storyboard */; };
+		89C36ADD1EF40BBD00E5342C /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C36ADC1EF40BBD00E5342C /* AuthenticationViewController.swift */; };
 		89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C467541E596250003CF8F2 /* CellDeployStatus.swift */; };
 		89C467571E596258003CF8F2 /* CellDeployStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C467561E596258003CF8F2 /* CellDeployStatus.xib */; };
 		89C7784C1E6EEB86008926E7 /* CreateGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C7784B1E6EEB86008926E7 /* CreateGridViewController.swift */; };
@@ -82,6 +83,7 @@
 		89B338011E48C08400610EA3 /* SlotableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotableCell.swift; sourceTree = "<group>"; };
 		89B338181E49F7A400610EA3 /* StalkrExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StalkrExtensions.swift; sourceTree = "<group>"; };
 		89C36ADA1EF4035000E5342C /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		89C36ADC1EF40BBD00E5342C /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		89C467541E596250003CF8F2 /* CellDeployStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDeployStatus.swift; sourceTree = "<group>"; };
 		89C467561E596258003CF8F2 /* CellDeployStatus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellDeployStatus.xib; sourceTree = "<group>"; };
 		89C7784B1E6EEB86008926E7 /* CreateGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGridViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				89C36ADA1EF4035000E5342C /* Authentication.storyboard */,
+				89C36ADC1EF40BBD00E5342C /* AuthenticationViewController.swift */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */,
 				8917E4AD1E6925FF001BD42A /* CommitRegister.swift in Sources */,
 				89D598B51E718C4900B27927 /* UserSession.swift in Sources */,
+				89C36ADD1EF40BBD00E5342C /* AuthenticationViewController.swift in Sources */,
 				892E73DE1E589378007483E1 /* CellCommitsFeedTableCell.swift in Sources */,
 				CE85B3CE1E5349D900DA7287 /* SideMenuBasedController.swift in Sources */,
 				89D598B71E718E2D00B27927 /* Project.swift in Sources */,
