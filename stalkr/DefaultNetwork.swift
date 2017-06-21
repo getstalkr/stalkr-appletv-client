@@ -9,6 +9,8 @@
 import Foundation
 import PromiseKit
 
+// todo: see it https://stackoverflow.com/questions/38813906/swift-3-how-to-use-preprocessor-flags-like-if-debug-to-implement-api-keys
+
 // todo: where, we have a awful global variable: globalUserSession
 // maybe we can resolve it changing SessionContext to singleton... or maybe existis a better solution
 let globalUserSession = SessionContext()

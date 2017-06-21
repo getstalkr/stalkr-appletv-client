@@ -9,11 +9,6 @@
 import Foundation
 import PromiseKit
 
-struct Environment {
-    let name: String
-    let host: String
-}
-
 /**
  The dispatcher is responsible to execute a Request by calling the underlyning layer.
  As output for a Request it should provide a Response.

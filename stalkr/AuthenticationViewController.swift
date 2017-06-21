@@ -10,47 +10,72 @@ import UIKit
 import Starscream
 import SwiftyJSON
 
-class AuthenticationViewController: UIViewController, WebSocketDelegate {
+import PromiseKit
 
-    var socket = WebSocket(url: URL(string: "ws://127.0.0.1:13254/")!)
+class AuthenticationViewController: UIViewController, LoginWebSocketDelegate {
+
+    let environment = Environment(name: "local", host: "ws://127.0.0.1:13254")
+    var loginSocket: LoginWebSocket?
     @IBOutlet weak var labelLoginKey: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        socket.headers["client-type"] = "tvOS" // todo: check if it's works
-        socket.delegate = self
+        /*globalUserSession.changeStateToLogged(userId: 1, userToken: "abc123")
+      
+        firstly {
+            GetUsernameTask().execute()
+        }.then { r -> Void in
+            print(r)
+        }.catch { error in
+            print("erro: \(error.localizedDescription)")
+        }*/
         
-        socket.connect()
+        /*firstly {
+            LoginTask(user: "macabeus", password: "1245325345334").execute()
+        }.then { r -> Void in
+            print("meu usuario: \(r)")
+        }.catch { error in
+            
+            if let error = error as? LoginTaskErros {
+                switch error {
+                case .incorrectCredentials:
+                    print("credenciais incorretas")
+                }
+            
+            } else {
+                print("erro: \(error.localizedDescription)")
+            }
+        }*/
+        
+        loginSocket = LoginWebSocket(environment: environment)!
+        loginSocket!.delegate = self
+        loginSocket!.socket.connect()
     }
     
-    func websocketDidConnect(socket: WebSocket) {
+    func didConnect(socket: WebSocket) {
         labelLoginKey.text = "getting key..."
     }
     
-    func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
-        labelLoginKey.text = "Error!! Websocket is disconnected!"
-        print("Login's websocket is disconnected: \(error?.localizedDescription ?? "nil")")
+    func didDisconnect(socket: WebSocket, error: NSError?) {
+        labelLoginKey.text = "ERROR: Websocket is disconnected!"
+        print("WARNING: Login's websocket is disconnected: \(error?.localizedDescription ?? "nil")")
     }
     
-    func websocketDidReceiveMessage(socket: WebSocket, text: String) {
+    func loginNewMessage(socket: WebSocket, event: LoginWebSocketEvents) {
         
-        let json = JSON(parseJSON: text)
-        let messageType = json["type"].stringValue
-        let messageData = json["data"].dictionaryValue
-        
-        if messageType == "login_key" {
-            labelLoginKey.text = messageData["key_value"]!.stringValue
-            
-        } else if messageType == "login_success" {
+        switch event {
+        case .newKey(let key):
+            labelLoginKey.text = key
+        case .authenticationSuccess:
             labelLoginKey.text = "logado! :3"
-            
+        case .authenticationFail:
+            labelLoginKey.text = "fail =["
         }
     }
     
-    func websocketDidReceiveData(socket: WebSocket, data: Data) {
-        // todo: it's never called!
-        print("got some data: \(data.count)")
+    func unexpectedMessage(socket: WebSocket, unexpectedMessage: WebSocketUnexpectedMessage) {
+        print("WARNING: Unexpected message received in socket!")
     }
 
 }
