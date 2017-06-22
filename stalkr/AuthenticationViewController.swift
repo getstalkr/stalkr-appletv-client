@@ -15,7 +15,7 @@ import PromiseKit
 class AuthenticationViewController: UIViewController, LoginWebSocketDelegate {
 
     let environment = Environment(name: "local", host: "ws://127.0.0.1:13254")
-    var loginSocket: LoginWebSocket?
+    var loginSocket: LoginWebSocketParse<AuthenticationViewController>?
     @IBOutlet weak var labelLoginKey: UILabel!
     
     override func viewDidLoad() {
@@ -48,9 +48,9 @@ class AuthenticationViewController: UIViewController, LoginWebSocketDelegate {
             }
         }*/
         
-        loginSocket = LoginWebSocket(environment: environment)!
+        loginSocket = LoginWebSocketParse<AuthenticationViewController>(environment: environment)
         loginSocket!.delegate = self
-        loginSocket!.socket.connect()
+        loginSocket!.socket?.connect()
     }
     
     func didConnect(socket: WebSocket) {
@@ -62,7 +62,7 @@ class AuthenticationViewController: UIViewController, LoginWebSocketDelegate {
         print("WARNING: Login's websocket is disconnected: \(error?.localizedDescription ?? "nil")")
     }
     
-    func loginNewMessage(socket: WebSocket, event: LoginWebSocketEvents) {
+    func newMessage(socket: WebSocket, event: LoginWebSocketEvents) {
         
         switch event {
         case .newKey(let key):

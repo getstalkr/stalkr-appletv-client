@@ -13,7 +13,7 @@ import Starscream
 /**
  Protocol for that each websocket service need to subscriber
  */
-protocol WebSocketProtocol {
+protocol WebSocketProtocol: WebSocketDelegate {
     associatedtype MyDelegate
     
     /// Relative path of the endpoint we want to call (ie. /users/login)
@@ -23,30 +23,21 @@ protocol WebSocketProtocol {
     var headers: [String: String] { get }
     
     //
-    var socket: WebSocket { get }
+    var socket: WebSocket? { get set }
     
     //
     var delegate: MyDelegate? { get set }
     
     //
+    func didReceiveMessage(_ response: ResponseText)
+    
+    //
+    init()
+    
     init?(environment: Environment)
 }
 
 struct ResponseText {
     let type: String
     let data: [String: JSON]?
-}
-
-extension WebSocketProtocol {
-    /**
-     First parse of one message received
-     */
-    func messageTextResponse(_ text: String) -> ResponseText {
-        
-        let json = JSON(parseJSON: text)
-        let messageType = json["type"].stringValue
-        let messageData = json["data"].dictionary
-        
-        return ResponseText(type: messageType, data: messageData)
-    }
 }
