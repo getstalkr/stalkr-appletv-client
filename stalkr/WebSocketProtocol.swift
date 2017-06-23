@@ -23,7 +23,7 @@ protocol WebSocketProtocol: WebSocketDelegate {
     var headers: [String: String] { get }
     
     //
-    var socket: WebSocket? { get set }
+    var socket: WebSocket! { get set }
     
     //
     var delegate: MyDelegate? { get set }

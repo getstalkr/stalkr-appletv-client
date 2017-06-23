@@ -50,7 +50,7 @@ class AuthenticationViewController: UIViewController, LoginWebSocketDelegate {
         
         loginSocket = LoginWebSocketParse<AuthenticationViewController>(environment: environment)
         loginSocket!.delegate = self
-        loginSocket!.socket?.connect()
+        loginSocket!.socket.connect()
     }
     
     func didConnect(socket: WebSocket) {

@@ -12,7 +12,7 @@ import Starscream
 
 extension WebSocketProtocol {
     
-    init?(environment: Environment) {
+    init?(environment: Environmentg) {
         self.init()
         
         guard let url = URL(string: "\(environment.host)/\(path)") else {
@@ -20,7 +20,7 @@ extension WebSocketProtocol {
         }
         
         socket = WebSocket(url: url)
-        socket!.delegate = self
+        socket.delegate = self
     }
     
     func websocketDidConnect(socket: WebSocket) {
