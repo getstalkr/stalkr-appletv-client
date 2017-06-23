@@ -34,17 +34,22 @@ extension WebSocketChannel {
     /**
      First parse of one message received
      */
-    func messageTextResponse(_ text: String) -> ResponseText {
+    func messageTextResponse(_ text: String) -> ResponseText? {
         
         let json = JSON(parseJSON: text)
-        let messageType = json["type"].stringValue
+        guard let messageType = json["type"].string else {
+            return nil
+        }
         let messageData = json["data"].dictionary
         
         return ResponseText(type: messageType, data: messageData)
     }
     
     func websocketDidReceiveMessage(socket: WebSocket, text: String) {
-        let response = messageTextResponse(text)
+        guard let response = messageTextResponse(text) else {
+            delegate?.unexpectedMessage(socket: socket, unexpectedMessage: .textMalformed(text))
+            return
+        }
         
         self.didReceiveMessage(response)
     }

@@ -14,11 +14,14 @@ import Starscream
  Enum used when receive a unexpected message by websocket
  */
 enum WebSocketUnexpectedMessage {
-    /// If this unexpected message is text
-    case response(_: ResponseText)
+    /// If this message is text and malformed
+    case textMalformed(_: String)
+
+    /// If this message is text with unknow type
+    case typeUnknow(_: ResponseText)
     
     /// If this unexpected message is binnary
-    case data(_: Data)
+    case unexpectedBinnary(_: Data)
 }
 
 /**

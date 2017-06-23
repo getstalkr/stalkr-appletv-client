@@ -46,12 +46,12 @@ final class LoginWebSocketChannel<D: LoginWebSocketDelegate>: WebSocketChannel {
             
         default:
             // we don't expect that will receive a response type different from above
-            delegate?.unexpectedMessage(socket: socket, unexpectedMessage: .response(response))
+            delegate?.unexpectedMessage(socket: socket, unexpectedMessage: .typeUnknow(response))
         }
     }
     
     func websocketDidReceiveData(socket: WebSocket, data: Data) {
         // we don't expect that will receive a binnary data in this channel
-        delegate?.unexpectedMessage(socket: socket, unexpectedMessage: .data(data))
+        delegate?.unexpectedMessage(socket: socket, unexpectedMessage: .unexpectedBinnary(data))
     }
 }
