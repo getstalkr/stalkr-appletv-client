@@ -13,8 +13,7 @@ import SwiftyJSON
 import PromiseKit
 
 class AuthenticationViewController: UIViewController, LoginWebSocketDelegate {
-
-    let environment = Environment(name: "local", host: "ws://127.0.0.1:13254")
+    
     var loginChannel: LoginWebSocketChannel<AuthenticationViewController>?
     @IBOutlet weak var labelLoginKey: UILabel!
     
@@ -48,7 +47,7 @@ class AuthenticationViewController: UIViewController, LoginWebSocketDelegate {
             }
         }*/
         
-        loginChannel = LoginWebSocketChannel<AuthenticationViewController>(environment: environment)
+        loginChannel = LoginWebSocketChannel<AuthenticationViewController>()
         loginChannel!.delegate = self
         loginChannel!.socket.connect()
     }
