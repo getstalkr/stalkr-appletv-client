@@ -16,11 +16,16 @@ enum WebSocketUnexpectedMessage {
 }
 
 protocol BaseWebSocketDelegate: class {
+    associatedtype EventEnum
+    
     /// Called when the socket is connected
     func didConnect(socket: WebSocket)
     
     /// Called when the socket is disconnect
     func didDisconnect(socket: WebSocket, error: NSError?)
+    
+    ///
+    func newMessage(socket: WebSocket, event: EventEnum)
     
     /// Called when one unexpected message is received
     func unexpectedMessage(socket: WebSocket, unexpectedMessage: WebSocketUnexpectedMessage)
