@@ -10,12 +10,11 @@ import Foundation
 import SwiftyJSON
 import Starscream
 
-extension WebSocketProtocol where MyDelegate: BaseWebSocketDelegate {
+extension WebSocketProtocol {
     
     init?(environment: Environment) {
         self.init()
         
-        // todo: when we migrate to Swift4, move this code of init to one extension
         guard let url = URL(string: "\(environment.host)/\(path)") else {
             return nil
         }

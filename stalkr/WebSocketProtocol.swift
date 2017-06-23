@@ -14,7 +14,7 @@ import Starscream
  Protocol for that each websocket service need to subscriber
  */
 protocol WebSocketProtocol: WebSocketDelegate {
-    associatedtype MyDelegate
+    associatedtype MyDelegate: BaseWebSocketDelegate
     
     /// Relative path of the endpoint we want to call (ie. /users/login)
     var path: String { get }
