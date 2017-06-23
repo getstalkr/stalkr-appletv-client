@@ -12,7 +12,7 @@ import Starscream
 
 extension WebSocketProtocol {
     
-    init?(environment: Environmentg) {
+    init?(environment: Environment) {
         self.init()
         
         guard let url = URL(string: "\(environment.host)/\(path)") else {
