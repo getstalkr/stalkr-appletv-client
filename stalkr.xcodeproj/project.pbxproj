@@ -29,7 +29,7 @@
 		8960D21C1EF8C8D4008E1D7C /* GetUsernameTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8960D21B1EF8C8D4008E1D7C /* GetUsernameTask.swift */; };
 		8960D2211EF9429B008E1D7C /* SessionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8960D2201EF9429B008E1D7C /* SessionContext.swift */; };
 		8960D2241EFA0C05008E1D7C /* WebSocketProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8960D2231EFA0C05008E1D7C /* WebSocketProtocol.swift */; };
-		8960D2261EFA0D60008E1D7C /* LoginWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8960D2251EFA0D60008E1D7C /* LoginWebSocket.swift */; };
+		8960D2261EFA0D60008E1D7C /* LoginChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8960D2251EFA0D60008E1D7C /* LoginChannels.swift */; };
 		8961C98D1E761E4900D84B5C /* ListClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8961C98C1E761E4900D84B5C /* ListClasses.swift */; };
 		896BF3021EF031F3003AED46 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896BF3011EF031F3003AED46 /* Account.storyboard */; };
 		89A6663F1E5DB9C0007F8A7A /* CellTeamCommitsZoom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A6663E1E5DB9C0007F8A7A /* CellTeamCommitsZoom.xib */; };
@@ -58,7 +58,7 @@
 		89D598B71E718E2D00B27927 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D598B61E718E2D00B27927 /* Project.swift */; };
 		89DEFD6D1EFA94BB0086F78B /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DEFD6C1EFA94BB0086F78B /* Environment.swift */; };
 		89DEFD6F1EFAB47B0086F78B /* BaseWebSocketDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DEFD6E1EFAB47B0086F78B /* BaseWebSocketDelegate.swift */; };
-		89DEFD731EFB6E790086F78B /* WebSocketExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DEFD721EFB6E790086F78B /* WebSocketExtension.swift */; };
+		89DEFD731EFB6E790086F78B /* WebSocketChannelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DEFD721EFB6E790086F78B /* WebSocketChannelExtension.swift */; };
 		91895BF7AD0056EDD4A683AD /* Pods_stalkr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2584928AB2DB6CF074F0769D /* Pods_stalkr.framework */; };
 		CE2E76411E5C737C00D5EC5C /* CellSidebarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E76401E5C737C00D5EC5C /* CellSidebarMenu.swift */; };
 		CE3DC3121E54807D008F88EE /* SidebarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DC3111E54807D008F88EE /* SidebarController.swift */; };
@@ -91,7 +91,7 @@
 		8960D21B1EF8C8D4008E1D7C /* GetUsernameTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsernameTask.swift; sourceTree = "<group>"; };
 		8960D2201EF9429B008E1D7C /* SessionContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionContext.swift; sourceTree = "<group>"; };
 		8960D2231EFA0C05008E1D7C /* WebSocketProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketProtocol.swift; sourceTree = "<group>"; };
-		8960D2251EFA0D60008E1D7C /* LoginWebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWebSocket.swift; sourceTree = "<group>"; };
+		8960D2251EFA0D60008E1D7C /* LoginChannels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginChannels.swift; sourceTree = "<group>"; };
 		8961C98C1E761E4900D84B5C /* ListClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListClasses.swift; sourceTree = "<group>"; };
 		896BF3011EF031F3003AED46 /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		89A6663E1E5DB9C0007F8A7A /* CellTeamCommitsZoom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTeamCommitsZoom.xib; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		89D598B61E718E2D00B27927 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		89DEFD6C1EFA94BB0086F78B /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		89DEFD6E1EFAB47B0086F78B /* BaseWebSocketDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebSocketDelegate.swift; sourceTree = "<group>"; };
-		89DEFD721EFB6E790086F78B /* WebSocketExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketExtension.swift; sourceTree = "<group>"; };
+		89DEFD721EFB6E790086F78B /* WebSocketChannelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketChannelExtension.swift; sourceTree = "<group>"; };
 		8DA58B41991C641DBFD4F4DC /* Pods-stalkr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stalkr.release.xcconfig"; path = "Pods/Target Support Files/Pods-stalkr/Pods-stalkr.release.xcconfig"; sourceTree = "<group>"; };
 		9924C7B765C9FBEEE07466DA /* Pods-stalkr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stalkr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stalkr/Pods-stalkr.debug.xcconfig"; sourceTree = "<group>"; };
 		CE2E76401E5C737C00D5EC5C /* CellSidebarMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellSidebarMenu.swift; sourceTree = "<group>"; };
@@ -219,8 +219,8 @@
 			children = (
 				8960D2231EFA0C05008E1D7C /* WebSocketProtocol.swift */,
 				89DEFD6E1EFAB47B0086F78B /* BaseWebSocketDelegate.swift */,
-				89DEFD721EFB6E790086F78B /* WebSocketExtension.swift */,
-				8960D2251EFA0D60008E1D7C /* LoginWebSocket.swift */,
+				89DEFD721EFB6E790086F78B /* WebSocketChannelExtension.swift */,
+				89DEFD741EFD4EDB0086F78B /* WebSocketChannels */,
 			);
 			name = WebSocket;
 			sourceTree = "<group>";
@@ -411,6 +411,14 @@
 			name = Project;
 			sourceTree = "<group>";
 		};
+		89DEFD741EFD4EDB0086F78B /* WebSocketChannels */ = {
+			isa = PBXGroup;
+			children = (
+				8960D2251EFA0D60008E1D7C /* LoginChannels.swift */,
+			);
+			name = WebSocketChannels;
+			sourceTree = "<group>";
+		};
 		BE5274D6EDF17265D484357B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -565,8 +573,8 @@
 				CE52C5391E61059300FC6C40 /* SidebarProtocol.swift in Sources */,
 				89C994AB1E547C6E00DBADBA /* CellTrevis.swift in Sources */,
 				8961C98D1E761E4900D84B5C /* ListClasses.swift in Sources */,
-				8960D2261EFA0D60008E1D7C /* LoginWebSocket.swift in Sources */,
-				89DEFD731EFB6E790086F78B /* WebSocketExtension.swift in Sources */,
+				8960D2261EFA0D60008E1D7C /* LoginChannels.swift in Sources */,
+				89DEFD731EFB6E790086F78B /* WebSocketChannelExtension.swift in Sources */,
 				892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */,
 				89AE2A611EF8025F00CD2948 /* UserRequest.swift in Sources */,
 				891F50C61E8DF4E80085A060 /* LoadingView.swift in Sources */,

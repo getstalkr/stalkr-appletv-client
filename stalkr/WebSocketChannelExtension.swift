@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 import Starscream
 
-extension WebSocketProtocol {
+extension WebSocketChannel {
     
     init?(environment: Environment) {
         self.init()

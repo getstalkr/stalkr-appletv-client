@@ -10,6 +10,9 @@ import Foundation
 import SwiftyJSON
 import Starscream
 
+/**
+ Possibles events when receive a new message in login channel
+ */
 enum LoginWebSocketEvents {
     case newKey(_: String?)
     case authenticationSuccess
@@ -20,14 +23,14 @@ protocol LoginWebSocketDelegate: BaseWebSocketDelegate {
     func newMessage(socket: WebSocket, event: LoginWebSocketEvents)
 }
 
-final class LoginWebSocketParse<E: LoginWebSocketDelegate>: WebSocketProtocol {
+final class LoginWebSocketChannel<D: LoginWebSocketDelegate>: WebSocketChannel {
     
     let path = ""
     let headers = ["client-type": "tvOS"]
     var socket: WebSocket!
     
-    typealias MyDelegate = E
-    weak var delegate: E?
+    typealias ChannelDelegate = D
+    weak var delegate: D?
     
     func didReceiveMessage(_ response: ResponseText) {
         switch response.type {
@@ -48,6 +51,7 @@ final class LoginWebSocketParse<E: LoginWebSocketDelegate>: WebSocketProtocol {
     }
     
     func websocketDidReceiveData(socket: WebSocket, data: Data) {
+        // we don't expect that will receive a binnary data in this channel
         delegate?.unexpectedMessage(socket: socket, unexpectedMessage: .data(data))
     }
 }
