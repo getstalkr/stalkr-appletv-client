@@ -35,7 +35,7 @@ enum Response {
     case error(_: Int?, _: Error, _: Data?)
     
     //
-    init(_ response: (r: HTTPURLResponse?, data: Data?, error: Error?), for request: Request) {
+    init(_ response: (r: HTTPURLResponse?, data: Data?, error: Error?), for request: ServiceRequest) {
         // connections and internal erros of server
         if let error = response.error {
             self = .error(response.r?.statusCode, error, response.data)

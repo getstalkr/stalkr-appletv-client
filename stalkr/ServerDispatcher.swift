@@ -18,7 +18,7 @@ class ServerDispatcher: Dispatcher {
         self.environment = environment
     }
     
-    func execute(request: Request, with session: SessionContext) -> Promise<Response> {
+    func execute(request: ServiceRequest, with session: SessionContext) -> Promise<Response> {
         let requestUrl = prepareURLRequest(for: request)
         
         return Promise { fulfill, reject in
@@ -63,7 +63,7 @@ class ServerDispatcher: Dispatcher {
         }
     }
     
-    private func prepareURLRequest(for request: Request) -> URL {
+    private func prepareURLRequest(for request: ServiceRequest) -> URL {
         return URL(string: "\(self.environment.host)\(request.path)")!
     }
 }

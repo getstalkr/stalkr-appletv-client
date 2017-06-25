@@ -1,5 +1,5 @@
 //
-//  LoginTask.swift
+//  SendLoginToken.swift
 //  stalkr
 //
 //  Created by Bruno Macabeus Aquino on 19/06/17.
@@ -11,35 +11,33 @@ import SwiftyJSON
 import PromiseKit
 
 enum LoginTaskErros: Error {
-    case incorrectCredentials
+    case incorrectToken
 }
 
 class LoginTask: Task {
     
-    var username: String
-    var password: String
+    var loginToken: String
     
-    init(user: String, password: String) {
-        self.username = user
-        self.password = password
+    init(loginToken: String) {
+        self.loginToken = loginToken
     }
     
-    var request: Request {
-        return UserRequests.login(username: self.username, password: self.password)
+    var request: ServiceRequest {
+        return UserService.sendLoginToken(loginToken)
     }
     
-    func execute(in dispatcher: Dispatcher, with session: SessionContext) -> Promise<(username: String, password: String)> {
+    func execute(in dispatcher: Dispatcher, with session: SessionContext) -> Promise<(userId: Int, sessionToken: String)> {
         
         return self.execute(in: dispatcher, with: session) { response, fulfill, reject in
             switch response {
             
             case .json(let json):
-                let myUser = (username: json["username"].stringValue, password: json["password"].stringValue)
-                fulfill(myUser)
+                let response = (userId: json["user_id"].intValue, sessionToken: json["session_token"].stringValue)
+                fulfill(response)
                 
             case .error(let httpErrorCode, let error, _):
                 if httpErrorCode == 401 {
-                    reject(LoginTaskErros.incorrectCredentials)
+                    reject(LoginTaskErros.incorrectToken)
                 } else {
                     reject(error)
                 }

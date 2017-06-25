@@ -25,5 +25,5 @@ protocol Dispatcher {
     /// - Parameter request: request to execute
     /// - Parameter session: in whitch user session this request will be executed
     /// - Returns: promise
-    func execute(request: Request, with session: SessionContext) -> Promise<Response>
+    func execute(request: ServiceRequest, with session: SessionContext) -> Promise<Response>
 }

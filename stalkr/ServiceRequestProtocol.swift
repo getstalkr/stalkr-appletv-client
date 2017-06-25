@@ -19,7 +19,7 @@ enum ResponseType {
 /**
  Protocol for that each service request need to subscriber
  */
-protocol Request {
+protocol ServiceRequest {
     
     /// Relative path of the endpoint we want to call (ie. /users/login)
     var path: String { get }

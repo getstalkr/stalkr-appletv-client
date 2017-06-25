@@ -9,43 +9,34 @@
 import Foundation
 import Alamofire
 
-enum UserRequests: Request {
-    case login(username: String, password: String)
-    case getUsername()
+enum UserService: ServiceRequest {
+    case sendLoginToken(_: String)
     
     var path: String {
         switch self {
-        case .login(_, _):
-            return "/users/login"
-        case .getUsername():
-            return "/users/username"
+        case .sendLoginToken(_):
+            return "/users/sendLoginToken"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .login(_, _):
+        case .sendLoginToken(_):
             return .post
-        case .getUsername():
-            return .get
         }
     }
     
     var parameters: Parameters? {
         switch self {
-        case .login(let username, let password):
-            return ["username": username, "password": password]
-        case .getUsername():
-            return nil
+        case .sendLoginToken(let token):
+            return ["token": token]
         }
     }
     
     var needToken: Bool {
         switch self {
-        case .login(_, _):
+        case .sendLoginToken(_):
             return false
-        case .getUsername():
-            return true
         }
     }
     
@@ -58,9 +49,7 @@ enum UserRequests: Request {
     
     var dataType: ResponseType {
         switch self {
-        case .login(_, _):
-            return .json
-        case .getUsername():
+        case .sendLoginToken(_):
             return .json
         }
     }

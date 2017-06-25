@@ -13,7 +13,7 @@ protocol Task {
     associatedtype Output
     
     /// Request to execute
-    var request: Request { get }
+    var request: ServiceRequest { get }
     
     /// Execute request in passed dispatcher
     ///
