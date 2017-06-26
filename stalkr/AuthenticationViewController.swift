@@ -7,74 +7,51 @@
 //
 
 import UIKit
-import Starscream
 import SwiftyJSON
-
 import PromiseKit
 
-class AuthenticationViewController: UIViewController, LoginWebSocketDelegate {
+class AuthenticationViewController: UIViewController {
     
-    var loginChannel: LoginWebSocketChannel<AuthenticationViewController>?
-    @IBOutlet weak var labelLoginKey: UILabel!
+    @IBOutlet weak var textFieldLoginToken: UITextField!
+    @IBOutlet weak var labelLoginNetworkStatus: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        /*globalUserSession.changeStateToLogged(userId: 1, userToken: "abc123")
-      
-        firstly {
-            GetUsernameTask().execute()
-        }.then { r -> Void in
-            print(r)
-        }.catch { error in
-            print("erro: \(error.localizedDescription)")
-        }*/
-        
-        /*firstly {
-            LoginTask(user: "macabeus", password: "1245325345334").execute()
-        }.then { r -> Void in
-            print("meu usuario: \(r)")
-        }.catch { error in
-            
-            if let error = error as? LoginTaskErros {
-                switch error {
-                case .incorrectCredentials:
-                    print("credenciais incorretas")
-                }
-            
-            } else {
-                print("erro: \(error.localizedDescription)")
-            }
-        }*/
-        
-        loginChannel = LoginWebSocketChannel<AuthenticationViewController>()
-        loginChannel!.delegate = self
-        loginChannel!.socket.connect()
+    @IBAction func insertLoginToken(_ sender: Any) {
+        sendLogin(token: textFieldLoginToken.text!)
     }
     
-    func didConnect(socket: WebSocket) {
-        labelLoginKey.text = "getting key..."
-    }
-    
-    func didDisconnect(socket: WebSocket, error: NSError?) {
-        labelLoginKey.text = "ERROR: Websocket is disconnected!"
-        print("WARNING: Login's websocket is disconnected: \(error?.localizedDescription ?? "nil")")
-    }
-    
-    func newMessage(socket: WebSocket, event: LoginWebSocketEvents) {
+    enum loginNetworkStatus: String {
+        case sendingToken = "Sending token..."
+        case success = "Success"
+        case failIncorrectToken = "Fail! Token incorrect."
+        case failUnknowError = "Fail! Unknow error."
         
-        switch event {
-        case .newKey(let key):
-            labelLoginKey.text = key
-        case .authenticationSuccess:
-            labelLoginKey.text = "logado! :3"
-        case .authenticationFail:
-            labelLoginKey.text = "fail =["
+        func updateStatusLabel(_ authViewController: AuthenticationViewController) {
+            authViewController.labelLoginNetworkStatus.text = self.rawValue
         }
     }
     
-    func unexpectedMessage(socket: WebSocket, unexpectedMessage: WebSocketUnexpectedMessage) {
-        print("WARNING: Unexpected message received in socket!")
+    func sendLogin(token: String) {
+        
+        loginNetworkStatus.sendingToken.updateStatusLabel(self)
+        
+        firstly {
+            LoginTask(loginToken: token).execute()
+        }.then { r -> Void in
+            globalUserSession.changeStateToLogged(userId: r.userId, userToken: r.sessionToken)
+            loginNetworkStatus.success.updateStatusLabel(self)
+        }.catch { error in
+                
+            if let error = error as? LoginTaskErros {
+                switch error {
+                case .incorrectToken:
+                    loginNetworkStatus.failIncorrectToken.updateStatusLabel(self)
+                }
+                    
+            } else {
+                loginNetworkStatus.failUnknowError.updateStatusLabel(self)
+            }
+            
+            print("LOGIN ERROR: \(error.localizedDescription)")
+        }
     }
-
 }
