@@ -16,7 +16,7 @@ import PromiseKit
 fileprivate let environmentWebSocket = Environment(name: "local", host: "ws://127.0.0.1:13254")
 
 let globalUserSession = SessionContext()
-fileprivate let environment = Environment(name: "local", host: "http://0.0.0.0:5000")
+fileprivate let environment = Environment(name: "local", host: "http://127.0.0.1:8080")
 fileprivate let serverDispatcher = ServerDispatcher(environment: environment)
 
 extension Task {
