@@ -10,46 +10,46 @@ import Foundation
 import Alamofire
 
 enum UserService: ServiceRequest {
-    case sendLoginToken(_: String)
+    case userShortTokenLogin(_: String)
     
     var path: String {
         switch self {
-        case .sendLoginToken(_):
-            return "/users/sendLoginToken"
+        case .userShortTokenLogin(_):
+            return "/user/shorttoken/login"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .sendLoginToken(_):
+        case .userShortTokenLogin(_):
             return .post
         }
     }
     
     var parameters: Parameters? {
         switch self {
-        case .sendLoginToken(let token):
-            return ["token": token]
+        case .userShortTokenLogin(_):
+            return nil
         }
     }
     
     var needToken: Bool {
         switch self {
-        case .sendLoginToken(_):
+        case .userShortTokenLogin(_):
             return false
         }
     }
     
     var headers: HTTPHeaders? {
         switch self {
-        default:
-            return nil
+        case .userShortTokenLogin(let token):
+            return ["secret": token]
         }
     }
     
     var dataType: ResponseType {
         switch self {
-        case .sendLoginToken(_):
+        case .userShortTokenLogin(_):
             return .json
         }
     }

@@ -23,7 +23,7 @@ class LoginTask: Task {
     }
     
     var request: ServiceRequest {
-        return UserService.sendLoginToken(loginToken)
+        return UserService.userShortTokenLogin(loginToken)
     }
     
     func execute(in dispatcher: Dispatcher, with session: SessionContext) -> Promise<(userId: Int, sessionToken: String)> {
@@ -32,11 +32,11 @@ class LoginTask: Task {
             switch response {
             
             case .json(let json):
-                let response = (userId: json["user_id"].intValue, sessionToken: json["session_token"].stringValue)
+                let response = (userId: json["user_id"].intValue, sessionToken: json["token"].stringValue)
                 fulfill(response)
                 
             case .error(let httpErrorCode, let error, _):
-                if httpErrorCode == 401 {
+                if httpErrorCode == 500 {
                     reject(LoginTaskErros.incorrectToken)
                 } else {
                     reject(error)

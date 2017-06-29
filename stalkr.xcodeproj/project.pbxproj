@@ -38,7 +38,7 @@
 		89AE2A661EF80A3800CD2948 /* ServerDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE2A651EF80A3800CD2948 /* ServerDispatcher.swift */; };
 		89AE2A681EF80B4300CD2948 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE2A671EF80B4300CD2948 /* Response.swift */; };
 		89AE2A6A1EF86D3200CD2948 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE2A691EF86D3200CD2948 /* Task.swift */; };
-		89AE2A6D1EF86DB300CD2948 /* SendLoginTokenTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE2A6C1EF86DB300CD2948 /* SendLoginTokenTask.swift */; };
+		89AE2A6D1EF86DB300CD2948 /* LoginTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE2A6C1EF86DB300CD2948 /* LoginTask.swift */; };
 		89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B337F21E48BB9F00610EA3 /* AppDelegate.swift */; };
 		89B337F81E48BB9F00610EA3 /* SideMenuBased.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B337F61E48BB9F00610EA3 /* SideMenuBased.storyboard */; };
 		89B337FA1E48BB9F00610EA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89B337F91E48BB9F00610EA3 /* Assets.xcassets */; };
@@ -99,7 +99,7 @@
 		89AE2A651EF80A3800CD2948 /* ServerDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerDispatcher.swift; sourceTree = "<group>"; };
 		89AE2A671EF80B4300CD2948 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		89AE2A691EF86D3200CD2948 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		89AE2A6C1EF86DB300CD2948 /* SendLoginTokenTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendLoginTokenTask.swift; sourceTree = "<group>"; };
+		89AE2A6C1EF86DB300CD2948 /* LoginTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTask.swift; sourceTree = "<group>"; };
 		89B337EF1E48BB9F00610EA3 /* stalkr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stalkr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B337F21E48BB9F00610EA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89B337F71E48BB9F00610EA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SideMenuBased.storyboard; sourceTree = "<group>"; };
@@ -263,7 +263,7 @@
 		89AE2A6B1EF86D8200CD2948 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				89AE2A6C1EF86DB300CD2948 /* SendLoginTokenTask.swift */,
+				89AE2A6C1EF86DB300CD2948 /* LoginTask.swift */,
 			);
 			name = Tasks;
 			sourceTree = "<group>";
@@ -561,7 +561,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89AE2A661EF80A3800CD2948 /* ServerDispatcher.swift in Sources */,
-				89AE2A6D1EF86DB300CD2948 /* SendLoginTokenTask.swift in Sources */,
+				89AE2A6D1EF86DB300CD2948 /* LoginTask.swift in Sources */,
 				892DECCA1E5F258400676056 /* SlotableCellConfiguration.swift in Sources */,
 				89C7784C1E6EEB86008926E7 /* CreateGridViewController.swift in Sources */,
 				89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */,
