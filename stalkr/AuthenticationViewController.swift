@@ -42,7 +42,7 @@ class AuthenticationViewController: UIViewController, CodeInputViewDelegate {
         firstly {
             LoginTask(loginToken: token).execute()
         }.then { r -> Void in
-            globalUserSession.changeStateToLogged(userId: r.userId, userToken: r.sessionToken)
+            globalUserSession.changeStateToLogged(userToken: r.sessionToken)
             loginNetworkStatus.success.updateStatusLabel(self)
         }.catch { error in
                 

@@ -16,12 +16,6 @@ class SessionContext {
             return state.isLogged
         }
     }
-    
-    var userId: Int? {
-        get {
-            return state.userId
-        }
-    }
 
     var userToken: String? {
         get {
@@ -29,8 +23,8 @@ class SessionContext {
         }
     }
     
-    func changeStateToLogged(userId: Int, userToken: String) {
-        state = .logged(userId: userId, userToken: userToken)
+    func changeStateToLogged(userToken: String) {
+        state = .logged(userToken: userToken)
     }
     
     func changeStateToNotLogged() {
@@ -40,23 +34,14 @@ class SessionContext {
 
 enum SessionStates {
     case notLogged
-    case logged(userId: Int, userToken: String)
+    case logged(userToken: String)
     
     var isLogged: Bool {
         switch self {
         case .notLogged:
             return false
-        case .logged(_, _):
+        case .logged(_):
             return true
-        }
-    }
-    
-    var userId: Int? {
-        switch self {
-        case .notLogged:
-            return nil
-        case .logged(let userId, _):
-            return userId
         }
     }
     
@@ -64,7 +49,7 @@ enum SessionStates {
         switch self {
         case .notLogged:
             return nil
-        case .logged(_, let userToken):
+        case .logged(let userToken):
             return userToken
         }
     }
