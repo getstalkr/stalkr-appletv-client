@@ -9,14 +9,19 @@
 import UIKit
 import SwiftyJSON
 import PromiseKit
+import TvCodeScreen
 
-class AuthenticationViewController: UIViewController {
+class AuthenticationViewController: UIViewController, CodeInputViewDelegate {
     
-    @IBOutlet weak var textFieldLoginToken: UITextField!
     @IBOutlet weak var labelLoginNetworkStatus: UILabel!
+    @IBOutlet weak var codeInputView: CodeInputView!
     
-    @IBAction func insertLoginToken(_ sender: Any) {
-        sendLogin(token: textFieldLoginToken.text!)
+    override func viewDidLoad() {
+        codeInputView.delegate = self
+    }
+    
+    func finishTyping(_ codeInputView: CodeInputView, codeText: String) {
+        sendLogin(token: codeText)
     }
     
     enum loginNetworkStatus: String {
