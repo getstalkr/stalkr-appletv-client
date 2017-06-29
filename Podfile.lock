@@ -48,6 +48,7 @@ PODS:
   - Starscream (2.0.4)
   - SwiftRichString (0.9.8)
   - SwiftyJSON (3.1.4)
+  - TvCodeScreen (0.1.0)
   - TvLightSegments (0.1.0):
     - Cartography (~> 1.1)
 
@@ -69,6 +70,7 @@ DEPENDENCIES:
   - Starscream
   - SwiftRichString
   - SwiftyJSON (~> 3.1.4)
+  - TvCodeScreen (~> 0.1.0)
   - TvLightSegments (~> 0.1.0)
 
 EXTERNAL SOURCES:
@@ -98,8 +100,9 @@ SPEC CHECKSUMS:
   Starscream: df5974ee928b157c8eda8af8de7c620276b7dfcc
   SwiftRichString: d42eeaefceea340e27b8a33945e0fac1ee21f58f
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  TvCodeScreen: aa2ba87353ac18ef96cf30496b55c5f6ed6fdc92
   TvLightSegments: a2f970ca56e0709cc10b86e5a3e457675755adb9
 
-PODFILE CHECKSUM: 2be86d1c966a165a7d3a581a485f305a7f51df45
+PODFILE CHECKSUM: 85b1adb43d8f70567e3b03fc7b2e48a593a03a28
 
 COCOAPODS: 1.2.1
