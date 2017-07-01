@@ -24,7 +24,7 @@ target 'stalkr' do
   pod 'FocusGuideHelper', '~> 0.1.0'
   pod 'AlertPro', '~> 1.3'
   pod 'Starscream'
-  pod 'TvCodeScreen', '~> 0.1.0'
+  pod 'TvCodeScreen', '~> 0.1.1'
  
   #pod 'GridView', :path => '/Users/macabeus/Dropbox (BEPiD)/CEFET/Bepid/GridView'
   pod 'GridView', :git => 'https://github.com/macabeus/GridView.git', :branch => 'move_cells'
