@@ -26,9 +26,9 @@ class LoginTask: Task {
         return UserService.userShortTokenLogin(loginToken)
     }
     
-    func execute(in dispatcher: Dispatcher, with session: SessionContext) -> Promise<(userId: Int, sessionToken: String)> {
+    func execute(in dispatcher: Dispatcher) -> Promise<(userId: Int, sessionToken: String)> {
         
-        return self.execute(in: dispatcher, with: session) { response, fulfill, reject in
+        return self.execute(in: dispatcher) { response, fulfill, reject in
             switch response {
             
             case .json(let json):

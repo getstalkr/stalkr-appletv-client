@@ -18,20 +18,20 @@ class ServerDispatcher: Dispatcher {
         self.environment = environment
     }
     
-    func execute(request: ServiceRequest, with session: SessionContext) -> Promise<Response> {
+    func execute(request: ServiceRequest) -> Promise<Response> {
         let requestUrl = prepareURLRequest(for: request)
         
         return Promise { fulfill, reject in
             
             var headers: HTTPHeaders?
             if request.needToken {
-                if session.isLogged == false {
+                if UserSession.shared.sessionContext.isLogged == false {
                     reject(ResponseError.tokenMissing)
                     return
                 }
                 
                 headers = (request.headers ?? [:])
-                headers!["Token"] = session.userToken!
+                headers!["Token"] = UserSession.shared.sessionContext.userToken!
             } else {
                 headers = request.headers
             }
@@ -54,7 +54,7 @@ class ServerDispatcher: Dispatcher {
                         
                     case .error(_, let error, _):
                         reject(error) // server erros (for example, no connection)
-                            
+                        
                     default:
                         fulfill(resp) // success
                     }

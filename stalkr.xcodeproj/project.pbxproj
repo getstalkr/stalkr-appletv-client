@@ -25,6 +25,7 @@
 		892E73E81E58F487007483E1 /* CellCloudPerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E73E71E58F487007483E1 /* CellCloudPerformance.swift */; };
 		892E73EA1E58F56F007483E1 /* CellCloudPerformance.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892E73E91E58F56F007483E1 /* CellCloudPerformance.xib */; };
 		893E5B681EB4495B00255CA9 /* EmbededGridController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893E5B671EB4495B00255CA9 /* EmbededGridController.swift */; };
+		894268C41F083E140073F4D5 /* GetDashboardTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894268C31F083E140073F4D5 /* GetDashboardTask.swift */; };
 		894BD45C1F0801470014BCA9 /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894BD45B1F0801470014BCA9 /* ViewController+Extensions.swift */; };
 		8960D21A1EF8C261008E1D7C /* DefaultNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8960D2191EF8C261008E1D7C /* DefaultNetwork.swift */; };
 		8960D2211EF9429B008E1D7C /* SessionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8960D2201EF9429B008E1D7C /* SessionContext.swift */; };
@@ -87,6 +88,7 @@
 		892E73E71E58F487007483E1 /* CellCloudPerformance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCloudPerformance.swift; sourceTree = "<group>"; };
 		892E73E91E58F56F007483E1 /* CellCloudPerformance.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCloudPerformance.xib; sourceTree = "<group>"; };
 		893E5B671EB4495B00255CA9 /* EmbededGridController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbededGridController.swift; sourceTree = "<group>"; };
+		894268C31F083E140073F4D5 /* GetDashboardTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetDashboardTask.swift; sourceTree = "<group>"; };
 		894BD45B1F0801470014BCA9 /* ViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
 		8960D2191EF8C261008E1D7C /* DefaultNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetwork.swift; sourceTree = "<group>"; };
 		8960D2201EF9429B008E1D7C /* SessionContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionContext.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				8960D2201EF9429B008E1D7C /* SessionContext.swift */,
+				89D598B41E718C4900B27927 /* UserSession.swift */,
 			);
 			name = UserSession;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				89AE2A6C1EF86DB300CD2948 /* LoginTask.swift */,
+				894268C31F083E140073F4D5 /* GetDashboardTask.swift */,
 			);
 			name = Tasks;
 			sourceTree = "<group>";
@@ -294,7 +298,6 @@
 				89B337F21E48BB9F00610EA3 /* AppDelegate.swift */,
 				89B337F91E48BB9F00610EA3 /* Assets.xcassets */,
 				89B337FB1E48BB9F00610EA3 /* Info.plist */,
-				89D598B41E718C4900B27927 /* UserSession.swift */,
 				891F50C51E8DF4E70085A060 /* LoadingView.swift */,
 				89AE2A5C1EF7FEE800CD2948 /* NetworkManager */,
 				89C36AD41EF400E000E5342C /* Views */,
@@ -599,6 +602,7 @@
 				89DEFD6F1EFAB47B0086F78B /* BaseWebSocketDelegate.swift in Sources */,
 				8960D2211EF9429B008E1D7C /* SessionContext.swift in Sources */,
 				89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */,
+				894268C41F083E140073F4D5 /* GetDashboardTask.swift in Sources */,
 				8917E4AD1E6925FF001BD42A /* CommitRegister.swift in Sources */,
 				89D598B51E718C4900B27927 /* UserSession.swift in Sources */,
 				89DEFD6D1EFA94BB0086F78B /* Environment.swift in Sources */,

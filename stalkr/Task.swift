@@ -20,15 +20,15 @@ protocol Task {
     /// - Parameter dispatcher: dispatcher
     /// - Parameter session: in whitch user session this request will be executed
     /// - Returns: a promise
-    func execute(in dispatcher: Dispatcher, with session: SessionContext) -> Promise<Output>
+    func execute(in dispatcher: Dispatcher) -> Promise<Output>
 }
 
 extension Task {
-    func execute(in dispatcher: Dispatcher, with session: SessionContext, then handle: @escaping (Response, (Output) -> (), (Error) -> ()) -> ()) -> Promise<Output> {
+    func execute(in dispatcher: Dispatcher, then handle: @escaping (Response, (Output) -> (), (Error) -> ()) -> ()) -> Promise<Output> {
         
         return Promise { fulfill, reject in
             firstly {
-                dispatcher.execute(request: request, with: session)
+                dispatcher.execute(request: request)
             }.then { response -> Void in
                 handle(response, fulfill, reject)
             }.catch { error in
