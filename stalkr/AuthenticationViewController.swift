@@ -18,6 +18,7 @@ class AuthenticationViewController: UIViewController, CodeInputViewDelegate {
     
     override func viewDidLoad() {
         codeInputView.delegate = self
+        setDefaultBackground()
     }
     
     func finishTyping(_ codeInputView: CodeInputView, codeText: String) {
@@ -55,7 +56,7 @@ class AuthenticationViewController: UIViewController, CodeInputViewDelegate {
             } else {
                 loginNetworkStatus.failUnknowError.updateStatusLabel(self)
             }
-            
+
             print("LOGIN ERROR: \(error.localizedDescription)")
         }
     }

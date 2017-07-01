@@ -25,6 +25,7 @@
 		892E73E81E58F487007483E1 /* CellCloudPerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E73E71E58F487007483E1 /* CellCloudPerformance.swift */; };
 		892E73EA1E58F56F007483E1 /* CellCloudPerformance.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892E73E91E58F56F007483E1 /* CellCloudPerformance.xib */; };
 		893E5B681EB4495B00255CA9 /* EmbededGridController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893E5B671EB4495B00255CA9 /* EmbededGridController.swift */; };
+		894BD45C1F0801470014BCA9 /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894BD45B1F0801470014BCA9 /* ViewController+Extensions.swift */; };
 		8960D21A1EF8C261008E1D7C /* DefaultNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8960D2191EF8C261008E1D7C /* DefaultNetwork.swift */; };
 		8960D2211EF9429B008E1D7C /* SessionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8960D2201EF9429B008E1D7C /* SessionContext.swift */; };
 		8960D2241EFA0C05008E1D7C /* WebSocketProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8960D2231EFA0C05008E1D7C /* WebSocketProtocol.swift */; };
@@ -86,6 +87,7 @@
 		892E73E71E58F487007483E1 /* CellCloudPerformance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCloudPerformance.swift; sourceTree = "<group>"; };
 		892E73E91E58F56F007483E1 /* CellCloudPerformance.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCloudPerformance.xib; sourceTree = "<group>"; };
 		893E5B671EB4495B00255CA9 /* EmbededGridController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbededGridController.swift; sourceTree = "<group>"; };
+		894BD45B1F0801470014BCA9 /* ViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
 		8960D2191EF8C261008E1D7C /* DefaultNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetwork.swift; sourceTree = "<group>"; };
 		8960D2201EF9429B008E1D7C /* SessionContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionContext.swift; sourceTree = "<group>"; };
 		8960D2231EFA0C05008E1D7C /* WebSocketProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketProtocol.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 		89C36AD41EF400E000E5342C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				894BD45B1F0801470014BCA9 /* ViewController+Extensions.swift */,
 				89C36AD91EF402E100E5342C /* Authentication */,
 				89C36AD51EF400E600E5342C /* SideMenuBased */,
 				89C36AD61EF4010600E5342C /* Projects */,
@@ -586,6 +589,7 @@
 				8960D21A1EF8C261008E1D7C /* DefaultNetwork.swift in Sources */,
 				892E73E81E58F487007483E1 /* CellCloudPerformance.swift in Sources */,
 				892E73DC1E589378007483E1 /* CellCommitsFeed.swift in Sources */,
+				894BD45C1F0801470014BCA9 /* ViewController+Extensions.swift in Sources */,
 				8960D2241EFA0C05008E1D7C /* WebSocketProtocol.swift in Sources */,
 				89C994CD1E5482C900DBADBA /* CellTrevisTableCell.swift in Sources */,
 				CE2E76411E5C737C00D5EC5C /* CellSidebarMenu.swift in Sources */,

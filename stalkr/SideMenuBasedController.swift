@@ -16,7 +16,6 @@ class SideMenuBasedController: UIViewController {
     @IBOutlet weak var sidebarView: UIView!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var containerView: UIView!
-    let gradientLayer = CAGradientLayer()
     let guideHelper = FocusGuideHelper()
     var sidebarTable: UITableView!
     var currentContainerController: UIViewController?
@@ -25,28 +24,7 @@ class SideMenuBasedController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        addGradientToBackground()
-    }
-    
-    func addGradientToBackground() {
-        
-        self.view.backgroundColor = .white
-        
-        gradientLayer.frame = self.view.bounds
-        
-        let color1 = UIColor(netHex: 0x543663).cgColor
-        let color2 = UIColor(netHex: 0x483159).cgColor
-        let color3 = UIColor(netHex: 0x453158).cgColor
-        let color4 = UIColor(netHex: 0x242741).cgColor
-        gradientLayer.colors = [color1, color2, color3, color4]
-        
-        gradientLayer.startPoint = CGPoint(x: 0.35, y: 0.25)
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.6)
-        gradientLayer.zPosition = -1
-        
-        gradientLayer.locations = [0.0, 0.25, 0.75, 1.0]
-        
-        self.view.layer.addSublayer(gradientLayer)
+        setDefaultBackground()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
