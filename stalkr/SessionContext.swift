@@ -31,14 +31,23 @@ class SessionContext {
         }
     }
     
-    func changeStateToNotLogged() {
+    func changeStateToNotLogged(removeTokenStored: Bool) {
         state = .notLogged
+        
+        if removeTokenStored {
+            removeStored()
+        }
     }
     
     // Store session
     private func store() {
         let defaults = UserDefaults.standard
         defaults.set(userToken, forKey: "sessionToken")
+    }
+    
+    private func removeStored() {
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: "sessionToken")
     }
     
     func recoverToken() -> String? {

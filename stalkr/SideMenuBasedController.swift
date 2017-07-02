@@ -120,7 +120,7 @@ extension SideMenuBasedController: SidebarProtocol {
             
             guideHelper.addLinkByFocusTemporary(
                 from: cellAccount,
-                to: accountController.container.view,
+                to: accountController.view,
                 inPosition: .right
             )
         }

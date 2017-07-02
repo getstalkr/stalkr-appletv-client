@@ -10,21 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Input Step By Step-->
-        <scene sceneID="b3D-K4-XFY">
-            <objects>
-                <collectionViewController id="5JI-qA-Zfe" customClass="InputStepByStep" customModule="InputStepByStep" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="xAU-wL-ivE">
-                        <rect key="frame" x="0.0" y="0.0" width="1880" height="987"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewLayout key="collectionViewLayout" id="D7j-O4-xt0"/>
-                        <cells/>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Pu-qv-5TK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4102" y="3659"/>
-        </scene>
         <!--Account View Controller-->
         <scene sceneID="rc5-Y3-WSv">
             <objects>
@@ -46,26 +31,27 @@
                                 <color key="textColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnF-lg-ME4">
-                                <rect key="frame" x="20" y="73" width="1880" height="987"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkb-pg-xxc">
+                                <rect key="frame" x="40" y="65" width="153" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="153" id="DQo-c4-qSr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Log out"/>
                                 <connections>
-                                    <segue destination="5JI-qA-Zfe" kind="embed" identifier="segueInputStepByStep" id="cOx-bE-9o1"/>
+                                    <action selector="buttonLogout:" destination="Taa-r3-lMj" eventType="primaryActionTriggered" id="UPO-D2-o4v"/>
                                 </connections>
-                            </containerView>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.050980392159999999" green="0.054901960780000002" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="jnF-lg-ME4" firstAttribute="top" secondItem="Xbq-L4-sOo" secondAttribute="bottom" constant="32" id="1rK-ny-zlC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jnF-lg-ME4" secondAttribute="trailing" id="4Kn-Gt-Qqt"/>
-                            <constraint firstItem="AXf-l4-UnX" firstAttribute="top" secondItem="jnF-lg-ME4" secondAttribute="bottom" constant="20" id="OWK-LX-PvC"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="jnF-lg-ME4" secondAttribute="leading" id="d36-mC-ZJ6"/>
+                            <constraint firstItem="bkb-pg-xxc" firstAttribute="top" secondItem="Xbq-L4-sOo" secondAttribute="bottom" constant="24" id="MTp-J6-WvM"/>
+                            <constraint firstItem="bkb-pg-xxc" firstAttribute="leading" secondItem="Xbq-L4-sOo" secondAttribute="leading" id="V5j-jY-tVH"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Xbq-L4-sOo" secondAttribute="leading" constant="-20" id="feE-Kk-1o4"/>
                             <constraint firstItem="Xbq-L4-sOo" firstAttribute="top" secondItem="r2n-ax-dU2" secondAttribute="bottom" constant="20" id="ju5-hn-sMz"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="container" destination="jnF-lg-ME4" id="Non-BR-dPb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lp6-hy-cyT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
