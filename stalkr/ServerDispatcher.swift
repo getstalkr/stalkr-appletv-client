@@ -31,7 +31,7 @@ class ServerDispatcher: Dispatcher {
                 }
                 
                 headers = (request.headers ?? [:])
-                headers!["Token"] = UserSession.shared.sessionContext.userToken!
+                headers!["Authorization"] = "Bearer \(UserSession.shared.sessionContext.userToken!)"
             } else {
                 headers = request.headers
             }
