@@ -21,7 +21,7 @@ enum UserService: ServiceRequest {
         case .me():
             return "/user/me"
         case .getDashboards():
-            return "/user/dashboard"
+            return "/user/dashboards"
         }
     }
     
