@@ -15,7 +15,7 @@ target 'stalkr' do
   pod 'Cartography'
   pod 'PromiseKit'
   pod 'PromiseKit/UIKit', '~> 4.0'
-  pod 'Alamofire', '~> 4.4'
+  pod 'Alamofire', '~> 4.5'
   pod 'NVActivityIndicatorView', '~> 3.5'
   pod 'FontAwesomeKit', '~> 2.2.0'
   pod 'TvLightSegments', '~> 0.1.0'
@@ -23,6 +23,8 @@ target 'stalkr' do
   pod 'InputStepByStep', '~> 0.0.2-beta'
   pod 'FocusGuideHelper', '~> 0.1.0'
   pod 'AlertPro', '~> 1.3'
+  pod 'Starscream'
+  pod 'TvCodeScreen', '~> 0.1.1'
  
   #pod 'GridView', :path => '/Users/macabeus/Dropbox (BEPiD)/CEFET/Bepid/GridView'
   pod 'GridView', :git => 'https://github.com/macabeus/GridView.git', :branch => 'move_cells'

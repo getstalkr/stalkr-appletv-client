@@ -16,7 +16,6 @@ class SideMenuBasedController: UIViewController {
     @IBOutlet weak var sidebarView: UIView!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var containerView: UIView!
-    let gradientLayer = CAGradientLayer()
     let guideHelper = FocusGuideHelper()
     var sidebarTable: UITableView!
     var currentContainerController: UIViewController?
@@ -25,28 +24,7 @@ class SideMenuBasedController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        addGradientToBackground()
-    }
-    
-    func addGradientToBackground() {
-        
-        self.view.backgroundColor = .white
-        
-        gradientLayer.frame = self.view.bounds
-        
-        let color1 = UIColor(netHex: 0x543663).cgColor
-        let color2 = UIColor(netHex: 0x483159).cgColor
-        let color3 = UIColor(netHex: 0x453158).cgColor
-        let color4 = UIColor(netHex: 0x242741).cgColor
-        gradientLayer.colors = [color1, color2, color3, color4]
-        
-        gradientLayer.startPoint = CGPoint(x: 0.35, y: 0.25)
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.6)
-        gradientLayer.zPosition = -1
-        
-        gradientLayer.locations = [0.0, 0.25, 0.75, 1.0]
-        
-        self.view.layer.addSublayer(gradientLayer)
+        setDefaultBackground()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -103,34 +81,28 @@ extension SideMenuBasedController: SidebarProtocol {
             let projectController = currentContainerController as! ProjectsViewController
             let cellDashboard = sidebarTable.cellForRow(at: IndexPath(row: 0, section: 0))!
             
-            let firstTab = projectController.dashboardsTab.visibleCells.sorted(by: {
-                $0.center.x < $1.center.x
-            }).first
+            guideHelper.addLinkByFocusTemporary(
+                from: cellDashboard,
+                to: projectController.dashboardsTab,
+                inPosition: .right
+            )
             
-            if let firstTab = firstTab { // if we have at least one project
-                guideHelper.addLinkByFocusTemporary(
-                    from: cellDashboard,
-                    to: firstTab,
-                    inPosition: .right
-                )
-                
-                projectController.guideHelper.addLinkByFocus(
-                    from: firstTab,
-                    to: cellDashboard,
-                    inPosition: .left,
-                    identifier: "projects segmenets to sidemenu"
-                )
-                
-                projectController.guideHelper.addLinkByFocus(
-                    from: projectController.gridView!.view,
-                    to: cellDashboard,
-                    inPosition: .left,
-                    identifier: "grid to sidemenu",
-                    activedWhen: { context in
-                        return (context.nextFocusedView as? SlotableCellDefault) != nil
-                    }
-                )
-            }
+            projectController.guideHelper.addLinkByFocus(
+                from: projectController.dashboardsTab,
+                to: cellDashboard,
+                inPosition: .left,
+                identifier: "projects segmenets to sidemenu"
+            )
+            
+            projectController.guideHelper.addLinkByFocus(
+                from: projectController.gridView!.view,
+                to: cellDashboard,
+                inPosition: .left,
+                identifier: "grid to sidemenu",
+                activedWhen: { context in
+                    return (context.nextFocusedView as? SlotableCellDefault) != nil
+                }
+            )
             
         case .newDasboard:
             let createProjectController = currentContainerController as! CreateGridViewController
@@ -148,7 +120,7 @@ extension SideMenuBasedController: SidebarProtocol {
             
             guideHelper.addLinkByFocusTemporary(
                 from: cellAccount,
-                to: accountController.container.view,
+                to: accountController.view,
                 inPosition: .right
             )
         }

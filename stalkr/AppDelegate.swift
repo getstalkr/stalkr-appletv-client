@@ -15,7 +15,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let initialViewController: UIViewController
+        if let lastToken = UserSession.shared.sessionContext.recoverToken() {
+            UserSession.shared.sessionContext.changeStateToLogged(
+                sessionToken: lastToken,
+                storeToken: false
+            )
+            
+            initialViewController = UIStoryboard(name: "SideMenuBased", bundle: nil).instantiateInitialViewController()!
+        } else {
+            initialViewController = UIStoryboard(name: "Authentication", bundle: nil).instantiateInitialViewController()!
+        }
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window!.rootViewController = initialViewController
+        self.window!.makeKeyAndVisible()
+        
         return true
     }
 

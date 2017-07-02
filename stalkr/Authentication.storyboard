@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Cwl-Vh-MXr">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="dark"/>
+    </device>
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Authentication View Controller-->
+        <scene sceneID="FDP-fb-Wsp">
+            <objects>
+                <viewController id="Cwl-Vh-MXr" customClass="AuthenticationViewController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rhQ-P0-kxR"/>
+                        <viewControllerLayoutGuide type="bottom" id="60m-8J-t6s"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iM6-sf-tKD">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PES-Ri-3Mn">
+                                <rect key="frame" x="140" y="90" width="1640" height="900"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting to insert  a login token..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ff-9T-wnG">
+                                        <rect key="frame" x="275" y="765" width="1039" height="91"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please, go to www.getstal.kr and generate your login token" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZy-3q-EoY">
+                                        <rect key="frame" x="282" y="79" width="1004" height="46"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Gz-fp-UTq" customClass="CodeInputView" customModule="TvCodeScreen">
+                                        <rect key="frame" x="90" y="285" width="1460" height="330"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="codeLength">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="labelBackgroundColor">
+                                                <color key="value" red="0.72156862749999995" green="0.39607843139999999" blue="0.82352941180000006" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="labelFontColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonFontColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonBackgroundFocusedColor">
+                                                <color key="value" red="0.72156862749999995" green="0.39607843139999999" blue="0.82352941180000006" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.019607843137254902" green="0.019607843137254902" blue="0.12156862745098039" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="6ff-9T-wnG" firstAttribute="top" secondItem="0Gz-fp-UTq" secondAttribute="bottom" constant="150" id="39z-ZD-T1D"/>
+                                    <constraint firstItem="hZy-3q-EoY" firstAttribute="leading" secondItem="PES-Ri-3Mn" secondAttribute="leading" constant="282" id="4oW-MW-w0c"/>
+                                    <constraint firstItem="0Gz-fp-UTq" firstAttribute="leading" secondItem="PES-Ri-3Mn" secondAttribute="leading" constant="90" id="7z8-WB-WHZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="6ff-9T-wnG" secondAttribute="bottom" constant="44" id="Hqb-Yv-cG3"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Gz-fp-UTq" secondAttribute="trailing" constant="90" id="gIj-0E-Ex4"/>
+                                    <constraint firstItem="6ff-9T-wnG" firstAttribute="leading" secondItem="PES-Ri-3Mn" secondAttribute="leading" constant="275" id="pQZ-3E-L9q"/>
+                                    <constraint firstItem="hZy-3q-EoY" firstAttribute="top" secondItem="PES-Ri-3Mn" secondAttribute="top" constant="79" id="q21-vg-ehU"/>
+                                    <constraint firstItem="0Gz-fp-UTq" firstAttribute="top" secondItem="hZy-3q-EoY" secondAttribute="bottom" constant="160" id="yHX-h0-gRy"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1058823529" green="0.062745098040000002" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PES-Ri-3Mn" firstAttribute="top" secondItem="rhQ-P0-kxR" secondAttribute="bottom" constant="90" id="VlJ-Oy-za7"/>
+                            <constraint firstItem="60m-8J-t6s" firstAttribute="top" secondItem="PES-Ri-3Mn" secondAttribute="bottom" constant="90" id="hnV-jd-TZS"/>
+                            <constraint firstItem="PES-Ri-3Mn" firstAttribute="leading" secondItem="iM6-sf-tKD" secondAttribute="leadingMargin" constant="120" id="ssJ-z0-eza"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PES-Ri-3Mn" secondAttribute="trailing" constant="120" id="vO9-bc-Cay"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="codeInputView" destination="0Gz-fp-UTq" id="bsL-5b-ip8"/>
+                        <outlet property="labelLoginNetworkStatus" destination="6ff-9T-wnG" id="njn-Sg-dhW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gqr-Qj-IrQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-101" y="124"/>
+        </scene>
+    </scenes>
+</document>
