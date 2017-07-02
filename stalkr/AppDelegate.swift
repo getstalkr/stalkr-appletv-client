@@ -17,7 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         let initialViewController: UIViewController
-        if UserSession.shared.sessionContext.recover() {
+        if let lastToken = UserSession.shared.sessionContext.recoverToken() {
+            UserSession.shared.sessionContext.changeStateToLogged(
+                sessionToken: lastToken,
+                storeToken: false
+            )
+            
             initialViewController = UIStoryboard(name: "SideMenuBased", bundle: nil).instantiateInitialViewController()!
         } else {
             initialViewController = UIStoryboard(name: "Authentication", bundle: nil).instantiateInitialViewController()!

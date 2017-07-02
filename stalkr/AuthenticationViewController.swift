@@ -45,8 +45,10 @@ class AuthenticationViewController: UIViewController, CodeInputViewDelegate {
             LoginTask(loginToken: token).execute()
         
         }.then { r -> Void in
-            UserSession.shared.sessionContext.changeStateToLogged(userToken: r.sessionToken)
-            UserSession.shared.sessionContext.store()
+            UserSession.shared.sessionContext.changeStateToLogged(
+                sessionToken: r.sessionToken,
+                storeToken: true
+            )
             
             loginNetworkStatus.loginSuccess.updateStatusLabel(self)
             

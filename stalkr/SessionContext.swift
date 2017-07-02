@@ -23,8 +23,12 @@ class SessionContext {
         }
     }
     
-    func changeStateToLogged(userToken: String) {
-        state = .logged(userToken: userToken)
+    func changeStateToLogged(sessionToken: String, storeToken: Bool) {
+        state = .logged(userToken: sessionToken)
+        
+        if storeToken {
+            store()
+        }
     }
     
     func changeStateToNotLogged() {
@@ -32,24 +36,15 @@ class SessionContext {
     }
     
     // Store session
-    func store() {
+    private func store() {
         let defaults = UserDefaults.standard
         defaults.set(userToken, forKey: "sessionToken")
     }
     
-    func recover() -> Bool {
-        // recover token
+    func recoverToken() -> String? {
         // todo: check if the token recovered still is valid
         let defaults = UserDefaults.standard
-        guard let sessionToken = defaults.string(forKey: "sessionToken") else {
-            return false
-        }
-        
-        // set session
-        self.changeStateToLogged(userToken: sessionToken)
-        
-        //
-        return true
+        return defaults.string(forKey: "sessionToken")
     }
 }
 
