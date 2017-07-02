@@ -58,8 +58,8 @@ class CellCommitsFeed: SlotableCellDefault, SlotableCell, StalkrCell, Subscriber
     func load(params: [String: Any]) {
         self.table.delegate = self
         self.table.dataSource = self
- 
-        self.table.register(CellTrevisTableCell.self, forCellReuseIdentifier: "CellCommitsFeedTableCell")
+        
+        self.table.register(CellCommitsFeedTableCell.self, forCellReuseIdentifier: "CellCommitsFeedTableCell")
         self.table.register(UINib(nibName: "CellCommitsFeedTableCell", bundle: nil), forCellReuseIdentifier: "CellCommitsFeedTableCell")
     }
 

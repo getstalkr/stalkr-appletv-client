@@ -51,10 +51,10 @@
 		89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C467541E596250003CF8F2 /* CellDeployStatus.swift */; };
 		89C467571E596258003CF8F2 /* CellDeployStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C467561E596258003CF8F2 /* CellDeployStatus.xib */; };
 		89C7784C1E6EEB86008926E7 /* CreateGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C7784B1E6EEB86008926E7 /* CreateGridViewController.swift */; };
-		89C994AB1E547C6E00DBADBA /* CellTrevis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C994AA1E547C6E00DBADBA /* CellTrevis.swift */; };
-		89C994AD1E547CDE00DBADBA /* CellTrevis.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994AC1E547CDE00DBADBA /* CellTrevis.xib */; };
-		89C994CB1E54820900DBADBA /* CellTrevisTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994CA1E54820900DBADBA /* CellTrevisTableCell.xib */; };
-		89C994CD1E5482C900DBADBA /* CellTrevisTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C994CC1E5482C900DBADBA /* CellTrevisTableCell.swift */; };
+		89C994AB1E547C6E00DBADBA /* CellTravis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C994AA1E547C6E00DBADBA /* CellTravis.swift */; };
+		89C994AD1E547CDE00DBADBA /* CellTravis.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994AC1E547CDE00DBADBA /* CellTravis.xib */; };
+		89C994CB1E54820900DBADBA /* CellTravisTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994CA1E54820900DBADBA /* CellTravisTableCell.xib */; };
+		89C994CD1E5482C900DBADBA /* CellTravisTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C994CC1E5482C900DBADBA /* CellTravisTableCell.swift */; };
 		89D598B51E718C4900B27927 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D598B41E718C4900B27927 /* UserSession.swift */; };
 		89D598B71E718E2D00B27927 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D598B61E718E2D00B27927 /* Project.swift */; };
 		89DEFD6D1EFA94BB0086F78B /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DEFD6C1EFA94BB0086F78B /* Environment.swift */; };
@@ -116,10 +116,10 @@
 		89C467541E596250003CF8F2 /* CellDeployStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDeployStatus.swift; sourceTree = "<group>"; };
 		89C467561E596258003CF8F2 /* CellDeployStatus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellDeployStatus.xib; sourceTree = "<group>"; };
 		89C7784B1E6EEB86008926E7 /* CreateGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGridViewController.swift; sourceTree = "<group>"; };
-		89C994AA1E547C6E00DBADBA /* CellTrevis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTrevis.swift; sourceTree = "<group>"; };
-		89C994AC1E547CDE00DBADBA /* CellTrevis.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTrevis.xib; sourceTree = "<group>"; };
-		89C994CA1E54820900DBADBA /* CellTrevisTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTrevisTableCell.xib; sourceTree = "<group>"; };
-		89C994CC1E5482C900DBADBA /* CellTrevisTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTrevisTableCell.swift; sourceTree = "<group>"; };
+		89C994AA1E547C6E00DBADBA /* CellTravis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTravis.swift; sourceTree = "<group>"; };
+		89C994AC1E547CDE00DBADBA /* CellTravis.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTravis.xib; sourceTree = "<group>"; };
+		89C994CA1E54820900DBADBA /* CellTravisTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTravisTableCell.xib; sourceTree = "<group>"; };
+		89C994CC1E5482C900DBADBA /* CellTravisTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTravisTableCell.swift; sourceTree = "<group>"; };
 		89D598B41E718C4900B27927 /* UserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		89D598B61E718E2D00B27927 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		89DEFD6C1EFA94BB0086F78B /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -314,7 +314,7 @@
 				89B338011E48C08400610EA3 /* SlotableCell.swift */,
 				89276ED71E54BBE800D99D4E /* SubscriberCell.swift */,
 				892DECC91E5F258400676056 /* SlotableCellConfiguration.swift */,
-				89C994C91E5481D700DBADBA /* CellTrevis */,
+				89C994C91E5481D700DBADBA /* CellTravis */,
 				892E73E01E589380007483E1 /* CellCommitsFeed */,
 				892E73E11E58A555007483E1 /* CellTeamCommits */,
 				892E73E61E58F39A007483E1 /* CellCloudPerformance */,
@@ -394,16 +394,16 @@
 			name = CellDeployStatus;
 			sourceTree = "<group>";
 		};
-		89C994C91E5481D700DBADBA /* CellTrevis */ = {
+		89C994C91E5481D700DBADBA /* CellTravis */ = {
 			isa = PBXGroup;
 			children = (
 				892DD7C31E5624F1000482C0 /* TravisBuildRegister.swift */,
-				89C994AA1E547C6E00DBADBA /* CellTrevis.swift */,
-				89C994AC1E547CDE00DBADBA /* CellTrevis.xib */,
-				89C994CC1E5482C900DBADBA /* CellTrevisTableCell.swift */,
-				89C994CA1E54820900DBADBA /* CellTrevisTableCell.xib */,
+				89C994AA1E547C6E00DBADBA /* CellTravis.swift */,
+				89C994AC1E547CDE00DBADBA /* CellTravis.xib */,
+				89C994CC1E5482C900DBADBA /* CellTravisTableCell.swift */,
+				89C994CA1E54820900DBADBA /* CellTravisTableCell.xib */,
 			);
-			name = CellTrevis;
+			name = CellTravis;
 			sourceTree = "<group>";
 		};
 		89D598B81E718E3D00B27927 /* Project */ = {
@@ -496,10 +496,10 @@
 			files = (
 				89B337FA1E48BB9F00610EA3 /* Assets.xcassets in Resources */,
 				89A6663F1E5DB9C0007F8A7A /* CellTeamCommitsZoom.xib in Resources */,
-				89C994AD1E547CDE00DBADBA /* CellTrevis.xib in Resources */,
+				89C994AD1E547CDE00DBADBA /* CellTravis.xib in Resources */,
 				892E73E51E58A59B007483E1 /* CellTeamCommits.xib in Resources */,
 				89C467571E596258003CF8F2 /* CellDeployStatus.xib in Resources */,
-				89C994CB1E54820900DBADBA /* CellTrevisTableCell.xib in Resources */,
+				89C994CB1E54820900DBADBA /* CellTravisTableCell.xib in Resources */,
 				892E1DD61EEFFD630098A0FC /* CreateProject.storyboard in Resources */,
 				892E73EA1E58F56F007483E1 /* CellCloudPerformance.xib in Resources */,
 				89C36ADB1EF4035000E5342C /* Authentication.storyboard in Resources */,
@@ -573,7 +573,7 @@
 				89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */,
 				89AE2A5E1EF7FF0000CD2948 /* ServiceRequestProtocol.swift in Sources */,
 				CE52C5391E61059300FC6C40 /* SidebarProtocol.swift in Sources */,
-				89C994AB1E547C6E00DBADBA /* CellTrevis.swift in Sources */,
+				89C994AB1E547C6E00DBADBA /* CellTravis.swift in Sources */,
 				8961C98D1E761E4900D84B5C /* ListClasses.swift in Sources */,
 				8960D2261EFA0D60008E1D7C /* LoginChannels.swift in Sources */,
 				89DEFD731EFB6E790086F78B /* WebSocketChannelExtension.swift in Sources */,
@@ -594,7 +594,7 @@
 				892E73DC1E589378007483E1 /* CellCommitsFeed.swift in Sources */,
 				894BD45C1F0801470014BCA9 /* ViewController+Extensions.swift in Sources */,
 				8960D2241EFA0C05008E1D7C /* WebSocketProtocol.swift in Sources */,
-				89C994CD1E5482C900DBADBA /* CellTrevisTableCell.swift in Sources */,
+				89C994CD1E5482C900DBADBA /* CellTravisTableCell.swift in Sources */,
 				CE2E76411E5C737C00D5EC5C /* CellSidebarMenu.swift in Sources */,
 				89B338021E48C08400610EA3 /* SlotableCell.swift in Sources */,
 				89AE2A681EF80B4300CD2948 /* Response.swift in Sources */,

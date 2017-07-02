@@ -68,7 +68,7 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
         if configCellTravis.count == 3 {
             cellTravis = "" +
                 "{" +
-                    "\"cell\": \"CellTrevis\"," +
+                    "\"cell\": \"CellTravis\"," +
                     "\"params\": {" +
                         "\"pusher_key\": \"\(configCellTravis["pusher_key"]!)\"," +
                         "\"owner\": \"\(configCellTravis["owner"]!)\"," +

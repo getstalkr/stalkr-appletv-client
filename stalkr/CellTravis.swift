@@ -1,5 +1,5 @@
 //
-//  TrevisCell.swift
+//  TravisCell.swift
 //  stalkr
 //
 //  Created by Bruno Macabeus Aquino on 15/02/17.
@@ -12,14 +12,14 @@ import RelativeFormatter
 import PusherSwift
 import GridView
 
-class CellTrevis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell, UITableViewDelegate, UITableViewDataSource {
+class CellTravis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var table: UITableView!
     static let cellName = "Travis"
     static let slotWidth = 1
     static let slotHeight = 2
     static let haveZoom = false
-    let cellHeight = (UINib(nibName: "CellTrevisTableCell", bundle: nil).instantiate(withOwner: nil, options: nil).last as! UIView).frame.size.height
+    let cellHeight = (UINib(nibName: "CellTravisTableCell", bundle: nil).instantiate(withOwner: nil, options: nil).last as! UIView).frame.size.height
     
     var travisBuildsLog: [(buildNumber: String, register: TravisBuildRegister)] = []
     
@@ -44,7 +44,7 @@ class CellTrevis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell,
             event: "push",
             
             handle: { json, cell in
-                let cell = cell as! CellTrevis
+                let cell = cell as! CellTravis
                 
                 let travisRegister = TravisBuildRegister(json: json)
                 
@@ -72,8 +72,8 @@ class CellTrevis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell,
         self.table.delegate = self
         self.table.dataSource = self
         
-        self.table.register(CellTrevisTableCell.self, forCellReuseIdentifier: "CellTrevisTableCell")
-        self.table.register(UINib(nibName: "CellTrevisTableCell", bundle: nil), forCellReuseIdentifier: "CellTrevisTableCell")
+        self.table.register(CellTravisTableCell.self, forCellReuseIdentifier: "CellTravisTableCell")
+        self.table.register(UINib(nibName: "CellTravisTableCell", bundle: nil), forCellReuseIdentifier: "CellTravisTableCell")
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -90,7 +90,7 @@ class CellTrevis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell,
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellTrevisTableCell", for: indexPath) as! CellTrevisTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellTravisTableCell", for: indexPath) as! CellTravisTableCell
         let (_, currentBuild) = travisBuildsLog[indexPath.row]
         
         switch currentBuild.state {

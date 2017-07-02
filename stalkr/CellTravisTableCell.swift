@@ -1,5 +1,5 @@
 //
-//  CellTrevisTableCell.swift
+//  CellTravisTableCell.swift
 //  stalkr
 //
 //  Created by Bruno Macabeus Aquino on 15/02/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CellTrevisTableCell: UITableViewCell {
+class CellTravisTableCell: UITableViewCell {
 
     @IBOutlet weak var viewLeft: UIView!
     @IBOutlet weak var labelCheckmark: UILabel!
