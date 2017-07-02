@@ -141,7 +141,7 @@ class CreateGridViewController: UIViewController, InputStepByStepProtocol {
         
         ////
         // save
-        UserSession.shared.addProject(json: json)
+        //UserSession.shared.addProject(json: json)
         hrShowAlert(withTitle: "Success", message: "New dashboard created!")
     }
     

@@ -27,8 +27,9 @@ class AuthenticationViewController: UIViewController, CodeInputViewDelegate {
     
     enum loginNetworkStatus: String {
         case sendingToken = "Sending token..."
-        case success = "Success"
+        case loginSuccess = "Login success! Getting projects..."
         case failIncorrectToken = "Fail! Token incorrect."
+        case failDashboardJsonMalformatted = "Fail! Dashboard with errors!"
         case failUnknowError = "Fail! Unknow error."
         
         func updateStatusLabel(_ authViewController: AuthenticationViewController) {
@@ -42,21 +43,38 @@ class AuthenticationViewController: UIViewController, CodeInputViewDelegate {
         
         firstly {
             LoginTask(loginToken: token).execute()
+        
+        }.then { r -> Promise<[Project]> in
+            UserSession.shared.sessionContext.changeStateToLogged(userToken: r.sessionToken)
+            
+            loginNetworkStatus.loginSuccess.updateStatusLabel(self)
+            
+            return GetDashboardTask().execute()
+        
         }.then { r -> Void in
-            globalUserSession.changeStateToLogged(userToken: r.sessionToken)
-            loginNetworkStatus.success.updateStatusLabel(self)
+            UserSession.shared.projects = r
+            
+            let viewController = UIStoryboard(name: "SideMenuBased", bundle: nil).instantiateInitialViewController()!
+            self.present(viewController, animated: true, completion: nil)
+        
         }.catch { error in
-                
+            
             if let error = error as? LoginTaskErros {
                 switch error {
                 case .incorrectToken:
                     loginNetworkStatus.failIncorrectToken.updateStatusLabel(self)
                 }
-                    
+            
+            } else if let error = error as? GetDashboardTaskErros {
+                switch error {
+                case .jsonMalformatted(_):
+                    loginNetworkStatus.failDashboardJsonMalformatted.updateStatusLabel(self)
+                }
+                
             } else {
                 loginNetworkStatus.failUnknowError.updateStatusLabel(self)
             }
-
+            
             print("LOGIN ERROR: \(error.localizedDescription)")
         }
     }

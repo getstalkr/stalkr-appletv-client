@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 import TvLightSegments
 import GridView
 
@@ -15,22 +14,12 @@ class Project {
     let name: String
     var slots: Slots
     
-    init(json: JSON) {
-        self.name = json.dictionaryValue["name"]!.stringValue
+    init(name: String, cells: [[(SlotableCell.Type, [String: Any])]]) {
+        self.name = name
         
-        // create slots from JSON
-        let slotsArray = json.dictionaryValue["grid"]!.map { _, rows -> [Slot] in
-            rows.arrayValue.map { cell -> Slot in
-                let cellClass = NSClassFromString("stalkr." + cell["cell"].stringValue)! as! NSObject.Type
-                let params = cell["params"].dictionaryObject!
-                
-                return Slot(cell: cellClass as! SlotableCell.Type, params: params)
-            }
-        }
-        
-        slots = Slots(slots: slotsArray)
+        let slotsArray = cells.map { $0.map { Slot(cell: $0, params: $1) } }
+        self.slots = Slots(slots: slotsArray)
     }
-
 }
 
 extension Project: TvLightSegmentsItem {
