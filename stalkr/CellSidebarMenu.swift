@@ -30,6 +30,10 @@ class CellSidebarMenu: UITableViewCell {
     
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         
+        if context.nextFocusedItem === context.previouslyFocusedItem {
+            return
+        }
+        
         if self === context.nextFocusedItem {
             sidebarProtocol?.focusedCell(withOption: self.myOption!)
             
