@@ -11,12 +11,15 @@ import Alamofire
 
 enum UserService: ServiceRequest {
     case userShortTokenLogin(_: String)
+    case me()
     case getDashboards()
     
     var path: String {
         switch self {
         case .userShortTokenLogin(_):
             return "/user/shorttoken/login"
+        case .me():
+            return "/user/me"
         case .getDashboards():
             return "/user/dashboard"
         }
@@ -26,6 +29,8 @@ enum UserService: ServiceRequest {
         switch self {
         case .userShortTokenLogin(_):
             return .post
+        case .me():
+            return .get
         case .getDashboards():
             return .get
         }
@@ -34,6 +39,8 @@ enum UserService: ServiceRequest {
     var parameters: Parameters? {
         switch self {
         case .userShortTokenLogin(_):
+            return nil
+        case .me():
             return nil
         case .getDashboards():
             return nil
@@ -44,6 +51,8 @@ enum UserService: ServiceRequest {
         switch self {
         case .userShortTokenLogin(_):
             return false
+        case .me():
+            return true
         case .getDashboards():
             return true
         }
@@ -53,6 +62,8 @@ enum UserService: ServiceRequest {
         switch self {
         case .userShortTokenLogin(let token):
             return ["secret": token]
+        case .me():
+            return nil
         case .getDashboards():
             return nil
         }
@@ -61,6 +72,8 @@ enum UserService: ServiceRequest {
     var dataType: ResponseType {
         switch self {
         case .userShortTokenLogin(_):
+            return .json
+        case .me():
             return .json
         case .getDashboards():
             return .json
