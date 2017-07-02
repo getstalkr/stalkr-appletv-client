@@ -12,7 +12,6 @@ class UserSession {
     static let shared = UserSession()
     
     var sessionContext = SessionContext()
-    var projects: [Project] = []
     
     private init() {
 

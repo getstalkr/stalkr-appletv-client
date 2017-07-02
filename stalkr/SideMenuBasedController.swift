@@ -81,34 +81,28 @@ extension SideMenuBasedController: SidebarProtocol {
             let projectController = currentContainerController as! ProjectsViewController
             let cellDashboard = sidebarTable.cellForRow(at: IndexPath(row: 0, section: 0))!
             
-            let firstTab = projectController.dashboardsTab.visibleCells.sorted(by: {
-                $0.center.x < $1.center.x
-            }).first
+            guideHelper.addLinkByFocusTemporary(
+                from: cellDashboard,
+                to: projectController.dashboardsTab,
+                inPosition: .right
+            )
             
-            if let firstTab = firstTab { // if we have at least one project
-                guideHelper.addLinkByFocusTemporary(
-                    from: cellDashboard,
-                    to: firstTab,
-                    inPosition: .right
-                )
-                
-                projectController.guideHelper.addLinkByFocus(
-                    from: firstTab,
-                    to: cellDashboard,
-                    inPosition: .left,
-                    identifier: "projects segmenets to sidemenu"
-                )
-                
-                projectController.guideHelper.addLinkByFocus(
-                    from: projectController.gridView!.view,
-                    to: cellDashboard,
-                    inPosition: .left,
-                    identifier: "grid to sidemenu",
-                    activedWhen: { context in
-                        return (context.nextFocusedView as? SlotableCellDefault) != nil
-                    }
-                )
-            }
+            projectController.guideHelper.addLinkByFocus(
+                from: projectController.dashboardsTab,
+                to: cellDashboard,
+                inPosition: .left,
+                identifier: "projects segmenets to sidemenu"
+            )
+            
+            projectController.guideHelper.addLinkByFocus(
+                from: projectController.gridView!.view,
+                to: cellDashboard,
+                inPosition: .left,
+                identifier: "grid to sidemenu",
+                activedWhen: { context in
+                    return (context.nextFocusedView as? SlotableCellDefault) != nil
+                }
+            )
             
         case .newDasboard:
             let createProjectController = currentContainerController as! CreateGridViewController

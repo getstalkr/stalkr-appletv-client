@@ -44,15 +44,11 @@ class AuthenticationViewController: UIViewController, CodeInputViewDelegate {
         firstly {
             LoginTask(loginToken: token).execute()
         
-        }.then { r -> Promise<[Project]> in
+        }.then { r -> Void in
             UserSession.shared.sessionContext.changeStateToLogged(userToken: r.sessionToken)
+            UserSession.shared.sessionContext.store()
             
             loginNetworkStatus.loginSuccess.updateStatusLabel(self)
-            
-            return GetDashboardTask().execute()
-        
-        }.then { r -> Void in
-            UserSession.shared.projects = r
             
             let viewController = UIStoryboard(name: "SideMenuBased", bundle: nil).instantiateInitialViewController()!
             self.present(viewController, animated: true, completion: nil)
@@ -63,12 +59,6 @@ class AuthenticationViewController: UIViewController, CodeInputViewDelegate {
                 switch error {
                 case .incorrectToken:
                     loginNetworkStatus.failIncorrectToken.updateStatusLabel(self)
-                }
-            
-            } else if let error = error as? GetDashboardTaskErros {
-                switch error {
-                case .jsonMalformatted(_):
-                    loginNetworkStatus.failDashboardJsonMalformatted.updateStatusLabel(self)
                 }
                 
             } else {

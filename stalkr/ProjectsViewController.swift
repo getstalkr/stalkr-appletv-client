@@ -8,6 +8,7 @@
 import UIKit
 import TvLightSegments
 import FocusGuideHelper
+import PromiseKit
 
 class ProjectsViewController: UIViewController {
 
@@ -31,10 +32,17 @@ class ProjectsViewController: UIViewController {
     }
     
     func loadProjectsList() {
-        projectsList = UserSession.shared.projects
-
-        if projectsList.count > 0 {
-            dashboardsTab.set(segmentsItems: projectsList)
+        firstly {
+            GetDashboardTask().execute()
+        }.then { r -> Void in
+            self.projectsList = r
+            
+            if self.projectsList.count > 0 {
+                self.dashboardsTab.set(segmentsItems: self.projectsList)
+            }
+        }.catch { error in
+            // todo: show this error in UI
+            print("ERROR IN LOAD PROJECT: \(error)")
         }
     }
     

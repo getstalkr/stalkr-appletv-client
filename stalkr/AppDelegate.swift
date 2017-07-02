@@ -16,7 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let initialViewController = UIStoryboard(name: "Authentication", bundle: nil).instantiateInitialViewController()!
+        let initialViewController: UIViewController
+        if UserSession.shared.sessionContext.recover() {
+            initialViewController = UIStoryboard(name: "SideMenuBased", bundle: nil).instantiateInitialViewController()!
+        } else {
+            initialViewController = UIStoryboard(name: "Authentication", bundle: nil).instantiateInitialViewController()!
+        }
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window!.rootViewController = initialViewController

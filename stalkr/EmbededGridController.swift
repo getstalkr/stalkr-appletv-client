@@ -108,11 +108,11 @@ extension EmbededGridController: GridViewDelegate {
     
     func gridView(_ gridView: GridViewController, newGridConfiguration: GridConfiguration) {
         
-        let indexOfCurrentProjectSelected = UserSession.shared.projects.index(
-            where: { $0 === currentProject! }
-        )!
-        UserSession.shared.projects[indexOfCurrentProjectSelected].slots = newGridConfiguration.slots
-        // todo: we need stored the new grid configuration in device
+        // todo: in future, remove the "amazing change grid configuration"
+        //let indexOfCurrentProjectSelected = UserSession.shared.projects.index(
+        //    where: { $0 === currentProject! }
+        //)!
+        //UserSession.shared.projects[indexOfCurrentProjectSelected].slots = newGridConfiguration.slots
     }
 }
 

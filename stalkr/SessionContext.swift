@@ -30,6 +30,27 @@ class SessionContext {
     func changeStateToNotLogged() {
         state = .notLogged
     }
+    
+    // Store session
+    func store() {
+        let defaults = UserDefaults.standard
+        defaults.set(userToken, forKey: "sessionToken")
+    }
+    
+    func recover() -> Bool {
+        // recover token
+        // todo: check if the token recovered still is valid
+        let defaults = UserDefaults.standard
+        guard let sessionToken = defaults.string(forKey: "sessionToken") else {
+            return false
+        }
+        
+        // set session
+        self.changeStateToLogged(userToken: sessionToken)
+        
+        //
+        return true
+    }
 }
 
 enum SessionStates {
