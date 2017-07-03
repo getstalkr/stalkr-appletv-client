@@ -49,7 +49,7 @@ PODS:
   - SwiftRichString (0.9.8)
   - SwiftyJSON (3.1.4)
   - TvCodeScreen (0.1.1)
-  - TvLightSegments (0.1.0):
+  - TvLightSegments (0.1.1):
     - Cartography (~> 1.1)
 
 DEPENDENCIES:
@@ -71,7 +71,7 @@ DEPENDENCIES:
   - SwiftRichString
   - SwiftyJSON (~> 3.1.4)
   - TvCodeScreen (~> 0.1.1)
-  - TvLightSegments (~> 0.1.0)
+  - TvLightSegments (~> 0.1.1)
 
 EXTERNAL SOURCES:
   GridView:
@@ -101,8 +101,8 @@ SPEC CHECKSUMS:
   SwiftRichString: d42eeaefceea340e27b8a33945e0fac1ee21f58f
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TvCodeScreen: 27871aa105f80730b5a46f61da6144dd44fda7d1
-  TvLightSegments: a2f970ca56e0709cc10b86e5a3e457675755adb9
+  TvLightSegments: 373ec07644b815c7d6c5da510d887e332a13cbb1
 
-PODFILE CHECKSUM: fbf01922c59e6d01659573b905dc93bfa713a603
+PODFILE CHECKSUM: 29ccd085cd3a1da8f067eb744a011e733ab2ea27
 
 COCOAPODS: 1.2.1

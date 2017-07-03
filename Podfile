@@ -18,7 +18,7 @@ target 'stalkr' do
   pod 'Alamofire', '~> 4.5'
   pod 'NVActivityIndicatorView', '~> 3.5'
   pod 'FontAwesomeKit', '~> 2.2.0'
-  pod 'TvLightSegments', '~> 0.1.0'
+  pod 'TvLightSegments', '~> 0.1.1'
   #pod 'GridView', '~> 0.1.2'
   pod 'InputStepByStep', '~> 0.0.2-beta'
   pod 'FocusGuideHelper', '~> 0.1.0'
