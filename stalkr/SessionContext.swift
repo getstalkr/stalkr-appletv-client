@@ -33,7 +33,7 @@ class SessionContext {
         state = .logged(userToken: sessionToken)
         
         if storeToken {
-            store()
+            storeSessionToken()
         }
     }
     
@@ -41,34 +41,48 @@ class SessionContext {
         state = .notLogged
         
         if removeTokenStored {
-            removeStored()
+            removeSessionTokenStored()
         }
     }
     
+    ////
     // Store session
-    private func store() {
+    
+    /**
+     Save the session token, to use when the app is relaunched
+    */
+    private func storeSessionToken() {
         let defaults = UserDefaults.standard
         defaults.set(userToken, forKey: "sessionToken")
     }
     
-    private func removeStored() {
+    /**
+     Remove the file with the session token
+     */
+    private func removeSessionTokenStored() {
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: "sessionToken")
     }
     
+    /**
+     Try to recover the old token stored
+    */
     func recoverToken() -> Promise<String> {
         return Promise { fulfill, reject in
+            // Get the old session token, if exists
             let defaults = UserDefaults.standard
             guard let sessionToken = defaults.string(forKey: "sessionToken") else {
                 reject(RecorverTokenErrors.haveNotFileWithLastToken)
                 return
             }
             
+            // Check if this old session token still is valid
             firstly {
                 CheckTokenValidTask(sessionToken).execute()
             }.then {
                 fulfill(sessionToken)
             }.catch { _ in
+                self.removeSessionTokenStored()
                 reject(RecorverTokenErrors.sessionExpired)
             }
         }
