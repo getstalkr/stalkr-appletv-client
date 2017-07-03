@@ -136,13 +136,13 @@
         <scene sceneID="8qx-2t-Fuc">
             <objects>
                 <tableViewController storyboardIdentifier="ProjectTableViewController" id="8PL-Ka-4f6" customClass="SidebarController" customModule="stalkr" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="66" sectionFooterHeight="66" id="Ebf-zl-vZe">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="66" sectionFooterHeight="66" id="Ebf-zl-vZe">
                         <rect key="frame" x="0.0" y="0.0" width="386" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.95022302865982056" green="0.75401997566223145" blue="0.035687629133462906" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="CellSidebarMenu" customModule="stalkr" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="CellSidebarMenu" customModule="stalkr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="66" width="386" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UW4-Tw-7UH" id="9Fg-35-gqH">
