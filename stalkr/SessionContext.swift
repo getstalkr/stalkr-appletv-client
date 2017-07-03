@@ -7,6 +7,12 @@
 //
 
 import Foundation
+import PromiseKit
+
+enum RecorverTokenErrors: Error {
+    case haveNotFileWithLastToken
+    case sessionExpired
+}
 
 class SessionContext {
     private var state: SessionStates = .notLogged
@@ -50,10 +56,22 @@ class SessionContext {
         defaults.removeObject(forKey: "sessionToken")
     }
     
-    func recoverToken() -> String? {
-        // todo: check if the token recovered still is valid
-        let defaults = UserDefaults.standard
-        return defaults.string(forKey: "sessionToken")
+    func recoverToken() -> Promise<String> {
+        return Promise { fulfill, reject in
+            let defaults = UserDefaults.standard
+            guard let sessionToken = defaults.string(forKey: "sessionToken") else {
+                reject(RecorverTokenErrors.haveNotFileWithLastToken)
+                return
+            }
+            
+            firstly {
+                CheckTokenValidTask(sessionToken).execute()
+            }.then {
+                fulfill(sessionToken)
+            }.catch { _ in
+                reject(RecorverTokenErrors.sessionExpired)
+            }
+        }
     }
 }
 
