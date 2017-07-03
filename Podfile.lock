@@ -1,6 +1,5 @@
 PODS:
   - Alamofire (4.5.0)
-  - AlertPro (1.3)
   - Cartography (1.1.0)
   - Charts (3.0.2):
     - Charts/Core (= 3.0.2)
@@ -54,7 +53,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
-  - AlertPro (~> 1.3)
   - Cartography
   - Charts
   - FocusGuideHelper (~> 0.1.0)
@@ -85,7 +83,6 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  AlertPro: e02ab63b0ff84706634074d6b2f3a7f355b9bab6
   Cartography: 0538ccb4044acbbda2266335fc58cb4228794d90
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
   FocusGuideHelper: 69f901fe857bd19db6068eb2ef9bda5f25fa4916
@@ -103,6 +100,6 @@ SPEC CHECKSUMS:
   TvCodeScreen: 27871aa105f80730b5a46f61da6144dd44fda7d1
   TvLightSegments: 373ec07644b815c7d6c5da510d887e332a13cbb1
 
-PODFILE CHECKSUM: 29ccd085cd3a1da8f067eb744a011e733ab2ea27
+PODFILE CHECKSUM: 12418ed3722dabddb63be10a8077cd9c8d93813d
 
 COCOAPODS: 1.2.1
