@@ -27,8 +27,6 @@ PODS:
   - FontAwesomeKit/Zocial (2.2.1):
     - FontAwesomeKit/Core
   - GridView (0.1.2)
-  - InputStepByStep (0.0.2-beta):
-    - Cartography (~> 1.1)
   - Kingfisher (3.10.2)
   - NVActivityIndicatorView (3.6.1)
   - PromiseKit (4.2.2):
@@ -58,7 +56,6 @@ DEPENDENCIES:
   - FocusGuideHelper (~> 0.1.0)
   - FontAwesomeKit (~> 2.2.0)
   - GridView (from `https://github.com/macabeus/GridView.git`, branch `move_cells`)
-  - InputStepByStep (~> 0.0.2-beta)
   - Kingfisher (~> 3.4)
   - NVActivityIndicatorView (~> 3.5)
   - PromiseKit
@@ -88,7 +85,6 @@ SPEC CHECKSUMS:
   FocusGuideHelper: 69f901fe857bd19db6068eb2ef9bda5f25fa4916
   FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
   GridView: b7c93fe68c43956bbec88e7483b3efa3cebb3c8d
-  InputStepByStep: b096a266aaff3c082288fe208d2ade863900b1e7
   Kingfisher: 7297492bf8cec9b2e2dee3519f2219948580d98e
   NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
   PromiseKit: 00e8886881f151c7e573d06b437915b0bb2970ec
@@ -100,6 +96,6 @@ SPEC CHECKSUMS:
   TvCodeScreen: 27871aa105f80730b5a46f61da6144dd44fda7d1
   TvLightSegments: 373ec07644b815c7d6c5da510d887e332a13cbb1
 
-PODFILE CHECKSUM: 12418ed3722dabddb63be10a8077cd9c8d93813d
+PODFILE CHECKSUM: c3000d0d8d7f3473a6aa52f33a9c65ca315cfa86
 
 COCOAPODS: 1.2.1
