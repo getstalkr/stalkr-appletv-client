@@ -10,10 +10,9 @@ import UIKit
 
 enum SidebarOptions: String, CustomStringConvertible {
     case dashboard = "Dashboard"
-    case newDasboard = "New Dasboard"
     case myAccount = "My Account"
     
-    static let allValues = [dashboard, newDasboard, myAccount]
+    static let allValues = [dashboard, myAccount]
     
     var description: String {
         return self.rawValue.uppercased()
@@ -23,9 +22,6 @@ enum SidebarOptions: String, CustomStringConvertible {
         switch self {
         case .dashboard:
             return UIStoryboard(name: "ProjectsView", bundle: nil).instantiateInitialViewController()
-            
-        case .newDasboard:
-            return UIStoryboard(name: "CreateProject", bundle: nil).instantiateInitialViewController()
             
         case .myAccount:
             return UIStoryboard(name: "Account", bundle: nil).instantiateInitialViewController()

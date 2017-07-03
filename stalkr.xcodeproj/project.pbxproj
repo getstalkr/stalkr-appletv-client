@@ -15,7 +15,6 @@
 		892DECC81E5E308900676056 /* CellTeamCommitsZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DECC71E5E308900676056 /* CellTeamCommitsZoom.swift */; };
 		892DECCA1E5F258400676056 /* SlotableCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DECC91E5F258400676056 /* SlotableCellConfiguration.swift */; };
 		892E1DD41EEECABD0098A0FC /* ProjectsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 892E1DD31EEECABD0098A0FC /* ProjectsView.storyboard */; };
-		892E1DD61EEFFD630098A0FC /* CreateProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 892E1DD51EEFFD620098A0FC /* CreateProject.storyboard */; };
 		892E73DC1E589378007483E1 /* CellCommitsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E73D81E589378007483E1 /* CellCommitsFeed.swift */; };
 		892E73DD1E589378007483E1 /* CellCommitsFeed.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892E73D91E589378007483E1 /* CellCommitsFeed.xib */; };
 		892E73DE1E589378007483E1 /* CellCommitsFeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E73DA1E589378007483E1 /* CellCommitsFeedTableCell.swift */; };
@@ -53,7 +52,6 @@
 		89C36ADD1EF40BBD00E5342C /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C36ADC1EF40BBD00E5342C /* AuthenticationViewController.swift */; };
 		89C467551E596250003CF8F2 /* CellDeployStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C467541E596250003CF8F2 /* CellDeployStatus.swift */; };
 		89C467571E596258003CF8F2 /* CellDeployStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C467561E596258003CF8F2 /* CellDeployStatus.xib */; };
-		89C7784C1E6EEB86008926E7 /* CreateGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C7784B1E6EEB86008926E7 /* CreateGridViewController.swift */; };
 		89C994AB1E547C6E00DBADBA /* CellTravis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C994AA1E547C6E00DBADBA /* CellTravis.swift */; };
 		89C994AD1E547CDE00DBADBA /* CellTravis.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994AC1E547CDE00DBADBA /* CellTravis.xib */; };
 		89C994CB1E54820900DBADBA /* CellTravisTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C994CA1E54820900DBADBA /* CellTravisTableCell.xib */; };
@@ -81,7 +79,6 @@
 		892DECC71E5E308900676056 /* CellTeamCommitsZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTeamCommitsZoom.swift; sourceTree = "<group>"; };
 		892DECC91E5F258400676056 /* SlotableCellConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotableCellConfiguration.swift; sourceTree = "<group>"; };
 		892E1DD31EEECABD0098A0FC /* ProjectsView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProjectsView.storyboard; sourceTree = "<group>"; };
-		892E1DD51EEFFD620098A0FC /* CreateProject.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateProject.storyboard; sourceTree = "<group>"; };
 		892E73D81E589378007483E1 /* CellCommitsFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCommitsFeed.swift; sourceTree = "<group>"; };
 		892E73D91E589378007483E1 /* CellCommitsFeed.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCommitsFeed.xib; sourceTree = "<group>"; };
 		892E73DA1E589378007483E1 /* CellCommitsFeedTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCommitsFeedTableCell.swift; sourceTree = "<group>"; };
@@ -121,7 +118,6 @@
 		89C36ADC1EF40BBD00E5342C /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		89C467541E596250003CF8F2 /* CellDeployStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDeployStatus.swift; sourceTree = "<group>"; };
 		89C467561E596258003CF8F2 /* CellDeployStatus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellDeployStatus.xib; sourceTree = "<group>"; };
-		89C7784B1E6EEB86008926E7 /* CreateGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGridViewController.swift; sourceTree = "<group>"; };
 		89C994AA1E547C6E00DBADBA /* CellTravis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTravis.swift; sourceTree = "<group>"; };
 		89C994AC1E547CDE00DBADBA /* CellTravis.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTravis.xib; sourceTree = "<group>"; };
 		89C994CA1E54820900DBADBA /* CellTravisTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTravisTableCell.xib; sourceTree = "<group>"; };
@@ -347,7 +343,6 @@
 				89C36AD91EF402E100E5342C /* Authentication */,
 				89C36AD51EF400E600E5342C /* SideMenuBased */,
 				89C36AD61EF4010600E5342C /* Projects */,
-				89C36AD71EF4014100E5342C /* CreateProject */,
 				89C36AD81EF4017300E5342C /* Account */,
 			);
 			name = Views;
@@ -373,15 +368,6 @@
 				893E5B671EB4495B00255CA9 /* EmbededGridController.swift */,
 			);
 			name = Projects;
-			sourceTree = "<group>";
-		};
-		89C36AD71EF4014100E5342C /* CreateProject */ = {
-			isa = PBXGroup;
-			children = (
-				892E1DD51EEFFD620098A0FC /* CreateProject.storyboard */,
-				89C7784B1E6EEB86008926E7 /* CreateGridViewController.swift */,
-			);
-			name = CreateProject;
 			sourceTree = "<group>";
 		};
 		89C36AD81EF4017300E5342C /* Account */ = {
@@ -517,7 +503,6 @@
 				892E73E51E58A59B007483E1 /* CellTeamCommits.xib in Resources */,
 				89C467571E596258003CF8F2 /* CellDeployStatus.xib in Resources */,
 				89C994CB1E54820900DBADBA /* CellTravisTableCell.xib in Resources */,
-				892E1DD61EEFFD630098A0FC /* CreateProject.storyboard in Resources */,
 				892E73EA1E58F56F007483E1 /* CellCloudPerformance.xib in Resources */,
 				8948CC9E1F09F419003B9D27 /* Splash.storyboard in Resources */,
 				89C36ADB1EF4035000E5342C /* Authentication.storyboard in Resources */,
@@ -587,7 +572,6 @@
 				89AE2A661EF80A3800CD2948 /* ServerDispatcher.swift in Sources */,
 				89AE2A6D1EF86DB300CD2948 /* LoginTask.swift in Sources */,
 				892DECCA1E5F258400676056 /* SlotableCellConfiguration.swift in Sources */,
-				89C7784C1E6EEB86008926E7 /* CreateGridViewController.swift in Sources */,
 				89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */,
 				8948CCA01F09F518003B9D27 /* SplashViewController.swift in Sources */,
 				89AE2A5E1EF7FF0000CD2948 /* ServiceRequestProtocol.swift in Sources */,

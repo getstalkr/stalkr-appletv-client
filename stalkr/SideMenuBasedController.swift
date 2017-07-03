@@ -104,19 +104,9 @@ extension SideMenuBasedController: SidebarProtocol {
                 }
             )
             
-        case .newDasboard:
-            let createProjectController = currentContainerController as! CreateGridViewController
-            let cellNewDashboard = sidebarTable.cellForRow(at: IndexPath(row: 1, section: 0))!
-            
-            guideHelper.addLinkByFocusTemporary(
-                from: cellNewDashboard,
-                to: createProjectController.container.view,
-                inPosition: .right
-            )
-            
         case .myAccount:
             let accountController = currentContainerController as! AccountViewController
-            let cellAccount = sidebarTable.cellForRow(at: IndexPath(row: 2, section: 0))!
+            let cellAccount = sidebarTable.cellForRow(at: IndexPath(row: 1, section: 0))!
             
             guideHelper.addLinkByFocusTemporary(
                 from: cellAccount,
