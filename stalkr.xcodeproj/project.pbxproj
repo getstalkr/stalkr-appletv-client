@@ -26,7 +26,9 @@
 		892E73EA1E58F56F007483E1 /* CellCloudPerformance.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892E73E91E58F56F007483E1 /* CellCloudPerformance.xib */; };
 		893E5B681EB4495B00255CA9 /* EmbededGridController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893E5B671EB4495B00255CA9 /* EmbededGridController.swift */; };
 		894268C41F083E140073F4D5 /* GetDashboardTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894268C31F083E140073F4D5 /* GetDashboardTask.swift */; };
-		8948CC9B1F099C62003B9D27 /* MeTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8948CC9A1F099C62003B9D27 /* MeTask.swift */; };
+		8948CC9B1F099C62003B9D27 /* CheckTokenValidTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8948CC9A1F099C62003B9D27 /* CheckTokenValidTask.swift */; };
+		8948CC9E1F09F419003B9D27 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8948CC9D1F09F419003B9D27 /* Splash.storyboard */; };
+		8948CCA01F09F518003B9D27 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8948CC9F1F09F518003B9D27 /* SplashViewController.swift */; };
 		894BD45C1F0801470014BCA9 /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894BD45B1F0801470014BCA9 /* ViewController+Extensions.swift */; };
 		8960D21A1EF8C261008E1D7C /* DefaultNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8960D2191EF8C261008E1D7C /* DefaultNetwork.swift */; };
 		8960D2211EF9429B008E1D7C /* SessionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8960D2201EF9429B008E1D7C /* SessionContext.swift */; };
@@ -90,7 +92,9 @@
 		892E73E91E58F56F007483E1 /* CellCloudPerformance.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCloudPerformance.xib; sourceTree = "<group>"; };
 		893E5B671EB4495B00255CA9 /* EmbededGridController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbededGridController.swift; sourceTree = "<group>"; };
 		894268C31F083E140073F4D5 /* GetDashboardTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetDashboardTask.swift; sourceTree = "<group>"; };
-		8948CC9A1F099C62003B9D27 /* MeTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTask.swift; sourceTree = "<group>"; };
+		8948CC9A1F099C62003B9D27 /* CheckTokenValidTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckTokenValidTask.swift; sourceTree = "<group>"; };
+		8948CC9D1F09F419003B9D27 /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		8948CC9F1F09F518003B9D27 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		894BD45B1F0801470014BCA9 /* ViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
 		8960D2191EF8C261008E1D7C /* DefaultNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetwork.swift; sourceTree = "<group>"; };
 		8960D2201EF9429B008E1D7C /* SessionContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionContext.swift; sourceTree = "<group>"; };
@@ -188,6 +192,15 @@
 			name = CellCloudPerformance;
 			sourceTree = "<group>";
 		};
+		8948CC9C1F09F406003B9D27 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				8948CC9D1F09F419003B9D27 /* Splash.storyboard */,
+				8948CC9F1F09F518003B9D27 /* SplashViewController.swift */,
+			);
+			name = Splash;
+			sourceTree = "<group>";
+		};
 		8960D21D1EF94127008E1D7C /* Request */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,7 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				89AE2A6C1EF86DB300CD2948 /* LoginTask.swift */,
-				8948CC9A1F099C62003B9D27 /* MeTask.swift */,
+				8948CC9A1F099C62003B9D27 /* CheckTokenValidTask.swift */,
 				894268C31F083E140073F4D5 /* GetDashboardTask.swift */,
 			);
 			name = Tasks;
@@ -330,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				894BD45B1F0801470014BCA9 /* ViewController+Extensions.swift */,
+				8948CC9C1F09F406003B9D27 /* Splash */,
 				89C36AD91EF402E100E5342C /* Authentication */,
 				89C36AD51EF400E600E5342C /* SideMenuBased */,
 				89C36AD61EF4010600E5342C /* Projects */,
@@ -505,6 +519,7 @@
 				89C994CB1E54820900DBADBA /* CellTravisTableCell.xib in Resources */,
 				892E1DD61EEFFD630098A0FC /* CreateProject.storyboard in Resources */,
 				892E73EA1E58F56F007483E1 /* CellCloudPerformance.xib in Resources */,
+				8948CC9E1F09F419003B9D27 /* Splash.storyboard in Resources */,
 				89C36ADB1EF4035000E5342C /* Authentication.storyboard in Resources */,
 				892E73DF1E589378007483E1 /* CellCommitsFeedTableCell.xib in Resources */,
 				892E73DD1E589378007483E1 /* CellCommitsFeed.xib in Resources */,
@@ -574,11 +589,12 @@
 				892DECCA1E5F258400676056 /* SlotableCellConfiguration.swift in Sources */,
 				89C7784C1E6EEB86008926E7 /* CreateGridViewController.swift in Sources */,
 				89B337F31E48BB9F00610EA3 /* AppDelegate.swift in Sources */,
+				8948CCA01F09F518003B9D27 /* SplashViewController.swift in Sources */,
 				89AE2A5E1EF7FF0000CD2948 /* ServiceRequestProtocol.swift in Sources */,
 				CE52C5391E61059300FC6C40 /* SidebarProtocol.swift in Sources */,
 				89C994AB1E547C6E00DBADBA /* CellTravis.swift in Sources */,
 				8961C98D1E761E4900D84B5C /* ListClasses.swift in Sources */,
-				8948CC9B1F099C62003B9D27 /* MeTask.swift in Sources */,
+				8948CC9B1F099C62003B9D27 /* CheckTokenValidTask.swift in Sources */,
 				8960D2261EFA0D60008E1D7C /* LoginChannels.swift in Sources */,
 				89DEFD731EFB6E790086F78B /* WebSocketChannelExtension.swift in Sources */,
 				892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */,

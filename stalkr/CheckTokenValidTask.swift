@@ -1,5 +1,5 @@
 //
-//  MeTask.swift
+//  CheckTokenValidTask.swift
 //  stalkr
 //
 //  Created by Bruno Macabeus Aquino on 02/07/17.
@@ -9,10 +9,16 @@
 import Foundation
 import PromiseKit
 
-class MeTask: Task {
+class CheckTokenValidTask: Task {
+    
+    var sessionToken: String
+    
+    init(_ sessionToken: String) {
+        self.sessionToken = sessionToken
+    }
     
     var request: ServiceRequest {
-        return UserService.me()
+        return UserService.checkTokenValid(sessionToken)
     }
     
     func execute(in dispatcher: Dispatcher) -> Promise<Void> {
