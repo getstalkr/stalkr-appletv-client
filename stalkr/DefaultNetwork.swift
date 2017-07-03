@@ -9,11 +9,16 @@
 import Foundation
 import PromiseKit
 
-// todo: see it https://stackoverflow.com/questions/38813906/swift-3-how-to-use-preprocessor-flags-like-if-debug-to-implement-api-keys
-
 fileprivate let environmentWebSocket = Environment(name: "local", host: "ws://127.0.0.1:13254")
 
-fileprivate let environment = Environment(name: "local", host: "http://127.0.0.1:8080")
+fileprivate var environment: Environment = {
+    if ProcessInfo.processInfo.arguments.contains("USE_LOCAL_USER_SERVER") {
+        return Environment(name: "local", host: "http://127.0.0.1:8080")
+    } else {
+        return Environment(name: "production", host: "https://stalkr-cloud.herokuapp.com")
+    }
+}()
+
 fileprivate let serverDispatcher = ServerDispatcher(environment: environment)
 
 extension Task {
