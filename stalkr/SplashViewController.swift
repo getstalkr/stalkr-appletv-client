@@ -22,10 +22,10 @@ class SplashViewController: UIViewController {
             )
             
             let initialViewController = UIStoryboard(name: "SideMenuBased", bundle: nil).instantiateInitialViewController()!
-            self.present(initialViewController, animated: true, completion: nil)
+            self.changeRootViewController(to: initialViewController)
         }.catch { _ in
             let initialViewController = UIStoryboard(name: "Authentication", bundle: nil).instantiateInitialViewController()!
-            self.present(initialViewController, animated: true, completion: nil)
+            self.changeRootViewController(to: initialViewController)
         }
     }
 }

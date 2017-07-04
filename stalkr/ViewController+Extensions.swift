@@ -30,4 +30,8 @@ extension UIViewController {
         
         self.view.layer.addSublayer(gradientLayer)
     }
+    
+    func changeRootViewController(to newRoot: UIViewController) {
+        UIApplication.shared.delegate?.window??.rootViewController = newRoot
+    }
 }
