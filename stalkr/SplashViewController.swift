@@ -21,11 +21,9 @@ class SplashViewController: UIViewController {
                 storeToken: false
             )
             
-            let initialViewController = UIStoryboard(name: "SideMenuBased", bundle: nil).instantiateInitialViewController()!
-            self.changeRootViewController(to: initialViewController)
+            self.changeRootViewController(toInitialAtStoryboard: "SideMenuBased")
         }.catch { _ in
-            let initialViewController = UIStoryboard(name: "Authentication", bundle: nil).instantiateInitialViewController()!
-            self.changeRootViewController(to: initialViewController)
+            self.changeRootViewController(toInitialAtStoryboard: "Authentication")
         }
     }
 }

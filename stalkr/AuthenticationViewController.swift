@@ -52,8 +52,7 @@ class AuthenticationViewController: UIViewController, CodeInputViewDelegate {
             
             loginNetworkStatus.loginSuccess.updateStatusLabel(self)
             
-            let viewController = UIStoryboard(name: "SideMenuBased", bundle: nil).instantiateInitialViewController()!
-            self.changeRootViewController(to: viewController)
+            self.changeRootViewController(toInitialAtStoryboard: "SideMenuBased")
         
         }.catch { error in
             

@@ -31,6 +31,11 @@ extension UIViewController {
         self.view.layer.addSublayer(gradientLayer)
     }
     
+    func changeRootViewController(toInitialAtStoryboard storyboardName: String) {
+        let initialViewController = UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController()!
+        self.changeRootViewController(to: initialViewController)
+    }
+    
     func changeRootViewController(to newRoot: UIViewController) {
         UIApplication.shared.delegate?.window??.rootViewController = newRoot
     }
