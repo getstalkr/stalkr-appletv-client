@@ -25,8 +25,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PES-Ri-3Mn">
                                 <rect key="frame" x="140" y="90" width="1640" height="900"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting to insert  a login token..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ff-9T-wnG">
-                                        <rect key="frame" x="275" y="765" width="1039" height="91"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting to insert  a login token..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ff-9T-wnG">
+                                        <rect key="frame" x="301" y="765" width="1039" height="91"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -65,8 +65,8 @@
                                     <constraint firstItem="hZy-3q-EoY" firstAttribute="leading" secondItem="PES-Ri-3Mn" secondAttribute="leading" constant="282" id="4oW-MW-w0c"/>
                                     <constraint firstItem="0Gz-fp-UTq" firstAttribute="leading" secondItem="PES-Ri-3Mn" secondAttribute="leading" constant="90" id="7z8-WB-WHZ"/>
                                     <constraint firstAttribute="bottom" secondItem="6ff-9T-wnG" secondAttribute="bottom" constant="44" id="Hqb-Yv-cG3"/>
+                                    <constraint firstItem="6ff-9T-wnG" firstAttribute="centerX" secondItem="PES-Ri-3Mn" secondAttribute="centerX" id="MPv-gi-hLI"/>
                                     <constraint firstAttribute="trailing" secondItem="0Gz-fp-UTq" secondAttribute="trailing" constant="90" id="gIj-0E-Ex4"/>
-                                    <constraint firstItem="6ff-9T-wnG" firstAttribute="leading" secondItem="PES-Ri-3Mn" secondAttribute="leading" constant="275" id="pQZ-3E-L9q"/>
                                     <constraint firstItem="hZy-3q-EoY" firstAttribute="top" secondItem="PES-Ri-3Mn" secondAttribute="top" constant="79" id="q21-vg-ehU"/>
                                     <constraint firstItem="0Gz-fp-UTq" firstAttribute="top" secondItem="hZy-3q-EoY" secondAttribute="bottom" constant="160" id="yHX-h0-gRy"/>
                                 </constraints>
