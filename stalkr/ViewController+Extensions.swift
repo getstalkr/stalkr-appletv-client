@@ -37,6 +37,17 @@ extension UIViewController {
     }
     
     func changeRootViewController(to newRoot: UIViewController) {
-        UIApplication.shared.delegate?.window??.rootViewController = newRoot
+        guard let window = UIApplication.shared.keyWindow else {
+            return print("ERROR at changeRootViewController(to:) : Can't get the keyWindow")
+        }
+        
+        UIView.transition(
+            with: window,
+            duration: 0.8,
+            options: .transitionCrossDissolve,
+            animations: {
+                window.rootViewController = newRoot
+            }
+        )
     }
 }
