@@ -14,7 +14,7 @@
         <scene sceneID="6mX-P1-tng">
             <objects>
                 <collectionViewController id="yGM-Pg-MOw" customClass="GridViewController" customModule="GridView" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="gql-XQ-nWL">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="UIViewController-L0N-Re-S2P" dataMode="prototypes" id="gql-XQ-nWL">
                         <rect key="frame" x="0.0" y="0.0" width="1848" height="986"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewLayout key="collectionViewLayout" id="Gjf-NR-ZHX">
@@ -100,7 +100,7 @@
                                 </connections>
                             </containerView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DyS-yH-JWo" customClass="TvLightSegments" customModule="TvLightSegments">
-                                <rect key="frame" x="36" y="0.0" width="1848" height="86"/>
+                                <rect key="frame" x="20" y="0.0" width="1878" height="86"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="86" id="KaF-uN-9p1"/>
@@ -119,9 +119,9 @@
                             <constraint firstItem="DyS-yH-JWo" firstAttribute="top" secondItem="hAX-L9-gYc" secondAttribute="bottom" id="FJD-x5-46V"/>
                             <constraint firstItem="g7R-M7-uee" firstAttribute="leading" secondItem="bhW-VZ-A5q" secondAttribute="leadingMargin" constant="16" id="YGg-Qh-VmO"/>
                             <constraint firstItem="g7R-M7-uee" firstAttribute="top" secondItem="DyS-yH-JWo" secondAttribute="bottom" constant="8" id="ckT-JB-E1N"/>
-                            <constraint firstItem="DyS-yH-JWo" firstAttribute="leading" secondItem="bhW-VZ-A5q" secondAttribute="leadingMargin" constant="16" id="eoY-2C-4JG"/>
+                            <constraint firstItem="DyS-yH-JWo" firstAttribute="leading" secondItem="bhW-VZ-A5q" secondAttribute="leadingMargin" id="eoY-2C-4JG"/>
                             <constraint firstItem="g7R-M7-uee" firstAttribute="top" secondItem="DyS-yH-JWo" secondAttribute="bottom" constant="8" id="fDW-q5-r1R"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="DyS-yH-JWo" secondAttribute="trailing" constant="16" id="mE4-Hs-g9c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DyS-yH-JWo" secondAttribute="trailing" constant="2" id="mE4-Hs-g9c"/>
                             <constraint firstItem="LlB-jQ-IQS" firstAttribute="top" secondItem="g7R-M7-uee" secondAttribute="bottom" id="nb1-bg-PnL"/>
                         </constraints>
                     </view>
