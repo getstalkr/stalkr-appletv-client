@@ -18,7 +18,6 @@ class SideMenuBasedController: UIViewController {
     @IBOutlet weak var sideMenuSuperView: UIView!
     @IBOutlet weak var sideMenuSuperViewWidth: NSLayoutConstraint!
     @IBOutlet weak var sideMenuArrowIcon: UIImageView!
-    @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var containerView: UIView!
     let guideHelper = FocusGuideHelper()
     var sidebarTable: UITableView!
@@ -177,8 +176,6 @@ extension SideMenuBasedController: SidebarProtocol {
     }
     
     func changeContainerView(option: SidebarOptions) {
-        labelTitle.text = option.description
-        
         guard let controller = option.instantiateController else {
             return
         }

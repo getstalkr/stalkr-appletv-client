@@ -28,17 +28,8 @@
                                 <rect key="frame" x="140" y="90" width="1640" height="900"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBB-r1-arU" userLabel="Project View">
-                                        <rect key="frame" x="417" y="70" width="1190" height="830"/>
+                                        <rect key="frame" x="417" y="22" width="1190" height="878"/>
                                     </containerView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LnL-ND-Cqh">
-                                        <rect key="frame" x="417" y="20" width="1190" height="42"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="1190" id="iRP-6g-IvJ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHA-3Q-ZCw" userLabel="TableBackView">
                                         <rect key="frame" x="0.0" y="0.0" width="386" height="900"/>
                                         <subviews>
@@ -88,16 +79,14 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.019607843137254902" green="0.019607843137254902" blue="0.12156862745098039" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="cBB-r1-arU" firstAttribute="top" secondItem="8F8-tD-s7m" secondAttribute="top" constant="22" id="CdA-OC-4Ts"/>
                                     <constraint firstAttribute="trailing" secondItem="cBB-r1-arU" secondAttribute="trailing" constant="33" id="MjQ-Iq-8gH"/>
                                     <constraint firstItem="QHA-3Q-ZCw" firstAttribute="top" secondItem="8F8-tD-s7m" secondAttribute="top" id="SXL-4N-iga"/>
                                     <constraint firstAttribute="bottom" secondItem="cBB-r1-arU" secondAttribute="bottom" id="WGl-kX-139"/>
-                                    <constraint firstItem="LnL-ND-Cqh" firstAttribute="leading" secondItem="QHA-3Q-ZCw" secondAttribute="trailing" constant="31" id="aae-uG-du8"/>
                                     <constraint firstAttribute="bottom" secondItem="QHA-3Q-ZCw" secondAttribute="bottom" id="btL-gb-l8M"/>
                                     <constraint firstItem="QHA-3Q-ZCw" firstAttribute="leading" secondItem="8F8-tD-s7m" secondAttribute="leading" id="gKQ-8e-3Nc"/>
                                     <constraint firstItem="cBB-r1-arU" firstAttribute="leading" secondItem="QHA-3Q-ZCw" secondAttribute="trailing" constant="31" id="ob1-O0-nTn"/>
                                     <constraint firstItem="QHA-3Q-ZCw" firstAttribute="height" secondItem="8F8-tD-s7m" secondAttribute="height" id="u9L-Hz-wj5"/>
-                                    <constraint firstItem="LnL-ND-Cqh" firstAttribute="top" secondItem="8F8-tD-s7m" secondAttribute="top" constant="20" id="wf3-6G-ccA"/>
-                                    <constraint firstItem="cBB-r1-arU" firstAttribute="top" secondItem="LnL-ND-Cqh" secondAttribute="bottom" constant="8" id="xBj-Cf-dOQ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -117,7 +106,6 @@
                     <navigationItem key="navigationItem" id="mkD-kw-s0m"/>
                     <connections>
                         <outlet property="containerView" destination="cBB-r1-arU" id="pmB-p1-htI"/>
-                        <outlet property="labelTitle" destination="LnL-ND-Cqh" id="kqp-UA-qw0"/>
                         <outlet property="logoStalkr" destination="xU3-6z-p94" id="NPM-LR-wRp"/>
                         <outlet property="sideMenuArrowIcon" destination="mfq-Z1-iGg" id="Rf1-SI-SRb"/>
                         <outlet property="sideMenuSuperView" destination="QHA-3Q-ZCw" id="fKj-fr-cXX"/>
