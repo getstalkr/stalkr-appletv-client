@@ -30,10 +30,11 @@ extension SubscriberCell {
     func subscriber(pusherKey: String, params: [String: Any]) -> Pusher {
         let pusher = Pusher(key: pusherKey)
         
-        // return a function to converter parameter "Any?" to "JSON", and pass the current cell
+        // return a function to wrapper the handle
         func wrapperHandle(_ handle: @escaping (_ data: JSON, _ cell: SlotableCell) -> Void) -> ((Any?) -> Void) {
             
             return { (data: Any?) -> () in
+                // converter parameter "Any?" to "JSON", and pass the current cell
                 let json: JSON
                 
                 if let object = data as? [String : Any],
@@ -43,6 +44,14 @@ extension SubscriberCell {
                     json = JSON(arrayLiteral: [])
                 }
                 
+                // stop the loading animation, if need
+                if let cellLoading = self as? LoadingAnimateCellProtocol,
+                    cellLoading.loading.currentState == .waiting {
+                    
+                    cellLoading.loading.stop()
+                }
+
+                // call handle function
                 handle(json, self as! SlotableCell)
             }
         }

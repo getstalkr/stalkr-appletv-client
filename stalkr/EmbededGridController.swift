@@ -54,6 +54,12 @@ extension EmbededGridController: GridViewDelegate {
                 pusherKey: params["pusher_key"]! as! String,
                 params: params
             )
+            
+            if let cellLoading = cell as? LoadingAnimateCellProtocol {
+                if cellLoading.loading.currentState == .new {
+                    cellLoading.loading.show(message: "Waiting for data...")
+                }
+            }
         }
         
         // create gestures related a zoom

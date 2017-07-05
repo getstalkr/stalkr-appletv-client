@@ -20,9 +20,9 @@ protocol StalkrCell {
     static var configurations: [StalkrCellConfig] { get }
 }
 
-class SlotableCellDefault: UICollectionViewCell, LoadingViewProtocol {
+class SlotableCellDefault: UICollectionViewCell, LoadingAnimateCellProtocol {
     
-    lazy var loadingView: LoadingView = {
+    lazy var loading: LoadingAnimateCell = {
         // get label cell title
         let labelCellTitle = self.contentView.subviews
             .filter { ($0 as? UILabel) != nil }
@@ -35,7 +35,7 @@ class SlotableCellDefault: UICollectionViewCell, LoadingViewProtocol {
         }
         
         //
-        return LoadingView(
+        return LoadingAnimateCell(
             inView: self.contentView,
             animationType: NVActivityIndicatorType.ballClipRotatePulse,
             hideExcept: hideExcept

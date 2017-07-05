@@ -12,16 +12,24 @@ import Cartography
 import SwiftRichString
 
 
-protocol LoadingViewProtocol {
-    var loadingView: LoadingView { get }
+protocol LoadingAnimateCellProtocol {
+    var loading: LoadingAnimateCell { get }
 }
 
-class LoadingView {
+enum LoadingCellStates {
+    case new  // the cell was created now
+    case waiting  // waiting for data
+    case error
+    case finish  // receive a data
+}
+
+class LoadingAnimateCell {
     private let animation: NVActivityIndicatorView
     private let label: UILabel
     private let superView: UIView
     private let hideExcept: [UIView]
     private var hidded: [UIView] = []
+    public private(set) var currentState = LoadingCellStates.new
     
     init(inView view: UIView, animationType: NVActivityIndicatorType, hideExcept: [UIView]) {
         superView = view
@@ -60,6 +68,8 @@ class LoadingView {
             }
         }
         
+        currentState = .waiting
+        
         animation.alpha = 1
         animation.startAnimating()
         label.alpha = 1
@@ -72,6 +82,8 @@ class LoadingView {
             $0.font = FontAttribute(FontName.HelveticaNeue, size: 15)
         }))
         label.textColor = UIColor.stalkrError
+        
+        currentState = .error
     }
     
     func stop() {
@@ -81,6 +93,8 @@ class LoadingView {
         superView.subviews.forEach {
             $0.alpha = 1
         }
+        
+        currentState = .finish
         
         animation.alpha = 0
         animation.stopAnimating()

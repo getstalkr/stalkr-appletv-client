@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		890E0C851E7248990083C76E /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E0C841E7248990083C76E /* AccountViewController.swift */; };
 		8917E4AD1E6925FF001BD42A /* CommitRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8917E4AC1E6925FF001BD42A /* CommitRegister.swift */; };
-		891F50C61E8DF4E80085A060 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891F50C51E8DF4E70085A060 /* LoadingView.swift */; };
+		891F50C61E8DF4E80085A060 /* LoadingAnimateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891F50C51E8DF4E70085A060 /* LoadingAnimateCell.swift */; };
 		89276ED81E54BBE800D99D4E /* SubscriberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89276ED71E54BBE800D99D4E /* SubscriberCell.swift */; };
 		892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DD7C31E5624F1000482C0 /* TravisBuildRegister.swift */; };
 		892DECC81E5E308900676056 /* CellTeamCommitsZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892DECC71E5E308900676056 /* CellTeamCommitsZoom.swift */; };
@@ -73,7 +73,7 @@
 		2584928AB2DB6CF074F0769D /* Pods_stalkr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stalkr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		890E0C841E7248990083C76E /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		8917E4AC1E6925FF001BD42A /* CommitRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitRegister.swift; sourceTree = "<group>"; };
-		891F50C51E8DF4E70085A060 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		891F50C51E8DF4E70085A060 /* LoadingAnimateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingAnimateCell.swift; sourceTree = "<group>"; };
 		89276ED71E54BBE800D99D4E /* SubscriberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriberCell.swift; sourceTree = "<group>"; };
 		892DD7C31E5624F1000482C0 /* TravisBuildRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravisBuildRegister.swift; sourceTree = "<group>"; };
 		892DECC71E5E308900676056 /* CellTeamCommitsZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTeamCommitsZoom.swift; sourceTree = "<group>"; };
@@ -310,7 +310,6 @@
 				89B337F21E48BB9F00610EA3 /* AppDelegate.swift */,
 				89B337F91E48BB9F00610EA3 /* Assets.xcassets */,
 				89B337FB1E48BB9F00610EA3 /* Info.plist */,
-				891F50C51E8DF4E70085A060 /* LoadingView.swift */,
 				89AE2A5C1EF7FEE800CD2948 /* NetworkManager */,
 				89C36AD41EF400E000E5342C /* Views */,
 				89D598B81E718E3D00B27927 /* Project */,
@@ -326,6 +325,7 @@
 				89B338011E48C08400610EA3 /* SlotableCell.swift */,
 				89276ED71E54BBE800D99D4E /* SubscriberCell.swift */,
 				892DECC91E5F258400676056 /* SlotableCellConfiguration.swift */,
+				891F50C51E8DF4E70085A060 /* LoadingAnimateCell.swift */,
 				89C994C91E5481D700DBADBA /* CellTravis */,
 				892E73E01E589380007483E1 /* CellCommitsFeed */,
 				892E73E11E58A555007483E1 /* CellTeamCommits */,
@@ -583,7 +583,7 @@
 				89DEFD731EFB6E790086F78B /* WebSocketChannelExtension.swift in Sources */,
 				892DD7C41E5624F1000482C0 /* TravisBuildRegister.swift in Sources */,
 				89AE2A611EF8025F00CD2948 /* UserService.swift in Sources */,
-				891F50C61E8DF4E80085A060 /* LoadingView.swift in Sources */,
+				891F50C61E8DF4E80085A060 /* LoadingAnimateCell.swift in Sources */,
 				890E0C851E7248990083C76E /* AccountViewController.swift in Sources */,
 				892DECC81E5E308900676056 /* CellTeamCommitsZoom.swift in Sources */,
 				89AE2A6A1EF86D3200CD2948 /* Task.swift in Sources */,
