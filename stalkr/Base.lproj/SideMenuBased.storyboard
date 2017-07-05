@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -56,16 +57,26 @@
                                                     <constraint firstAttribute="width" secondItem="xU3-6z-p94" secondAttribute="height" multiplier="240:97" constant="-100" id="AvJ-D1-cAv"/>
                                                 </constraints>
                                             </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="arrowSidemenu" translatesAutoresizingMaskIntoConstraints="NO" id="mfq-Z1-iGg">
+                                                <rect key="frame" x="97" y="278" width="193" height="344"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="mfq-Z1-iGg" secondAttribute="height" multiplier="193:344" id="zRR-cK-h9w"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.29803921568627451" alpha="0.099020761986301373" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="QHA-3Q-ZCw" secondAttribute="height" multiplier="193:450" id="J6j-jO-xFO"/>
+                                            <constraint firstItem="mfq-Z1-iGg" firstAttribute="centerY" secondItem="QHA-3Q-ZCw" secondAttribute="centerY" id="AN7-gK-PDc"/>
                                             <constraint firstItem="xU3-6z-p94" firstAttribute="top" secondItem="QHA-3Q-ZCw" secondAttribute="top" constant="26" id="REi-wH-YfH"/>
                                             <constraint firstAttribute="trailing" secondItem="Khn-QB-1nk" secondAttribute="trailing" id="VAz-4n-fPy"/>
                                             <constraint firstItem="Khn-QB-1nk" firstAttribute="top" secondItem="xU3-6z-p94" secondAttribute="bottom" constant="41" id="a2l-Ds-Bgx"/>
                                             <constraint firstItem="xU3-6z-p94" firstAttribute="centerX" secondItem="QHA-3Q-ZCw" secondAttribute="centerX" id="axw-8G-MOZ"/>
+                                            <constraint firstAttribute="height" constant="900" id="cYa-h5-tuF"/>
+                                            <constraint firstItem="mfq-Z1-iGg" firstAttribute="centerX" secondItem="xU3-6z-p94" secondAttribute="centerX" id="dy6-BU-Sca"/>
+                                            <constraint firstAttribute="width" constant="386" id="f0c-si-v3w"/>
                                             <constraint firstItem="Khn-QB-1nk" firstAttribute="centerX" secondItem="QHA-3Q-ZCw" secondAttribute="centerX" id="jNN-CX-eMf"/>
                                             <constraint firstItem="xU3-6z-p94" firstAttribute="width" secondItem="QHA-3Q-ZCw" secondAttribute="height" multiplier="4:15" constant="-100" id="l4v-hx-LLy"/>
+                                            <constraint firstItem="mfq-Z1-iGg" firstAttribute="width" secondItem="QHA-3Q-ZCw" secondAttribute="width" multiplier="0.5" id="ogG-xM-Ys0"/>
                                             <constraint firstItem="Khn-QB-1nk" firstAttribute="leading" secondItem="QHA-3Q-ZCw" secondAttribute="leading" id="rcQ-4K-Kfa"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -107,6 +118,10 @@
                     <connections>
                         <outlet property="containerView" destination="cBB-r1-arU" id="pmB-p1-htI"/>
                         <outlet property="labelTitle" destination="LnL-ND-Cqh" id="kqp-UA-qw0"/>
+                        <outlet property="logoStalkr" destination="xU3-6z-p94" id="NPM-LR-wRp"/>
+                        <outlet property="sideMenuArrowIcon" destination="mfq-Z1-iGg" id="Rf1-SI-SRb"/>
+                        <outlet property="sideMenuSuperView" destination="QHA-3Q-ZCw" id="fKj-fr-cXX"/>
+                        <outlet property="sideMenuSuperViewWidth" destination="f0c-si-v3w" id="UVd-mI-rlX"/>
                         <outlet property="sidebarView" destination="Khn-QB-1nk" id="lyF-6K-O76"/>
                     </connections>
                 </viewController>
@@ -142,7 +157,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.95022302865982056" green="0.75401997566223145" blue="0.035687629133462906" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="CellSidebarMenu" customModule="stalkr" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="CellSidebarMenu" customModule="stalkr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="66" width="386" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UW4-Tw-7UH" id="9Fg-35-gqH">
@@ -175,6 +190,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowSidemenu" width="194" height="344"/>
         <image name="logo" width="3333" height="2500"/>
     </resources>
 </document>

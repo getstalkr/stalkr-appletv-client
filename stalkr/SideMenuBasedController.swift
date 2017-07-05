@@ -13,7 +13,11 @@ import FocusGuideHelper
 
 class SideMenuBasedController: UIViewController {
     
+    @IBOutlet weak var logoStalkr: UIImageView!
     @IBOutlet weak var sidebarView: UIView!
+    @IBOutlet weak var sideMenuSuperView: UIView!
+    @IBOutlet weak var sideMenuSuperViewWidth: NSLayoutConstraint!
+    @IBOutlet weak var sideMenuArrowIcon: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var containerView: UIView!
     let guideHelper = FocusGuideHelper()
@@ -24,6 +28,7 @@ class SideMenuBasedController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        sideMenuArrowIcon.alpha = 0
         setDefaultBackground()
     }
     
@@ -46,6 +51,53 @@ class SideMenuBasedController: UIViewController {
 
 //MARK: SidebarProtocol
 extension SideMenuBasedController: SidebarProtocol {
+    
+    func toggle(showSidebar: Bool) {
+        let projectController = self.currentContainerController as? ProjectsViewController
+        
+        if showSidebar {
+            self.sideMenuArrowIcon.alpha = 0
+            
+            _ = firstly {
+                UIView.promise(animateWithDuration: 1, animations: {
+                    self.logoStalkr.alpha = 0.4
+                    self.sidebarView.alpha = 1
+                    
+                    projectController?.gridView?.view.alpha = 0
+                    
+                    self.sideMenuSuperView.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.1882352941, blue: 0.2980392157, alpha: 0.1)
+                    self.sideMenuSuperViewWidth.constant = 386
+                    self.view.layoutIfNeeded()
+                })
+            }.then { _ -> Promise<Bool> in
+                projectController?.gridView?.gridView?.reloadGrid()
+                        
+                return UIView.promise(animateWithDuration: 1, animations: {
+                    projectController?.gridView?.view.alpha = 1
+                })
+            }
+        } else {
+            _ = firstly {
+                UIView.promise(animateWithDuration: 1, animations: {
+                    self.logoStalkr.alpha = 0
+                    self.sidebarView.alpha = 0
+                    
+                    projectController?.gridView?.view.alpha = 0
+                    
+                    self.sideMenuSuperView.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.1882352941, blue: 0.2980392157, alpha: 0.2)
+                    self.sideMenuSuperViewWidth.constant = 50
+                    self.view.layoutIfNeeded()
+                })
+            }.then { _ -> Promise<Bool> in
+                projectController?.gridView?.gridView?.reloadGrid()
+                
+                return UIView.promise(animateWithDuration: 1, animations: {
+                    self.sideMenuArrowIcon.alpha = 1
+                    projectController?.gridView?.view.alpha = 1
+                })
+            }
+        }
+    }
     
     func focusedCell(withOption option: SidebarOptions) {
         
@@ -87,21 +139,11 @@ extension SideMenuBasedController: SidebarProtocol {
                 inPosition: .right
             )
             
-            projectController.guideHelper.addLinkByFocus(
-                from: projectController.dashboardsTab,
+            guideHelper.addLinkByFocus(
+                from: containerView,
                 to: cellDashboard,
                 inPosition: .left,
-                identifier: "projects segmenets to sidemenu"
-            )
-            
-            projectController.guideHelper.addLinkByFocus(
-                from: projectController.gridView!.view,
-                to: cellDashboard,
-                inPosition: .left,
-                identifier: "grid to sidemenu",
-                activedWhen: { context in
-                    return (context.nextFocusedView as? SlotableCellDefault) != nil
-                }
+                identifier: "container to sidemenu"
             )
             
         case .myAccount:
@@ -112,6 +154,13 @@ extension SideMenuBasedController: SidebarProtocol {
                 from: cellAccount,
                 to: accountController.view,
                 inPosition: .right
+            )
+            
+            guideHelper.addLinkByFocus(
+                from: containerView,
+                to: cellAccount,
+                inPosition: .left,
+                identifier: "container to sidemenu"
             )
         }
     }

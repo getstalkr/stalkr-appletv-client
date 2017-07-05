@@ -31,5 +31,6 @@ enum SidebarOptions: String, CustomStringConvertible {
 
 protocol SidebarProtocol: class {
     
+    func toggle(showSidebar: Bool)
     func focusedCell(withOption option: SidebarOptions)
 }

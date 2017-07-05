@@ -37,8 +37,12 @@ class SidebarController: UITableViewController {
         if let cell = context.nextFocusedItem as? CellSidebarMenu {
             currentSelected = tableView.indexPath(for: cell)!
             shouldSelectEspecificTab = false
+            
+            sidebarProtocol?.toggle(showSidebar: true)
         } else {
             shouldSelectEspecificTab = true
+            
+            sidebarProtocol?.toggle(showSidebar: false)
         }
         
         return true
