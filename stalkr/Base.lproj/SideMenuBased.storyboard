@@ -178,7 +178,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrowSidemenu" width="194" height="344"/>
+        <image name="arrowSidemenu" width="272" height="512"/>
         <image name="logo" width="3333" height="2500"/>
     </resources>
 </document>
