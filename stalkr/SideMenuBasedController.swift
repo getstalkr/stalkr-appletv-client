@@ -17,6 +17,8 @@ class SideMenuBasedController: UIViewController {
     @IBOutlet weak var sidebarView: UIView!
     @IBOutlet weak var sideMenuSuperView: UIView!
     @IBOutlet weak var sideMenuSuperViewWidth: NSLayoutConstraint!
+    @IBOutlet weak var logoWidthSmall: NSLayoutConstraint!
+    @IBOutlet weak var logoWidthBig: NSLayoutConstraint!
     @IBOutlet weak var sideMenuArrowIcon: UIImageView!
     @IBOutlet weak var containerView: UIView!
     let guideHelper = FocusGuideHelper()
@@ -48,7 +50,6 @@ class SideMenuBasedController: UIViewController {
 
 }
 
-//MARK: SidebarProtocol
 extension SideMenuBasedController: SidebarProtocol {
     
     func toggle(showSidebar: Bool) {
@@ -59,7 +60,10 @@ extension SideMenuBasedController: SidebarProtocol {
             
             _ = firstly {
                 UIView.promise(animateWithDuration: 1, animations: {
-                    self.logoStalkr.alpha = 0.4
+                    self.logoStalkr.transform = CGAffineTransform(rotationAngle: 0)
+                    self.logoWidthSmall.isActive = true
+                    self.logoWidthBig.isActive = false
+                    
                     self.sidebarView.alpha = 1
                     
                     projectController?.gridView?.view.alpha = 0
@@ -78,7 +82,10 @@ extension SideMenuBasedController: SidebarProtocol {
         } else {
             _ = firstly {
                 UIView.promise(animateWithDuration: 1, animations: {
-                    self.logoStalkr.alpha = 0
+                    self.logoStalkr.transform = CGAffineTransform(rotationAngle: CGFloat(0.5 * Double.pi))
+                    self.logoWidthSmall.isActive = false
+                    self.logoWidthBig.isActive = true
+                    
                     self.sidebarView.alpha = 0
                     
                     projectController?.gridView?.view.alpha = 0

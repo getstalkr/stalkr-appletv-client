@@ -34,7 +34,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="386" height="900"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Khn-QB-1nk" userLabel="Table Container">
-                                                <rect key="frame" x="0.0" y="164" width="386" height="736"/>
+                                                <rect key="frame" x="0.0" y="144" width="386" height="736"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Khn-QB-1nk" secondAttribute="height" multiplier="337:736" constant="49" id="R32-Yh-VHL"/>
                                                 </constraints>
@@ -42,10 +42,10 @@
                                                     <segue destination="8PL-Ka-4f6" kind="embed" identifier="tableIdentifier" id="1Bh-um-Rmy"/>
                                                 </connections>
                                             </containerView>
-                                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="xU3-6z-p94">
-                                                <rect key="frame" x="123" y="26" width="140" height="97"/>
+                                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="xU3-6z-p94">
+                                                <rect key="frame" x="155" y="26" width="77" height="77"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="xU3-6z-p94" secondAttribute="height" multiplier="240:97" constant="-100" id="AvJ-D1-cAv"/>
+                                                    <constraint firstAttribute="width" secondItem="xU3-6z-p94" secondAttribute="height" multiplier="1:1" id="npJ-qb-M5s"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="arrowSidemenu" translatesAutoresizingMaskIntoConstraints="NO" id="mfq-Z1-iGg">
@@ -60,13 +60,14 @@
                                             <constraint firstItem="mfq-Z1-iGg" firstAttribute="centerY" secondItem="QHA-3Q-ZCw" secondAttribute="centerY" id="AN7-gK-PDc"/>
                                             <constraint firstItem="xU3-6z-p94" firstAttribute="top" secondItem="QHA-3Q-ZCw" secondAttribute="top" constant="26" id="REi-wH-YfH"/>
                                             <constraint firstAttribute="trailing" secondItem="Khn-QB-1nk" secondAttribute="trailing" id="VAz-4n-fPy"/>
+                                            <constraint firstItem="xU3-6z-p94" firstAttribute="width" secondItem="QHA-3Q-ZCw" secondAttribute="width" multiplier="0.2" id="W5S-k5-QnS"/>
+                                            <constraint firstItem="xU3-6z-p94" firstAttribute="width" secondItem="QHA-3Q-ZCw" secondAttribute="width" multiplier="0.8" id="Z1E-6I-hZ7"/>
                                             <constraint firstItem="Khn-QB-1nk" firstAttribute="top" secondItem="xU3-6z-p94" secondAttribute="bottom" constant="41" id="a2l-Ds-Bgx"/>
                                             <constraint firstItem="xU3-6z-p94" firstAttribute="centerX" secondItem="QHA-3Q-ZCw" secondAttribute="centerX" id="axw-8G-MOZ"/>
                                             <constraint firstAttribute="height" constant="900" id="cYa-h5-tuF"/>
                                             <constraint firstItem="mfq-Z1-iGg" firstAttribute="centerX" secondItem="xU3-6z-p94" secondAttribute="centerX" id="dy6-BU-Sca"/>
                                             <constraint firstAttribute="width" constant="386" id="f0c-si-v3w"/>
                                             <constraint firstItem="Khn-QB-1nk" firstAttribute="centerX" secondItem="QHA-3Q-ZCw" secondAttribute="centerX" id="jNN-CX-eMf"/>
-                                            <constraint firstItem="xU3-6z-p94" firstAttribute="width" secondItem="QHA-3Q-ZCw" secondAttribute="height" multiplier="4:15" constant="-100" id="l4v-hx-LLy"/>
                                             <constraint firstItem="mfq-Z1-iGg" firstAttribute="width" secondItem="QHA-3Q-ZCw" secondAttribute="width" multiplier="0.5" id="ogG-xM-Ys0"/>
                                             <constraint firstItem="Khn-QB-1nk" firstAttribute="leading" secondItem="QHA-3Q-ZCw" secondAttribute="leading" id="rcQ-4K-Kfa"/>
                                         </constraints>
@@ -75,6 +76,11 @@
                                                 <integer key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Z1E-6I-hZ7"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.019607843137254902" green="0.019607843137254902" blue="0.12156862745098039" alpha="0.5" colorSpace="calibratedRGB"/>
@@ -107,6 +113,8 @@
                     <connections>
                         <outlet property="containerView" destination="cBB-r1-arU" id="pmB-p1-htI"/>
                         <outlet property="logoStalkr" destination="xU3-6z-p94" id="NPM-LR-wRp"/>
+                        <outlet property="logoWidthBig" destination="Z1E-6I-hZ7" id="NIc-f8-XT2"/>
+                        <outlet property="logoWidthSmall" destination="W5S-k5-QnS" id="fEp-UR-yKe"/>
                         <outlet property="sideMenuArrowIcon" destination="mfq-Z1-iGg" id="Rf1-SI-SRb"/>
                         <outlet property="sideMenuSuperView" destination="QHA-3Q-ZCw" id="fKj-fr-cXX"/>
                         <outlet property="sideMenuSuperViewWidth" destination="f0c-si-v3w" id="UVd-mI-rlX"/>
@@ -145,7 +153,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.95022302865982056" green="0.75401997566223145" blue="0.035687629133462906" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="CellSidebarMenu" customModule="stalkr" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eIn-ao-Er5" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UW4-Tw-7UH" customClass="CellSidebarMenu" customModule="stalkr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="66" width="386" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UW4-Tw-7UH" id="9Fg-35-gqH">
