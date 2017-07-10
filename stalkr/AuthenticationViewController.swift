@@ -26,11 +26,11 @@ class AuthenticationViewController: UIViewController, CodeInputViewDelegate {
     }
     
     enum loginNetworkStatus: String {
-        case sendingToken = "Sending token..."
-        case loginSuccess = "Login success! Getting projects..."
-        case failIncorrectToken = "Fail! Token incorrect."
-        case failDashboardJsonMalformatted = "Fail! Dashboard with errors!"
-        case failUnknowError = "Fail! Unknow error."
+        case sendingToken = "Insert your token"
+        case loginSuccess = "Syncing..."
+        case failIncorrectToken = "Invalid token"
+        case failDashboardJsonMalformatted = "Internal error"
+        case failUnknowError = "Unknown error"
         
         func updateStatusLabel(_ authViewController: AuthenticationViewController) {
             authViewController.labelLoginNetworkStatus.text = self.rawValue
