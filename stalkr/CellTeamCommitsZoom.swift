@@ -39,7 +39,7 @@ class CellTeamCommitsZoom: ZoomCell, SlotableCell, SubscriberCell {
     ]
     
     //
-    func load(params: [String: Any]) {
+    func load() {
         drawChart(commits: [])
     }
     

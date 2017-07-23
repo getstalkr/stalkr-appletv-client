@@ -50,7 +50,7 @@ class CellTeamCommits: SlotableCellDefault, SlotableCell, StalkrCell, Subscriber
     ]
     
     //
-    func load(params: [String: Any]) {
+    func load() {
         drawChart(commits: [])
     }
     

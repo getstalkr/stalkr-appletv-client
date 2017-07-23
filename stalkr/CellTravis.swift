@@ -68,7 +68,7 @@ class CellTravis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell,
     ]
     
     //
-    func load(params: [String: Any]) {
+    func load() {
         self.table.delegate = self
         self.table.dataSource = self
         

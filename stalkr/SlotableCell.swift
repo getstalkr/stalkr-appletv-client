@@ -42,7 +42,7 @@ class SlotableCellDefault: UICollectionViewCell, LoadingAnimateCellProtocol {
         )
     }()
     
-    var params: [String : Any] = [:]
+    var slotParams: [String : Any] = [:]
     
     var scaleWhenFocused: Bool {
         get {

@@ -55,7 +55,7 @@ class CellCommitsFeed: SlotableCellDefault, SlotableCell, StalkrCell, Subscriber
     ]
     
     //
-    func load(params: [String: Any]) {
+    func load() {
         self.table.delegate = self
         self.table.dataSource = self
         

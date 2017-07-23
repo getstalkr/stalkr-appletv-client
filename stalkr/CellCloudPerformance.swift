@@ -97,7 +97,7 @@ class CellCloudPerformance: SlotableCellDefault, SlotableCell, StalkrCell, Subsc
         viewChart.data = chartData
     }
     
-    func load(params: [String: Any]) {
+    func load() {
         updateChart()
     }
 }

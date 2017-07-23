@@ -29,7 +29,7 @@ class CellDeployStatus: SlotableCellDefault, SlotableCell, StalkrCell {
     
     static let configurations: [StalkrCellConfig] = []
     
-    func load(params: [String: Any]) {
+    func load() {
         self.viewCircleStatus.layer.cornerRadius = self.viewCircleStatus.frame.width / 2
         self.viewCircleStatus.layer.masksToBounds = true
         self.viewCircleStatus.layer.borderWidth = 7

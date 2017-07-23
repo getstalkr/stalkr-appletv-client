@@ -47,12 +47,12 @@ extension EmbededGridController: GridViewDelegate {
         return listAllSlotableCell.map { ($0.classObject as! SlotableCell.Type) }
     }
     
-    func setup(cell: SlotableCell, params: [String: Any]) {
+    func setup(cell: SlotableCell) {
         // start websockets, if need
         if var cellSubscriber = cell as? SubscriberCell {
             cellSubscriber.pusher = cellSubscriber.subscriber(
-                pusherKey: params["pusher_key"]! as! String,
-                params: params
+                pusherKey: cell.slotParams["pusher_key"]! as! String,
+                params: cell.slotParams
             )
             
             if let cellLoading = cell as? LoadingAnimateCellProtocol {
@@ -82,16 +82,20 @@ extension EmbededGridController: GridViewDelegate {
     
     // Gesture functions
     func zoomCell(_ cell: UITapGestureRecognizer) { // todo: talvez eu possa remover esse paraemtro
-        if let focusedCell = UIScreen.main.focusedView as? UICollectionViewCell { // todo: talvez usar guard let
-            let indexPath = gridView!.collectionView!.indexPath(for: focusedCell)
-            
-            let zoomCell = NSClassFromString("stalkr." + (type(of: gridView!.collectionView!.cellForItem(at: indexPath!)!).className() + "Zoom"))! as! SlotableCell.Type
-            let params = gridView!.getParams(of: focusedCell)
-            
-            gridIsZoom = true
-            gridView!.gridConfiguration = GridConfiguration.create(slots: Slots(slots: [[Slot(cell: zoomCell, params: params)]]))
-            reloadGridWithAnimation()
+        guard let focusedCell = UIScreen.main.focusedView as? UICollectionViewCell else {
+            return
         }
+        
+        guard let zoomCellClass = NSClassFromString("stalkr." + type(of: focusedCell).className() + "Zoom") as? SlotableCell.Type else {
+            
+            return
+        }
+        
+        let params = (focusedCell as! SlotableCell).slotParams
+            
+        gridIsZoom = true
+        gridView!.gridConfiguration = GridConfiguration.create(slots: Slots(slots: [[Slot(cell: zoomCellClass, params: params)]]))
+        reloadGridWithAnimation()
     }
     
     func zoomOut() {
