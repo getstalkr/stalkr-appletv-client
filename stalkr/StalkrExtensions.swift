@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import SwiftRichString
+//import SwiftRichString
 
 extension NSObject {
     class func className() -> String {
@@ -85,7 +85,7 @@ extension UIView{
 }
 
 //
-extension Style {
+/*extension Style {
     static let fontBold = Style("bold", {
         $0.font = FontAttribute(FontName.HelveticaNeue_Bold, size: 17)
     })
@@ -93,7 +93,7 @@ extension Style {
     static let fontItalic = Style("italic", {
         $0.font = FontAttribute(FontName.HelveticaNeue_Italic, size: 17)
     })
-}
+}*/
 
 //
 extension UISegmentedControl {

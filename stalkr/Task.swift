@@ -24,7 +24,7 @@ protocol Task {
 }
 
 extension Task {
-    func execute(in dispatcher: Dispatcher, then handle: @escaping (Response, (Output) -> (), (Error) -> ()) -> ()) -> Promise<Output> {
+    func execute(in dispatcher: Dispatcher, then handle: @escaping (Response, @escaping (Output) -> Void, @escaping (Error) -> Void) -> Void) -> Promise<Output> {
         
         return Promise { fulfill, reject in
             firstly {

@@ -8,7 +8,7 @@ target 'stalkr' do
   # Pods for stalkr
   pod 'SwiftyJSON', '~> 3.1.4'
   pod 'PusherSwift'
-  pod 'SwiftRichString'
+  #pod 'SwiftRichString', '~> 1.0.1'
   pod 'RelativeFormatter'
   pod 'Kingfisher', '~> 3.4'
   pod 'Charts'

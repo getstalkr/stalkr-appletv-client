@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftRichString
+//import SwiftRichString
 import RelativeFormatter
 import PusherSwift
 import GridView
@@ -112,9 +112,11 @@ class CellTravis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell,
         cell.textCommitMessage.text = currentBuild.message
         cell.textCommitMessage.textColor = UIColor.fontPullMessage
         
-        cell.labelBranch.attributedText = "Branch " + currentBuild.branch.set(style: .fontBold)
+        //cell.labelBranch.attributedText = "Branch " + currentBuild.branch.set(style: .fontBold)
+        cell.labelBranch.text = "Branch " + currentBuild.branch
         cell.labelCommitterName.text = currentBuild.authorName
-        cell.labelCommitCode.attributedText = "Commit " + currentBuild.commit.set(style: .fontBold)
+        //cell.labelCommitCode.attributedText = "Commit " + currentBuild.commit.set(style: .fontBold)
+        cell.labelCommitCode.text = "Commit " + currentBuild.commit
         
         if let dateStarted = currentBuild.dateStarted {
             
@@ -122,9 +124,11 @@ class CellTravis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell,
             let splited = dateFinishRelativeFormatted.components(separatedBy: " ")
             
             if splited.count == 3 && splited[2] == "ago" {
-                cell.labelPastTime.attributedText = "\(splited[0]) \(splited[1])".set(style: .fontBold) + " \(splited[2])"
+                //cell.labelPastTime.attributedText = "\(splited[0]) \(splited[1])".set(style: .fontBold) + " \(splited[2])"
+                cell.labelPastTime.text = "\(splited[0]) \(splited[1])" + " \(splited[2])"
             } else {
-                cell.labelPastTime.attributedText = dateFinishRelativeFormatted.set(style: .fontBold)
+                //cell.labelPastTime.attributedText = dateFinishRelativeFormatted.set(style: .fontBold)
+                cell.labelPastTime.text = dateFinishRelativeFormatted
             }
             
             if let dateFinish = currentBuild.dateFinish {
@@ -137,7 +141,8 @@ class CellTravis: SlotableCellDefault, SlotableCell, StalkrCell, SubscriberCell,
                 let totalTime = dateComponentsFormatter.string(from: dateStarted, to: dateFinish)
                 
                 if let totalTime = totalTime {
-                    cell.labelTotalTime.attributedText = "Total time: " + totalTime.set(style: .fontBold)
+                    //cell.labelTotalTime.attributedText = "Total time: " + totalTime.set(style: .fontBold)
+                    cell.labelTotalTime.text = "Total time: " + totalTime
                 } else {
                     cell.labelTotalTime.text = ""
                 }

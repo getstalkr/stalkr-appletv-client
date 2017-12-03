@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import NVActivityIndicatorView
 import Cartography
-import SwiftRichString
+//import SwiftRichString
 import GridView
 
 protocol StalkrCell {

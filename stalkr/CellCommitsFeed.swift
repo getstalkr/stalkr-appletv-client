@@ -8,7 +8,7 @@
 
 import UIKit
 import Kingfisher
-import SwiftRichString
+//import SwiftRichString
 import SwiftyJSON
 import RelativeFormatter
 import PusherSwift
@@ -87,8 +87,10 @@ class CellCommitsFeed: SlotableCellDefault, SlotableCell, StalkrCell, Subscriber
         cell.labelCommitterName.text = currentCommit.name
         cell.textMessage.textColor = UIColor.fontPullMessage
         cell.textMessage.text = currentCommit.message
-        cell.labelCommitHash.attributedText = "Commit " + currentCommit.sha.set(style: .fontBold)
-        cell.labelBranch.attributedText = "Branch " + "Master".set(style: .fontBold) // TODO
+        //cell.labelCommitHash.attributedText = "Commit " + currentCommit.sha.set(style: .fontBold)
+        cell.labelCommitHash.text = "Commit " + currentCommit.sha
+        //cell.labelBranch.attributedText = "Branch " + "Master".set(style: .fontBold) // TODO
+        cell.labelBranch.text = "Branch " + "Master" // TODO
         cell.labelTimeAgo.text = currentCommit.date.relativeFormatted()
         
         return cell

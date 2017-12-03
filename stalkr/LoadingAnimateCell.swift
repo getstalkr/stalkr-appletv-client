@@ -9,7 +9,7 @@
 import UIKit
 import NVActivityIndicatorView
 import Cartography
-import SwiftRichString
+//import SwiftRichString
 
 
 protocol LoadingAnimateCellProtocol {
@@ -78,9 +78,7 @@ class LoadingAnimateCell {
     
     func error(message: String) {
         animation.stopAnimating()
-        label.attributedText = "Oops\n" + message.set(style: Style({
-            $0.font = FontAttribute(FontName.HelveticaNeue, size: 15)
-        }))
+        label.text = "Oops\n" + message
         label.textColor = UIColor.stalkrError
         
         currentState = .error
